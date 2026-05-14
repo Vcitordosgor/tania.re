@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TANIA — Votre assistante administrative sur WhatsApp</title>
+  <meta name="description" content="TANIA, l'assistante administrative des TPE/PME de La Réunion. Créez vos factures sur WhatsApp. Conforme à la réforme e-invoicing 2026." />
+  <meta name="theme-color" content="#10B981" />
+
+  <meta property="og:title" content="TANIA — Votre assistante administrative sur WhatsApp" />
+  <meta property="og:description" content="Créez vos factures sur WhatsApp. Conforme à la réforme 2026. Conçue à La Réunion." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+    .hero-halo {
+      background:
+        radial-gradient(60% 50% at 20% 10%, rgba(16, 185, 129, 0.10), transparent 60%),
+        radial-gradient(40% 35% at 80% 0%, rgba(16, 185, 129, 0.07), transparent 60%);
+    }
+    .dotted-line {
+      background-image: linear-gradient(to right, rgb(203 213 225) 33%, rgba(255,255,255,0) 0%);
+      background-position: top;
+      background-size: 8px 1px;
+      background-repeat: repeat-x;
+    }
+  </style>
+</head>
+<body class="bg-white text-slate-900 antialiased">
+
+  <!-- ─────────────── Header ─────────────── -->
+  <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-sm border-b border-slate-100">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#" class="text-2xl font-extrabold text-emerald-600 tracking-tight">TANIA</a>
+      <nav class="flex items-center gap-8">
+        <a href="#pricing" class="hidden sm:inline text-sm text-slate-700 hover:text-emerald-600 transition-colors">Tarifs</a>
+        <a href="#faq" class="hidden sm:inline text-sm text-slate-700 hover:text-emerald-600 transition-colors">FAQ</a>
+        <a href="#contact" class="hidden md:inline-flex items-center bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-semibold px-4 py-2 rounded-lg shadow-sm hover:shadow transition-all">Demander une démo</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ─────────────── Hero ─────────────── -->
+  <section class="hero-halo">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 py-24 lg:py-32">
+      <div class="grid lg:grid-cols-2 gap-16 lg:gap-12 items-center">
+
+        <div>
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 leading-[1.05] tracking-tight">
+            Pas le temps pour la paperasse&#8239;?<br />
+            <span class="text-slate-900">Donnez-la à TANIA.</span>
+          </h1>
+          <p class="mt-8 text-xl md:text-2xl text-slate-600 leading-relaxed">
+            Votre assistante administrative sur WhatsApp.
+          </p>
+          <p class="mt-3 text-base text-slate-500">
+            Conforme à la réforme 2026.
+          </p>
+
+          <div class="mt-12 flex flex-col sm:flex-row gap-4">
+            <a href="#contact" class="inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-md hover:shadow-lg hover:-translate-y-px transition-all">
+              Demander une démo
+            </a>
+            <a href="#how-it-works" class="inline-flex items-center justify-center border border-slate-300 hover:border-slate-400 text-slate-700 px-8 py-4 rounded-lg font-semibold text-lg transition-all">
+              Voir comment ça marche
+            </a>
+          </div>
+
+          <p class="mt-6 text-sm text-slate-500">
+            1<sup>er</sup> mois offert · Sans engagement
+          </p>
+        </div>
+
+        <div>
+          <p class="text-center text-xs italic text-slate-400 mb-3">Exemple de conversation avec TANIA</p>
+          <div class="max-w-md mx-auto bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden">
+            <div class="bg-emerald-600 text-white px-5 py-3 flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-emerald-800 flex items-center justify-center font-bold">T</div>
+              <div>
+                <div class="font-semibold leading-tight">TANIA</div>
+                <div class="text-xs text-emerald-200">en ligne</div>
+              </div>
+            </div>
+            <div class="bg-slate-50 px-5 py-6 space-y-3">
+
+              <div class="flex">
+                <div class="ml-auto max-w-xs bg-emerald-100 text-slate-900 rounded-2xl rounded-tr-sm px-4 py-2 text-sm">
+                  Mme&nbsp;Hoareau, plomberie 80&nbsp;€ payé cash
+                </div>
+              </div>
+
+              <div class="flex">
+                <div class="mr-auto max-w-xs bg-white text-slate-900 rounded-2xl rounded-tl-sm px-4 py-2 text-sm shadow-sm whitespace-pre-line">✅ Facture créée&nbsp;: F-2026-0042
+📄 PDF prêt à télécharger
+💚 Conforme Factur-X</div>
+              </div>
+
+              <div class="flex">
+                <div class="ml-auto max-w-xs bg-emerald-100 text-slate-900 rounded-2xl rounded-tr-sm px-4 py-2 text-sm">
+                  Combien j&rsquo;ai facturé ce mois&#8239;?
+                </div>
+              </div>
+
+              <div class="flex">
+                <div class="mr-auto max-w-xs bg-white text-slate-900 rounded-2xl rounded-tl-sm px-4 py-2 text-sm shadow-sm whitespace-pre-line">Mai 2026&nbsp;:
+💰 1&nbsp;450&nbsp;€ TTC
+📈 +12&nbsp;% vs avril
+🎉 Tu cartonnes&#8239;!</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────── Section 2 — 3 chiffres ─────────────── -->
+  <section class="bg-slate-50 py-20 lg:py-24">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+
+        <div class="bg-white rounded-2xl border border-slate-200 p-10 text-center hover:border-emerald-300 hover:shadow-md transition-all duration-200">
+          <div class="text-6xl lg:text-7xl font-extrabold text-emerald-600 tracking-tight">0&nbsp;min</div>
+          <div class="text-xl font-semibold text-slate-900 mt-4">Pour créer une facture</div>
+          <p class="text-base text-slate-600 mt-3 leading-relaxed">Plus de saisie manuelle. Un WhatsApp suffit.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-slate-200 p-10 text-center hover:border-emerald-300 hover:shadow-md transition-all duration-200">
+          <div class="text-6xl lg:text-7xl font-extrabold text-emerald-600 tracking-tight">1</div>
+          <div class="text-xl font-semibold text-slate-900 mt-4">Message WhatsApp</div>
+          <p class="text-base text-slate-600 mt-3 leading-relaxed">Pas d&rsquo;app à installer. Pas de formation.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-slate-200 p-10 text-center hover:border-emerald-300 hover:shadow-md transition-all duration-200">
+          <div class="text-6xl lg:text-7xl font-extrabold text-emerald-600 tracking-tight">100&nbsp;%</div>
+          <div class="text-xl font-semibold text-slate-900 mt-4">Conforme réforme 2026</div>
+          <p class="text-base text-slate-600 mt-3 leading-relaxed">Factur-X EN&nbsp;16931, transmis via Plateforme Agréée.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────── Section 3 — Comment ça marche ─────────────── -->
+  <section id="how-it-works" class="bg-white py-20 lg:py-24">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight">Comment ça marche&#8239;?</h2>
+        <p class="text-lg text-slate-600 mt-4">3 étapes, pas une de plus.</p>
+      </div>
+
+      <div class="relative mt-16 max-w-5xl mx-auto">
+        <div class="hidden md:block absolute top-8 left-[16%] right-[16%] dotted-line h-px" aria-hidden="true"></div>
+
+        <div class="relative grid grid-cols-1 md:grid-cols-3 gap-12">
+
+          <div class="text-center">
+            <div class="bg-emerald-100 text-emerald-600 w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto ring-8 ring-white">1</div>
+            <h3 class="text-xl font-semibold text-slate-900 mt-6">Vous envoyez un WhatsApp</h3>
+            <p class="text-base text-slate-600 mt-3 leading-relaxed">Exemple&nbsp;: «&nbsp;Mme&nbsp;Hoareau, plomberie 80&nbsp;€, payé cash&nbsp;»</p>
+          </div>
+
+          <div class="text-center">
+            <div class="bg-emerald-100 text-emerald-600 w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto ring-8 ring-white">2</div>
+            <h3 class="text-xl font-semibold text-slate-900 mt-6">TANIA crée votre facture</h3>
+            <p class="text-base text-slate-600 mt-3 leading-relaxed">PDF + XML Factur-X EN&nbsp;16931 généré automatiquement en quelques secondes.</p>
+          </div>
+
+          <div class="text-center">
+            <div class="bg-emerald-100 text-emerald-600 w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto ring-8 ring-white">3</div>
+            <h3 class="text-xl font-semibold text-slate-900 mt-6">Vous gardez tout</h3>
+            <p class="text-base text-slate-600 mt-3 leading-relaxed">Dashboard web, export CSV, transmission à votre comptable. Sans aucun effort.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────── Section 4 — Pourquoi TANIA ─────────────── -->
+  <section class="bg-slate-50 py-20 lg:py-24">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight">Pourquoi choisir TANIA&#8239;?</h2>
+        <p class="text-lg text-slate-600 mt-4">On a pris le contrepied des logiciels traditionnels.</p>
+      </div>
+
+      <div class="max-w-4xl mx-auto mt-16">
+        <!-- Desktop table -->
+        <div class="hidden md:block bg-white rounded-2xl border border-slate-200 overflow-hidden">
+          <table class="w-full">
+            <thead>
+              <tr class="bg-slate-100">
+                <th class="text-left text-xs font-semibold uppercase tracking-wider text-slate-700 px-6 py-3">Critère</th>
+                <th class="text-left text-xs font-semibold uppercase tracking-wider text-slate-700 px-6 py-3">Logiciels classiques</th>
+                <th class="text-left text-xs font-semibold uppercase tracking-wider text-emerald-900 px-6 py-3 bg-emerald-50">TANIA</th>
+              </tr>
+            </thead>
+            <tbody class="text-sm">
+              <tr class="border-b border-slate-200">
+                <td class="px-6 py-4 text-slate-700">Logiciel à installer</td>
+                <td class="px-6 py-4 text-slate-600"><span class="text-rose-400">✕</span>&nbsp; Oui</td>
+                <td class="px-6 py-4 text-emerald-900 bg-emerald-50"><span class="text-emerald-500">✓</span>&nbsp; Non, juste WhatsApp</td>
+              </tr>
+              <tr class="border-b border-slate-200">
+                <td class="px-6 py-4 text-slate-700">Formation nécessaire</td>
+                <td class="px-6 py-4 text-slate-600"><span class="text-rose-400">✕</span>&nbsp; Plusieurs heures</td>
+                <td class="px-6 py-4 text-emerald-900 bg-emerald-50"><span class="text-emerald-500">✓</span>&nbsp; Zéro</td>
+              </tr>
+              <tr class="border-b border-slate-200">
+                <td class="px-6 py-4 text-slate-700">Interface</td>
+                <td class="px-6 py-4 text-slate-600">Application&nbsp;/ Web</td>
+                <td class="px-6 py-4 text-emerald-900 bg-emerald-50">WhatsApp</td>
+              </tr>
+              <tr class="border-b border-slate-200">
+                <td class="px-6 py-4 text-slate-700">Spécial 974 (Réunion)</td>
+                <td class="px-6 py-4 text-slate-600"><span class="text-rose-400">✕</span>&nbsp; Non</td>
+                <td class="px-6 py-4 text-emerald-900 bg-emerald-50"><span class="text-emerald-500">✓</span>&nbsp; Oui</td>
+              </tr>
+              <tr class="border-b border-slate-200">
+                <td class="px-6 py-4 text-slate-700">Conforme réforme 2026</td>
+                <td class="px-6 py-4 text-slate-600"><span class="text-emerald-500">✓</span>&nbsp; Oui</td>
+                <td class="px-6 py-4 text-emerald-900 bg-emerald-50"><span class="text-emerald-500">✓</span>&nbsp; Oui</td>
+              </tr>
+              <tr class="border-b border-slate-200">
+                <td class="px-6 py-4 text-slate-700">Assistance humaine</td>
+                <td class="px-6 py-4 text-slate-600"><span class="text-rose-400">✕</span>&nbsp; Chatbot</td>
+                <td class="px-6 py-4 text-emerald-900 bg-emerald-50"><span class="text-emerald-500">✓</span>&nbsp; Vraie assistante</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-slate-700">Prix mensuel</td>
+                <td class="px-6 py-4 text-slate-600">14 à 99&nbsp;€</td>
+                <td class="px-6 py-4 text-emerald-900 bg-emerald-50 font-semibold">69 à 99&nbsp;€</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Mobile cards -->
+        <div class="md:hidden grid gap-6">
+          <div class="bg-white rounded-2xl border border-slate-200 p-6">
+            <div class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-4">Logiciels classiques</div>
+            <ul class="space-y-3 text-sm text-slate-700">
+              <li><span class="text-rose-400">✕</span> Logiciel à installer</li>
+              <li><span class="text-rose-400">✕</span> Formation de plusieurs heures</li>
+              <li>Interface application ou web</li>
+              <li><span class="text-rose-400">✕</span> Pas adapté à La Réunion</li>
+              <li><span class="text-emerald-500">✓</span> Conforme réforme 2026</li>
+              <li><span class="text-rose-400">✕</span> Support par chatbot</li>
+              <li>14 à 99&nbsp;€ / mois</li>
+            </ul>
+          </div>
+          <div class="bg-emerald-50 rounded-2xl border-2 border-emerald-500 p-6">
+            <div class="text-xs font-semibold uppercase tracking-wider text-emerald-700 mb-4">TANIA</div>
+            <ul class="space-y-3 text-sm text-emerald-900">
+              <li><span class="text-emerald-500">✓</span> Juste WhatsApp, rien à installer</li>
+              <li><span class="text-emerald-500">✓</span> Zéro formation</li>
+              <li>Interface WhatsApp</li>
+              <li><span class="text-emerald-500">✓</span> Conçue à La Réunion</li>
+              <li><span class="text-emerald-500">✓</span> Conforme réforme 2026</li>
+              <li><span class="text-emerald-500">✓</span> Vraie assistante humaine</li>
+              <li class="font-semibold">69 à 99&nbsp;€ / mois</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────── Section 5 — Pour qui ─────────────── -->
+  <section class="bg-white py-20 lg:py-24">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight">Pour qui est TANIA&#8239;?</h2>
+        <p class="text-lg text-slate-600 mt-4">Conçue pour les pros qui n&rsquo;ont pas une équipe administrative.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mt-16">
+
+        <div class="bg-slate-50 rounded-2xl p-8 text-center border border-transparent hover:bg-white hover:border-emerald-300 hover:shadow-md transition-all">
+          <div class="text-5xl">🔧</div>
+          <h3 class="text-xl font-semibold text-slate-900 mt-4">Artisans</h3>
+          <p class="text-base text-slate-600 mt-2 leading-relaxed">Plombiers, électriciens, maçons, peintres, carreleurs&hellip;</p>
+        </div>
+
+        <div class="bg-slate-50 rounded-2xl p-8 text-center border border-transparent hover:bg-white hover:border-emerald-300 hover:shadow-md transition-all">
+          <div class="text-5xl">🍴</div>
+          <h3 class="text-xl font-semibold text-slate-900 mt-4">Commerces</h3>
+          <p class="text-base text-slate-600 mt-2 leading-relaxed">Restaurants, snacks, boutiques, food trucks, salons&hellip;</p>
+        </div>
+
+        <div class="bg-slate-50 rounded-2xl p-8 text-center border border-transparent hover:bg-white hover:border-emerald-300 hover:shadow-md transition-all">
+          <div class="text-5xl">💼</div>
+          <h3 class="text-xl font-semibold text-slate-900 mt-4">Services &amp; freelances</h3>
+          <p class="text-base text-slate-600 mt-2 leading-relaxed">Consultants, designers, marketing, web, formation&hellip;</p>
+        </div>
+
+        <div class="bg-slate-50 rounded-2xl p-8 text-center border border-transparent hover:bg-white hover:border-emerald-300 hover:shadow-md transition-all">
+          <div class="text-5xl">🚚</div>
+          <h3 class="text-xl font-semibold text-slate-900 mt-4">Indépendants</h3>
+          <p class="text-base text-slate-600 mt-2 leading-relaxed">VTC, livreurs, coiffeurs à domicile, professionnels libéraux&hellip;</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────── Section 6 — Tarifs ─────────────── -->
+  <section id="pricing" class="bg-slate-50 py-20 lg:py-24">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight">Choisissez votre formule</h2>
+        <p class="text-lg text-slate-600 mt-4">1<sup>er</sup> mois offert. Sans engagement.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mt-16">
+
+        <!-- Essentiel -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-10 flex flex-col">
+          <h3 class="text-2xl font-bold text-slate-900">Essentiel</h3>
+          <p class="text-slate-600 mt-2">Pour démarrer simplement.</p>
+          <div class="mt-8 flex items-baseline gap-2">
+            <span class="text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight">69&nbsp;€</span>
+            <span class="text-slate-500">/ mois</span>
+          </div>
+          <ul class="mt-8 space-y-3 text-base text-slate-700">
+            <li class="flex gap-3"><span class="text-emerald-500 font-bold">✓</span> Création de factures sur WhatsApp</li>
+            <li class="flex gap-3"><span class="text-emerald-500 font-bold">✓</span> Dashboard web</li>
+            <li class="flex gap-3"><span class="text-emerald-500 font-bold">✓</span> PDF + XML Factur-X</li>
+            <li class="flex gap-3"><span class="text-emerald-500 font-bold">✓</span> Export CSV pour votre comptable</li>
+            <li class="flex gap-3"><span class="text-emerald-500 font-bold">✓</span> Support par WhatsApp</li>
+          </ul>
+          <a href="#contact" class="mt-10 inline-flex items-center justify-center border border-slate-300 hover:border-slate-400 text-slate-700 px-6 py-3 rounded-lg font-semibold transition-all">Choisir Essentiel</a>
+        </div>
+
+        <!-- Conforme -->
+        <div class="relative bg-white rounded-2xl border-2 border-emerald-500 p-10 flex flex-col shadow-lg">
+          <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-500 text-white text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">Recommandé</span>
+          <h3 class="text-2xl font-bold text-slate-900">Conforme</h3>
+          <p class="text-slate-600 mt-2">Pour la réforme&nbsp;2026, sereinement.</p>
+          <div class="mt-8 flex items-baseline gap-2">
+            <span class="text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight">99&nbsp;€</span>
+            <span class="text-slate-500">/ mois</span>
+          </div>
+          <ul class="mt-8 space-y-3 text-base text-slate-700">
+            <li class="flex gap-3"><span class="text-emerald-500 font-bold">✓</span> Tout l&rsquo;Essentiel</li>
+            <li class="flex gap-3"><span class="text-emerald-500 font-bold">✓</span> Transmission via Plateforme Agréée</li>
+            <li class="flex gap-3"><span class="text-emerald-500 font-bold">✓</span> Réception des factures fournisseurs</li>
+            <li class="flex gap-3"><span class="text-emerald-500 font-bold">✓</span> Support prioritaire</li>
+            <li class="flex gap-3"><span class="text-emerald-500 font-bold">✓</span> Accompagnement à l&rsquo;inscription PA</li>
+          </ul>
+          <a href="#contact" class="mt-10 inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg hover:-translate-y-px transition-all">Choisir Conforme</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────── Section 7 — FAQ ─────────────── -->
+  <section id="faq" class="bg-white py-20 lg:py-24">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight">Questions fréquentes</h2>
+        <p class="text-lg text-slate-600 mt-4">Tout ce qu&rsquo;on nous demande avant de commencer.</p>
+      </div>
+
+      <div class="mt-16 divide-y divide-slate-200 border-y border-slate-200">
+
+        <details class="group py-6">
+          <summary class="flex items-center justify-between cursor-pointer list-none">
+            <span class="text-lg font-semibold text-slate-900">Faut-il installer une application&#8239;?</span>
+            <span class="ml-4 text-emerald-500 transition-transform group-open:rotate-45 text-2xl leading-none">+</span>
+          </summary>
+          <p class="mt-4 text-base text-slate-600 leading-relaxed">Non. TANIA fonctionne dans WhatsApp, l&rsquo;app que vous utilisez déjà tous les jours. Aucun téléchargement, aucune installation, aucun mot de passe à retenir.</p>
+        </details>
+
+        <details class="group py-6">
+          <summary class="flex items-center justify-between cursor-pointer list-none">
+            <span class="text-lg font-semibold text-slate-900">C&rsquo;est quoi la réforme e-invoicing de 2026&#8239;?</span>
+            <span class="ml-4 text-emerald-500 transition-transform group-open:rotate-45 text-2xl leading-none">+</span>
+          </summary>
+          <p class="mt-4 text-base text-slate-600 leading-relaxed">À partir de septembre&nbsp;2026, toutes les entreprises françaises devront émettre et recevoir leurs factures B2B au format électronique (Factur-X), via une Plateforme Agréée. TANIA s&rsquo;occupe de tout pour vous.</p>
+        </details>
+
+        <details class="group py-6">
+          <summary class="flex items-center justify-between cursor-pointer list-none">
+            <span class="text-lg font-semibold text-slate-900">Mes données sont-elles en sécurité&#8239;?</span>
+            <span class="ml-4 text-emerald-500 transition-transform group-open:rotate-45 text-2xl leading-none">+</span>
+          </summary>
+          <p class="mt-4 text-base text-slate-600 leading-relaxed">Vos données sont chiffrées, hébergées en France, et conformes au RGPD. Vous restez propriétaire de tout, à tout moment.</p>
+        </details>
+
+        <details class="group py-6">
+          <summary class="flex items-center justify-between cursor-pointer list-none">
+            <span class="text-lg font-semibold text-slate-900">Puis-je arrêter quand je veux&#8239;?</span>
+            <span class="ml-4 text-emerald-500 transition-transform group-open:rotate-45 text-2xl leading-none">+</span>
+          </summary>
+          <p class="mt-4 text-base text-slate-600 leading-relaxed">Oui. Sans engagement, sans frais cachés. Vous résiliez en un message WhatsApp, et vous repartez avec toutes vos données.</p>
+        </details>
+
+        <details class="group py-6">
+          <summary class="flex items-center justify-between cursor-pointer list-none">
+            <span class="text-lg font-semibold text-slate-900">Est-ce que ça marche avec mon comptable&#8239;?</span>
+            <span class="ml-4 text-emerald-500 transition-transform group-open:rotate-45 text-2xl leading-none">+</span>
+          </summary>
+          <p class="mt-4 text-base text-slate-600 leading-relaxed">Très bien&nbsp;: TANIA exporte vos factures en PDF, Factur-X et CSV. Vous pouvez aussi donner un accès direct à votre comptable sur le dashboard.</p>
+        </details>
+
+        <details class="group py-6">
+          <summary class="flex items-center justify-between cursor-pointer list-none">
+            <span class="text-lg font-semibold text-slate-900">Et si je rate la réforme&#8239;?</span>
+            <span class="ml-4 text-emerald-500 transition-transform group-open:rotate-45 text-2xl leading-none">+</span>
+          </summary>
+          <p class="mt-4 text-base text-slate-600 leading-relaxed">Pas de panique. L&rsquo;offre Conforme inclut un accompagnement humain pour vous inscrire à une Plateforme Agréée et être prêt avant&nbsp;septembre&nbsp;2026.</p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────── Section 8 — CTA final ─────────────── -->
+  <section id="contact" class="bg-slate-50 py-20 lg:py-24">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center">
+      <h2 class="text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight">Prêt à laisser tomber la paperasse&#8239;?</h2>
+      <p class="text-lg text-slate-600 mt-4">Écrivez-nous sur WhatsApp. On vous répond dans la journée.</p>
+
+      <div class="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://wa.me/33648345707" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-md hover:shadow-lg hover:-translate-y-px transition-all">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.555-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.519 5.265l-.999 3.648 3.969-1.612zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg>
+          WhatsApp&nbsp;: +262&nbsp;6&nbsp;48&nbsp;34&nbsp;57&nbsp;07
+        </a>
+        <a href="mailto:hello@tania.re" class="inline-flex items-center justify-center border border-slate-300 hover:border-slate-400 text-slate-700 px-8 py-4 rounded-lg font-semibold text-lg transition-all">
+          hello@tania.re
+        </a>
+      </div>
+
+      <p class="mt-8 text-sm text-slate-500">1<sup>er</sup> mois offert · Sans engagement · Conçue à La Réunion 🇷🇪</p>
+    </div>
+  </section>
+
+  <!-- ─────────────── Footer ─────────────── -->
+  <footer class="bg-slate-900 py-16">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+
+        <div>
+          <div class="text-2xl font-extrabold text-emerald-500 tracking-tight">TANIA</div>
+          <p class="mt-4 text-sm text-slate-400 leading-relaxed max-w-xs">Votre assistante administrative sur WhatsApp. Conçue à La Réunion&nbsp;🇷🇪</p>
+        </div>
+
+        <div>
+          <div class="text-xs font-semibold uppercase tracking-wider text-slate-500">Produit</div>
+          <ul class="mt-4 space-y-2 text-sm text-slate-300">
+            <li><a href="#how-it-works" class="hover:text-emerald-400 transition-colors">Comment ça marche</a></li>
+            <li><a href="#pricing" class="hover:text-emerald-400 transition-colors">Tarifs</a></li>
+            <li><a href="#faq" class="hover:text-emerald-400 transition-colors">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="text-xs font-semibold uppercase tracking-wider text-slate-500">Contact</div>
+          <ul class="mt-4 space-y-2 text-sm text-slate-300">
+            <li><a href="https://wa.me/33648345707" target="_blank" rel="noopener" class="hover:text-emerald-400 transition-colors">WhatsApp</a></li>
+            <li><a href="mailto:hello@tania.re" class="hover:text-emerald-400 transition-colors">hello@tania.re</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-slate-500">© 2026 TANIA. Tous droits réservés.</p>
+        <p class="text-xs text-slate-500">Made with 💚 à La Réunion</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
