@@ -24,6 +24,16 @@
         extend: {
           fontFamily: { sans: ['Inter', 'ui-sans-serif', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'] },
           letterSpacing: { tighter2: '-0.02em' },
+          colors: {
+            brand: {
+              primary: '#10b981',
+              primaryDark: '#059669',
+              primaryLight: '#ecfdf5',
+              secondary: '#0f172a',
+              secondaryDark: '#020617',
+              secondaryLight: '#f8fafc',
+            },
+          },
         },
       },
     };
@@ -143,7 +153,7 @@
         <!-- Colonne texte (60%) -->
         <div class="lg:col-span-3">
           <h1 class="reveal text-[36px] leading-[44px] md:text-5xl md:leading-[56px] lg:text-[56px] lg:leading-[64px] font-bold text-slate-900 tracking-tighter2">
-            Vos factures,<br />par WhatsApp.
+            Vos factures,<br />par <span class="text-emerald-500">WhatsApp</span>.
           </h1>
           <p class="reveal mt-6 text-lg lg:text-xl text-slate-600 leading-relaxed max-w-xl" data-delay="1">
             Conforme à la réforme du 1<sup>er</sup> septembre 2026.<br />
@@ -154,7 +164,7 @@
             <a href="https://wa.me/33648345707?text=Bonjour%20TANIA%2C%20je%20souhaite%20r%C3%A9server%20une%20d%C3%A9mo" target="_blank" rel="noopener" class="inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-white px-7 py-4 rounded-md font-semibold text-base shadow-sm hover:shadow-md transition-all" data-track="hero-cta">
               Réserver ma démo gratuite →
             </a>
-            <a href="#comment-ca-marche" class="inline-flex items-center justify-center bg-white border-2 border-slate-200 hover:border-slate-300 text-slate-900 px-7 py-4 rounded-md font-semibold text-base transition-all" data-track="hero-secondary">
+            <a href="#comment-ca-marche" class="inline-flex items-center justify-center bg-white border-2 border-slate-900 hover:bg-slate-50 text-slate-900 px-7 py-4 rounded-md font-semibold text-base transition-colors" data-track="hero-secondary">
               Découvrir TANIA
             </a>
           </div>
@@ -520,19 +530,19 @@
   <!-- ═════════════════════════════════════════════ -->
   <!-- SECTION 6 — RÉFORME 2026                      -->
   <!-- ═════════════════════════════════════════════ -->
-  <section id="reforme" class="bg-emerald-50 py-16 lg:py-24">
+  <section id="reforme" class="bg-slate-900 py-16 lg:py-24">
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
       <div class="text-center reveal">
-        <p class="text-emerald-700 font-semibold text-sm uppercase tracking-wider">Réforme 1<sup>er</sup> septembre 2026</p>
-        <h2 class="mt-3 text-3xl md:text-4xl lg:text-[40px] lg:leading-[48px] font-bold text-slate-900 tracking-tighter2">
+        <p class="text-emerald-400 font-semibold text-sm uppercase tracking-wider">Réforme 1<sup>er</sup> septembre 2026</p>
+        <h2 class="mt-3 text-3xl md:text-4xl lg:text-[40px] lg:leading-[48px] font-bold text-white tracking-tighter2">
           Ce qui change pour votre entreprise.
         </h2>
       </div>
 
       <div class="grid lg:grid-cols-2 gap-8 mt-12">
-        <!-- Bloc principal -->
-        <div class="reveal bg-white border border-emerald-200 rounded-xl p-8">
-          <p class="text-amber-600 font-semibold text-sm">⏰ Dans moins de 4 mois</p>
+        <!-- Bloc principal : carte blanche qui ressort sur fond sombre -->
+        <div class="reveal bg-white rounded-xl p-8 shadow-md">
+          <p class="text-amber-500 font-bold text-sm">⏰ Dans moins de 4 mois</p>
           <h3 class="mt-2 text-2xl font-semibold text-slate-900">Au 1<sup>er</sup> septembre 2026</h3>
           <p class="mt-4 text-base text-slate-700 leading-relaxed">
             Toutes les entreprises françaises, y compris les auto-entrepreneurs en franchise de TVA, devront pouvoir <strong>recevoir</strong> des factures électroniques au format Factur-X, via une plateforme agréée par l&rsquo;État.
@@ -542,28 +552,28 @@
           </p>
         </div>
 
-        <!-- Accordéons -->
+        <!-- Accordéons en mode sombre -->
         <div class="reveal flex flex-col gap-3" data-delay="1">
-          <details open class="bg-white border border-emerald-200 rounded-xl p-6">
+          <details open class="bg-slate-800 border border-slate-700 rounded-xl p-6">
             <summary class="flex items-center justify-between gap-4">
-              <span class="text-lg font-semibold text-slate-900">Suis-je concerné, même en franchise TVA&#8239;?</span>
-              <span class="acc-icon text-emerald-600 text-2xl leading-none">+</span>
+              <span class="text-lg font-semibold text-white">Suis-je concerné, même en franchise TVA&#8239;?</span>
+              <span class="acc-icon text-emerald-400 text-2xl leading-none">+</span>
             </summary>
-            <p class="acc-body mt-4 text-base text-slate-600 leading-relaxed">Oui. Toutes les entreprises assujetties à la TVA — y compris en franchise — sont concernées. Les particuliers ne sont pas obligés, mais dès que vous facturez un autre pro, vous devez être en règle.</p>
+            <p class="acc-body mt-4 text-base text-slate-300 leading-relaxed">Oui. Toutes les entreprises assujetties à la TVA — y compris en franchise — sont concernées. Les particuliers ne sont pas obligés, mais dès que vous facturez un autre pro, vous devez être en règle.</p>
           </details>
-          <details open class="bg-white border border-emerald-200 rounded-xl p-6">
+          <details open class="bg-slate-800 border border-slate-700 rounded-xl p-6">
             <summary class="flex items-center justify-between gap-4">
-              <span class="text-lg font-semibold text-slate-900">Qu&rsquo;est-ce qu&rsquo;une plateforme agréée&#8239;?</span>
-              <span class="acc-icon text-emerald-600 text-2xl leading-none">+</span>
+              <span class="text-lg font-semibold text-white">Qu&rsquo;est-ce qu&rsquo;une plateforme agréée&#8239;?</span>
+              <span class="acc-icon text-emerald-400 text-2xl leading-none">+</span>
             </summary>
-            <p class="acc-body mt-4 text-base text-slate-600 leading-relaxed">C&rsquo;est l&rsquo;intermédiaire technique entre votre entreprise et l&rsquo;administration fiscale. TANIA est en cours d&rsquo;intégration avec plusieurs plateformes agréées par l&rsquo;État.</p>
+            <p class="acc-body mt-4 text-base text-slate-300 leading-relaxed">C&rsquo;est l&rsquo;intermédiaire technique entre votre entreprise et l&rsquo;administration fiscale. TANIA est en cours d&rsquo;intégration avec plusieurs plateformes agréées par l&rsquo;État.</p>
           </details>
-          <details open class="bg-white border border-emerald-200 rounded-xl p-6">
+          <details open class="bg-slate-800 border border-slate-700 rounded-xl p-6">
             <summary class="flex items-center justify-between gap-4">
-              <span class="text-lg font-semibold text-slate-900">Quelles sont les sanctions en cas de non-conformité&#8239;?</span>
-              <span class="acc-icon text-emerald-600 text-2xl leading-none">+</span>
+              <span class="text-lg font-semibold text-white">Quelles sont les sanctions en cas de non-conformité&#8239;?</span>
+              <span class="acc-icon text-emerald-400 text-2xl leading-none">+</span>
             </summary>
-            <p class="acc-body mt-4 text-base text-slate-600 leading-relaxed">15&nbsp;€ par facture non conforme, plafonné à 15&nbsp;000&nbsp;€ par an pour votre entreprise.</p>
+            <p class="acc-body mt-4 text-base text-slate-300 leading-relaxed">15&nbsp;€ par facture non conforme, plafonné à 15&nbsp;000&nbsp;€ par an pour votre entreprise.</p>
           </details>
         </div>
       </div>
@@ -707,7 +717,7 @@
             <li class="flex gap-2"><span class="text-emerald-500">✓</span> Support par email</li>
           </ul>
           <a href="#cta-final" class="mt-auto pt-8">
-            <span class="block w-full bg-white border-2 border-slate-200 hover:border-slate-300 text-slate-900 text-center font-semibold py-3 rounded-md transition-colors">Rejoindre la liste d&rsquo;attente</span>
+            <span class="block w-full bg-white border-2 border-slate-900 hover:bg-slate-50 text-slate-900 text-center font-semibold py-3 rounded-md transition-colors">Rejoindre la liste d&rsquo;attente</span>
           </a>
         </div>
 
