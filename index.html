@@ -3,13 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TANIA — Votre assistante administrative sur WhatsApp</title>
-  <meta name="description" content="TANIA, l'assistante administrative des TPE/PME de La Réunion. Créez vos factures sur WhatsApp. Conforme à la réforme e-invoicing 2026." />
-  <meta name="theme-color" content="#10B981" />
+  <title>TANIA — Facturation par WhatsApp pour les TPE et PME de La Réunion</title>
+  <meta name="description" content="Conforme à la réforme du 1er septembre 2026. Conçu à La Réunion pour les TPE et PME. Vos factures par WhatsApp, simplement." />
+  <meta name="theme-color" content="#10b981" />
 
-  <meta property="og:title" content="TANIA — Votre assistante administrative sur WhatsApp" />
-  <meta property="og:description" content="Créez vos factures sur WhatsApp. Conforme à la réforme 2026. Conçue à La Réunion." />
+  <meta property="og:title" content="TANIA — Facturation par WhatsApp" />
+  <meta property="og:description" content="Conforme réforme 2026. Conçu à La Réunion." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tania-re.pages.dev" />
   <meta property="og:locale" content="fr_FR" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,9 +22,8 @@
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: {
-            sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
-          },
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'] },
+          letterSpacing: { tighter2: '-0.02em' },
         },
       },
     };
@@ -32,644 +32,952 @@
   <style>
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
-    .hero-halo {
-      background:
-        radial-gradient(60% 50% at 20% 10%, rgba(16, 185, 129, 0.10), transparent 60%),
-        radial-gradient(40% 35% at 80% 0%, rgba(16, 185, 129, 0.07), transparent 60%);
-    }
-    .dotted-line {
-      background-image: linear-gradient(to right, rgb(203 213 225) 33%, rgba(255,255,255,0) 0%);
-      background-position: top;
-      background-size: 8px 1px;
-      background-repeat: repeat-x;
+
+    /* ─── Halo doux derrière le mockup hero ─── */
+    .hero-halo::before {
+      content: ''; position: absolute; inset: auto; right: -10%; top: 10%;
+      width: 80%; height: 80%; background: rgba(16,185,129,0.18);
+      filter: blur(80px); border-radius: 9999px; z-index: -1;
     }
 
-    /* ─── Hero iPhone animation (8s loop) ─── */
-    /* Timeline:
-       0–1s   idle (placeholder visible)
-       1–3s   typewriter in input
-       3s     user bubble slides in, input clears
-       3–4s   TANIA typing dots
-       4s     dots out, TANIA reply slides in
-       4–8s   read pause, then fade to restart
-    */
-
-    .anim-typewriter {
-      display: inline-block;
-      overflow: hidden;
-      white-space: nowrap;
-      vertical-align: bottom;
-      width: 0;
-      animation: typewriter 8s steps(36, end) infinite;
+    /* ─── Carrousel infini des métiers ─── */
+    .trades-track {
+      display: flex; width: max-content;
+      animation: trades-scroll 40s linear infinite;
     }
-    @keyframes typewriter {
-      0%   { width: 0; }
-      12%  { width: 0; }                 /* 0–1s : nothing yet (0/8=0, 1/8=12.5) */
-      37%  { width: 19ch; }               /* 3s : fully typed */
-      37.5%{ width: 0; }                  /* clears as bubble appears */
-      100% { width: 0; }
+    .trades-viewport:hover .trades-track { animation-play-state: paused; }
+    @keyframes trades-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
     }
 
-    .anim-placeholder {
-      animation: placeholderToggle 8s steps(1, end) infinite;
-    }
-    @keyframes placeholderToggle {
-      0%, 12.4%   { opacity: 1; }
-      12.5%, 37%  { opacity: 0; }
-      37.5%, 100% { opacity: 1; }
-    }
-
-    .anim-caret {
-      display: inline-block;
-      width: 1px;
-      height: 1em;
-      vertical-align: -2px;
-      background: #10B981;
-      margin-left: 1px;
-      animation: caretBlink 8s linear infinite;
-    }
-    @keyframes caretBlink {
-      0%, 12%     { opacity: 0; }
-      12.5%, 37%  { opacity: 1; }
-      37.5%, 100% { opacity: 0; }
+    /* ─── Accordéons ─── */
+    details > summary { list-style: none; cursor: pointer; }
+    details > summary::-webkit-details-marker { display: none; }
+    details .acc-icon { transition: transform 0.2s ease-out; }
+    details[open] .acc-icon { transform: rotate(45deg); }
+    details .acc-body { animation: acc-fade 0.25s ease-out; }
+    @keyframes acc-fade {
+      from { opacity: 0; transform: translateY(-4px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
-    .anim-bubble-user {
-      opacity: 0;
-      transform: translateY(8px);
-      animation: bubbleIn 8s ease-out infinite;
-      animation-delay: 0s;
-    }
-    @keyframes bubbleIn {
-      0%, 37%     { opacity: 0; transform: translateY(8px); }
-      40%, 95%    { opacity: 1; transform: translateY(0); }
-      98%, 100%   { opacity: 0; transform: translateY(0); }
-    }
+    /* ─── Animations on-scroll (IntersectionObserver) ─── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal[data-delay="1"] { transition-delay: 0.1s; }
+    .reveal[data-delay="2"] { transition-delay: 0.2s; }
+    .reveal[data-delay="3"] { transition-delay: 0.3s; }
 
-    .anim-typing {
-      opacity: 0;
-      transform: translateY(8px);
-      animation: typingInOut 8s ease-out infinite;
-    }
-    @keyframes typingInOut {
-      0%, 40%     { opacity: 0; transform: translateY(8px); }
-      42%, 49%    { opacity: 1; transform: translateY(0); }
-      50%, 100%   { opacity: 0; }
-    }
-
-    .anim-bubble-tania {
-      opacity: 0;
-      transform: translateY(8px);
-      animation: taniaIn 8s ease-out infinite;
-    }
-    @keyframes taniaIn {
-      0%, 50%     { opacity: 0; transform: translateY(8px); }
-      53%, 95%    { opacity: 1; transform: translateY(0); }
-      98%, 100%   { opacity: 0; }
-    }
-
-    .anim-dot {
-      animation: dotPulse 1.2s ease-in-out infinite;
-    }
-    .anim-dot:nth-child(2) { animation-delay: 0.2s; }
-    .anim-dot:nth-child(3) { animation-delay: 0.4s; }
-    @keyframes dotPulse {
-      0%, 80%, 100% { opacity: 0.3; transform: translateY(0); }
-      40%           { opacity: 1;   transform: translateY(-2px); }
-    }
-
+    /* ─── Reduced motion ─── */
     @media (prefers-reduced-motion: reduce) {
-      .anim-typewriter, .anim-placeholder, .anim-caret,
-      .anim-bubble-user, .anim-typing, .anim-bubble-tania, .anim-dot {
-        animation: none;
-      }
-      .anim-typewriter { width: auto; }
-      .anim-placeholder { opacity: 0; }
-      .anim-bubble-user, .anim-bubble-tania { opacity: 1; transform: none; }
-      .anim-typing { display: none; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+      .trades-track { animation: none; }
+      .reveal { opacity: 1; transform: none; }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TANIA",
+    "url": "https://tania-re.pages.dev",
+    "telephone": "+262648345707",
+    "address": { "@type": "PostalAddress", "addressRegion": "La Réunion", "addressCountry": "FR" }
+  }
+  </script>
 </head>
+
 <body class="bg-white text-slate-900 antialiased">
 
-  <!-- ─────────────── Header ─────────────── -->
-  <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-sm border-b border-slate-100">
+  <!-- ─────────────── Bandeau réassurance ─────────────── -->
+  <div class="bg-emerald-50 text-emerald-800 text-xs font-medium">
+    <div class="max-w-6xl mx-auto px-6 py-2 text-center">
+      🛡️ Conforme Factur-X · 🌴 Conçu à La Réunion · 🔒 Données hébergées en France
+    </div>
+  </div>
+
+  <!-- ─────────────── Navigation ─────────────── -->
+  <header class="sticky top-0 z-40 bg-white/85 backdrop-blur border-b border-slate-100">
     <div class="max-w-6xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
       <a href="#" class="text-2xl font-extrabold text-emerald-600 tracking-tight">TANIA</a>
-      <nav class="flex items-center gap-8">
-        <a href="#pricing" class="hidden sm:inline text-sm text-slate-700 hover:text-emerald-600 transition-colors">Tarifs</a>
-        <a href="#faq" class="hidden sm:inline text-sm text-slate-700 hover:text-emerald-600 transition-colors">FAQ</a>
-        <a href="#contact" class="hidden md:inline-flex items-center bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-semibold px-4 py-2 rounded-lg shadow-sm hover:shadow transition-all">Demander une démo</a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm text-slate-700">
+        <a href="#comment-ca-marche" class="hover:text-emerald-600 transition-colors">Comment ça marche</a>
+        <a href="#reforme" class="hover:text-emerald-600 transition-colors">Réforme 2026</a>
+        <a href="#tarifs" class="hover:text-emerald-600 transition-colors">Tarifs</a>
+        <a href="#faq" class="hover:text-emerald-600 transition-colors">FAQ</a>
+      </nav>
+
+      <a href="#cta-final" class="hidden md:inline-flex items-center bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-semibold px-4 py-2 rounded-md shadow-sm hover:shadow transition-all">
+        Réserver ma démo
+      </a>
+
+      <button id="burger" aria-label="Ouvrir le menu" class="md:hidden p-2 -mr-2 text-slate-700">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Menu mobile -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-100 bg-white">
+      <nav class="flex flex-col px-6 py-4 gap-4 text-base text-slate-700">
+        <a href="#comment-ca-marche" class="hover:text-emerald-600">Comment ça marche</a>
+        <a href="#reforme" class="hover:text-emerald-600">Réforme 2026</a>
+        <a href="#tarifs" class="hover:text-emerald-600">Tarifs</a>
+        <a href="#faq" class="hover:text-emerald-600">FAQ</a>
+        <a href="#cta-final" class="bg-emerald-500 hover:bg-emerald-600 text-white text-center font-semibold px-4 py-3 rounded-md mt-2">Réserver ma démo</a>
       </nav>
     </div>
   </header>
 
-  <!-- ─────────────── Hero ─────────────── -->
-  <section class="hero-halo">
-    <div class="max-w-6xl mx-auto px-6 lg:px-8 py-24 lg:py-32">
-      <div class="grid lg:grid-cols-2 gap-16 lg:gap-12 items-center">
+  <!-- ═════════════════════════════════════════════ -->
+  <!-- SECTION 1 — HERO                              -->
+  <!-- ═════════════════════════════════════════════ -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-emerald-50/60 to-white">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 py-20 lg:py-28">
+      <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
 
-        <div>
-          <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 leading-[1.05] tracking-tight">
-            Pas le temps pour la paperasse&#8239;?<br />
-            <span class="text-slate-900">Donnez-la à TANIA.</span>
+        <!-- Colonne texte (60%) -->
+        <div class="lg:col-span-3">
+          <h1 class="reveal text-[36px] leading-[44px] md:text-5xl md:leading-[56px] lg:text-[56px] lg:leading-[64px] font-bold text-slate-900 tracking-tighter2">
+            Vos factures,<br />par WhatsApp.
           </h1>
-          <p class="mt-8 text-xl md:text-2xl text-slate-600 leading-relaxed">
-            Votre assistante administrative sur WhatsApp.
-          </p>
-          <p class="mt-3 text-base text-slate-500">
-            Conforme à la réforme 2026.
+          <p class="reveal mt-6 text-lg lg:text-xl text-slate-600 leading-relaxed max-w-xl" data-delay="1">
+            Conforme à la réforme du 1<sup>er</sup> septembre 2026.<br />
+            Pensé pour les TPE et PME de La Réunion.
           </p>
 
-          <div class="mt-12 flex flex-col sm:flex-row gap-4">
-            <a href="#contact" class="inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-md hover:shadow-lg hover:-translate-y-px transition-all">
-              Demander une démo
+          <div class="reveal mt-10 flex flex-col sm:flex-row gap-4" data-delay="2">
+            <a href="https://wa.me/33648345707?text=Bonjour%20TANIA%2C%20je%20souhaite%20r%C3%A9server%20une%20d%C3%A9mo" target="_blank" rel="noopener" class="inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-white px-7 py-4 rounded-md font-semibold text-base shadow-sm hover:shadow-md transition-all" data-track="hero-cta">
+              Réserver ma démo gratuite →
             </a>
-            <a href="#how-it-works" class="inline-flex items-center justify-center border border-slate-300 hover:border-slate-400 text-slate-700 px-8 py-4 rounded-lg font-semibold text-lg transition-all">
-              Voir comment ça marche
+            <a href="#comment-ca-marche" class="inline-flex items-center justify-center bg-white border-2 border-slate-200 hover:border-slate-300 text-slate-900 px-7 py-4 rounded-md font-semibold text-base transition-all" data-track="hero-secondary">
+              Découvrir TANIA
             </a>
           </div>
 
-          <p class="mt-6 text-sm text-slate-500">
-            1<sup>er</sup> mois offert · Sans engagement
-          </p>
+          <ul class="reveal mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-500" data-delay="3">
+            <li>✓ Sans engagement</li>
+            <li>✓ Démo en 15 minutes</li>
+            <li>✓ Réponse sous 24 h</li>
+          </ul>
         </div>
 
-        <div>
-          <p class="text-center text-xs italic text-slate-400 mb-3">Exemple de conversation avec TANIA</p>
-
-          <!-- iPhone mockup -->
-          <div class="mx-auto" style="max-width: 320px;">
-            <div class="relative mx-auto bg-slate-900 ring-2 ring-slate-700 shadow-2xl"
-                 style="width: 100%; aspect-ratio: 320 / 640; border-radius: 44px; padding: 10px;">
-
-              <!-- Inner screen -->
-              <div class="relative w-full h-full bg-white overflow-hidden flex flex-col"
-                   style="border-radius: 34px;">
-
+        <!-- Colonne mockup (40%) -->
+        <div class="lg:col-span-2 relative hero-halo">
+          <div class="mx-auto" style="max-width: 300px;">
+            <!-- Cadre iPhone -->
+            <div class="relative mx-auto bg-slate-900 shadow-2xl ring-1 ring-slate-800" style="width:100%; aspect-ratio: 300/600; border-radius: 40px; padding: 10px;">
+              <div class="relative w-full h-full bg-white overflow-hidden flex flex-col" style="border-radius: 32px;">
                 <!-- Dynamic Island -->
-                <div class="absolute left-1/2 -translate-x-1/2 bg-slate-900 z-20"
-                     style="top: 8px; width: 96px; height: 26px; border-radius: 999px;"></div>
-
+                <div class="absolute left-1/2 -translate-x-1/2 bg-slate-900 z-20" style="top: 8px; width: 88px; height: 24px; border-radius: 999px;"></div>
                 <!-- Status bar -->
-                <div class="relative z-10 flex items-center justify-between px-6 pt-2.5 text-[11px] font-semibold text-slate-900"
-                     style="height: 36px;">
-                  <span>21:42</span>
-                  <span class="flex items-center gap-1">
-                    <!-- signal -->
-                    <svg width="14" height="10" viewBox="0 0 14 10" fill="currentColor" aria-hidden="true">
-                      <rect x="0" y="7" width="2" height="3" rx="0.5"/>
-                      <rect x="4" y="5" width="2" height="5" rx="0.5"/>
-                      <rect x="8" y="3" width="2" height="7" rx="0.5"/>
-                      <rect x="12" y="1" width="2" height="9" rx="0.5"/>
-                    </svg>
-                    <!-- wifi -->
-                    <svg width="13" height="10" viewBox="0 0 13 10" fill="currentColor" aria-hidden="true">
-                      <path d="M6.5 1.5c2.2 0 4.2.9 5.6 2.3l-1 1A5.7 5.7 0 006.5 3 5.7 5.7 0 002.4 4.8l-1-1A8 8 0 016.5 1.5zm0 3c1.4 0 2.6.5 3.5 1.4l-1 1c-.7-.6-1.6-1-2.5-1s-1.8.4-2.5 1l-1-1A4.9 4.9 0 016.5 4.5zm0 3c.6 0 1.1.2 1.5.6L6.5 9.7 5 8.1c.4-.4.9-.6 1.5-.6z"/>
-                    </svg>
-                    <!-- battery -->
-                    <svg width="22" height="10" viewBox="0 0 22 10" aria-hidden="true">
-                      <rect x="0.5" y="0.5" width="18" height="9" rx="2" ry="2" fill="none" stroke="currentColor" stroke-opacity="0.4"/>
-                      <rect x="2" y="2" width="14" height="6" rx="1" fill="currentColor"/>
-                      <rect x="19.5" y="3" width="1.5" height="4" rx="0.5" fill="currentColor" fill-opacity="0.4"/>
-                    </svg>
+                <div class="flex items-center justify-between px-5 pt-2 text-[11px] font-semibold text-slate-900" style="height: 34px;">
+                  <span>14:23</span>
+                  <span class="flex items-center gap-1 text-slate-700">
+                    <svg width="14" height="10" viewBox="0 0 14 10" fill="currentColor" aria-hidden="true"><rect x="0" y="7" width="2" height="3" rx=".5"/><rect x="4" y="5" width="2" height="5" rx=".5"/><rect x="8" y="3" width="2" height="7" rx=".5"/><rect x="12" y="1" width="2" height="9" rx=".5"/></svg>
+                    <svg width="20" height="10" viewBox="0 0 22 10" aria-hidden="true"><rect x=".5" y=".5" width="18" height="9" rx="2" fill="none" stroke="currentColor" stroke-opacity=".5"/><rect x="2" y="2" width="14" height="6" rx="1" fill="currentColor"/><rect x="19.5" y="3" width="1.5" height="4" rx=".5" fill="currentColor" fill-opacity=".4"/></svg>
                   </span>
                 </div>
-
-                <!-- WhatsApp header -->
+                <!-- Header WhatsApp -->
                 <div class="bg-emerald-600 text-white px-3 py-2.5 flex items-center gap-3">
-                  <svg width="10" height="16" viewBox="0 0 10 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <polyline points="8,2 2,8 8,14"/>
-                  </svg>
-                  <div class="w-9 h-9 rounded-full bg-emerald-800 flex items-center justify-center font-bold text-white text-sm">T</div>
-                  <div class="flex-1 min-w-0">
+                  <div class="w-9 h-9 rounded-full bg-emerald-800 flex items-center justify-center font-bold text-sm">T</div>
+                  <div>
                     <div class="font-semibold text-sm leading-tight">TANIA</div>
-                    <div class="text-[10px] text-emerald-100 flex items-center gap-1">
-                      <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-300"></span>
-                      en ligne
-                    </div>
+                    <div class="text-[10px] text-emerald-100 flex items-center gap-1"><span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-300"></span> en ligne</div>
                   </div>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="opacity-90"><path d="M17 10.5V7a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h12a1 1 0 001-1v-3.5l4 4v-11l-4 4z"/></svg>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="opacity-90"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1 1 0 00-1.02.24l-2.2 2.2a15.15 15.15 0 01-6.59-6.59l2.2-2.21a1 1 0 00.25-1A11.36 11.36 0 018.5 4a1 1 0 00-1-1H4a1 1 0 00-1 1c0 9.39 7.61 17 17 17a1 1 0 001-1v-3.5a1 1 0 00-1-1z"/></svg>
                 </div>
-
                 <!-- Conversation -->
-                <div class="flex-1 bg-slate-50 px-3 py-3 flex flex-col gap-2 overflow-hidden">
-
-                  <!-- User bubble -->
-                  <div class="flex anim-bubble-user">
+                <div class="flex-1 bg-slate-50 p-3 flex flex-col gap-2 overflow-hidden">
+                  <div class="flex">
                     <div class="ml-auto max-w-[80%] bg-emerald-100 text-slate-900 rounded-2xl rounded-tr-sm px-3 py-2 text-[13px] leading-snug">
-                      Mme&nbsp;Hoareau, plomberie 80&nbsp;€ payé cash
-                      <div class="text-[10px] text-slate-500 text-right mt-1 flex items-center justify-end gap-1">
-                        21:42
-                        <svg width="12" height="8" viewBox="0 0 16 11" fill="none" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                          <polyline points="1,6 5,10 11,2"/>
-                          <polyline points="6,6 9,9 15,1"/>
-                        </svg>
-                      </div>
+                      Madame Hoareau, plomberie, 250&nbsp;€, virement
+                      <div class="text-[10px] text-slate-500 text-right mt-1">14:23 ✓✓</div>
                     </div>
                   </div>
-
-                  <!-- Typing indicator -->
-                  <div class="flex anim-typing">
-                    <div class="mr-auto bg-white shadow-sm rounded-2xl rounded-tl-sm px-3 py-2.5 flex items-center gap-1">
-                      <span class="anim-dot w-1.5 h-1.5 rounded-full bg-slate-400 inline-block"></span>
-                      <span class="anim-dot w-1.5 h-1.5 rounded-full bg-slate-400 inline-block"></span>
-                      <span class="anim-dot w-1.5 h-1.5 rounded-full bg-slate-400 inline-block"></span>
-                    </div>
-                  </div>
-
-                  <!-- TANIA reply -->
-                  <div class="flex anim-bubble-tania">
+                  <div class="flex">
                     <div class="mr-auto max-w-[85%] bg-white shadow-sm rounded-2xl rounded-tl-sm px-3 py-2 text-[13px] text-slate-900 leading-snug whitespace-pre-line">✅ Facture créée&nbsp;: F-2026-0042
-💰 80,00&nbsp;€ TTC
-💚 Conforme Factur-X<div class="text-[10px] text-slate-500 text-right mt-1">21:42</div></div>
+💰 250,00&nbsp;€ TTC
+💚 Conforme Factur-X
+
+<span class="text-emerald-600 font-medium underline underline-offset-2">Voir le PDF →</span><div class="text-[10px] text-slate-500 text-right mt-1">14:23</div></div>
                   </div>
-
                 </div>
-
-                <!-- Input bar -->
+                <!-- Input -->
                 <div class="bg-slate-100 px-2.5 py-2 flex items-center gap-2">
-                  <div class="flex-1 bg-white rounded-full px-3 py-1.5 text-[13px] text-slate-400 relative overflow-hidden whitespace-nowrap" style="min-height: 30px;">
-                    <span class="anim-placeholder">Message</span>
-                    <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-900">
-                      <span class="anim-typewriter">Mme Hoareau, plomberie 80€ payé cash</span><span class="anim-caret"></span>
-                    </span>
-                  </div>
-                  <button type="button" aria-label="Envoyer" class="w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center shrink-0">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>
-                  </button>
+                  <div class="flex-1 bg-white rounded-full px-3 py-1.5 text-[13px] text-slate-400">Message…</div>
+                  <span class="text-slate-500 text-base">📎</span>
+                  <span class="text-slate-500 text-base">🎤</span>
                 </div>
-
               </div>
             </div>
           </div>
-
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ─────────────── Section 2 — 3 chiffres ─────────────── -->
-  <section class="bg-slate-50 py-20 lg:py-24">
+  <!-- ═════════════════════════════════════════════ -->
+  <!-- SECTION 2 — LE PROBLÈME                       -->
+  <!-- ═════════════════════════════════════════════ -->
+  <section class="bg-slate-50 py-16 lg:py-24">
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      <div class="max-w-3xl mx-auto text-center reveal">
+        <h2 class="text-3xl md:text-4xl lg:text-[40px] lg:leading-[48px] font-bold text-slate-900 tracking-tighter2">
+          On sait à quoi ressemble votre quotidien.
+        </h2>
+        <p class="mt-4 text-lg text-slate-600">Trois problèmes que vivent chaque jour les entrepreneurs de La Réunion.</p>
+      </div>
 
-        <div class="bg-white rounded-2xl border border-slate-200 p-10 text-center hover:border-emerald-300 hover:shadow-md transition-all duration-200">
-          <div class="text-6xl lg:text-7xl font-extrabold text-emerald-600 tracking-tight">0&nbsp;min</div>
-          <div class="text-xl font-semibold text-slate-900 mt-4">Pour créer une facture</div>
-          <p class="text-base text-slate-600 mt-3 leading-relaxed">Plus de saisie manuelle. Un WhatsApp suffit.</p>
+      <div class="grid md:grid-cols-3 gap-8 mt-16">
+        <!-- Card 1 -->
+        <div class="reveal bg-white border border-slate-200 rounded-xl p-8 hover:border-emerald-200 hover:shadow-sm transition-all" data-delay="1">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="13" y2="16"/></svg>
+          <h3 class="mt-6 text-xl font-semibold text-slate-900">Les factures s&rsquo;accumulent.</h3>
+          <p class="mt-3 text-base text-slate-600 leading-relaxed">Sur un carnet, dans des SMS, sur des post-it. Vous savez qu&rsquo;il faudra tout reprendre. Plus tard. Toujours plus tard.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="reveal bg-white border border-slate-200 rounded-xl p-8 hover:border-emerald-200 hover:shadow-sm transition-all" data-delay="2">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M5 8h14"/><path d="M5 8l-2 6a4 4 0 008 0L9 8"/><path d="M19 8l-2 6a4 4 0 008 0l-2-6"/><path d="M8 21h8"/></svg>
+          <h3 class="mt-6 text-xl font-semibold text-slate-900">La réforme 2026 approche.</h3>
+          <p class="mt-3 text-base text-slate-600 leading-relaxed">On vous parle de Factur-X, de plateforme agréée, d&rsquo;e-invoicing. Personne ne vous explique vraiment ce qui change pour vous.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="reveal bg-white border border-slate-200 rounded-xl p-8 hover:border-emerald-200 hover:shadow-sm transition-all" data-delay="3">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="13" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><line x1="9" y1="9" x2="15" y2="13"/><line x1="15" y1="9" x2="9" y2="13"/></svg>
+          <h3 class="mt-6 text-xl font-semibold text-slate-900">Les logiciels comptables sont compliqués.</h3>
+          <p class="mt-3 text-base text-slate-600 leading-relaxed">Pennylane, Sage, Indy. Trop de fonctionnalités, trop de temps à apprendre. Vous voulez juste que ce soit fait.</p>
+        </div>
+      </div>
+
+      <p class="reveal text-center mt-16 text-xl font-medium text-slate-900">TANIA, c&rsquo;est l&rsquo;inverse de tout ça.</p>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════ -->
+  <!-- SECTION 3 — COMMENT ÇA MARCHE                 -->
+  <!-- ═════════════════════════════════════════════ -->
+  <section id="comment-ca-marche" class="bg-white py-16 lg:py-24">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="text-center reveal">
+        <p class="text-emerald-600 font-semibold text-sm uppercase tracking-wider">Comment ça marche</p>
+        <h2 class="mt-3 text-3xl md:text-4xl lg:text-[40px] lg:leading-[48px] font-bold text-slate-900 tracking-tighter2">
+          Trois étapes. Pas une de plus.
+        </h2>
+        <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">TANIA est conçue pour être utilisable en moins de 30 secondes.</p>
+      </div>
+
+      <div class="relative mt-16 grid md:grid-cols-3 gap-12 md:gap-6">
+
+        <!-- Étape 1 -->
+        <div class="reveal text-center" data-delay="1">
+          <div class="mx-auto w-12 h-12 rounded-full bg-emerald-100 text-emerald-700 font-bold text-lg flex items-center justify-center">1</div>
+          <h3 class="mt-6 text-xl font-semibold text-slate-900">Vous envoyez un message WhatsApp</h3>
+          <p class="mt-3 text-base text-slate-600 leading-relaxed">Comme un message normal, à votre rythme, depuis votre téléphone.</p>
+          <div class="mt-6 mx-auto max-w-xs bg-slate-50 border border-slate-200 rounded-2xl p-4">
+            <div class="flex"><div class="ml-auto bg-emerald-100 rounded-2xl rounded-tr-sm px-3 py-2 text-[13px] text-slate-900">Madame Hoareau, plomberie salle de bain, 250&nbsp;€, virement</div></div>
+          </div>
         </div>
 
-        <div class="bg-white rounded-2xl border border-slate-200 p-10 text-center hover:border-emerald-300 hover:shadow-md transition-all duration-200">
-          <div class="text-6xl lg:text-7xl font-extrabold text-emerald-600 tracking-tight">1</div>
-          <div class="text-xl font-semibold text-slate-900 mt-4">Message WhatsApp</div>
-          <p class="text-base text-slate-600 mt-3 leading-relaxed">Pas d&rsquo;app à installer. Pas de formation.</p>
+        <!-- Étape 2 -->
+        <div class="reveal text-center" data-delay="2">
+          <div class="mx-auto w-12 h-12 rounded-full bg-emerald-100 text-emerald-700 font-bold text-lg flex items-center justify-center">2</div>
+          <h3 class="mt-6 text-xl font-semibold text-slate-900">TANIA crée votre facture</h3>
+          <p class="mt-3 text-base text-slate-600 leading-relaxed">En quelques secondes, au format Factur-X obligatoire à partir de septembre 2026.</p>
+          <div class="mt-6 mx-auto max-w-xs bg-slate-50 border border-slate-200 rounded-2xl p-4">
+            <div class="flex"><div class="mr-auto bg-white shadow-sm rounded-2xl rounded-tl-sm px-3 py-2 text-[13px] text-slate-900 whitespace-pre-line">✅ Facture F-2026-0042
+💰 250,00&nbsp;€
+💚 Conforme Factur-X</div></div>
+          </div>
         </div>
 
-        <div class="bg-white rounded-2xl border border-slate-200 p-10 text-center hover:border-emerald-300 hover:shadow-md transition-all duration-200">
-          <div class="text-6xl lg:text-7xl font-extrabold text-emerald-600 tracking-tight">100&nbsp;%</div>
-          <div class="text-xl font-semibold text-slate-900 mt-4">Conforme réforme 2026</div>
-          <p class="text-base text-slate-600 mt-3 leading-relaxed">Factur-X EN&nbsp;16931, transmis via Plateforme Agréée.</p>
+        <!-- Étape 3 -->
+        <div class="reveal text-center" data-delay="3">
+          <div class="mx-auto w-12 h-12 rounded-full bg-emerald-100 text-emerald-700 font-bold text-lg flex items-center justify-center">3</div>
+          <h3 class="mt-6 text-xl font-semibold text-slate-900">Tout est rangé, suivi, accessible</h3>
+          <p class="mt-3 text-base text-slate-600 leading-relaxed">Votre tableau de bord en ligne. Accessible par vous et votre comptable, à tout moment.</p>
+          <div class="mt-6 mx-auto max-w-xs bg-slate-50 border border-slate-200 rounded-2xl p-3 text-left text-[12px]">
+            <div class="flex items-center justify-between py-2 border-b border-slate-200"><span class="text-slate-700">F-2026-0042</span><span class="bg-emerald-100 text-emerald-700 font-medium px-2 py-0.5 rounded-full">Payée</span></div>
+            <div class="flex items-center justify-between py-2 border-b border-slate-200"><span class="text-slate-700">F-2026-0041</span><span class="bg-emerald-100 text-emerald-700 font-medium px-2 py-0.5 rounded-full">Payée</span></div>
+            <div class="flex items-center justify-between py-2 border-b border-slate-200"><span class="text-slate-700">F-2026-0040</span><span class="bg-amber-100 text-amber-700 font-medium px-2 py-0.5 rounded-full">Émise</span></div>
+            <div class="flex items-center justify-between py-2"><span class="text-slate-700">F-2026-0039</span><span class="bg-emerald-100 text-emerald-700 font-medium px-2 py-0.5 rounded-full">Payée</span></div>
+          </div>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ─────────────── Section 3 — Comment ça marche ─────────────── -->
-  <section id="how-it-works" class="bg-white py-20 lg:py-24">
+  <!-- ═════════════════════════════════════════════ -->
+  <!-- SECTION 4 — VOIR TANIA EN ACTION              -->
+  <!-- ═════════════════════════════════════════════ -->
+  <section id="demo" class="bg-slate-50 py-16 lg:py-24">
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
-      <div class="text-center">
-        <h2 class="text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight">Comment ça marche&#8239;?</h2>
-        <p class="text-lg text-slate-600 mt-4">3 étapes, pas une de plus.</p>
+      <div class="text-center reveal">
+        <h2 class="text-3xl md:text-4xl lg:text-[40px] lg:leading-[48px] font-bold text-slate-900 tracking-tighter2">
+          Voir, c&rsquo;est mieux que lire.
+        </h2>
+        <p class="mt-4 text-lg text-slate-600">Une vraie conversation. Pas un mockup marketing.</p>
       </div>
 
-      <div class="relative mt-16 max-w-5xl mx-auto">
-        <div class="hidden md:block absolute top-8 left-[16%] right-[16%] dotted-line h-px" aria-hidden="true"></div>
-
-        <div class="relative grid grid-cols-1 md:grid-cols-3 gap-12">
-
-          <div class="text-center">
-            <div class="bg-emerald-100 text-emerald-600 w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto ring-8 ring-white">1</div>
-            <h3 class="text-xl font-semibold text-slate-900 mt-6">Vous envoyez un WhatsApp</h3>
-            <p class="text-base text-slate-600 mt-3 leading-relaxed">Exemple&nbsp;: «&nbsp;Mme&nbsp;Hoareau, plomberie 80&nbsp;€, payé cash&nbsp;»</p>
+      <div class="reveal mt-12 mx-auto" style="max-width: 360px;" data-delay="1">
+        <div class="relative mx-auto bg-slate-900 shadow-2xl ring-1 ring-slate-800" style="width:100%; aspect-ratio: 360/720; border-radius: 44px; padding: 11px;">
+          <div class="relative w-full h-full bg-white overflow-hidden flex flex-col" style="border-radius: 34px;">
+            <div class="absolute left-1/2 -translate-x-1/2 bg-slate-900 z-20" style="top:8px; width:100px; height:26px; border-radius:999px;"></div>
+            <div class="flex items-center justify-between px-6 pt-2.5 text-[11px] font-semibold text-slate-900" style="height:36px;">
+              <span>10:08</span>
+              <span class="flex items-center gap-1 text-slate-700">
+                <svg width="14" height="10" viewBox="0 0 14 10" fill="currentColor" aria-hidden="true"><rect x="0" y="7" width="2" height="3" rx=".5"/><rect x="4" y="5" width="2" height="5" rx=".5"/><rect x="8" y="3" width="2" height="7" rx=".5"/><rect x="12" y="1" width="2" height="9" rx=".5"/></svg>
+                <svg width="20" height="10" viewBox="0 0 22 10" aria-hidden="true"><rect x=".5" y=".5" width="18" height="9" rx="2" fill="none" stroke="currentColor" stroke-opacity=".5"/><rect x="2" y="2" width="14" height="6" rx="1" fill="currentColor"/><rect x="19.5" y="3" width="1.5" height="4" rx=".5" fill="currentColor" fill-opacity=".4"/></svg>
+              </span>
+            </div>
+            <div class="bg-emerald-600 text-white px-4 py-3 flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-emerald-800 flex items-center justify-center font-bold">T</div>
+              <div>
+                <div class="font-semibold text-sm leading-tight">TANIA</div>
+                <div class="text-[10px] text-emerald-100 flex items-center gap-1"><span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-300"></span> en ligne</div>
+              </div>
+            </div>
+            <div class="flex-1 bg-slate-50 p-3 flex flex-col gap-2 overflow-y-auto text-[13px]">
+              <div class="flex"><div class="ml-auto bg-emerald-100 rounded-2xl rounded-tr-sm px-3 py-2 text-slate-900">Bonjour TANIA<div class="text-[10px] text-slate-500 text-right mt-0.5">10:06 ✓✓</div></div></div>
+              <div class="flex"><div class="mr-auto bg-white shadow-sm rounded-2xl rounded-tl-sm px-3 py-2 text-slate-900">Bonjour&#8239;! Comment puis-je vous aider&#8239;?<div class="text-[10px] text-slate-500 text-right mt-0.5">10:06</div></div></div>
+              <div class="flex"><div class="ml-auto bg-emerald-100 rounded-2xl rounded-tr-sm px-3 py-2 text-slate-900">Sophie Dijoux, coupe couleur, 95&nbsp;€, espèces<div class="text-[10px] text-slate-500 text-right mt-0.5">10:07 ✓✓</div></div></div>
+              <div class="flex"><div class="mr-auto bg-white shadow-sm rounded-2xl rounded-tl-sm px-3 py-2 text-slate-900 whitespace-pre-line">✅ Facture créée&nbsp;: F-2026-0058
+💰 95,00&nbsp;€
+💳 Espèces (déjà payée)
+💚 Conforme Factur-X<div class="text-[10px] text-slate-500 text-right mt-0.5">10:07</div></div></div>
+              <div class="flex"><div class="ml-auto bg-emerald-100 rounded-2xl rounded-tr-sm px-3 py-2 text-slate-900">Et combien j&rsquo;ai facturé ce mois&#8239;?<div class="text-[10px] text-slate-500 text-right mt-0.5">10:08 ✓✓</div></div></div>
+              <div class="flex"><div class="mr-auto bg-white shadow-sm rounded-2xl rounded-tl-sm px-3 py-2 text-slate-900 whitespace-pre-line">📊 Octobre 2026
+13 factures · 4&nbsp;280&nbsp;€ HT
+✅ 3&nbsp;920&nbsp;€ encaissés
+⏳ 360&nbsp;€ en attente<div class="text-[10px] text-slate-500 text-right mt-0.5">10:08</div></div></div>
+            </div>
+            <div class="bg-slate-100 px-3 py-2 flex items-center gap-2">
+              <div class="flex-1 bg-white rounded-full px-3 py-1.5 text-[13px] text-slate-400">Message…</div>
+              <span class="text-slate-500">📎</span><span class="text-slate-500">🎤</span>
+            </div>
           </div>
+        </div>
+        <p class="text-sm text-slate-500 text-center mt-6">Conversation réelle. TANIA répond en moyenne en moins de 3 secondes.</p>
+      </div>
+    </div>
+  </section>
 
-          <div class="text-center">
-            <div class="bg-emerald-100 text-emerald-600 w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto ring-8 ring-white">2</div>
-            <h3 class="text-xl font-semibold text-slate-900 mt-6">TANIA crée votre facture</h3>
-            <p class="text-base text-slate-600 mt-3 leading-relaxed">PDF + XML Factur-X EN&nbsp;16931 généré automatiquement en quelques secondes.</p>
+  <!-- ═════════════════════════════════════════════ -->
+  <!-- SECTION 5 — POUR QUI ? (carrousel métiers)    -->
+  <!-- ═════════════════════════════════════════════ -->
+  <section class="bg-white py-16 lg:py-24 overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="text-center reveal">
+        <h2 class="text-3xl md:text-4xl lg:text-[40px] lg:leading-[48px] font-bold text-slate-900 tracking-tighter2">
+          Pour toutes les TPE et PME de La Réunion.
+        </h2>
+        <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Quel que soit votre métier, si vous facturez, TANIA est faite pour vous.</p>
+      </div>
+    </div>
+
+    <!-- Carrousel pleine largeur -->
+    <div class="trades-viewport mt-12 relative" aria-hidden="false">
+      <div class="trades-track gap-4">
+        <!-- Liste dupliquée 2× pour boucle infinie -->
+        <!-- (les SVG sont stroke emerald-600 monochromes) -->
+        <!-- bloc 1 -->
+        <div class="flex gap-4 pr-4" id="trades-list">
+          <!-- Plombier -->
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+            <span class="text-sm font-medium text-slate-700">Plombier</span>
           </div>
-
-          <div class="text-center">
-            <div class="bg-emerald-100 text-emerald-600 w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto ring-8 ring-white">3</div>
-            <h3 class="text-xl font-semibold text-slate-900 mt-6">Vous gardez tout</h3>
-            <p class="text-base text-slate-600 mt-3 leading-relaxed">Dashboard web, export CSV, transmission à votre comptable. Sans aucun effort.</p>
+          <!-- Électricien -->
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13,2 3,14 12,14 11,22 21,10 12,10"/></svg>
+            <span class="text-sm font-medium text-slate-700">Électricien</span>
           </div>
+          <!-- Maçon -->
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-5 9 5"/><path d="M5 9v11h14V9"/><path d="M9 20v-6h6v6"/></svg>
+            <span class="text-sm font-medium text-slate-700">Maçon</span>
+          </div>
+          <!-- Coiffeur -->
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
+            <span class="text-sm font-medium text-slate-700">Coiffeur</span>
+          </div>
+          <!-- Esthéticienne -->
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><line x1="12" y1="15" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg>
+            <span class="text-sm font-medium text-slate-700">Esthéticienne</span>
+          </div>
+          <!-- Paysagiste -->
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 014 13c0-5 7-11 7-11s7 6 7 11a7 7 0 01-7 7z"/><line x1="11" y1="11" x2="11" y2="20"/></svg>
+            <span class="text-sm font-medium text-slate-700">Paysagiste</span>
+          </div>
+          <!-- Mécanicien -->
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 00-.2-1.7l2-1.5-2-3.4-2.3.9a7 7 0 00-2.9-1.7L13 2h-2l-.5 2.6a7 7 0 00-2.9 1.7L5.2 5.4l-2 3.4 2 1.5A7 7 0 005 12c0 .6.1 1.1.2 1.7l-2 1.5 2 3.4 2.3-.9a7 7 0 002.9 1.7L11 22h2l.5-2.6a7 7 0 002.9-1.7l2.3.9 2-3.4-2-1.5c.1-.6.2-1.1.2-1.7z"/></svg>
+            <span class="text-sm font-medium text-slate-700">Mécanicien</span>
+          </div>
+          <!-- Boulanger -->
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 14c0-3 4-5 9-5s9 2 9 5-4 5-9 5-9-2-9-5z"/><line x1="7" y1="12" x2="17" y2="16"/><line x1="9" y1="11" x2="19" y2="15"/></svg>
+            <span class="text-sm font-medium text-slate-700">Boulanger</span>
+          </div>
+          <!-- Photographe -->
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            <span class="text-sm font-medium text-slate-700">Photographe</span>
+          </div>
+          <!-- Restaurateur -->
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 2v6a3 3 0 003 3v11"/><path d="M10 2v9"/><path d="M7 2v9"/><path d="M14 8c0-3 1-6 4-6v20"/></svg>
+            <span class="text-sm font-medium text-slate-700">Restaurateur</span>
+          </div>
+          <!-- Tailleur -->
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2"/><path d="M7.5 7.5L21 21"/><line x1="8" y1="5" x2="20" y2="17"/></svg>
+            <span class="text-sm font-medium text-slate-700">Tailleur</span>
+          </div>
+          <!-- Décorateur -->
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="7.5" cy="10" r="1"/><circle cx="12" cy="7" r="1"/><circle cx="16.5" cy="10" r="1"/><circle cx="15" cy="15" r="1"/></svg>
+            <span class="text-sm font-medium text-slate-700">Décorateur</span>
+          </div>
+          <!-- Chauffagiste -->
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 14.76V3a2 2 0 10-4 0v11.76a4 4 0 104 0z"/></svg>
+            <span class="text-sm font-medium text-slate-700">Chauffagiste</span>
+          </div>
+          <!-- Garagiste -->
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 16H9m10 0h2v-3l-2-5H5l-2 5v3h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+            <span class="text-sm font-medium text-slate-700">Garagiste</span>
+          </div>
+          <!-- Fleuriste -->
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M12 11v10"/><path d="M9 5a3 3 0 016 0"/><path d="M12 11l-4 4"/><path d="M12 11l4 4"/></svg>
+            <span class="text-sm font-medium text-slate-700">Fleuriste</span>
+          </div>
+          <!-- Cordonnier -->
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18h18l-2-7H8L6 6H3v12z"/></svg>
+            <span class="text-sm font-medium text-slate-700">Cordonnier</span>
+          </div>
+          <!-- Tatoueur -->
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="21" x2="13" y2="11"/><path d="M13 11l4-4 4 4-4 4z"/></svg>
+            <span class="text-sm font-medium text-slate-700">Tatoueur</span>
+          </div>
+          <!-- Kinésithérapeute -->
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11V6a2 2 0 114 0v5"/><path d="M13 11V4a2 2 0 114 0v7"/><path d="M17 11V6a2 2 0 114 0v9a6 6 0 01-12 0V8a2 2 0 114 0v3"/></svg>
+            <span class="text-sm font-medium text-slate-700">Kinésithérapeute</span>
+          </div>
+          <!-- Vétérinaire -->
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="15" r="4"/><circle cx="6" cy="9" r="2"/><circle cx="10" cy="6" r="2"/><circle cx="14" cy="6" r="2"/><circle cx="18" cy="9" r="2"/></svg>
+            <span class="text-sm font-medium text-slate-700">Vétérinaire</span>
+          </div>
+          <!-- Traiteur -->
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h20"/><path d="M2 12a10 10 0 0120 0"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+            <span class="text-sm font-medium text-slate-700">Traiteur</span>
+          </div>
+        </div>
+        <!-- Duplication identique pour effet infini -->
+        <div class="flex gap-4 pr-4" aria-hidden="true">
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg><span class="text-sm font-medium text-slate-700">Plombier</span></div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13,2 3,14 12,14 11,22 21,10 12,10"/></svg><span class="text-sm font-medium text-slate-700">Électricien</span></div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l9-5 9 5"/><path d="M5 9v11h14V9"/><path d="M9 20v-6h6v6"/></svg><span class="text-sm font-medium text-slate-700">Maçon</span></div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg><span class="text-sm font-medium text-slate-700">Coiffeur</span></div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><line x1="12" y1="15" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg><span class="text-sm font-medium text-slate-700">Esthéticienne</span></div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 014 13c0-5 7-11 7-11s7 6 7 11a7 7 0 01-7 7z"/><line x1="11" y1="11" x2="11" y2="20"/></svg><span class="text-sm font-medium text-slate-700">Paysagiste</span></div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/></svg><span class="text-sm font-medium text-slate-700">Mécanicien</span></div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14c0-3 4-5 9-5s9 2 9 5-4 5-9 5-9-2-9-5z"/></svg><span class="text-sm font-medium text-slate-700">Boulanger</span></div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg><span class="text-sm font-medium text-slate-700">Photographe</span></div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v6a3 3 0 003 3v11"/><path d="M10 2v9"/><path d="M7 2v9"/><path d="M14 8c0-3 1-6 4-6v20"/></svg><span class="text-sm font-medium text-slate-700">Restaurateur</span></div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2"/><line x1="8" y1="5" x2="20" y2="17"/></svg><span class="text-sm font-medium text-slate-700">Tailleur</span></div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg><span class="text-sm font-medium text-slate-700">Décorateur</span></div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3a2 2 0 10-4 0v11.76a4 4 0 104 0z"/></svg><span class="text-sm font-medium text-slate-700">Chauffagiste</span></div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 16H9m10 0h2v-3l-2-5H5l-2 5v3h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg><span class="text-sm font-medium text-slate-700">Garagiste</span></div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3"/><path d="M12 11v10"/></svg><span class="text-sm font-medium text-slate-700">Fleuriste</span></div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18h18l-2-7H8L6 6H3v12z"/></svg><span class="text-sm font-medium text-slate-700">Cordonnier</span></div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="21" x2="13" y2="11"/><path d="M13 11l4-4 4 4-4 4z"/></svg><span class="text-sm font-medium text-slate-700">Tatoueur</span></div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11V6a2 2 0 114 0v5"/></svg><span class="text-sm font-medium text-slate-700">Kinésithérapeute</span></div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="15" r="4"/><circle cx="6" cy="9" r="2"/><circle cx="10" cy="6" r="2"/><circle cx="14" cy="6" r="2"/><circle cx="18" cy="9" r="2"/></svg><span class="text-sm font-medium text-slate-700">Vétérinaire</span></div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20"/><path d="M2 12a10 10 0 0120 0"/></svg><span class="text-sm font-medium text-slate-700">Traiteur</span></div>
+        </div>
+      </div>
+    </div>
 
+    <p class="text-center mt-12 text-lg text-slate-600">Et tous les autres.</p>
+  </section>
+
+  <!-- ═════════════════════════════════════════════ -->
+  <!-- SECTION 6 — RÉFORME 2026                      -->
+  <!-- ═════════════════════════════════════════════ -->
+  <section id="reforme" class="bg-emerald-50 py-16 lg:py-24">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="text-center reveal">
+        <p class="text-emerald-700 font-semibold text-sm uppercase tracking-wider">Réforme 1<sup>er</sup> septembre 2026</p>
+        <h2 class="mt-3 text-3xl md:text-4xl lg:text-[40px] lg:leading-[48px] font-bold text-slate-900 tracking-tighter2">
+          Ce qui change pour votre entreprise.
+        </h2>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8 mt-12">
+        <!-- Bloc principal -->
+        <div class="reveal bg-white border border-emerald-200 rounded-xl p-8">
+          <p class="text-amber-600 font-semibold text-sm">⏰ Dans moins de 4 mois</p>
+          <h3 class="mt-2 text-2xl font-semibold text-slate-900">Au 1<sup>er</sup> septembre 2026</h3>
+          <p class="mt-4 text-base text-slate-700 leading-relaxed">
+            Toutes les entreprises françaises, y compris les auto-entrepreneurs en franchise de TVA, devront pouvoir <strong>recevoir</strong> des factures électroniques au format Factur-X, via une plateforme agréée par l&rsquo;État.
+          </p>
+          <p class="mt-4 text-base text-slate-700 leading-relaxed">
+            Au 1<sup>er</sup> septembre 2027, l&rsquo;obligation s&rsquo;étend à l&rsquo;<strong>émission</strong> des factures électroniques pour les TPE et PME.
+          </p>
+        </div>
+
+        <!-- Accordéons -->
+        <div class="reveal flex flex-col gap-3" data-delay="1">
+          <details open class="bg-white border border-emerald-200 rounded-xl p-6">
+            <summary class="flex items-center justify-between gap-4">
+              <span class="text-lg font-semibold text-slate-900">Suis-je concerné, même en franchise TVA&#8239;?</span>
+              <span class="acc-icon text-emerald-600 text-2xl leading-none">+</span>
+            </summary>
+            <p class="acc-body mt-4 text-base text-slate-600 leading-relaxed">Oui. Toutes les entreprises assujetties à la TVA — y compris en franchise — sont concernées. Les particuliers ne sont pas obligés, mais dès que vous facturez un autre pro, vous devez être en règle.</p>
+          </details>
+          <details open class="bg-white border border-emerald-200 rounded-xl p-6">
+            <summary class="flex items-center justify-between gap-4">
+              <span class="text-lg font-semibold text-slate-900">Qu&rsquo;est-ce qu&rsquo;une plateforme agréée&#8239;?</span>
+              <span class="acc-icon text-emerald-600 text-2xl leading-none">+</span>
+            </summary>
+            <p class="acc-body mt-4 text-base text-slate-600 leading-relaxed">C&rsquo;est l&rsquo;intermédiaire technique entre votre entreprise et l&rsquo;administration fiscale. TANIA est en cours d&rsquo;intégration avec plusieurs plateformes agréées par l&rsquo;État.</p>
+          </details>
+          <details open class="bg-white border border-emerald-200 rounded-xl p-6">
+            <summary class="flex items-center justify-between gap-4">
+              <span class="text-lg font-semibold text-slate-900">Quelles sont les sanctions en cas de non-conformité&#8239;?</span>
+              <span class="acc-icon text-emerald-600 text-2xl leading-none">+</span>
+            </summary>
+            <p class="acc-body mt-4 text-base text-slate-600 leading-relaxed">15&nbsp;€ par facture non conforme, plafonné à 15&nbsp;000&nbsp;€ par an pour votre entreprise.</p>
+          </details>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ─────────────── Section 4 — Pourquoi TANIA ─────────────── -->
-  <section class="bg-slate-50 py-20 lg:py-24">
+  <!-- ═════════════════════════════════════════════ -->
+  <!-- SECTION 7 — POURQUOI TANIA (comparatif)       -->
+  <!-- ═════════════════════════════════════════════ -->
+  <section class="bg-white py-16 lg:py-24">
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
-      <div class="text-center">
-        <h2 class="text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight">Pourquoi choisir TANIA&#8239;?</h2>
-        <p class="text-lg text-slate-600 mt-4">On a pris le contrepied des logiciels traditionnels.</p>
+      <div class="text-center reveal">
+        <h2 class="text-3xl md:text-4xl lg:text-[40px] lg:leading-[48px] font-bold text-slate-900 tracking-tighter2">
+          Pourquoi TANIA&#8239;?
+        </h2>
+        <p class="mt-4 text-lg text-slate-600">Comparé à votre organisation actuelle.</p>
       </div>
 
-      <div class="max-w-4xl mx-auto mt-16">
-        <!-- Desktop table -->
-        <div class="hidden md:block bg-white rounded-2xl border border-slate-200 overflow-hidden">
-          <table class="w-full">
-            <thead>
-              <tr class="bg-slate-100">
-                <th class="text-left text-xs font-semibold uppercase tracking-wider text-slate-700 px-6 py-3">Critère</th>
-                <th class="text-left text-xs font-semibold uppercase tracking-wider text-slate-700 px-6 py-3">Logiciels classiques</th>
-                <th class="text-left text-xs font-semibold uppercase tracking-wider text-emerald-900 px-6 py-3 bg-emerald-50">TANIA</th>
-              </tr>
-            </thead>
-            <tbody class="text-sm">
-              <tr class="border-b border-slate-200">
-                <td class="px-6 py-4 text-slate-700">Logiciel à installer</td>
-                <td class="px-6 py-4 text-slate-600"><span class="text-rose-400">✕</span>&nbsp; Oui</td>
-                <td class="px-6 py-4 text-emerald-900 bg-emerald-50"><span class="text-emerald-500">✓</span>&nbsp; Non, juste WhatsApp</td>
-              </tr>
-              <tr class="border-b border-slate-200">
-                <td class="px-6 py-4 text-slate-700">Formation nécessaire</td>
-                <td class="px-6 py-4 text-slate-600"><span class="text-rose-400">✕</span>&nbsp; Plusieurs heures</td>
-                <td class="px-6 py-4 text-emerald-900 bg-emerald-50"><span class="text-emerald-500">✓</span>&nbsp; Zéro</td>
-              </tr>
-              <tr class="border-b border-slate-200">
-                <td class="px-6 py-4 text-slate-700">Interface</td>
-                <td class="px-6 py-4 text-slate-600">Application&nbsp;/ Web</td>
-                <td class="px-6 py-4 text-emerald-900 bg-emerald-50">WhatsApp</td>
-              </tr>
-              <tr class="border-b border-slate-200">
-                <td class="px-6 py-4 text-slate-700">Spécial 974 (Réunion)</td>
-                <td class="px-6 py-4 text-slate-600"><span class="text-rose-400">✕</span>&nbsp; Non</td>
-                <td class="px-6 py-4 text-emerald-900 bg-emerald-50"><span class="text-emerald-500">✓</span>&nbsp; Oui</td>
-              </tr>
-              <tr class="border-b border-slate-200">
-                <td class="px-6 py-4 text-slate-700">Conforme réforme 2026</td>
-                <td class="px-6 py-4 text-slate-600"><span class="text-emerald-500">✓</span>&nbsp; Oui</td>
-                <td class="px-6 py-4 text-emerald-900 bg-emerald-50"><span class="text-emerald-500">✓</span>&nbsp; Oui</td>
-              </tr>
-              <tr class="border-b border-slate-200">
-                <td class="px-6 py-4 text-slate-700">Assistance humaine</td>
-                <td class="px-6 py-4 text-slate-600"><span class="text-rose-400">✕</span>&nbsp; Chatbot</td>
-                <td class="px-6 py-4 text-emerald-900 bg-emerald-50"><span class="text-emerald-500">✓</span>&nbsp; Vraie assistante</td>
-              </tr>
-              <tr>
-                <td class="px-6 py-4 text-slate-700">Prix mensuel</td>
-                <td class="px-6 py-4 text-slate-600">14 à 99&nbsp;€</td>
-                <td class="px-6 py-4 text-emerald-900 bg-emerald-50 font-semibold">69 à 99&nbsp;€</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <!-- Mobile cards -->
-        <div class="md:hidden grid gap-6">
-          <div class="bg-white rounded-2xl border border-slate-200 p-6">
-            <div class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-4">Logiciels classiques</div>
-            <ul class="space-y-3 text-sm text-slate-700">
-              <li><span class="text-rose-400">✕</span> Logiciel à installer</li>
-              <li><span class="text-rose-400">✕</span> Formation de plusieurs heures</li>
-              <li>Interface application ou web</li>
-              <li><span class="text-rose-400">✕</span> Pas adapté à La Réunion</li>
-              <li><span class="text-emerald-500">✓</span> Conforme réforme 2026</li>
-              <li><span class="text-rose-400">✕</span> Support par chatbot</li>
-              <li>14 à 99&nbsp;€ / mois</li>
-            </ul>
-          </div>
-          <div class="bg-emerald-50 rounded-2xl border-2 border-emerald-500 p-6">
-            <div class="text-xs font-semibold uppercase tracking-wider text-emerald-700 mb-4">TANIA</div>
-            <ul class="space-y-3 text-sm text-emerald-900">
-              <li><span class="text-emerald-500">✓</span> Juste WhatsApp, rien à installer</li>
-              <li><span class="text-emerald-500">✓</span> Zéro formation</li>
-              <li>Interface WhatsApp</li>
-              <li><span class="text-emerald-500">✓</span> Conçue à La Réunion</li>
-              <li><span class="text-emerald-500">✓</span> Conforme réforme 2026</li>
-              <li><span class="text-emerald-500">✓</span> Vraie assistante humaine</li>
-              <li class="font-semibold">69 à 99&nbsp;€ / mois</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─────────────── Section 5 — Pour qui ─────────────── -->
-  <section class="bg-white py-20 lg:py-24">
-    <div class="max-w-6xl mx-auto px-6 lg:px-8">
-      <div class="text-center">
-        <h2 class="text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight">Pour qui est TANIA&#8239;?</h2>
-        <p class="text-lg text-slate-600 mt-4">Conçue pour les pros qui n&rsquo;ont pas une équipe administrative.</p>
+      <!-- Tableau desktop -->
+      <div class="reveal hidden md:block mt-12 overflow-hidden rounded-xl border border-slate-200" data-delay="1">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-emerald-50 text-slate-800">
+              <th class="text-left font-semibold px-6 py-4 w-1/4"></th>
+              <th class="text-left font-semibold px-6 py-4">Carnet, Excel, post-it</th>
+              <th class="text-left font-semibold px-6 py-4">Logiciels comptables</th>
+              <th class="text-left font-semibold px-6 py-4 bg-emerald-100 text-emerald-900">TANIA</th>
+            </tr>
+          </thead>
+          <tbody class="text-slate-700">
+            <tr class="border-t border-slate-200 hover:bg-slate-50">
+              <td class="px-6 py-4 font-medium">Conforme 2026</td>
+              <td class="px-6 py-4">❌</td>
+              <td class="px-6 py-4">✅</td>
+              <td class="px-6 py-4 bg-emerald-50/60 text-emerald-900 font-medium">✅</td>
+            </tr>
+            <tr class="border-t border-slate-200 hover:bg-slate-50">
+              <td class="px-6 py-4 font-medium">Apprentissage</td>
+              <td class="px-6 py-4">0 (mais désordre)</td>
+              <td class="px-6 py-4">2-3 h minimum</td>
+              <td class="px-6 py-4 bg-emerald-50/60 text-emerald-900 font-medium">0 (WhatsApp)</td>
+            </tr>
+            <tr class="border-t border-slate-200 hover:bg-slate-50">
+              <td class="px-6 py-4 font-medium">Toujours sur soi</td>
+              <td class="px-6 py-4">❌</td>
+              <td class="px-6 py-4">Sur ordinateur</td>
+              <td class="px-6 py-4 bg-emerald-50/60 text-emerald-900 font-medium">✅ Sur le téléphone</td>
+            </tr>
+            <tr class="border-t border-slate-200 hover:bg-slate-50">
+              <td class="px-6 py-4 font-medium">Suivi du mois</td>
+              <td class="px-6 py-4">À reconstituer</td>
+              <td class="px-6 py-4">✅</td>
+              <td class="px-6 py-4 bg-emerald-50/60 text-emerald-900 font-medium">✅</td>
+            </tr>
+            <tr class="border-t border-slate-200 hover:bg-slate-50">
+              <td class="px-6 py-4 font-medium">Pensé pour La Réunion</td>
+              <td class="px-6 py-4">—</td>
+              <td class="px-6 py-4">❌</td>
+              <td class="px-6 py-4 bg-emerald-50/60 text-emerald-900 font-medium">✅</td>
+            </tr>
+            <tr class="border-t border-slate-200 hover:bg-slate-50">
+              <td class="px-6 py-4 font-medium">Tarif</td>
+              <td class="px-6 py-4">«&nbsp;Gratuit&nbsp;» (mais coût en temps)</td>
+              <td class="px-6 py-4">29 à 49&nbsp;€/mois</td>
+              <td class="px-6 py-4 bg-emerald-50/60 text-emerald-900 font-medium">À partir de 19&nbsp;€/mois</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mt-16">
-
-        <div class="bg-slate-50 rounded-2xl p-8 text-center border border-transparent hover:bg-white hover:border-emerald-300 hover:shadow-md transition-all">
-          <div class="text-5xl">🔧</div>
-          <h3 class="text-xl font-semibold text-slate-900 mt-4">Artisans</h3>
-          <p class="text-base text-slate-600 mt-2 leading-relaxed">Plombiers, électriciens, maçons, peintres, carreleurs&hellip;</p>
-        </div>
-
-        <div class="bg-slate-50 rounded-2xl p-8 text-center border border-transparent hover:bg-white hover:border-emerald-300 hover:shadow-md transition-all">
-          <div class="text-5xl">🍴</div>
-          <h3 class="text-xl font-semibold text-slate-900 mt-4">Commerces</h3>
-          <p class="text-base text-slate-600 mt-2 leading-relaxed">Restaurants, snacks, boutiques, food trucks, salons&hellip;</p>
-        </div>
-
-        <div class="bg-slate-50 rounded-2xl p-8 text-center border border-transparent hover:bg-white hover:border-emerald-300 hover:shadow-md transition-all">
-          <div class="text-5xl">💼</div>
-          <h3 class="text-xl font-semibold text-slate-900 mt-4">Services &amp; freelances</h3>
-          <p class="text-base text-slate-600 mt-2 leading-relaxed">Consultants, designers, marketing, web, formation&hellip;</p>
-        </div>
-
-        <div class="bg-slate-50 rounded-2xl p-8 text-center border border-transparent hover:bg-white hover:border-emerald-300 hover:shadow-md transition-all">
-          <div class="text-5xl">🚚</div>
-          <h3 class="text-xl font-semibold text-slate-900 mt-4">Indépendants</h3>
-          <p class="text-base text-slate-600 mt-2 leading-relaxed">VTC, livreurs, coiffeurs à domicile, professionnels libéraux&hellip;</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ─────────────── Section 6 — Tarifs ─────────────── -->
-  <section id="pricing" class="bg-slate-50 py-20 lg:py-24">
-    <div class="max-w-6xl mx-auto px-6 lg:px-8">
-      <div class="text-center">
-        <h2 class="text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight">Choisissez votre formule</h2>
-        <p class="text-lg text-slate-600 mt-4">1<sup>er</sup> mois offert. Sans engagement.</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mt-16">
-
-        <!-- Essentiel -->
-        <div class="bg-white rounded-2xl border border-slate-200 p-10 flex flex-col">
-          <h3 class="text-2xl font-bold text-slate-900">Essentiel</h3>
-          <p class="text-slate-600 mt-2">Pour démarrer simplement.</p>
-          <div class="mt-8 flex items-baseline gap-2">
-            <span class="text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight">69&nbsp;€</span>
-            <span class="text-slate-500">/ mois</span>
-          </div>
-          <ul class="mt-8 space-y-3 text-base text-slate-700">
-            <li class="flex gap-3"><span class="text-emerald-500 font-bold">✓</span> Création de factures sur WhatsApp</li>
-            <li class="flex gap-3"><span class="text-emerald-500 font-bold">✓</span> Dashboard web</li>
-            <li class="flex gap-3"><span class="text-emerald-500 font-bold">✓</span> PDF + XML Factur-X</li>
-            <li class="flex gap-3"><span class="text-emerald-500 font-bold">✓</span> Export CSV pour votre comptable</li>
-            <li class="flex gap-3"><span class="text-emerald-500 font-bold">✓</span> Support par WhatsApp</li>
+      <!-- Cards mobile -->
+      <div class="md:hidden mt-12 grid gap-6">
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Carnet, Excel, post-it</p>
+          <ul class="mt-4 space-y-2 text-sm text-slate-700">
+            <li>❌ Non conforme 2026</li>
+            <li>0 apprentissage, mais désordre</li>
+            <li>❌ Pas toujours sur soi</li>
+            <li>Suivi à reconstituer</li>
+            <li class="font-semibold">«&nbsp;Gratuit&nbsp;» (mais coût en temps)</li>
           </ul>
-          <a href="#contact" class="mt-10 inline-flex items-center justify-center border border-slate-300 hover:border-slate-400 text-slate-700 px-6 py-3 rounded-lg font-semibold transition-all">Choisir Essentiel</a>
         </div>
-
-        <!-- Conforme -->
-        <div class="relative bg-white rounded-2xl border-2 border-emerald-500 p-10 flex flex-col shadow-lg">
-          <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-500 text-white text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">Recommandé</span>
-          <h3 class="text-2xl font-bold text-slate-900">Conforme</h3>
-          <p class="text-slate-600 mt-2">Pour la réforme&nbsp;2026, sereinement.</p>
-          <div class="mt-8 flex items-baseline gap-2">
-            <span class="text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight">99&nbsp;€</span>
-            <span class="text-slate-500">/ mois</span>
-          </div>
-          <ul class="mt-8 space-y-3 text-base text-slate-700">
-            <li class="flex gap-3"><span class="text-emerald-500 font-bold">✓</span> Tout l&rsquo;Essentiel</li>
-            <li class="flex gap-3"><span class="text-emerald-500 font-bold">✓</span> Transmission via Plateforme Agréée</li>
-            <li class="flex gap-3"><span class="text-emerald-500 font-bold">✓</span> Réception des factures fournisseurs</li>
-            <li class="flex gap-3"><span class="text-emerald-500 font-bold">✓</span> Support prioritaire</li>
-            <li class="flex gap-3"><span class="text-emerald-500 font-bold">✓</span> Accompagnement à l&rsquo;inscription PA</li>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Logiciels comptables</p>
+          <ul class="mt-4 space-y-2 text-sm text-slate-700">
+            <li>✅ Conforme 2026</li>
+            <li>2-3 h d&rsquo;apprentissage minimum</li>
+            <li>Sur ordinateur</li>
+            <li>✅ Suivi du mois</li>
+            <li>❌ Pas pensé pour La Réunion</li>
+            <li class="font-semibold">29 à 49&nbsp;€/mois</li>
           </ul>
-          <a href="#contact" class="mt-10 inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg hover:-translate-y-px transition-all">Choisir Conforme</a>
         </div>
-
+        <div class="bg-emerald-50 border-2 border-emerald-500 rounded-xl p-6">
+          <p class="text-xs font-semibold uppercase tracking-wider text-emerald-700">TANIA</p>
+          <ul class="mt-4 space-y-2 text-sm text-emerald-900">
+            <li>✅ Conforme 2026</li>
+            <li>0 apprentissage (WhatsApp)</li>
+            <li>✅ Toujours sur le téléphone</li>
+            <li>✅ Suivi du mois</li>
+            <li>✅ Pensé pour La Réunion</li>
+            <li class="font-semibold">À partir de 19&nbsp;€/mois</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ─────────────── Section 7 — FAQ ─────────────── -->
-  <section id="faq" class="bg-white py-20 lg:py-24">
+  <!-- ═════════════════════════════════════════════ -->
+  <!-- SECTION 8 — TARIFS                            -->
+  <!-- ═════════════════════════════════════════════ -->
+  <section id="tarifs" class="bg-slate-50 py-16 lg:py-24">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="text-center reveal">
+        <p class="text-emerald-600 font-semibold text-sm uppercase tracking-wider">Tarifs</p>
+        <h2 class="mt-3 text-3xl md:text-4xl lg:text-[40px] lg:leading-[48px] font-bold text-slate-900 tracking-tighter2">
+          Simple et transparent.
+        </h2>
+        <p class="mt-4 text-lg text-slate-600">Des tarifs pensés pour les TPE et PME, sans surprise.</p>
+      </div>
+
+      <div class="reveal max-w-2xl mx-auto mt-8 bg-emerald-100 border border-emerald-200 rounded-xl p-4 text-center" data-delay="1">
+        🎁 Liste d&rsquo;attente prioritaire ouverte&nbsp;: −30&nbsp;% à vie pour les 100 premières entreprises inscrites.
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mt-12">
+
+        <!-- Plan Découverte -->
+        <div class="reveal bg-white border border-slate-200 rounded-xl p-8 flex flex-col" data-delay="1">
+          <p class="text-sm uppercase tracking-wider font-semibold text-slate-500">Découverte</p>
+          <div class="mt-4 flex items-baseline gap-2">
+            <span class="text-5xl font-bold text-slate-900">19&nbsp;€</span>
+            <span class="text-slate-500">par mois</span>
+          </div>
+          <p class="mt-4 text-base text-slate-600">Pour démarrer en douceur.</p>
+          <ul class="mt-8 space-y-3 text-base text-slate-700">
+            <li class="flex gap-2"><span class="text-emerald-500">✓</span> Jusqu&rsquo;à 30 factures par mois</li>
+            <li class="flex gap-2"><span class="text-emerald-500">✓</span> Génération PDF + Factur-X</li>
+            <li class="flex gap-2"><span class="text-emerald-500">✓</span> Conformité réforme 2026</li>
+            <li class="flex gap-2"><span class="text-emerald-500">✓</span> Tableau de bord en ligne</li>
+            <li class="flex gap-2"><span class="text-emerald-500">✓</span> Support par email</li>
+          </ul>
+          <a href="#cta-final" class="mt-auto pt-8">
+            <span class="block w-full bg-white border-2 border-slate-200 hover:border-slate-300 text-slate-900 text-center font-semibold py-3 rounded-md transition-colors">Rejoindre la liste d&rsquo;attente</span>
+          </a>
+        </div>
+
+        <!-- Plan Pro -->
+        <div class="reveal relative bg-white border-2 border-emerald-500 rounded-xl p-8 flex flex-col shadow-md" data-delay="2">
+          <span class="absolute -top-3 right-6 bg-emerald-500 text-white px-3 py-1 rounded-full text-xs font-bold">RECOMMANDÉ</span>
+          <p class="text-sm uppercase tracking-wider font-semibold text-slate-500">Pro</p>
+          <div class="mt-4 flex items-baseline gap-2">
+            <span class="text-5xl font-bold text-slate-900">39&nbsp;€</span>
+            <span class="text-slate-500">par mois</span>
+          </div>
+          <p class="mt-4 text-base text-slate-600">Pour les pros qui facturent beaucoup.</p>
+          <ul class="mt-8 space-y-3 text-base text-slate-700">
+            <li class="flex gap-2"><span class="text-emerald-500">✓</span> Factures illimitées</li>
+            <li class="flex gap-2"><span class="text-emerald-500">✓</span> Génération PDF + Factur-X</li>
+            <li class="flex gap-2"><span class="text-emerald-500">✓</span> Conformité réforme 2026</li>
+            <li class="flex gap-2"><span class="text-emerald-500">✓</span> Tableau de bord avancé</li>
+            <li class="flex gap-2"><span class="text-emerald-500">✓</span> Multi-utilisateurs (votre comptable inclus)</li>
+            <li class="flex gap-2"><span class="text-emerald-500">✓</span> Support prioritaire WhatsApp</li>
+            <li class="flex gap-2"><span class="text-emerald-500">✓</span> Carnet de clients automatique</li>
+          </ul>
+          <a href="#cta-final" class="mt-auto pt-8">
+            <span class="block w-full bg-emerald-500 hover:bg-emerald-600 text-white text-center font-semibold py-3 rounded-md transition-colors">Rejoindre la liste d&rsquo;attente</span>
+          </a>
+        </div>
+
+      </div>
+
+      <p class="text-center mt-8 text-sm text-slate-500">Pas de carte demandée. Pas d&rsquo;engagement. Lancement officiel à l&rsquo;été 2026.</p>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════ -->
+  <!-- SECTION 9 — L'ORIGINE                         -->
+  <!-- ═════════════════════════════════════════════ -->
+  <section class="bg-white py-16 lg:py-24">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center reveal">
+      <p class="text-emerald-600 font-semibold text-sm uppercase tracking-wider">L&rsquo;histoire</p>
+      <h2 class="mt-3 text-3xl md:text-4xl lg:text-[40px] lg:leading-[48px] font-bold text-slate-900 tracking-tighter2">
+        Pourquoi TANIA existe.
+      </h2>
+
+      <div class="mt-8 text-lg text-slate-700 leading-relaxed text-left space-y-5">
+        <p>TANIA est née à La Réunion en 2026, après un constat simple&nbsp;: les solutions de facturation pensées pour Paris ne comprennent pas le quotidien des entrepreneurs réunionnais.</p>
+        <p>Pendant que la réforme française de septembre 2026 approchait, nous avons vu autour de nous des artisans, des commerçants, des prestataires de services — tous dépassés par la paperasse, souvent inquiets, parfois découragés.</p>
+        <p>Nous avons construit TANIA pour eux. Pour vous.</p>
+        <p>Un outil simple comme un message WhatsApp. Sérieux comme la réglementation l&rsquo;exige. Et profondément ancré dans le quotidien des TPE et PME de La Réunion.</p>
+      </div>
+
+      <div class="mt-12 text-slate-700 flex items-center justify-center gap-2">
+        <span class="text-2xl">🌴</span>
+        <span class="font-medium">Conçu et opéré à La Réunion.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════ -->
+  <!-- SECTION 10 — FAQ                              -->
+  <!-- ═════════════════════════════════════════════ -->
+  <section id="faq" class="bg-slate-50 py-16 lg:py-24">
     <div class="max-w-3xl mx-auto px-6 lg:px-8">
-      <div class="text-center">
-        <h2 class="text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight">Questions fréquentes</h2>
-        <p class="text-lg text-slate-600 mt-4">Tout ce qu&rsquo;on nous demande avant de commencer.</p>
+      <div class="text-center reveal">
+        <h2 class="text-3xl md:text-4xl lg:text-[40px] lg:leading-[48px] font-bold text-slate-900 tracking-tighter2">
+          Vos questions.
+        </h2>
+        <p class="mt-4 text-lg text-slate-600">Tout ce qu&rsquo;il faut savoir avant de commencer.</p>
       </div>
 
-      <div class="mt-16 divide-y divide-slate-200 border-y border-slate-200">
-
-        <details class="group py-6">
-          <summary class="flex items-center justify-between cursor-pointer list-none">
-            <span class="text-lg font-semibold text-slate-900">Faut-il installer une application&#8239;?</span>
-            <span class="ml-4 text-emerald-500 transition-transform group-open:rotate-45 text-2xl leading-none">+</span>
+      <div class="mt-12 divide-y divide-slate-200 border-y border-slate-200">
+        <details class="py-6">
+          <summary class="flex items-center justify-between gap-4">
+            <span class="text-lg font-semibold text-slate-900">Combien de temps pour commencer avec TANIA&#8239;?</span>
+            <span class="acc-icon text-emerald-600 text-2xl leading-none">+</span>
           </summary>
-          <p class="mt-4 text-base text-slate-600 leading-relaxed">Non. TANIA fonctionne dans WhatsApp, l&rsquo;app que vous utilisez déjà tous les jours. Aucun téléchargement, aucune installation, aucun mot de passe à retenir.</p>
+          <p class="acc-body mt-4 text-base text-slate-600 leading-relaxed">15 minutes. Une fois votre profil créé via WhatsApp, vous pouvez envoyer votre première facture immédiatement.</p>
         </details>
-
-        <details class="group py-6">
-          <summary class="flex items-center justify-between cursor-pointer list-none">
-            <span class="text-lg font-semibold text-slate-900">C&rsquo;est quoi la réforme e-invoicing de 2026&#8239;?</span>
-            <span class="ml-4 text-emerald-500 transition-transform group-open:rotate-45 text-2xl leading-none">+</span>
-          </summary>
-          <p class="mt-4 text-base text-slate-600 leading-relaxed">À partir de septembre&nbsp;2026, toutes les entreprises françaises devront émettre et recevoir leurs factures B2B au format électronique (Factur-X), via une Plateforme Agréée. TANIA s&rsquo;occupe de tout pour vous.</p>
-        </details>
-
-        <details class="group py-6">
-          <summary class="flex items-center justify-between cursor-pointer list-none">
+        <details class="py-6">
+          <summary class="flex items-center justify-between gap-4">
             <span class="text-lg font-semibold text-slate-900">Mes données sont-elles en sécurité&#8239;?</span>
-            <span class="ml-4 text-emerald-500 transition-transform group-open:rotate-45 text-2xl leading-none">+</span>
+            <span class="acc-icon text-emerald-600 text-2xl leading-none">+</span>
           </summary>
-          <p class="mt-4 text-base text-slate-600 leading-relaxed">Vos données sont chiffrées, hébergées en France, et conformes au RGPD. Vous restez propriétaire de tout, à tout moment.</p>
+          <p class="acc-body mt-4 text-base text-slate-600 leading-relaxed">Vos données sont hébergées en France, chiffrées de bout en bout, et conformes RGPD. Personne d&rsquo;autre que vous — et votre comptable si vous lui donnez accès — n&rsquo;y a accès.</p>
         </details>
-
-        <details class="group py-6">
-          <summary class="flex items-center justify-between cursor-pointer list-none">
-            <span class="text-lg font-semibold text-slate-900">Puis-je arrêter quand je veux&#8239;?</span>
-            <span class="ml-4 text-emerald-500 transition-transform group-open:rotate-45 text-2xl leading-none">+</span>
+        <details class="py-6">
+          <summary class="flex items-center justify-between gap-4">
+            <span class="text-lg font-semibold text-slate-900">Et si je décide de quitter TANIA&#8239;?</span>
+            <span class="acc-icon text-emerald-600 text-2xl leading-none">+</span>
           </summary>
-          <p class="mt-4 text-base text-slate-600 leading-relaxed">Oui. Sans engagement, sans frais cachés. Vous résiliez en un message WhatsApp, et vous repartez avec toutes vos données.</p>
+          <p class="acc-body mt-4 text-base text-slate-600 leading-relaxed">Vous récupérez l&rsquo;intégralité de vos factures aux formats PDF et Factur-X. Aucun verrouillage.</p>
         </details>
-
-        <details class="group py-6">
-          <summary class="flex items-center justify-between cursor-pointer list-none">
-            <span class="text-lg font-semibold text-slate-900">Est-ce que ça marche avec mon comptable&#8239;?</span>
-            <span class="ml-4 text-emerald-500 transition-transform group-open:rotate-45 text-2xl leading-none">+</span>
+        <details class="py-6">
+          <summary class="flex items-center justify-between gap-4">
+            <span class="text-lg font-semibold text-slate-900">Mon comptable peut-il accéder à mes factures&#8239;?</span>
+            <span class="acc-icon text-emerald-600 text-2xl leading-none">+</span>
           </summary>
-          <p class="mt-4 text-base text-slate-600 leading-relaxed">Très bien&nbsp;: TANIA exporte vos factures en PDF, Factur-X et CSV. Vous pouvez aussi donner un accès direct à votre comptable sur le dashboard.</p>
+          <p class="acc-body mt-4 text-base text-slate-600 leading-relaxed">Oui. Vous lui transmettez un lien d&rsquo;accès sécurisé et il consulte vos factures en lecture seule, à tout moment.</p>
         </details>
-
-        <details class="group py-6">
-          <summary class="flex items-center justify-between cursor-pointer list-none">
-            <span class="text-lg font-semibold text-slate-900">Et si je rate la réforme&#8239;?</span>
-            <span class="ml-4 text-emerald-500 transition-transform group-open:rotate-45 text-2xl leading-none">+</span>
+        <details class="py-6">
+          <summary class="flex items-center justify-between gap-4">
+            <span class="text-lg font-semibold text-slate-900">TANIA fonctionne-t-elle hors connexion&#8239;?</span>
+            <span class="acc-icon text-emerald-600 text-2xl leading-none">+</span>
           </summary>
-          <p class="mt-4 text-base text-slate-600 leading-relaxed">Pas de panique. L&rsquo;offre Conforme inclut un accompagnement humain pour vous inscrire à une Plateforme Agréée et être prêt avant&nbsp;septembre&nbsp;2026.</p>
+          <p class="acc-body mt-4 text-base text-slate-600 leading-relaxed">Vos messages WhatsApp sont enregistrés par le système et traités dès que vous retrouvez la connexion.</p>
         </details>
-
+        <details class="py-6">
+          <summary class="flex items-center justify-between gap-4">
+            <span class="text-lg font-semibold text-slate-900">Je suis en franchise TVA. Cela change-t-il quelque chose&#8239;?</span>
+            <span class="acc-icon text-emerald-600 text-2xl leading-none">+</span>
+          </summary>
+          <p class="acc-body mt-4 text-base text-slate-600 leading-relaxed">Non. TANIA gère parfaitement la franchise TVA — la mention «&nbsp;TVA non applicable, art. 293 B du CGI&nbsp;» est incluse automatiquement sur vos factures.</p>
+        </details>
+        <details class="py-6">
+          <summary class="flex items-center justify-between gap-4">
+            <span class="text-lg font-semibold text-slate-900">Êtes-vous vraiment à La Réunion&#8239;?</span>
+            <span class="acc-icon text-emerald-600 text-2xl leading-none">+</span>
+          </summary>
+          <p class="acc-body mt-4 text-base text-slate-600 leading-relaxed">Oui. TANIA est conçue et opérée depuis La Réunion. Notre support comprend vos réalités, vos clients, vos contraintes.</p>
+        </details>
+        <details class="py-6">
+          <summary class="flex items-center justify-between gap-4">
+            <span class="text-lg font-semibold text-slate-900">Quand pourrai-je vraiment commencer&#8239;?</span>
+            <span class="acc-icon text-emerald-600 text-2xl leading-none">+</span>
+          </summary>
+          <p class="acc-body mt-4 text-base text-slate-600 leading-relaxed">TANIA est en finalisation. Inscrivez-vous sur la liste d&rsquo;attente pour bénéficier du tarif préférentiel à vie.</p>
+        </details>
       </div>
     </div>
   </section>
 
-  <!-- ─────────────── Section 8 — CTA final ─────────────── -->
-  <section id="contact" class="bg-slate-50 py-20 lg:py-24">
+  <!-- ═════════════════════════════════════════════ -->
+  <!-- SECTION 11 — CTA FINAL                        -->
+  <!-- ═════════════════════════════════════════════ -->
+  <section id="cta-final" class="bg-emerald-500 py-24">
     <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center">
-      <h2 class="text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight">Prêt à laisser tomber la paperasse&#8239;?</h2>
-      <p class="text-lg text-slate-600 mt-4">Écrivez-nous sur WhatsApp. On vous répond dans la journée.</p>
+      <h2 class="text-3xl md:text-4xl lg:text-[40px] lg:leading-[48px] font-bold text-white tracking-tighter2">
+        Prêt à arrêter le désordre administratif&#8239;?
+      </h2>
+      <p class="mt-6 text-xl text-emerald-50">
+        Rejoignez la liste d&rsquo;attente. Soyez parmi les premières entreprises réunionnaises à passer à TANIA.
+      </p>
 
-      <div class="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="https://wa.me/33648345707" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-md hover:shadow-lg hover:-translate-y-px transition-all">
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.555-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.519 5.265l-.999 3.648 3.969-1.612zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg>
-          WhatsApp&nbsp;: +262&nbsp;6&nbsp;48&nbsp;34&nbsp;57&nbsp;07
-        </a>
-        <a href="mailto:hello@tania.re" class="inline-flex items-center justify-center border border-slate-300 hover:border-slate-400 text-slate-700 px-8 py-4 rounded-lg font-semibold text-lg transition-all">
-          hello@tania.re
-        </a>
-      </div>
+      <form id="waitlist-form" action="/api/waitlist" method="POST" class="mt-10 max-w-lg mx-auto text-left">
+        <label for="wl-email" class="sr-only">Email</label>
+        <input id="wl-email" name="email" type="email" required placeholder="votre@email.fr" class="w-full px-5 py-4 rounded-md text-base text-slate-900 placeholder-slate-400 bg-white focus:outline-none focus:ring-2 focus:ring-white/60" />
 
-      <p class="mt-8 text-sm text-slate-500">1<sup>er</sup> mois offert · Sans engagement · Conçue à La Réunion 🇷🇪</p>
+        <label for="wl-phone" class="sr-only">Téléphone</label>
+        <input id="wl-phone" name="phone" type="tel" placeholder="Votre téléphone (optionnel)" class="w-full mt-3 px-5 py-4 rounded-md text-base text-slate-900 placeholder-slate-400 bg-white focus:outline-none focus:ring-2 focus:ring-white/60" />
+
+        <button type="submit" class="w-full mt-4 bg-white text-emerald-700 font-bold px-6 py-4 rounded-md hover:bg-emerald-50 transition" data-track="waitlist-submit">
+          Rejoindre la liste d&rsquo;attente
+        </button>
+        <p id="wl-status" class="mt-4 text-sm text-emerald-100" role="status"></p>
+      </form>
+
+      <p class="text-emerald-100 text-sm mt-4">Sans engagement. Vous recevrez un email dès l&rsquo;ouverture officielle.</p>
+
+      <p class="text-emerald-100 mt-12">— OU —</p>
+      <p class="text-white mt-6">Vous préférez nous parler directement&#8239;?</p>
+      <a href="https://wa.me/33648345707?text=Bonjour%20TANIA" target="_blank" rel="noopener" class="inline-flex items-center justify-center mt-4 bg-white text-emerald-700 hover:bg-emerald-50 px-7 py-3 rounded-md font-semibold transition" data-track="whatsapp-cta">
+        💬 Écrire sur WhatsApp
+      </a>
     </div>
   </section>
 
-  <!-- ─────────────── Footer ─────────────── -->
-  <footer class="bg-slate-900 py-16">
+  <!-- ═════════════════════════════════════════════ -->
+  <!-- SECTION 12 — FOOTER                           -->
+  <!-- ═════════════════════════════════════════════ -->
+  <footer class="bg-slate-900 text-slate-400 py-16">
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
 
-        <div>
-          <div class="text-2xl font-extrabold text-emerald-500 tracking-tight">TANIA</div>
-          <p class="mt-4 text-sm text-slate-400 leading-relaxed max-w-xs">Votre assistante administrative sur WhatsApp. Conçue à La Réunion&nbsp;🇷🇪</p>
+        <div class="md:col-span-1">
+          <div class="text-2xl font-extrabold text-white tracking-tight">TANIA</div>
+          <p class="mt-4 text-sm leading-relaxed max-w-xs">La facturation par WhatsApp pour les TPE et PME de La Réunion.</p>
+          <p class="mt-4 text-sm">🌴 Conçu à La Réunion</p>
         </div>
 
         <div>
-          <div class="text-xs font-semibold uppercase tracking-wider text-slate-500">Produit</div>
-          <ul class="mt-4 space-y-2 text-sm text-slate-300">
-            <li><a href="#how-it-works" class="hover:text-emerald-400 transition-colors">Comment ça marche</a></li>
-            <li><a href="#pricing" class="hover:text-emerald-400 transition-colors">Tarifs</a></li>
-            <li><a href="#faq" class="hover:text-emerald-400 transition-colors">FAQ</a></li>
+          <div class="text-xs font-semibold uppercase tracking-wider text-white">Produit</div>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li><a href="#comment-ca-marche" class="hover:text-white transition-colors">Comment ça marche</a></li>
+            <li><a href="#reforme" class="hover:text-white transition-colors">Réforme 2026</a></li>
+            <li><a href="#tarifs" class="hover:text-white transition-colors">Tarifs</a></li>
+            <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
           </ul>
         </div>
 
         <div>
-          <div class="text-xs font-semibold uppercase tracking-wider text-slate-500">Contact</div>
-          <ul class="mt-4 space-y-2 text-sm text-slate-300">
-            <li><a href="https://wa.me/33648345707" target="_blank" rel="noopener" class="hover:text-emerald-400 transition-colors">WhatsApp</a></li>
-            <li><a href="mailto:hello@tania.re" class="hover:text-emerald-400 transition-colors">hello@tania.re</a></li>
+          <div class="text-xs font-semibold uppercase tracking-wider text-white">Société</div>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li><a href="#" class="hover:text-white transition-colors">À propos</a></li>
+            <li><a href="https://wa.me/33648345707" target="_blank" rel="noopener" class="hover:text-white transition-colors">Contact</a></li>
+            <li><a href="#cta-final" class="hover:text-white transition-colors">Liste d&rsquo;attente</a></li>
+            <li><span class="opacity-60">Blog (à venir)</span></li>
           </ul>
         </div>
 
+        <div>
+          <div class="text-xs font-semibold uppercase tracking-wider text-white">Légal</div>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li><a href="#" class="hover:text-white transition-colors">Mentions légales</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">CGU</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Politique de confidentialité</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">RGPD</a></li>
+          </ul>
+        </div>
       </div>
 
-      <div class="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-slate-500">© 2026 TANIA. Tous droits réservés.</p>
-        <p class="text-xs text-slate-500">Made with 💚 à La Réunion</p>
+      <div class="border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
+        <p>© 2026 TANIA · Tous droits réservés.</p>
+        <div class="flex items-center gap-4">
+          <a href="#" aria-label="LinkedIn" class="text-slate-500 hover:text-white transition-colors">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8h4.56V24H.22V8zM8.34 8h4.37v2.19h.06c.61-1.15 2.1-2.36 4.32-2.36 4.62 0 5.48 3.04 5.48 7v9.17h-4.56v-8.13c0-1.94-.04-4.43-2.7-4.43-2.7 0-3.11 2.11-3.11 4.29V24H8.34V8z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram" class="text-slate-500 hover:text-white transition-colors">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        </div>
       </div>
     </div>
   </footer>
 
+  <!-- ═════════════════════════════════════════════ -->
+  <!-- JS — menu, accordéons, observer, formulaire   -->
+  <!-- ═════════════════════════════════════════════ -->
+  <script>
+    // Menu mobile
+    const burger = document.getElementById('burger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (burger && mobileMenu) {
+      burger.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+      mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+    }
+
+    // Animations on-scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Formulaire liste d'attente
+    const form = document.getElementById('waitlist-form');
+    const status = document.getElementById('wl-status');
+    if (form) {
+      form.addEventListener('submit', async (ev) => {
+        ev.preventDefault();
+        status.textContent = 'Envoi en cours…';
+        const data = Object.fromEntries(new FormData(form).entries());
+        try {
+          const res = await fetch('/api/waitlist', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+          });
+          if (res.ok) {
+            status.textContent = 'Merci ! Vous êtes inscrit·e sur la liste d’attente.';
+            form.reset();
+          } else {
+            status.textContent = 'Une erreur est survenue. Réessayez ou contactez-nous sur WhatsApp.';
+          }
+        } catch (_e) {
+          status.textContent = 'Connexion impossible. Réessayez plus tard ou écrivez-nous sur WhatsApp.';
+        }
+      });
+    }
+  </script>
 </body>
 </html>
