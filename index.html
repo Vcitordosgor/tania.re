@@ -3,15 +3,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TANIA — Facturation par WhatsApp pour les TPE et PME de La Réunion</title>
+  <title>Tania — Facturation par WhatsApp pour les TPE et PME de La Réunion</title>
   <meta name="description" content="Conforme à la réforme du 1er septembre 2026. Conçu à La Réunion pour les TPE et PME. Vos factures par WhatsApp, simplement." />
   <meta name="theme-color" content="#10b981" />
 
-  <meta property="og:title" content="TANIA — Facturation par WhatsApp" />
+  <meta property="og:title" content="Tania — Facturation par WhatsApp" />
   <meta property="og:description" content="Conforme réforme 2026. Conçu à La Réunion." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://tania-re.pages.dev" />
+  <meta property="og:url" content="https://tania.re" />
   <meta property="og:locale" content="fr_FR" />
+  <meta property="og:image" content="https://tania.re/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tania — Facturation par WhatsApp" />
+  <meta name="twitter:description" content="Conforme réforme 2026. Conçu à La Réunion." />
+  <meta name="twitter:image" content="https://tania.re/og-image.png" />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="manifest" href="/site.webmanifest" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -79,6 +87,41 @@
     .reveal[data-delay="2"] { transition-delay: 0.2s; }
     .reveal[data-delay="3"] { transition-delay: 0.3s; }
 
+    /* ─── Logo wordmark "Tania" avec gap dans le T ─── */
+    .tania-logo {
+      position: relative; display: inline-block; line-height: 1;
+      font-family: 'Inter', sans-serif; font-weight: 600;
+      letter-spacing: -0.025em; color: #10b981;
+    }
+    .tania-logo .gap {
+      position: absolute; background: #ffffff;
+    }
+    /* Tailles : sm 24 / md 32 / lg 48 / xl 64 */
+    .tania-logo.sm { font-size: 24px; }
+    .tania-logo.sm .gap { width: 8px; height: 1px; left: 3px; top: 6px; }
+    .tania-logo.md { font-size: 32px; }
+    .tania-logo.md .gap { width: 11px; height: 1.5px; left: 4px; top: 8px; }
+    .tania-logo.lg { font-size: 48px; }
+    .tania-logo.lg .gap { width: 17px; height: 2px; left: 6px; top: 12px; }
+    .tania-logo.xl { font-size: 64px; }
+    .tania-logo.xl .gap { width: 22px; height: 2.5px; left: 8px; top: 16px; }
+    /* Variantes de fond (couleur du gap = couleur du fond) */
+    .tania-logo.on-white .gap   { background: #ffffff; }
+    .tania-logo.on-slate-50 .gap{ background: #f8fafc; }
+    .tania-logo.on-emerald .gap { background: #10b981; }
+    .tania-logo.on-slate-900    { color: #ffffff; }
+    .tania-logo.on-slate-900 .gap { background: #0f172a; }
+    .tania-logo.on-emerald      { color: #ffffff; }
+
+    /* ─── Pulse dot (optionnel) ─── */
+    @keyframes tania-pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.15); }
+    }
+    .tania-pulse-dot { position: relative; display: inline-block; width: 15px; height: 15px; flex-shrink: 0; }
+    .tania-pulse-dot .halo { position: absolute; inset: 0; background: #10b981; border-radius: 50%; opacity: 0.3; animation: tania-pulse 2.5s ease-in-out infinite; }
+    .tania-pulse-dot .core { position: absolute; inset: 3px; background: #10b981; border-radius: 50%; }
+
     /* ─── Reduced motion ─── */
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
@@ -91,8 +134,10 @@
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "TANIA",
-    "url": "https://tania-re.pages.dev",
+    "name": "Tania",
+    "url": "https://tania.re",
+    "logo": "https://tania.re/favicon.svg",
+    "description": "Facturation par WhatsApp pour les TPE et PME de La Réunion",
     "telephone": "+262648345707",
     "address": { "@type": "PostalAddress", "addressRegion": "La Réunion", "addressCountry": "FR" }
   }
@@ -111,7 +156,7 @@
   <!-- ─────────────── Navigation ─────────────── -->
   <header class="sticky top-0 z-40 bg-white/85 backdrop-blur border-b border-slate-100">
     <div class="max-w-6xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="#" class="text-2xl font-extrabold text-emerald-600 tracking-tight">TANIA</a>
+      <a href="#" aria-label="Tania — Accueil" class="tania-logo md on-white">Tania<span class="gap" aria-hidden="true"></span></a>
 
       <nav class="hidden md:flex items-center gap-8 text-sm text-slate-700">
         <a href="#comment-ca-marche" class="hover:text-emerald-600 transition-colors">Comment ça marche</a>
@@ -161,11 +206,11 @@
           </p>
 
           <div class="reveal mt-10 flex flex-col sm:flex-row gap-4" data-delay="2">
-            <a href="https://wa.me/33648345707?text=Bonjour%20TANIA%2C%20je%20souhaite%20r%C3%A9server%20une%20d%C3%A9mo" target="_blank" rel="noopener" class="inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-white px-7 py-4 rounded-md font-semibold text-base shadow-sm hover:shadow-md transition-all" data-track="hero-cta">
+            <a href="https://wa.me/33648345707?text=Bonjour%20Tania%2C%20je%20souhaite%20r%C3%A9server%20une%20d%C3%A9mo" target="_blank" rel="noopener" class="inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-white px-7 py-4 rounded-md font-semibold text-base shadow-sm hover:shadow-md transition-all" data-track="hero-cta">
               Réserver ma démo gratuite →
             </a>
             <a href="#comment-ca-marche" class="inline-flex items-center justify-center bg-white border-2 border-slate-900 hover:bg-slate-50 text-slate-900 px-7 py-4 rounded-md font-semibold text-base transition-colors" data-track="hero-secondary">
-              Découvrir TANIA
+              Découvrir Tania
             </a>
           </div>
 
@@ -196,7 +241,7 @@
                 <div class="bg-emerald-600 text-white px-3 py-2.5 flex items-center gap-3">
                   <div class="w-9 h-9 rounded-full bg-emerald-800 flex items-center justify-center font-bold text-sm">T</div>
                   <div>
-                    <div class="font-semibold text-sm leading-tight">TANIA</div>
+                    <div class="font-semibold text-sm leading-tight">Tania</div>
                     <div class="text-[10px] text-emerald-100 flex items-center gap-1"><span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-300"></span> en ligne</div>
                   </div>
                 </div>
@@ -264,7 +309,7 @@
         </div>
       </div>
 
-      <p class="reveal text-center mt-16 text-xl font-medium text-slate-900">TANIA, c&rsquo;est l&rsquo;inverse de tout ça.</p>
+      <p class="reveal text-center mt-16 text-xl font-medium text-slate-900">Tania, c&rsquo;est l&rsquo;inverse de tout ça.</p>
     </div>
   </section>
 
@@ -278,7 +323,7 @@
         <h2 class="mt-3 text-3xl md:text-4xl lg:text-[40px] lg:leading-[48px] font-bold text-slate-900 tracking-tighter2">
           Trois étapes. Pas une de plus.
         </h2>
-        <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">TANIA est conçue pour être utilisable en moins de 30 secondes.</p>
+        <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Tania est conçue pour être utilisable en moins de 30 secondes.</p>
       </div>
 
       <div class="relative mt-16 grid md:grid-cols-3 gap-12 md:gap-6">
@@ -296,7 +341,7 @@
         <!-- Étape 2 -->
         <div class="reveal text-center" data-delay="2">
           <div class="mx-auto w-12 h-12 rounded-full bg-emerald-100 text-emerald-700 font-bold text-lg flex items-center justify-center">2</div>
-          <h3 class="mt-6 text-xl font-semibold text-slate-900">TANIA crée votre facture</h3>
+          <h3 class="mt-6 text-xl font-semibold text-slate-900">Tania crée votre facture</h3>
           <p class="mt-3 text-base text-slate-600 leading-relaxed">En quelques secondes, au format Factur-X obligatoire à partir de septembre 2026.</p>
           <div class="mt-6 mx-auto max-w-xs bg-slate-50 border border-slate-200 rounded-2xl p-4">
             <div class="flex"><div class="mr-auto bg-white shadow-sm rounded-2xl rounded-tl-sm px-3 py-2 text-[13px] text-slate-900 whitespace-pre-line">✅ Facture F-2026-0042
@@ -323,7 +368,7 @@
   </section>
 
   <!-- ═════════════════════════════════════════════ -->
-  <!-- SECTION 4 — VOIR TANIA EN ACTION              -->
+  <!-- SECTION 4 — VOIR Tania EN ACTION              -->
   <!-- ═════════════════════════════════════════════ -->
   <section id="demo" class="bg-slate-50 py-16 lg:py-24">
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
@@ -348,12 +393,12 @@
             <div class="bg-emerald-600 text-white px-4 py-3 flex items-center gap-3">
               <div class="w-10 h-10 rounded-full bg-emerald-800 flex items-center justify-center font-bold">T</div>
               <div>
-                <div class="font-semibold text-sm leading-tight">TANIA</div>
+                <div class="font-semibold text-sm leading-tight">Tania</div>
                 <div class="text-[10px] text-emerald-100 flex items-center gap-1"><span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-300"></span> en ligne</div>
               </div>
             </div>
             <div class="flex-1 bg-slate-50 p-3 flex flex-col gap-2 overflow-y-auto text-[13px]">
-              <div class="flex"><div class="ml-auto bg-emerald-100 rounded-2xl rounded-tr-sm px-3 py-2 text-slate-900">Bonjour TANIA<div class="text-[10px] text-slate-500 text-right mt-0.5">10:06 ✓✓</div></div></div>
+              <div class="flex"><div class="ml-auto bg-emerald-100 rounded-2xl rounded-tr-sm px-3 py-2 text-slate-900">Bonjour Tania<div class="text-[10px] text-slate-500 text-right mt-0.5">10:06 ✓✓</div></div></div>
               <div class="flex"><div class="mr-auto bg-white shadow-sm rounded-2xl rounded-tl-sm px-3 py-2 text-slate-900">Bonjour&#8239;! Comment puis-je vous aider&#8239;?<div class="text-[10px] text-slate-500 text-right mt-0.5">10:06</div></div></div>
               <div class="flex"><div class="ml-auto bg-emerald-100 rounded-2xl rounded-tr-sm px-3 py-2 text-slate-900">Sophie Dijoux, coupe couleur, 95&nbsp;€, espèces<div class="text-[10px] text-slate-500 text-right mt-0.5">10:07 ✓✓</div></div></div>
               <div class="flex"><div class="mr-auto bg-white shadow-sm rounded-2xl rounded-tl-sm px-3 py-2 text-slate-900 whitespace-pre-line">✅ Facture créée&nbsp;: F-2026-0058
@@ -372,7 +417,7 @@
             </div>
           </div>
         </div>
-        <p class="text-sm text-slate-500 text-center mt-6">Conversation réelle. TANIA répond en moyenne en moins de 3 secondes.</p>
+        <p class="text-sm text-slate-500 text-center mt-6">Conversation réelle. Tania répond en moyenne en moins de 3 secondes.</p>
       </div>
     </div>
   </section>
@@ -386,7 +431,7 @@
         <h2 class="text-3xl md:text-4xl lg:text-[40px] lg:leading-[48px] font-bold text-slate-900 tracking-tighter2">
           Pour toutes les TPE et PME de La Réunion.
         </h2>
-        <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Quel que soit votre métier, si vous facturez, TANIA est faite pour vous.</p>
+        <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Quel que soit votre métier, si vous facturez, Tania est faite pour vous.</p>
       </div>
     </div>
 
@@ -566,7 +611,7 @@
               <span class="text-lg font-semibold text-white">Qu&rsquo;est-ce qu&rsquo;une plateforme agréée&#8239;?</span>
               <span class="acc-icon text-emerald-400 text-2xl leading-none">+</span>
             </summary>
-            <p class="acc-body mt-4 text-base text-slate-300 leading-relaxed">C&rsquo;est l&rsquo;intermédiaire technique entre votre entreprise et l&rsquo;administration fiscale. TANIA est en cours d&rsquo;intégration avec plusieurs plateformes agréées par l&rsquo;État.</p>
+            <p class="acc-body mt-4 text-base text-slate-300 leading-relaxed">C&rsquo;est l&rsquo;intermédiaire technique entre votre entreprise et l&rsquo;administration fiscale. Tania est en cours d&rsquo;intégration avec plusieurs plateformes agréées par l&rsquo;État.</p>
           </details>
           <details open class="bg-slate-800 border border-slate-700 rounded-xl p-6">
             <summary class="flex items-center justify-between gap-4">
@@ -581,13 +626,13 @@
   </section>
 
   <!-- ═════════════════════════════════════════════ -->
-  <!-- SECTION 7 — POURQUOI TANIA (comparatif)       -->
+  <!-- SECTION 7 — POURQUOI Tania (comparatif)       -->
   <!-- ═════════════════════════════════════════════ -->
   <section class="bg-white py-16 lg:py-24">
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
       <div class="text-center reveal">
         <h2 class="text-3xl md:text-4xl lg:text-[40px] lg:leading-[48px] font-bold text-slate-900 tracking-tighter2">
-          Pourquoi TANIA&#8239;?
+          Pourquoi Tania&#8239;?
         </h2>
         <p class="mt-4 text-lg text-slate-600">Comparé à votre organisation actuelle.</p>
       </div>
@@ -600,7 +645,7 @@
               <th class="text-left font-semibold px-6 py-4 w-1/4"></th>
               <th class="text-left font-semibold px-6 py-4">Carnet, Excel, post-it</th>
               <th class="text-left font-semibold px-6 py-4">Logiciels comptables</th>
-              <th class="text-left font-semibold px-6 py-4 bg-emerald-100 text-emerald-900">TANIA</th>
+              <th class="text-left font-semibold px-6 py-4 bg-emerald-100 text-emerald-900">Tania</th>
             </tr>
           </thead>
           <tbody class="text-slate-700">
@@ -668,7 +713,7 @@
           </ul>
         </div>
         <div class="bg-emerald-50 border-2 border-emerald-500 rounded-xl p-6">
-          <p class="text-xs font-semibold uppercase tracking-wider text-emerald-700">TANIA</p>
+          <p class="text-xs font-semibold uppercase tracking-wider text-emerald-700">Tania</p>
           <ul class="mt-4 space-y-2 text-sm text-emerald-900">
             <li>✅ Conforme 2026</li>
             <li>0 apprentissage (WhatsApp)</li>
@@ -757,13 +802,13 @@
     <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center reveal">
       <p class="text-emerald-600 font-semibold text-sm uppercase tracking-wider">L&rsquo;histoire</p>
       <h2 class="mt-3 text-3xl md:text-4xl lg:text-[40px] lg:leading-[48px] font-bold text-slate-900 tracking-tighter2">
-        Pourquoi TANIA existe.
+        Pourquoi Tania existe.
       </h2>
 
       <div class="mt-8 text-lg text-slate-700 leading-relaxed text-left space-y-5">
-        <p>TANIA est née à La Réunion en 2026, après un constat simple&nbsp;: les solutions de facturation pensées pour Paris ne comprennent pas le quotidien des entrepreneurs réunionnais.</p>
+        <p>Tania est née à La Réunion en 2026, après un constat simple&nbsp;: les solutions de facturation pensées pour Paris ne comprennent pas le quotidien des entrepreneurs réunionnais.</p>
         <p>Pendant que la réforme française de septembre 2026 approchait, nous avons vu autour de nous des artisans, des commerçants, des prestataires de services — tous dépassés par la paperasse, souvent inquiets, parfois découragés.</p>
-        <p>Nous avons construit TANIA pour eux. Pour vous.</p>
+        <p>Nous avons construit Tania pour eux. Pour vous.</p>
         <p>Un outil simple comme un message WhatsApp. Sérieux comme la réglementation l&rsquo;exige. Et profondément ancré dans le quotidien des TPE et PME de La Réunion.</p>
       </div>
 
@@ -789,7 +834,7 @@
       <div class="mt-12 divide-y divide-slate-200 border-y border-slate-200">
         <details class="py-6">
           <summary class="flex items-center justify-between gap-4">
-            <span class="text-lg font-semibold text-slate-900">Combien de temps pour commencer avec TANIA&#8239;?</span>
+            <span class="text-lg font-semibold text-slate-900">Combien de temps pour commencer avec Tania&#8239;?</span>
             <span class="acc-icon text-emerald-600 text-2xl leading-none">+</span>
           </summary>
           <p class="acc-body mt-4 text-base text-slate-600 leading-relaxed">15 minutes. Une fois votre profil créé via WhatsApp, vous pouvez envoyer votre première facture immédiatement.</p>
@@ -803,7 +848,7 @@
         </details>
         <details class="py-6">
           <summary class="flex items-center justify-between gap-4">
-            <span class="text-lg font-semibold text-slate-900">Et si je décide de quitter TANIA&#8239;?</span>
+            <span class="text-lg font-semibold text-slate-900">Et si je décide de quitter Tania&#8239;?</span>
             <span class="acc-icon text-emerald-600 text-2xl leading-none">+</span>
           </summary>
           <p class="acc-body mt-4 text-base text-slate-600 leading-relaxed">Vous récupérez l&rsquo;intégralité de vos factures aux formats PDF et Factur-X. Aucun verrouillage.</p>
@@ -817,7 +862,7 @@
         </details>
         <details class="py-6">
           <summary class="flex items-center justify-between gap-4">
-            <span class="text-lg font-semibold text-slate-900">TANIA fonctionne-t-elle hors connexion&#8239;?</span>
+            <span class="text-lg font-semibold text-slate-900">Tania fonctionne-t-elle hors connexion&#8239;?</span>
             <span class="acc-icon text-emerald-600 text-2xl leading-none">+</span>
           </summary>
           <p class="acc-body mt-4 text-base text-slate-600 leading-relaxed">Vos messages WhatsApp sont enregistrés par le système et traités dès que vous retrouvez la connexion.</p>
@@ -827,21 +872,21 @@
             <span class="text-lg font-semibold text-slate-900">Je suis en franchise TVA. Cela change-t-il quelque chose&#8239;?</span>
             <span class="acc-icon text-emerald-600 text-2xl leading-none">+</span>
           </summary>
-          <p class="acc-body mt-4 text-base text-slate-600 leading-relaxed">Non. TANIA gère parfaitement la franchise TVA — la mention «&nbsp;TVA non applicable, art. 293 B du CGI&nbsp;» est incluse automatiquement sur vos factures.</p>
+          <p class="acc-body mt-4 text-base text-slate-600 leading-relaxed">Non. Tania gère parfaitement la franchise TVA — la mention «&nbsp;TVA non applicable, art. 293 B du CGI&nbsp;» est incluse automatiquement sur vos factures.</p>
         </details>
         <details class="py-6">
           <summary class="flex items-center justify-between gap-4">
             <span class="text-lg font-semibold text-slate-900">Êtes-vous vraiment à La Réunion&#8239;?</span>
             <span class="acc-icon text-emerald-600 text-2xl leading-none">+</span>
           </summary>
-          <p class="acc-body mt-4 text-base text-slate-600 leading-relaxed">Oui. TANIA est conçue et opérée depuis La Réunion. Notre support comprend vos réalités, vos clients, vos contraintes.</p>
+          <p class="acc-body mt-4 text-base text-slate-600 leading-relaxed">Oui. Tania est conçue et opérée depuis La Réunion. Notre support comprend vos réalités, vos clients, vos contraintes.</p>
         </details>
         <details class="py-6">
           <summary class="flex items-center justify-between gap-4">
             <span class="text-lg font-semibold text-slate-900">Quand pourrai-je vraiment commencer&#8239;?</span>
             <span class="acc-icon text-emerald-600 text-2xl leading-none">+</span>
           </summary>
-          <p class="acc-body mt-4 text-base text-slate-600 leading-relaxed">TANIA est en finalisation. Inscrivez-vous sur la liste d&rsquo;attente pour bénéficier du tarif préférentiel à vie.</p>
+          <p class="acc-body mt-4 text-base text-slate-600 leading-relaxed">Tania est en finalisation. Inscrivez-vous sur la liste d&rsquo;attente pour bénéficier du tarif préférentiel à vie.</p>
         </details>
       </div>
     </div>
@@ -856,7 +901,7 @@
         Prêt à arrêter le désordre administratif&#8239;?
       </h2>
       <p class="mt-6 text-xl text-emerald-50">
-        Rejoignez la liste d&rsquo;attente. Soyez parmi les premières entreprises réunionnaises à passer à TANIA.
+        Rejoignez la liste d&rsquo;attente. Soyez parmi les premières entreprises réunionnaises à passer à Tania.
       </p>
 
       <form id="waitlist-form" action="/api/waitlist" method="POST" class="mt-10 max-w-lg mx-auto text-left">
@@ -876,7 +921,7 @@
 
       <p class="text-emerald-100 mt-12">— OU —</p>
       <p class="text-white mt-6">Vous préférez nous parler directement&#8239;?</p>
-      <a href="https://wa.me/33648345707?text=Bonjour%20TANIA" target="_blank" rel="noopener" class="inline-flex items-center justify-center mt-4 bg-white text-emerald-700 hover:bg-emerald-50 px-7 py-3 rounded-md font-semibold transition" data-track="whatsapp-cta">
+      <a href="https://wa.me/33648345707?text=Bonjour%20Tania" target="_blank" rel="noopener" class="inline-flex items-center justify-center mt-4 bg-white text-emerald-700 hover:bg-emerald-50 px-7 py-3 rounded-md font-semibold transition" data-track="whatsapp-cta">
         💬 Écrire sur WhatsApp
       </a>
     </div>
@@ -890,7 +935,7 @@
       <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
 
         <div class="md:col-span-1">
-          <div class="text-2xl font-extrabold text-white tracking-tight">TANIA</div>
+          <div class="tania-logo md on-slate-900">Tania<span class="gap" aria-hidden="true"></span></div>
           <p class="mt-4 text-sm leading-relaxed max-w-xs">La facturation par WhatsApp pour les TPE et PME de La Réunion.</p>
           <p class="mt-4 text-sm">🌴 Conçu à La Réunion</p>
         </div>
@@ -927,7 +972,7 @@
       </div>
 
       <div class="border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
-        <p>© 2026 TANIA · Tous droits réservés.</p>
+        <p>© 2026 Tania · Tous droits réservés.</p>
         <div class="flex items-center gap-4">
           <a href="#" aria-label="LinkedIn" class="text-slate-500 hover:text-white transition-colors">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8h4.56V24H.22V8zM8.34 8h4.37v2.19h.06c.61-1.15 2.1-2.36 4.32-2.36 4.62 0 5.48 3.04 5.48 7v9.17h-4.56v-8.13c0-1.94-.04-4.43-2.7-4.43-2.7 0-3.11 2.11-3.11 4.29V24H8.34V8z"/></svg>
