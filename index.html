@@ -113,6 +113,26 @@
     .tania-logo.on-slate-900 .gap { background: #0f172a; }
     .tania-logo.on-emerald      { color: #ffffff; }
 
+    /* ─── Logo animé navbar : "T" SVG + "ania" texte ─── */
+    .tania-anim-logo { display: inline-flex; align-items: center; line-height: 1; }
+    .tania-anim-logo .tania-ania {
+      font-family: 'Inter', sans-serif; font-weight: 500;
+      font-size: 22px; color: #059669; letter-spacing: -0.02em;
+      margin-left: -4px;
+    }
+    .tania-t .bar-h { stroke-dasharray: 24; stroke-dashoffset: 0; animation: bar-h-redraw 6s ease-in-out infinite; }
+    .tania-t .bar-v { stroke-dasharray: 20; stroke-dashoffset: 0; animation: bar-v-redraw 6s ease-in-out infinite; }
+    @keyframes bar-h-redraw {
+      0%, 80% { stroke-dashoffset: 0; }
+      85%     { stroke-dashoffset: 24; }
+      90%, 100% { stroke-dashoffset: 0; }
+    }
+    @keyframes bar-v-redraw {
+      0%, 87% { stroke-dashoffset: 0; }
+      91.5%   { stroke-dashoffset: 20; }
+      96%, 100% { stroke-dashoffset: 0; }
+    }
+
     /* ─── Pulse dot (optionnel) ─── */
     @keyframes tania-pulse {
       0%, 100% { opacity: 1; transform: scale(1); }
@@ -158,9 +178,15 @@
   </div>
 
   <!-- ─────────────── Navigation ─────────────── -->
-  <header class="sticky top-0 z-40 bg-white/85 backdrop-blur border-b border-slate-100">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-100">
     <div class="max-w-6xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="#" aria-label="Tania — Accueil" class="tania-logo md on-white">Tania<span class="gap" aria-hidden="true"></span></a>
+      <a href="/" aria-label="Tania — Accueil" class="tania-anim-logo">
+        <svg class="tania-t" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true">
+          <line class="bar-h" x1="2" y1="6" x2="26" y2="6" stroke="#059669" stroke-width="4" stroke-linecap="square"/>
+          <line class="bar-v" x1="14" y1="6" x2="14" y2="26" stroke="#059669" stroke-width="4" stroke-linecap="square"/>
+        </svg>
+        <span class="tania-ania">ania</span>
+      </a>
 
       <nav class="hidden md:flex items-center gap-8 text-sm text-slate-700">
         <a href="#comment-ca-marche" class="hover:text-emerald-600 transition-colors">Comment ça marche</a>
