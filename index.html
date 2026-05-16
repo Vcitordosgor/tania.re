@@ -95,6 +95,15 @@
     }
     .tania-logo .gap {
       position: absolute; background: #ffffff;
+      animation: gap-redraw 6s ease-in-out infinite;
+      transform-origin: left center;
+    }
+    @keyframes gap-redraw {
+      0%, 80% { transform: scaleX(1); opacity: 1; }
+      85%     { transform: scaleX(0); opacity: 0.5; }
+      86%     { transform: scaleX(0); opacity: 1; }
+      95%     { transform: scaleX(1); opacity: 1; }
+      100%    { transform: scaleX(1); opacity: 1; }
     }
     /* Tailles : sm 24 / md 32 / lg 48 / xl 64 */
     .tania-logo.sm { font-size: 24px; }
@@ -158,9 +167,9 @@
   </div>
 
   <!-- ─────────────── Navigation ─────────────── -->
-  <header class="sticky top-0 z-40 bg-white/85 backdrop-blur border-b border-slate-100">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-100">
     <div class="max-w-6xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="#" aria-label="Tania — Accueil" class="tania-logo md on-white">Tania<span class="gap" aria-hidden="true"></span></a>
+      <a href="/" aria-label="Tania — Accueil" class="tania-logo md on-white">Tania<span class="gap" aria-hidden="true"></span></a>
 
       <nav class="hidden md:flex items-center gap-8 text-sm text-slate-700">
         <a href="#comment-ca-marche" class="hover:text-emerald-600 transition-colors">Comment ça marche</a>
