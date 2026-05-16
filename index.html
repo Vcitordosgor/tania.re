@@ -87,40 +87,45 @@
     .reveal[data-delay="2"] { transition-delay: 0.2s; }
     .reveal[data-delay="3"] { transition-delay: 0.3s; }
 
-    /* ─── Logo wordmark "Tania" avec gap dans le T ─── */
+    /* ─── Logo Tania : T en SVG + "ania" en Inter ─── */
     .tania-logo {
-      position: relative; display: inline-block; line-height: 1;
-      font-family: 'Inter', sans-serif; font-weight: 600;
-      letter-spacing: -0.025em; color: #10b981;
+      display: inline-flex; align-items: center; gap: 0;
+      line-height: 1; text-decoration: none; color: #10b981;
     }
-    .tania-logo .gap {
-      position: absolute; background: #ffffff;
-      animation: gap-redraw 6s ease-in-out infinite;
-      transform-origin: left center;
+    .tania-T { height: 1em; width: auto; display: block; }
+    .tania-ania {
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-weight: 600; font-size: 1em;
+      letter-spacing: -0.025em; line-height: 1; color: inherit;
     }
-    @keyframes gap-redraw {
-      0%, 80% { transform: scaleX(1); opacity: 1; }
-      85%     { transform: scaleX(0); opacity: 0.5; }
-      86%     { transform: scaleX(0); opacity: 1; }
-      95%     { transform: scaleX(1); opacity: 1; }
-      100%    { transform: scaleX(1); opacity: 1; }
-    }
-    /* Tailles : sm 24 / md 32 / lg 48 / xl 64 */
-    .tania-logo.sm { font-size: 24px; }
-    .tania-logo.sm .gap { width: 8px; height: 1px; left: 3px; top: 6px; }
+    /* Tailles */
+    .tania-logo.sm { font-size: 20px; }
     .tania-logo.md { font-size: 32px; }
-    .tania-logo.md .gap { width: 11px; height: 1.5px; left: 4px; top: 8px; }
     .tania-logo.lg { font-size: 48px; }
-    .tania-logo.lg .gap { width: 17px; height: 2px; left: 6px; top: 12px; }
     .tania-logo.xl { font-size: 64px; }
-    .tania-logo.xl .gap { width: 22px; height: 2.5px; left: 8px; top: 16px; }
-    /* Variantes de fond (couleur du gap = couleur du fond) */
-    .tania-logo.on-white .gap   { background: #ffffff; }
-    .tania-logo.on-slate-50 .gap{ background: #f8fafc; }
-    .tania-logo.on-emerald .gap { background: #10b981; }
-    .tania-logo.on-slate-900    { color: #ffffff; }
-    .tania-logo.on-slate-900 .gap { background: #0f172a; }
-    .tania-logo.on-emerald      { color: #ffffff; }
+    /* Variante sur fond sombre : "ania" et T restent emerald (contraste OK) */
+    .tania-logo.on-slate-900 { color: #10b981; }
+
+    /* Animation des 2 barres du T (cycle 6s) */
+    .tania-T .t-bar  { transform-origin: left center; animation: t-bar-draw 6s ease-in-out infinite; }
+    .tania-T .t-stem { transform-origin: top center;  animation: t-stem-draw 6s ease-in-out infinite; }
+    @keyframes t-bar-draw {
+      0%, 10% { transform: scaleX(0); }
+      25%     { transform: scaleX(1); }
+      85%     { transform: scaleX(1); }
+      95%     { transform: scaleX(0); }
+      100%    { transform: scaleX(0); }
+    }
+    @keyframes t-stem-draw {
+      0%, 25% { transform: scaleY(0); }
+      45%     { transform: scaleY(1); }
+      85%     { transform: scaleY(1); }
+      95%     { transform: scaleY(0); }
+      100%    { transform: scaleY(0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .tania-T .t-bar, .tania-T .t-stem { animation: none; transform: scaleX(1) scaleY(1); }
+    }
 
     /* ─── Pulse dot (optionnel) ─── */
     @keyframes tania-pulse {
@@ -169,7 +174,13 @@
   <!-- ─────────────── Navigation ─────────────── -->
   <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-100">
     <div class="max-w-6xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="/" aria-label="Tania — Accueil" class="tania-logo md on-white">Tania<span class="gap" aria-hidden="true"></span></a>
+      <a href="/" aria-label="Tania — Accueil" class="tania-logo md">
+        <svg class="tania-T" viewBox="0 0 80 80" preserveAspectRatio="xMinYMid meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect class="t-bar"  x="0"  y="14" width="80" height="18" fill="#10b981"/>
+          <rect class="t-stem" x="31" y="42" width="18" height="38" fill="#10b981"/>
+        </svg>
+        <span class="tania-ania">ania</span>
+      </a>
 
       <nav class="hidden md:flex items-center gap-8 text-sm text-slate-700">
         <a href="#comment-ca-marche" class="hover:text-emerald-600 transition-colors">Comment ça marche</a>
@@ -948,7 +959,13 @@
       <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
 
         <div class="md:col-span-1">
-          <div class="tania-logo md on-slate-900">Tania<span class="gap" aria-hidden="true"></span></div>
+          <div class="tania-logo md on-slate-900" aria-label="Tania">
+            <svg class="tania-T" viewBox="0 0 80 80" preserveAspectRatio="xMinYMid meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect class="t-bar"  x="0"  y="14" width="80" height="18" fill="#10b981"/>
+              <rect class="t-stem" x="31" y="42" width="18" height="38" fill="#10b981"/>
+            </svg>
+            <span class="tania-ania">ania</span>
+          </div>
           <p class="mt-4 text-sm leading-relaxed max-w-xs">La facturation par WhatsApp pour les TPE et PME de La Réunion.</p>
           <p class="mt-4 text-sm">🌴 Conçu à La Réunion</p>
         </div>
