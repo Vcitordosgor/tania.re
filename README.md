@@ -1,6 +1,6 @@
 # tania.re
 
-Landing page de **TANIA** — votre assistante administrative sur WhatsApp.
+Landing page de **Tania** — votre assistante administrative sur WhatsApp.
 
 ## Stack
 

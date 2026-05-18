@@ -1,4 +1,4 @@
-// Cloudflare Pages Function — placeholder pour la liste d'attente TANIA.
+// Cloudflare Pages Function — placeholder pour la liste d'attente Tania.
 // À compléter : envoi email (Resend / MailChannels) ou stockage KV / D1.
 //
 // Pour activer plus tard : ajouter les bindings dans Cloudflare Pages
