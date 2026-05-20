@@ -126,7 +126,7 @@
     }
 
     /* ───────── Hero animation (loop 21s) ───────── */
-    .hero-stage { position: relative; width: 100%; min-height: 480px; overflow: visible; }
+    .hero-stage { position: relative; width: 100%; min-height: 560px; overflow: visible; }
     .lg\:col-span-2.hero-halo { overflow: visible; }
     /* Fond doodle WhatsApp authentique (cream #ECE5DD + petites icônes répétées) */
     .wa-bg {
@@ -135,23 +135,24 @@
       background-size: 200px 200px;
     }
 
-    /* iPhone (cycle 11s) */
-    .hero-iphone { max-width: 280px; margin: 0 auto; animation: iphone-cycle 11s ease-in-out infinite; }
-    @keyframes iphone-cycle {
-      0%, 50% { transform: translateX(0); opacity: 1; }
-      55%     { transform: translateX(-140%); opacity: 0; }
-      98%     { transform: translateX(-140%); opacity: 0; }
-      100%    { transform: translateX(0); opacity: 1; }
+    /* iPhone (cycle 11s, crossfade pur) */
+    .hero-iphone {
+      max-width: 280px; margin: 0 auto;
+      animation: iphone-cycle 11s cubic-bezier(0.65, 0, 0.35, 1) infinite;
     }
-    /* Bulles : 3 phases (user → typing → Tania combinée) */
-    .hero-b1, .hero-t1, .hero-b2 { opacity: 0; transform: translateY(8px) scale(0.95); }
-    .hero-b1 { animation: hb1 11s ease-out infinite; }
-    .hero-t1 { animation: ht1 11s ease-out infinite; }
-    .hero-b2 { animation: hb2 11s ease-out infinite; }
-    /* timings en % de 11s : 0s=0% 1s=9% 2s=18% 2.5s=23% 5.5s=50% 6s=55% */
-    @keyframes hb1 { 0%, 1% { opacity:0; transform:translateY(8px) scale(.95); } 5%, 53% { opacity:1; transform:translateY(0) scale(1); } 55%, 100% { opacity:0; } }
-    @keyframes ht1 { 0%, 9% { opacity:0; transform:translateY(8px) scale(.95); } 13%, 18% { opacity:1; transform:translateY(0) scale(1); } 20%, 100% { opacity:0; } }
-    @keyframes hb2 { 0%, 19% { opacity:0; transform:translateY(8px) scale(.95); } 25%, 53% { opacity:1; transform:translateY(0) scale(1); } 55%, 100% { opacity:0; } }
+    @keyframes iphone-cycle {
+      0%, 50%  { opacity: 1; transform: scale(1); }
+      59%, 95% { opacity: 0; transform: scale(0.97); }
+      100%     { opacity: 1; transform: scale(1); }
+    }
+    /* Bulles : 3 phases lissées */
+    .hero-b1, .hero-t1, .hero-b2 { opacity: 0; transform: translateY(8px) scale(0.96); }
+    .hero-b1 { animation: hb1 11s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
+    .hero-t1 { animation: ht1 11s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
+    .hero-b2 { animation: hb2 11s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
+    @keyframes hb1 { 0%, 3% { opacity:0; transform:translateY(8px) scale(.96); } 9%, 50% { opacity:1; transform:translateY(0) scale(1); } 56%, 100% { opacity:0; } }
+    @keyframes ht1 { 0%, 22% { opacity:0; transform:translateY(8px) scale(.96); } 27%, 34% { opacity:1; transform:translateY(0) scale(1); } 38%, 100% { opacity:0; } }
+    @keyframes hb2 { 0%, 34% { opacity:0; transform:translateY(8px) scale(.96); } 40%, 50% { opacity:1; transform:translateY(0) scale(1); } 56%, 100% { opacity:0; } }
 
     .hero-t1 .dot { animation: typdot 1s ease-in-out infinite; }
     .hero-t1 .dot:nth-child(2) { animation-delay: .15s; }
@@ -160,25 +161,26 @@
 
     .chat-scroll { scroll-behavior: smooth; }
 
-    /* MacBook (cycle 11s, version large qui déborde de la colonne) */
+    /* MacBook : crossfade, 16:9, débordement large vers la gauche */
     .hero-macbook {
-      position: absolute; top: 0; right: 0;
-      width: 720px; max-width: calc(100vw - 60px);
+      position: absolute; top: 50%; right: -40px;
+      width: 960px; max-width: calc(100vw - 48px);
+      transform: translateY(-50%) scale(0.97);
       pointer-events: none; opacity: 0;
-      animation: mb-cycle 11s ease-in-out infinite;
+      animation: mb-cycle 11s cubic-bezier(0.65, 0, 0.35, 1) infinite;
     }
     @keyframes mb-cycle {
-      0%, 50% { transform: translateX(140%); opacity: 0; }
-      55%, 98% { transform: translateX(0); opacity: 1; }
-      100% { transform: translateX(140%); opacity: 0; }
+      0%, 50%  { opacity: 0; transform: translateY(-50%) scale(0.97); }
+      59%, 95% { opacity: 1; transform: translateY(-50%) scale(1); }
+      100%     { opacity: 0; transform: translateY(-50%) scale(0.97); }
     }
     .hero-macbook-frame {
-      width: 100%; height: 460px;
+      width: 100%; aspect-ratio: 16 / 9; max-height: 540px;
       background: white; border: 1px solid #e2e8f0; border-radius: 14px;
-      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.14);
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.18);
       overflow: hidden; display: flex; position: relative;
     }
-    .hero-mb-sidebar { width: 170px; background: white; border-right: 1px solid #e2e8f0; padding: 14px 10px; display: flex; flex-direction: column; flex-shrink: 0; }
+    .hero-mb-sidebar { width: 200px; background: white; border-right: 1px solid #e2e8f0; padding: 18px 12px; display: flex; flex-direction: column; flex-shrink: 0; }
     .hero-mb-nav { display: flex; align-items: center; gap: 8px; padding: 7px 10px; border-radius: 6px; color: #334155; font-size: 12px; cursor: default; }
     .hero-mb-nav.hero-nav-active { background: #ecfdf5; color: #047857; font-weight: 500; }
     .hero-mb-main { flex: 1; background: #f8fafc; overflow: hidden; position: relative; }
