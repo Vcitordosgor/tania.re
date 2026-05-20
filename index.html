@@ -151,21 +151,21 @@
     /* iPhone (cycle 11s, crossfade pur) */
     .hero-iphone {
       max-width: 280px; margin: 0 auto;
-      animation: iphone-cycle 11s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+      animation: iphone-cycle 12s cubic-bezier(0.65, 0, 0.35, 1) infinite;
     }
     @keyframes iphone-cycle {
-      0%, 50%  { opacity: 1; transform: scale(1); }
-      59%, 95% { opacity: 0; transform: scale(0.97); }
+      0%, 46%  { opacity: 1; transform: scale(1); }
+      54%, 95% { opacity: 0; transform: scale(0.97); }
       100%     { opacity: 1; transform: scale(1); }
     }
-    /* Bulles : 3 phases lissées */
+    /* Bulles : 3 phases lissées (12s cycle, WhatsApp se termine vers 5.5s = 46%) */
     .hero-b1, .hero-t1, .hero-b2 { opacity: 0; transform: translateY(8px) scale(0.96); }
-    .hero-b1 { animation: hb1 11s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
-    .hero-t1 { animation: ht1 11s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
-    .hero-b2 { animation: hb2 11s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
-    @keyframes hb1 { 0%, 3% { opacity:0; transform:translateY(8px) scale(.96); } 9%, 50% { opacity:1; transform:translateY(0) scale(1); } 56%, 100% { opacity:0; } }
-    @keyframes ht1 { 0%, 22% { opacity:0; transform:translateY(8px) scale(.96); } 27%, 34% { opacity:1; transform:translateY(0) scale(1); } 38%, 100% { opacity:0; } }
-    @keyframes hb2 { 0%, 34% { opacity:0; transform:translateY(8px) scale(.96); } 40%, 50% { opacity:1; transform:translateY(0) scale(1); } 56%, 100% { opacity:0; } }
+    .hero-b1 { animation: hb1 12s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
+    .hero-t1 { animation: ht1 12s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
+    .hero-b2 { animation: hb2 12s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
+    @keyframes hb1 { 0%, 2% { opacity:0; transform:translateY(8px) scale(.96); } 7%, 46% { opacity:1; transform:translateY(0) scale(1); } 52%, 100% { opacity:0; } }
+    @keyframes ht1 { 0%, 18% { opacity:0; transform:translateY(8px) scale(.96); } 22%, 28% { opacity:1; transform:translateY(0) scale(1); } 32%, 100% { opacity:0; } }
+    @keyframes hb2 { 0%, 28% { opacity:0; transform:translateY(8px) scale(.96); } 34%, 46% { opacity:1; transform:translateY(0) scale(1); } 52%, 100% { opacity:0; } }
 
     .hero-t1 .dot { animation: typdot 1s ease-in-out infinite; }
     .hero-t1 .dot:nth-child(2) { animation-delay: .15s; }
@@ -180,11 +180,11 @@
       width: 960px; max-width: calc(100vw - 48px);
       transform: translateY(-50%) scale(0.97);
       pointer-events: none; opacity: 0;
-      animation: mb-cycle 11s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+      animation: mb-cycle 12s cubic-bezier(0.65, 0, 0.35, 1) infinite;
     }
     @keyframes mb-cycle {
-      0%, 50%  { opacity: 0; transform: translateY(-50%) scale(0.97); }
-      59%, 95% { opacity: 1; transform: translateY(-50%) scale(1); }
+      0%, 46%  { opacity: 0; transform: translateY(-50%) scale(0.97); }
+      54%, 95% { opacity: 1; transform: translateY(-50%) scale(1); }
       100%     { opacity: 0; transform: translateY(-50%) scale(0.97); }
     }
     .hero-macbook-frame {
@@ -195,47 +195,80 @@
     }
     .hero-mb-sidebar { width: 200px; background: white; border-right: 1px solid #e2e8f0; padding: 18px 12px; display: flex; flex-direction: column; flex-shrink: 0; }
     .hero-mb-nav { display: flex; align-items: center; gap: 8px; padding: 7px 10px; border-radius: 6px; color: #334155; font-size: 12px; cursor: default; transition: background 0.25s ease, color 0.25s ease, transform 0.15s ease; }
-    .hero-mb-nav.hero-nav-accueil { animation: nav-accueil 11s linear infinite; }
-    .hero-mb-nav.hero-nav-factures { animation: nav-factures 11s linear infinite; }
+    .hero-mb-nav.hero-nav-accueil { animation: nav-accueil 12s linear infinite; }
+    .hero-mb-nav.hero-nav-factures { animation: nav-factures 12s linear infinite; }
     @keyframes nav-accueil {
-      0%, 70%  { background: #ecfdf5; color: #047857; font-weight: 500; }
-      72%, 100% { background: transparent; color: #334155; font-weight: 400; }
+      0%, 56%  { background: #ecfdf5; color: #047857; font-weight: 500; }
+      58%, 100% { background: transparent; color: #334155; font-weight: 400; }
     }
     @keyframes nav-factures {
-      0%, 70%  { background: transparent; color: #334155; font-weight: 400; transform: scale(1); }
-      71%      { background: #ecfdf5; color: #047857; font-weight: 500; transform: scale(0.96); }
-      73%, 100% { background: #ecfdf5; color: #047857; font-weight: 500; transform: scale(1); }
+      0%, 56%  { background: transparent; color: #334155; font-weight: 400; transform: scale(1); }
+      57%      { background: #ecfdf5; color: #047857; font-weight: 500; transform: scale(0.96); }
+      59%, 100% { background: #ecfdf5; color: #047857; font-weight: 500; transform: scale(1); }
     }
     .hero-mb-main { flex: 1; background: #f8fafc; overflow: hidden; position: relative; }
     /* Vues */
-    .hero-view-accueil { opacity: 0; animation: view-accueil 11s ease-out infinite; }
-    .hero-view-factures { opacity: 0; animation: view-factures 11s ease-out infinite; }
+    .hero-view-accueil { opacity: 0; animation: view-accueil 12s ease-out infinite; }
+    .hero-view-factures { opacity: 0; animation: view-factures 12s ease-out infinite; }
     @keyframes view-accueil {
-      0%, 56% { opacity: 0; }
-      60%, 70% { opacity: 1; }
-      72%, 100% { opacity: 0; }
+      0%, 47% { opacity: 0; }
+      50%, 56% { opacity: 1; }
+      58%, 100% { opacity: 0; }
     }
     @keyframes view-factures {
-      0%, 70% { opacity: 0; }
-      73%, 95% { opacity: 1; }
+      0%, 56% { opacity: 0; }
+      59%, 95% { opacity: 1; }
       98%, 100% { opacity: 0; }
     }
-    /* Curseur macOS : apparaît centre-droit, glisse vers Factures (sidebar), clic, disparaît */
-    .hero-cursor { position: absolute; left: 0; top: 0; opacity: 0; animation: cursor-cycle 11s cubic-bezier(0.4, 0, 0.2, 1) infinite; pointer-events: none; z-index: 10; filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2)); }
+    /* Overlay PDF facture */
+    .hero-pdf-overlay { position: absolute; inset: 0; opacity: 0; pointer-events: none; animation: pdf-cycle 12s ease-out infinite; z-index: 20; }
+    .hero-pdf-backdrop { position: absolute; inset: 0; background: rgba(15, 23, 42, 0.45); }
+    .hero-pdf-sheet {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%) scale(0.94);
+      width: 360px; height: 470px;
+      background: white; border-radius: 4px;
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3);
+      padding: 18px 20px;
+      display: flex; flex-direction: column;
+      animation: pdf-sheet-cycle 12s ease-out infinite;
+    }
+    @keyframes pdf-cycle {
+      0%, 71% { opacity: 0; }
+      74%, 92% { opacity: 1; }
+      96%, 100% { opacity: 0; }
+    }
+    @keyframes pdf-sheet-cycle {
+      0%, 71% { transform: translate(-50%, -45%) scale(0.94); }
+      75%, 92% { transform: translate(-50%, -50%) scale(1); }
+      96%, 100% { transform: translate(-50%, -55%) scale(0.94); }
+    }
+    /* Curseur macOS : 2 stops — Factures (sidebar), puis œil F-2026-0003 (row), clics aux deux */
+    .hero-cursor { position: absolute; left: 0; top: 0; opacity: 0; animation: cursor-cycle 12s cubic-bezier(0.4, 0, 0.2, 1) infinite; pointer-events: none; z-index: 30; filter: drop-shadow(0 2px 3px rgba(0,0,0,0.25)); }
     @keyframes cursor-cycle {
-      0%, 57% { opacity: 0; transform: translate(640px, 280px); }
-      59%     { opacity: 1; transform: translate(640px, 280px); }
-      69%     { opacity: 1; transform: translate(95px, 110px); }
-      71%     { opacity: 1; transform: translate(95px, 110px) scale(0.85); }
-      72%, 88% { opacity: 1; transform: translate(95px, 110px) scale(1); }
-      92%, 100% { opacity: 0; transform: translate(95px, 110px); }
+      0%, 47% { opacity: 0; transform: translate(640px, 280px); }
+      49%     { opacity: 1; transform: translate(640px, 280px); }
+      56%     { opacity: 1; transform: translate(95px, 110px); }
+      57%     { opacity: 1; transform: translate(95px, 110px) scale(0.85); }
+      58%, 63% { opacity: 1; transform: translate(95px, 110px) scale(1); }
+      71%     { opacity: 1; transform: translate(880px, 245px); }
+      72%     { opacity: 1; transform: translate(880px, 245px) scale(0.85); }
+      73%, 90% { opacity: 0; transform: translate(880px, 245px) scale(1); }
+      100%    { opacity: 0; transform: translate(880px, 245px); }
+    }
+    /* Eye icon : pulse subtil quand le curseur arrive (66-71%) */
+    .hero-eye-target { animation: eye-pulse 12s ease-out infinite; }
+    @keyframes eye-pulse {
+      0%, 65% { stroke: #64748b; transform: scale(1); }
+      70%, 72% { stroke: #059669; transform: scale(1.15); }
+      75%, 100% { stroke: #64748b; transform: scale(1); }
     }
     /* Highlight row F-2026-0003 (juste après le clic Factures) */
-    .hero-row-new { animation: row-highlight-cycle 11s ease-out infinite; }
+    .hero-row-new { animation: row-highlight-cycle 12s ease-out infinite; }
     @keyframes row-highlight-cycle {
-      0%, 72% { background-color: white; box-shadow: none; }
-      76%, 88% { background-color: #ecfdf5; box-shadow: inset 0 0 0 1.5px #6ee7b7; }
-      92%, 100% { background-color: white; box-shadow: none; }
+      0%, 59% { background-color: white; box-shadow: none; }
+      63%, 70% { background-color: #ecfdf5; box-shadow: inset 0 0 0 1.5px #6ee7b7; }
+      73%, 100% { background-color: white; box-shadow: none; }
     }
 
     /* Mobile : iPhone seul, pas de MacBook, durée 6s */
@@ -548,8 +581,8 @@
                       <div class="grid grid-cols-7 gap-2 px-3 py-2 bg-slate-50 text-[10px] uppercase tracking-wider font-semibold text-slate-500 border-b border-slate-200">
                         <span>Date</span><span>Numéro</span><span>Client</span><span class="text-right">Montant</span><span>Statut</span><span>Factur-X</span><span>PPF</span>
                       </div>
-                      <div class="hero-row-new grid grid-cols-7 gap-2 px-3 py-3 text-xs items-center border-b border-slate-100">
-                        <span class="text-slate-700">20/05/2026</span><span class="text-slate-900 font-medium">F-2026-0003</span><span class="text-slate-700">Géraldine Payet</span><span class="text-right text-slate-900 font-semibold">450,00&nbsp;€</span><span><span class="bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded text-[10px] font-medium">Payée</span></span><span class="text-emerald-600">✓</span><span class="text-slate-300">—</span>
+                      <div class="hero-row-new grid grid-cols-7 gap-2 px-3 py-3 text-xs items-center border-b border-slate-100 relative">
+                        <span class="text-slate-700">20/05/2026</span><span class="text-slate-900 font-medium">F-2026-0003</span><span class="text-slate-700">Géraldine Payet</span><span class="text-right text-slate-900 font-semibold">450,00&nbsp;€</span><span><span class="bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded text-[10px] font-medium">Payée</span></span><span class="text-emerald-600">✓</span><span class="flex items-center gap-1.5"><span class="text-slate-300">—</span><svg class="hero-eye-target" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></span>
                       </div>
                       <div class="grid grid-cols-7 gap-2 px-3 py-3 text-xs items-center border-b border-slate-100">
                         <span class="text-slate-700">20/05/2026</span><span class="text-slate-900 font-medium">F-2026-0002</span><span class="text-slate-700">Marie Hoareau</span><span class="text-right text-slate-900 font-semibold">80,00&nbsp;€</span><span><span class="bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded text-[10px] font-medium">Payée</span></span><span class="text-emerald-600">✓</span><span class="text-slate-300">—</span>
@@ -560,6 +593,54 @@
                     </div>
                   </div>
                 </main>
+
+                <!-- Overlay PDF facture (apparaît au clic œil) -->
+                <div class="hero-pdf-overlay">
+                  <div class="hero-pdf-backdrop"></div>
+                  <div class="hero-pdf-sheet">
+                    <div class="flex items-start justify-between">
+                      <div>
+                        <p class="text-[11px] font-bold text-slate-900">BATI974</p>
+                        <p class="text-[8px] text-slate-600 mt-0.5 leading-tight">ILE DE LA REUNION, 3 CHEMIN DE LA CITERNE,<br/>97417 SAINT-DENIS</p>
+                        <p class="text-[8px] text-slate-600 leading-tight">SIRET&nbsp;: 987 641 917 00016</p>
+                        <p class="text-[8px] text-slate-600 leading-tight">Auto-entrepreneur</p>
+                        <p class="text-[8px] font-semibold text-slate-700 leading-tight mt-1">TVA non applicable, art. 293 B du CGI</p>
+                      </div>
+                      <div class="text-right">
+                        <p class="text-[15px] font-bold text-slate-900 tracking-tight">FACTURE</p>
+                        <div class="mt-2 text-[8px] grid grid-cols-2 gap-x-2 gap-y-0.5 text-slate-600">
+                          <span>Numéro</span><span class="text-slate-900">F-2026-0003</span>
+                          <span>Émission</span><span class="text-slate-900">20/05/2026</span>
+                          <span>Échéance</span><span class="text-slate-900">19/06/2026</span>
+                          <span>Prestation</span><span class="text-slate-900">20/05/2026</span>
+                        </div>
+                      </div>
+                    </div>
+                    <hr class="my-3 border-slate-200"/>
+                    <p class="text-[9px] font-bold text-slate-900">Facturé à&nbsp;:</p>
+                    <p class="text-[10px] text-slate-900 mt-0.5">Géraldine Payet</p>
+                    <p class="text-[8px] text-slate-600">Particulier</p>
+
+                    <div class="mt-4 border-t border-b border-slate-200">
+                      <div class="flex justify-between text-[9px] font-bold text-slate-700 py-1.5 border-b border-slate-200">
+                        <span>Description</span><span>Montant</span>
+                      </div>
+                      <div class="flex justify-between text-[9px] text-slate-800 py-1.5">
+                        <span>travaux d&rsquo;étanchéité</span><span>450,00&nbsp;€</span>
+                      </div>
+                    </div>
+                    <div class="flex justify-end items-baseline gap-3 mt-2">
+                      <span class="text-[10px] font-bold text-slate-900">Total</span>
+                      <span class="text-[12px] font-bold text-slate-900">450,00&nbsp;€</span>
+                    </div>
+
+                    <div class="mt-auto">
+                      <p class="text-[8px] font-bold text-slate-700">Conditions de paiement</p>
+                      <p class="text-[7px] text-slate-600 leading-tight">Délai de paiement&nbsp;: 30 jours. Aucun escompte pour paiement anticipé. Pénalités de retard&nbsp;: taux d&rsquo;intérêt légal majoré de 10 points. Indemnité forfaitaire pour frais de recouvrement&nbsp;: 40&nbsp;€.</p>
+                      <p class="text-[8px] text-slate-400 mt-3 flex items-center gap-1">Facture générée avec <span class="tania-logo" style="font-size:10px;"><svg class="tania-T" viewBox="0 0 80 80" preserveAspectRatio="xMinYMid meet" aria-hidden="true"><rect x="0" y="14" width="80" height="18" fill="#10b981"/><rect x="31" y="42" width="18" height="38" fill="#10b981"/></svg><span class="tania-ania">ania</span></span> · tania.re</p>
+                    </div>
+                  </div>
+                </div>
 
                 <!-- Curseur fake macOS -->
                 <svg class="hero-cursor" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
