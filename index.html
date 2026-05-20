@@ -402,10 +402,13 @@
       </div>
 
       <div class="relative mt-16 grid md:grid-cols-3 gap-12 md:gap-6">
+        <!-- Ligne de connexion (desktop : horizontale ; mobile : verticale) -->
+        <div class="hidden md:block absolute top-6 left-0 right-0 h-px border-t border-dashed border-slate-200 z-0" aria-hidden="true"></div>
+        <div class="md:hidden absolute top-6 bottom-6 left-1/2 w-px border-l border-dashed border-slate-200 z-0" aria-hidden="true"></div>
 
         <!-- Étape 1 -->
-        <div class="reveal text-center" data-delay="1">
-          <div class="mx-auto w-12 h-12 rounded-full bg-emerald-100 text-emerald-700 font-bold text-lg flex items-center justify-center">1</div>
+        <div class="reveal text-center relative z-10" data-delay="1">
+          <div class="mx-auto w-12 h-12 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-bold text-lg flex items-center justify-center">1</div>
           <h3 class="mt-6 text-xl font-semibold text-slate-900">Vous envoyez un message WhatsApp</h3>
           <p class="mt-3 text-base text-slate-600 leading-relaxed">Comme un message normal, à votre rythme, depuis votre téléphone.</p>
           <div class="mt-6 mx-auto max-w-xs bg-slate-50 border border-slate-200 rounded-2xl p-4">
@@ -414,8 +417,8 @@
         </div>
 
         <!-- Étape 2 -->
-        <div class="reveal text-center" data-delay="2">
-          <div class="mx-auto w-12 h-12 rounded-full bg-emerald-100 text-emerald-700 font-bold text-lg flex items-center justify-center">2</div>
+        <div class="reveal text-center relative z-10" data-delay="2">
+          <div class="mx-auto w-12 h-12 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-bold text-lg flex items-center justify-center">2</div>
           <h3 class="mt-6 text-xl font-semibold text-slate-900">Tania crée votre facture</h3>
           <p class="mt-3 text-base text-slate-600 leading-relaxed">En quelques secondes, au format Factur-X obligatoire à partir de septembre 2026.</p>
           <div class="mt-6 mx-auto max-w-xs bg-slate-50 border border-slate-200 rounded-2xl p-4">
@@ -426,8 +429,8 @@
         </div>
 
         <!-- Étape 3 -->
-        <div class="reveal text-center" data-delay="3">
-          <div class="mx-auto w-12 h-12 rounded-full bg-emerald-100 text-emerald-700 font-bold text-lg flex items-center justify-center">3</div>
+        <div class="reveal text-center relative z-10" data-delay="3">
+          <div class="mx-auto w-12 h-12 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-bold text-lg flex items-center justify-center">3</div>
           <h3 class="mt-6 text-xl font-semibold text-slate-900">Tout est rangé, suivi, accessible</h3>
           <p class="mt-3 text-base text-slate-600 leading-relaxed">Votre tableau de bord en ligne. Accessible par vous et votre comptable, à tout moment.</p>
           <div class="mt-6 mx-auto max-w-xs bg-slate-50 border border-slate-200 rounded-2xl p-3 text-left text-[12px]">
@@ -454,8 +457,8 @@
         <p class="mt-4 text-lg text-slate-600">Une vraie conversation. Pas un mockup marketing.</p>
       </div>
 
-      <div class="reveal mt-12 mx-auto" style="max-width: 360px;" data-delay="1">
-        <div class="relative mx-auto bg-slate-900 shadow-2xl ring-1 ring-slate-800" style="width:100%; aspect-ratio: 360/720; border-radius: 44px; padding: 11px;">
+      <div class="reveal mt-12 mx-auto" style="max-width: 360px; transform: rotate(-2deg);" data-delay="1">
+        <div class="relative mx-auto bg-slate-900 ring-1 ring-slate-800" style="width:100%; aspect-ratio: 360/720; border-radius: 48px; padding: 11px; box-shadow: 0 20px 40px rgba(15, 23, 42, 0.10), 0 -10px 30px rgba(16, 185, 129, 0.08);">
           <div class="relative w-full h-full bg-white overflow-hidden flex flex-col" style="border-radius: 34px;">
             <div class="absolute left-1/2 -translate-x-1/2 bg-slate-900 z-20" style="top:8px; width:100px; height:26px; border-radius:999px;"></div>
             <div class="flex items-center justify-between px-6 pt-2.5 text-[11px] font-semibold text-slate-900" style="height:36px;">
