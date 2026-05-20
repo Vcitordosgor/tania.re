@@ -501,6 +501,181 @@
   </section>
 
   <!-- ═════════════════════════════════════════════ -->
+  <!-- SECTION 6 — VOTRE TABLEAU DE BORD (style Indy) -->
+  <!-- ═════════════════════════════════════════════ -->
+  <section id="dashboard" class="bg-white py-16 lg:py-24">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="grid lg:grid-cols-5 gap-12 items-center">
+
+        <!-- Colonne gauche -->
+        <div class="lg:col-span-2 reveal">
+          <p class="text-emerald-600 font-semibold text-sm uppercase tracking-wider">Votre tableau de bord</p>
+          <h2 class="mt-3 text-3xl md:text-4xl lg:text-[40px] lg:leading-[48px] font-bold text-slate-900 tracking-tighter2">
+            Tout est rangé, suivi, accessible.
+          </h2>
+          <div class="mt-6 text-lg text-slate-700 leading-relaxed max-w-md space-y-4">
+            <p>Toutes vos factures sont rangées automatiquement. Vous voyez d&rsquo;un coup d&rsquo;œil&nbsp;:</p>
+            <ul class="space-y-2 text-base">
+              <li class="flex gap-2"><span class="text-emerald-600">•</span> Combien vous avez encaissé ce mois</li>
+              <li class="flex gap-2"><span class="text-emerald-600">•</span> Combien il vous reste à encaisser</li>
+              <li class="flex gap-2"><span class="text-emerald-600">•</span> Quelles factures sont payées, lesquelles attendent</li>
+            </ul>
+            <p>Votre comptable peut consulter en lecture seule via un lien sécurisé. Vous gardez le contrôle, sans la complexité.</p>
+          </div>
+          <a href="#demande-demo" class="mt-8 inline-flex items-center bg-white border-2 border-slate-900 hover:bg-slate-50 text-slate-900 font-semibold px-6 py-3 rounded-md transition-colors">
+            Voir une démo →
+          </a>
+        </div>
+
+        <!-- Colonne droite (mockup dashboard) -->
+        <div class="lg:col-span-3 reveal" data-delay="1">
+          <div class="relative rounded-2xl p-6 md:p-12" style="background-color: #f6f9f3;">
+
+            <!-- Mockup -->
+            <div class="relative rounded-xl bg-white shadow-md border border-slate-200 overflow-hidden">
+              <!-- Header dashboard -->
+              <div class="flex items-center justify-between px-5 py-3 border-b border-slate-200 bg-white">
+                <span class="tania-logo" style="font-size: 18px;">
+                  <svg class="tania-T" viewBox="0 0 80 80" preserveAspectRatio="xMinYMid meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect class="t-bar" x="0" y="14" width="80" height="18" fill="#10b981"/>
+                    <rect class="t-stem" x="31" y="42" width="18" height="38" fill="#10b981"/>
+                  </svg>
+                  <span class="tania-ania">ania</span>
+                </span>
+                <div class="flex items-center gap-3 text-sm">
+                  <span class="hidden sm:inline text-slate-500">v***@tania.re</span>
+                  <span class="w-8 h-8 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-sm">V</span>
+                </div>
+              </div>
+
+              <!-- Stats -->
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 p-5 bg-slate-50">
+                <div class="bg-white rounded-lg p-4 border border-slate-200">
+                  <p class="text-[10px] uppercase tracking-wider text-slate-500 font-semibold">Encaissé ce mois</p>
+                  <p class="mt-2 text-2xl font-bold text-slate-900">3&nbsp;920&nbsp;€</p>
+                  <p class="mt-1 text-xs text-emerald-600 font-medium">+12&nbsp;% vs mois dernier</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 border border-slate-200">
+                  <p class="text-[10px] uppercase tracking-wider text-slate-500 font-semibold">À encaisser</p>
+                  <p class="mt-2 text-2xl font-bold text-slate-900">360&nbsp;€</p>
+                  <p class="mt-1 text-xs text-amber-600 font-medium">2 factures en attente</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 border border-slate-200">
+                  <p class="text-[10px] uppercase tracking-wider text-slate-500 font-semibold">Total du mois</p>
+                  <p class="mt-2 text-2xl font-bold text-slate-900">4&nbsp;280&nbsp;€</p>
+                  <p class="mt-1 text-xs text-slate-500">13 prestations</p>
+                </div>
+              </div>
+
+              <!-- Liste factures -->
+              <div class="p-5 bg-white">
+                <div class="grid grid-cols-5 gap-2 text-[10px] uppercase tracking-wider text-slate-500 font-semibold pb-2 border-b border-slate-200">
+                  <span>Numéro</span><span>Client</span><span class="text-right">Montant</span><span>Date</span><span class="text-right">Statut</span>
+                </div>
+                <div class="text-sm">
+                  <div class="grid grid-cols-5 gap-2 py-2.5 border-b border-slate-100 items-center">
+                    <span class="text-slate-700 font-medium">F-2026-0042</span><span class="text-slate-700">Hoareau</span><span class="text-right text-slate-900">250,00&nbsp;€</span><span class="text-slate-500">15 mai</span><span class="text-right"><span class="bg-emerald-50 text-emerald-700 text-xs font-medium px-2 py-0.5 rounded-full">✓ Payée</span></span>
+                  </div>
+                  <div class="grid grid-cols-5 gap-2 py-2.5 border-b border-slate-100 items-center">
+                    <span class="text-slate-700 font-medium">F-2026-0041</span><span class="text-slate-700">Dijoux</span><span class="text-right text-slate-900">95,00&nbsp;€</span><span class="text-slate-500">14 mai</span><span class="text-right"><span class="bg-emerald-50 text-emerald-700 text-xs font-medium px-2 py-0.5 rounded-full">✓ Payée</span></span>
+                  </div>
+                  <div class="grid grid-cols-5 gap-2 py-2.5 border-b border-slate-100 items-center">
+                    <span class="text-slate-700 font-medium">F-2026-0040</span><span class="text-slate-700">Lambert</span><span class="text-right text-slate-900">180,00&nbsp;€</span><span class="text-slate-500">13 mai</span><span class="text-right"><span class="bg-amber-50 text-amber-700 text-xs font-medium px-2 py-0.5 rounded-full">⏳ Émise</span></span>
+                  </div>
+                  <div class="hidden sm:grid grid-cols-5 gap-2 py-2.5 border-b border-slate-100 items-center">
+                    <span class="text-slate-700 font-medium">F-2026-0039</span><span class="text-slate-700">Boyer</span><span class="text-right text-slate-900">75,00&nbsp;€</span><span class="text-slate-500">12 mai</span><span class="text-right"><span class="bg-emerald-50 text-emerald-700 text-xs font-medium px-2 py-0.5 rounded-full">✓ Payée</span></span>
+                  </div>
+                  <div class="hidden sm:grid grid-cols-5 gap-2 py-2.5 items-center">
+                    <span class="text-slate-700 font-medium">F-2026-0038</span><span class="text-slate-700">Bègue</span><span class="text-right text-slate-900">320,00&nbsp;€</span><span class="text-slate-500">10 mai</span><span class="text-right"><span class="bg-emerald-50 text-emerald-700 text-xs font-medium px-2 py-0.5 rounded-full">✓ Payée</span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- UI overlay flottante (notification Tania) -->
+            <div class="reveal hidden lg:block absolute bg-white shadow-md border border-slate-200 rounded-xl p-4 max-w-xs" style="top: -24px; right: -32px;" data-delay="3">
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-sm shrink-0">T</div>
+                <div class="flex-1 text-sm">
+                  <div class="flex items-center justify-between gap-2">
+                    <span class="font-semibold text-slate-900">Tania</span>
+                    <span class="text-xs text-slate-500">il y a 2&nbsp;min</span>
+                  </div>
+                  <p class="mt-1 text-slate-700 whitespace-pre-line">📊 Stats du mois&nbsp;:
+
+Encaissé&nbsp;: 3&nbsp;920&nbsp;€
+Reste&nbsp;: 360&nbsp;€</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Version mobile : notification empilée -->
+            <div class="reveal lg:hidden mt-4 bg-white shadow-md border border-slate-200 rounded-xl p-4" data-delay="2">
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-sm shrink-0">T</div>
+                <div class="flex-1 text-sm">
+                  <div class="flex items-center justify-between gap-2">
+                    <span class="font-semibold text-slate-900">Tania</span>
+                    <span class="text-xs text-slate-500">il y a 2&nbsp;min</span>
+                  </div>
+                  <p class="mt-1 text-slate-700 whitespace-pre-line">📊 Stats du mois&nbsp;:
+
+Encaissé&nbsp;: 3&nbsp;920&nbsp;€
+Reste&nbsp;: 360&nbsp;€</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════ -->
+  <!-- SECTION 7 — CONFORMITÉ VALIDÉE                 -->
+  <!-- ═════════════════════════════════════════════ -->
+  <section id="conformite" class="bg-slate-50 py-16 lg:py-24">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="text-center reveal">
+        <p class="text-emerald-600 font-semibold text-sm uppercase tracking-wider">Preuve technique</p>
+        <h2 class="mt-3 text-3xl md:text-4xl lg:text-[40px] lg:leading-[48px] font-bold text-slate-900 tracking-tighter2">
+          Validée par l&rsquo;organisme officiel.
+        </h2>
+        <p class="mt-4 text-lg text-slate-700 max-w-2xl mx-auto leading-relaxed">
+          Tania produit des factures conformes à la norme française Factur-X, validées par l&rsquo;organisme officiel qui gère cette norme. Vos clients et votre comptable peuvent les ouvrir sans inquiétude.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+        <div class="reveal bg-white border border-slate-200 rounded-xl p-8 text-center hover:border-emerald-200 hover:shadow-md transition-all" data-delay="1">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="mx-auto" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          <h3 class="mt-4 text-lg font-semibold text-slate-900">Format archivage</h3>
+          <p class="mt-2 text-sm text-slate-500 leading-relaxed">Vos factures restent lisibles à long terme, même dans 10 ans.</p>
+        </div>
+        <div class="reveal bg-white border border-slate-200 rounded-xl p-8 text-center hover:border-emerald-200 hover:shadow-md transition-all" data-delay="2">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="mx-auto" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/></svg>
+          <h3 class="mt-4 text-lg font-semibold text-slate-900">Structure validée</h3>
+          <p class="mt-2 text-sm text-slate-500 leading-relaxed">Métadonnées et données conformes à la norme française.</p>
+        </div>
+        <div class="reveal bg-white border border-slate-200 rounded-xl p-8 text-center hover:border-emerald-200 hover:shadow-md transition-all" data-delay="3">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="mx-auto" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg>
+          <h3 class="mt-4 text-lg font-semibold text-slate-900">Norme européenne</h3>
+          <p class="mt-2 text-sm text-slate-500 leading-relaxed">Conforme à la norme EN&nbsp;16931 utilisée dans toute l&rsquo;Europe.</p>
+        </div>
+        <div class="reveal bg-white border border-slate-200 rounded-xl p-8 text-center hover:border-emerald-200 hover:shadow-md transition-all" data-delay="3">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="mx-auto" aria-hidden="true"><path d="M3.85 8.62a4 4 0 014.78-4.77 4 4 0 016.74 0 4 4 0 014.78 4.78 4 4 0 010 6.74 4 4 0 01-4.77 4.78 4 4 0 01-6.75 0 4 4 0 01-4.78-4.77 4 4 0 010-6.76z"/><polyline points="9 12 11 14 15 10"/></svg>
+          <h3 class="mt-4 text-lg font-semibold text-slate-900">Test officiel</h3>
+          <p class="mt-2 text-sm text-slate-500 leading-relaxed">Validation par fnfe-mpe.org, organisme français de référence.</p>
+        </div>
+      </div>
+
+      <p class="text-center mt-10 text-sm text-slate-500 italic">Validation effectuée par fnfe-mpe.org — organisme français de la facturation électronique.</p>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════ -->
   <!-- SECTION 5 — POUR QUI ? (carrousel métiers)    -->
   <!-- ═════════════════════════════════════════════ -->
   <section class="bg-white py-16 lg:py-24 overflow-hidden">
