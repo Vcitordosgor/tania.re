@@ -126,124 +126,83 @@
     }
 
     /* ───────── Hero animation (loop 21s) ───────── */
-    .hero-stage { position: relative; width: 100%; min-height: 460px; }
-    /* iPhone */
-    .hero-iphone { max-width: 280px; margin: 0 auto; animation: iphone-cycle 21s ease-in-out infinite; }
-    @keyframes iphone-cycle {
-      0%, 71.4% { transform: translateX(0); opacity: 1; }
-      76.2%     { transform: translateX(-140%); opacity: 0; }
-      99%       { transform: translateX(-140%); opacity: 0; }
-      100%      { transform: translateX(0); opacity: 1; }
+    .hero-stage { position: relative; width: 100%; min-height: 480px; overflow: visible; }
+    .lg\:col-span-2.hero-halo { overflow: visible; }
+    /* Fond doodle WhatsApp authentique (cream #ECE5DD + petites icônes répétées) */
+    .wa-bg {
+      background-color: #ECE5DD;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'><g fill='none' stroke='%23A8A29E' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round' opacity='0.18'><circle cx='30' cy='30' r='8'/><path d='M26 30c1.5 2 5 2 8 0'/><circle cx='27' cy='27' r='0.8' fill='%23A8A29E'/><circle cx='33' cy='27' r='0.8' fill='%23A8A29E'/><path d='M85 25c-3-3-9-1-9 4 0 4 9 10 9 10s9-6 9-10c0-5-6-7-9-4z'/><path d='M150 22l-2 7-7-2 5-5-5-5 7-2 2 7 7 2-5 5 5 5-7-2-2 7'/><path d='M30 90c-4 0-7 3-7 7 0 5 7 11 7 11s7-6 7-11c0-4-3-7-7-7zm0 5a2 2 0 100 4 2 2 0 000-4z'/><path d='M95 95l3-3 3 3 3-3 3 3'/><path d='M155 90l-5 5 5 5 5-5z'/><path d='M30 165c5 0 9-4 9-9'/><path d='M37 150v6h-6'/><circle cx='90' cy='160' r='7'/><path d='M90 155v10M85 160h10'/><path d='M155 155l-2 8 7-5h-10l7 5z'/></g></svg>");
+      background-size: 200px 200px;
     }
-    /* Bulles (timeline en % de 21s) */
-    .hero-b1, .hero-t1, .hero-b2, .hero-b3, .hero-t2, .hero-b4 { opacity: 0; transform: translateY(8px) scale(0.95); }
-    .hero-b1 { animation: bub 21s ease-out infinite; --in: 0%; --vis-start: 2%; --vis-end: 74%; --out: 76%; }
-    .hero-t1 { animation: bub 21s ease-out infinite; --in: 13.5%; --vis-start: 15%; --vis-end: 18%; --out: 19%; }
-    .hero-b2 { animation: bub 21s ease-out infinite; --in: 18%; --vis-start: 20%; --vis-end: 74%; --out: 76%; }
-    .hero-b3 { animation: bub 21s ease-out infinite; --in: 42.5%; --vis-start: 44%; --vis-end: 74%; --out: 76%; }
-    .hero-t2 { animation: bub 21s ease-out infinite; --in: 47%; --vis-start: 48%; --vis-end: 51%; --out: 52.4%; }
-    .hero-b4 { animation: bub 21s ease-out infinite; --in: 51.5%; --vis-start: 53%; --vis-end: 74%; --out: 76%; }
-    /* Keyframe générique : timing piloté par les délais individuels */
-    .hero-b1 { animation: hb1 21s ease-out infinite; }
-    .hero-t1 { animation: ht1 21s ease-out infinite; }
-    .hero-b2 { animation: hb2 21s ease-out infinite; }
-    .hero-b3 { animation: hb3 21s ease-out infinite; }
-    .hero-t2 { animation: ht2 21s ease-out infinite; }
-    .hero-b4 { animation: hb4 21s ease-out infinite; }
-    @keyframes hb1 { 0%, 0.5% { opacity:0; transform:translateY(8px) scale(.95); } 4%, 75% { opacity:1; transform:translateY(0) scale(1); } 76%, 100% { opacity:0; } }
-    @keyframes ht1 { 0%, 14% { opacity:0; transform:translateY(8px) scale(.95); } 15%, 18% { opacity:1; transform:translateY(0) scale(1); } 19%, 100% { opacity:0; } }
-    @keyframes hb2 { 0%, 18% { opacity:0; transform:translateY(8px) scale(.95); } 22%, 75% { opacity:1; transform:translateY(0) scale(1); } 76%, 100% { opacity:0; } }
-    @keyframes hb3 { 0%, 42% { opacity:0; transform:translateY(8px) scale(.95); } 45%, 75% { opacity:1; transform:translateY(0) scale(1); } 76%, 100% { opacity:0; } }
-    @keyframes ht2 { 0%, 47% { opacity:0; transform:translateY(8px) scale(.95); } 48%, 51% { opacity:1; transform:translateY(0) scale(1); } 52%, 100% { opacity:0; } }
-    @keyframes hb4 { 0%, 52% { opacity:0; transform:translateY(8px) scale(.95); } 56%, 75% { opacity:1; transform:translateY(0) scale(1); } 76%, 100% { opacity:0; } }
 
-    /* Typing dots */
-    .hero-t1 .dot, .hero-t2 .dot { animation: typdot 1.2s ease-in-out infinite; }
-    .hero-t1 .dot:nth-child(2), .hero-t2 .dot:nth-child(2) { animation-delay: .2s; }
-    .hero-t1 .dot:nth-child(3), .hero-t2 .dot:nth-child(3) { animation-delay: .4s; }
+    /* iPhone (cycle 11s) */
+    .hero-iphone { max-width: 280px; margin: 0 auto; animation: iphone-cycle 11s ease-in-out infinite; }
+    @keyframes iphone-cycle {
+      0%, 50% { transform: translateX(0); opacity: 1; }
+      55%     { transform: translateX(-140%); opacity: 0; }
+      98%     { transform: translateX(-140%); opacity: 0; }
+      100%    { transform: translateX(0); opacity: 1; }
+    }
+    /* Bulles : 3 phases (user → typing → Tania combinée) */
+    .hero-b1, .hero-t1, .hero-b2 { opacity: 0; transform: translateY(8px) scale(0.95); }
+    .hero-b1 { animation: hb1 11s ease-out infinite; }
+    .hero-t1 { animation: ht1 11s ease-out infinite; }
+    .hero-b2 { animation: hb2 11s ease-out infinite; }
+    /* timings en % de 11s : 0s=0% 1s=9% 2s=18% 2.5s=23% 5.5s=50% 6s=55% */
+    @keyframes hb1 { 0%, 1% { opacity:0; transform:translateY(8px) scale(.95); } 5%, 53% { opacity:1; transform:translateY(0) scale(1); } 55%, 100% { opacity:0; } }
+    @keyframes ht1 { 0%, 9% { opacity:0; transform:translateY(8px) scale(.95); } 13%, 18% { opacity:1; transform:translateY(0) scale(1); } 20%, 100% { opacity:0; } }
+    @keyframes hb2 { 0%, 19% { opacity:0; transform:translateY(8px) scale(.95); } 25%, 53% { opacity:1; transform:translateY(0) scale(1); } 55%, 100% { opacity:0; } }
+
+    .hero-t1 .dot { animation: typdot 1s ease-in-out infinite; }
+    .hero-t1 .dot:nth-child(2) { animation-delay: .15s; }
+    .hero-t1 .dot:nth-child(3) { animation-delay: .3s; }
     @keyframes typdot { 0%, 80%, 100% { opacity:.3; transform:translateY(0); } 40% { opacity:1; transform:translateY(-2px); } }
 
-    /* Auto-scroll bottom dans la zone de chat (effet visuel via padding-top) */
     .chat-scroll { scroll-behavior: smooth; }
 
-    /* MacBook */
-    .hero-macbook { position: absolute; inset: 0; pointer-events: none; opacity: 0; animation: mb-cycle 21s ease-in-out infinite; }
+    /* MacBook (cycle 11s, version large qui déborde de la colonne) */
+    .hero-macbook {
+      position: absolute; top: 0; right: 0;
+      width: 720px; max-width: calc(100vw - 60px);
+      pointer-events: none; opacity: 0;
+      animation: mb-cycle 11s ease-in-out infinite;
+    }
     @keyframes mb-cycle {
-      0%, 71.4% { transform: translateX(140%); opacity: 0; }
-      76.2%, 99% { transform: translateX(0); opacity: 1; }
+      0%, 50% { transform: translateX(140%); opacity: 0; }
+      55%, 98% { transform: translateX(0); opacity: 1; }
       100% { transform: translateX(140%); opacity: 0; }
     }
     .hero-macbook-frame {
-      width: 100%; max-width: 520px; height: 360px; margin: 40px auto 0;
-      background: white; border: 1px solid #e2e8f0; border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.10);
+      width: 100%; height: 460px;
+      background: white; border: 1px solid #e2e8f0; border-radius: 14px;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.14);
       overflow: hidden; display: flex; position: relative;
     }
-    .hero-mb-sidebar { width: 130px; background: white; border-right: 1px solid #e2e8f0; padding: 12px 8px; display: flex; flex-direction: column; flex-shrink: 0; }
-    .hero-mb-nav { display: flex; align-items: center; gap: 6px; padding: 5px 8px; border-radius: 5px; color: #334155; font-size: 11px; cursor: default; }
-    .hero-mb-nav.nav-accueil { background: #ecfdf5; color: #047857; font-weight: 500; animation: nav-accueil-cycle 21s ease-out infinite; }
-    .hero-mb-nav.nav-factures { animation: nav-factures-cycle 21s ease-out infinite; }
-    @keyframes nav-accueil-cycle {
-      0%, 86% { background: #ecfdf5; color: #047857; }
-      90%, 100% { background: transparent; color: #334155; font-weight: 400; }
-    }
-    @keyframes nav-factures-cycle {
-      0%, 86% { background: transparent; color: #334155; }
-      90%, 100% { background: #ecfdf5; color: #047857; font-weight: 500; transform: scale(0.98); }
-    }
+    .hero-mb-sidebar { width: 170px; background: white; border-right: 1px solid #e2e8f0; padding: 14px 10px; display: flex; flex-direction: column; flex-shrink: 0; }
+    .hero-mb-nav { display: flex; align-items: center; gap: 8px; padding: 7px 10px; border-radius: 6px; color: #334155; font-size: 12px; cursor: default; }
+    .hero-mb-nav.hero-nav-active { background: #ecfdf5; color: #047857; font-weight: 500; }
     .hero-mb-main { flex: 1; background: #f8fafc; overflow: hidden; position: relative; }
-    .hero-view { position: absolute; inset: 0; opacity: 0; }
-    .hero-view-accueil { animation: view-accueil-cycle 21s ease-out infinite; }
-    .hero-view-factures { animation: view-factures-cycle 21s ease-out infinite; }
-    @keyframes view-accueil-cycle {
-      0%, 75% { opacity: 0; }
-      77%, 88% { opacity: 1; }
-      91%, 100% { opacity: 0; }
-    }
-    @keyframes view-factures-cycle {
-      0%, 89% { opacity: 0; }
-      92%, 99% { opacity: 1; }
-      100% { opacity: 0; }
-    }
-    /* Curseur */
-    .hero-cursor { position: absolute; left: 0; top: 0; opacity: 0; animation: cursor-cycle 21s ease-out infinite; pointer-events: none; }
-    @keyframes cursor-cycle {
-      0%, 84% { opacity: 0; transform: translate(360px, 200px); }
-      85% { opacity: 1; transform: translate(360px, 200px); }
-      90% { opacity: 1; transform: translate(55px, 70px); }
-      91% { opacity: 1; transform: translate(55px, 70px) scale(0.92); }
-      92%, 95% { opacity: 1; transform: translate(55px, 70px) scale(1); }
-      100% { opacity: 0; transform: translate(55px, 70px); }
-    }
-    /* Highlight row F-2026-0003 */
-    .hero-row-new { animation: row-highlight-cycle 21s ease-out infinite; }
+    /* Highlight row F-2026-0003 (dès que le dashboard est visible) */
+    .hero-row-new { animation: row-highlight-cycle 11s ease-out infinite; }
     @keyframes row-highlight-cycle {
-      0%, 89% { background-color: white; box-shadow: none; }
-      91%, 95% { background-color: #ecfdf5; box-shadow: inset 0 0 0 1px #a7f3d0; }
-      98%, 100% { background-color: white; box-shadow: none; }
+      0%, 55% { background-color: white; box-shadow: none; }
+      60%, 80% { background-color: #ecfdf5; box-shadow: inset 0 0 0 1.5px #6ee7b7; }
+      90%, 100% { background-color: white; box-shadow: none; }
     }
 
-    /* Mobile : iPhone seul, pas de MacBook */
+    /* Mobile : iPhone seul, pas de MacBook, durée 6s */
     @media (max-width: 1023px) {
-      .hero-iphone { animation: iphone-mobile 15s ease-out infinite; }
-      @keyframes iphone-mobile { 0%, 100% { transform: none; opacity: 1; } }
-      .hero-b1 { animation-duration: 15s; }
-      .hero-t1 { animation-duration: 15s; }
-      .hero-b2 { animation-duration: 15s; }
-      .hero-b3 { animation-duration: 15s; }
-      .hero-t2 { animation-duration: 15s; }
-      .hero-b4 { animation-duration: 15s; }
+      .hero-iphone { animation: none; }
+      .hero-macbook { display: none; }
     }
 
     @media (prefers-reduced-motion: reduce) {
       .hero-iphone, .hero-macbook,
-      .hero-b1, .hero-t1, .hero-b2, .hero-b3, .hero-t2, .hero-b4,
-      .hero-t1 .dot, .hero-t2 .dot,
-      .hero-view-accueil, .hero-view-factures,
-      .hero-cursor, .hero-row-new,
-      .nav-accueil, .nav-factures { animation: none !important; }
-      .hero-b1, .hero-b2, .hero-b4 { opacity: 1; transform: none; }
-      .hero-t1, .hero-t2, .hero-b3 { display: none; }
+      .hero-b1, .hero-t1, .hero-b2,
+      .hero-t1 .dot,
+      .hero-row-new { animation: none !important; }
+      .hero-b1, .hero-b2 { opacity: 1; transform: none; }
+      .hero-t1 { display: none; }
       .hero-macbook { display: none; }
     }
 
@@ -391,15 +350,15 @@
 
                   <div class="flex-1 p-3 flex flex-col gap-2 overflow-y-auto chat-scroll" style="background:#ECE5DD;">
 
-                    <!-- B1 : user "Géraldine Payet..." -->
+                    <!-- B1 : user envoie la prestation -->
                     <div class="flex hero-b1">
-                      <div class="ml-auto max-w-[85%] text-slate-900 rounded-2xl rounded-tr-sm px-3 py-2 text-[12px] leading-snug" style="background:#DCF8C6;">
+                      <div class="ml-auto max-w-[85%] text-slate-900 rounded-2xl rounded-tr-sm px-3 py-2 text-[12px] leading-snug shadow-sm" style="background:#DCF8C6;">
                         Géraldine Payet Sainte Marie travaux d&rsquo;étanchéité 450€ payé en CB
                         <div class="text-[9px] text-slate-500 text-right mt-1">17:09 <span style="color:#34B7F1;">✓✓</span></div>
                       </div>
                     </div>
 
-                    <!-- T1 : typing indicator -->
+                    <!-- T1 : typing -->
                     <div class="flex hero-t1">
                       <div class="mr-auto bg-white shadow-sm rounded-2xl rounded-tl-sm px-3 py-2.5 flex items-center gap-1">
                         <span class="dot w-1.5 h-1.5 rounded-full bg-slate-400 inline-block"></span>
@@ -408,53 +367,17 @@
                       </div>
                     </div>
 
-                    <!-- B2 : Tania "Voici ce que j'ai compris" -->
+                    <!-- B2 : Tania reformule + envoie liens facture + dashboard -->
                     <div class="flex hero-b2">
-                      <div class="mr-auto max-w-[88%] bg-white shadow-sm rounded-2xl rounded-tl-sm px-3 py-2 text-[12px] text-slate-900 leading-snug whitespace-pre-line">📋 Voici ce que j&rsquo;ai compris&nbsp;:
-
-👤 Client&nbsp;: Géraldine Payet
-🔧 Prestation&nbsp;: travaux d&rsquo;étanchéité
-📅 Date&nbsp;: 20/05/2026
-📍 Lieu&nbsp;: Sainte Marie
-
-💶 Montant&nbsp;: 450,00&nbsp;€ TTC
-
-💳 Paiement&nbsp;: CB
-✅ Statut&nbsp;: payé<div class="text-[9px] text-slate-500 text-right mt-1">17:09</div></div>
-                    </div>
-
-                    <!-- B3 : user "OUI" -->
-                    <div class="flex hero-b3">
-                      <div class="ml-auto max-w-[80%] text-slate-900 rounded-2xl rounded-tr-sm px-3 py-2 text-[12px] leading-snug" style="background:#DCF8C6;">
-                        OUI
-                        <div class="text-[9px] text-slate-500 text-right mt-1">17:10 <span style="color:#34B7F1;">✓✓</span></div>
-                      </div>
-                    </div>
-
-                    <!-- T2 : typing -->
-                    <div class="flex hero-t2">
-                      <div class="mr-auto bg-white shadow-sm rounded-2xl rounded-tl-sm px-3 py-2.5 flex items-center gap-1">
-                        <span class="dot w-1.5 h-1.5 rounded-full bg-slate-400 inline-block"></span>
-                        <span class="dot w-1.5 h-1.5 rounded-full bg-slate-400 inline-block"></span>
-                        <span class="dot w-1.5 h-1.5 rounded-full bg-slate-400 inline-block"></span>
-                      </div>
-                    </div>
-
-                    <!-- B4 : Tania "C'est enregistré" -->
-                    <div class="flex hero-b4">
                       <div class="mr-auto max-w-[88%] bg-white shadow-sm rounded-2xl rounded-tl-sm px-3 py-2 text-[12px] text-slate-900 leading-snug whitespace-pre-line">✅ C&rsquo;est enregistré.
 
-👤 Client&nbsp;: Géraldine Payet
-🔧 Prestation&nbsp;: travaux d&rsquo;étanchéité
-💶 Montant&nbsp;: 450,00&nbsp;€
+👤 Géraldine Payet
+🔧 travaux d&rsquo;étanchéité
+💶 450,00&nbsp;€ · CB · payé
 
-📊 Total du mois&nbsp;: 3 prestations
-
-📄 Facture F-2026-0003 prête ✅
-
+📄 Facture F-2026-0003 prête
 <span class="text-emerald-600 font-medium underline underline-offset-2">Télécharger le PDF →</span>
-
-Elle est aussi disponible dans votre dashboard.<div class="text-[9px] text-slate-500 text-right mt-1">17:10</div></div>
+<span class="text-emerald-600 font-medium underline underline-offset-2">Voir dans le dashboard →</span><div class="text-[9px] text-slate-500 text-right mt-1">17:10</div></div>
                     </div>
 
                   </div>
@@ -483,9 +406,9 @@ Elle est aussi disponible dans votre dashboard.<div class="text-[9px] text-slate
                     </span>
                     <p class="text-[10px] text-slate-500 font-medium mt-1 ml-1">BATI974</p>
                   </div>
-                  <nav class="flex flex-col gap-0.5 text-[11px]">
-                    <a class="hero-mb-nav nav-accueil"><span>🏠</span><span>Accueil</span></a>
-                    <a class="hero-mb-nav nav-factures"><span>📄</span><span>Factures</span></a>
+                  <nav class="flex flex-col gap-0.5">
+                    <a class="hero-mb-nav"><span>🏠</span><span>Accueil</span></a>
+                    <a class="hero-mb-nav hero-nav-active"><span>📄</span><span>Factures</span></a>
                     <a class="hero-mb-nav"><span>🏢</span><span>Profil</span></a>
                     <a class="hero-mb-nav"><span>👥</span><span>Clients</span></a>
                     <a class="hero-mb-nav"><span>📋</span><span>Avoirs</span></a>
@@ -501,93 +424,38 @@ Elle est aussi disponible dans votre dashboard.<div class="text-[9px] text-slate
                   </div>
                 </aside>
 
-                <!-- Main -->
+                <!-- Main : Factures direct (lien depuis WhatsApp) -->
                 <main class="hero-mb-main">
-                  <!-- Vue Accueil -->
-                  <div class="hero-view hero-view-accueil">
-                    <div class="flex items-start justify-between px-5 py-4 border-b border-slate-100">
+                  <div class="hero-view-factures">
+                    <div class="flex items-start justify-between px-6 py-5 border-b border-slate-100">
                       <div>
-                        <h3 class="text-base font-bold text-slate-900 leading-tight">Bon après-midi, BATI974 ☀️</h3>
-                        <p class="text-[10px] text-slate-500 mt-0.5">Vos chiffres de mai 2026</p>
+                        <h3 class="text-xl font-bold text-slate-900 leading-tight">Factures</h3>
+                        <p class="text-xs text-slate-500 mt-1">3 factures au total</p>
                       </div>
-                      <button class="bg-emerald-600 text-white text-[10px] font-semibold px-2.5 py-1.5 rounded-md flex items-center gap-1">💬 Envoyer à Tania</button>
+                      <button class="bg-emerald-600 text-white text-xs font-semibold px-3 py-2 rounded-md flex items-center gap-1.5">💬 Envoyer à Tania</button>
                     </div>
-                    <div class="grid grid-cols-4 gap-2 px-5 mt-3">
-                      <div class="bg-emerald-50 border border-emerald-100 rounded-lg p-2.5">
-                        <p class="text-[9px] text-slate-500">💰 CA HT</p>
-                        <p class="text-base font-bold text-slate-900 mt-1">680,00&nbsp;€</p>
-                        <p class="text-[9px] text-slate-300 mt-1">—</p>
-                      </div>
-                      <div class="bg-white border border-slate-200 rounded-lg p-2.5">
-                        <p class="text-[9px] text-slate-500">💵 CA TTC</p>
-                        <p class="text-base font-bold text-slate-900 mt-1">680,00&nbsp;€</p>
-                        <p class="text-[9px] text-slate-300 mt-1">—</p>
-                      </div>
-                      <div class="bg-white border border-slate-200 rounded-lg p-2.5">
-                        <p class="text-[9px] text-slate-500">💚 Encaissé</p>
-                        <p class="text-base font-bold text-slate-900 mt-1">680,00&nbsp;€</p>
-                        <p class="text-[9px] text-slate-300 mt-1">—</p>
-                      </div>
-                      <div class="bg-white border border-slate-200 rounded-lg p-2.5">
-                        <p class="text-[9px] text-slate-500">⏳ À encaisser</p>
-                        <p class="text-base font-bold text-slate-900 mt-1">0,00&nbsp;€</p>
-                        <p class="text-[9px] text-slate-300 mt-1">—</p>
-                      </div>
+                    <div class="mx-6 mt-4 grid grid-cols-4 gap-3 bg-white border border-slate-200 rounded-lg p-3">
+                      <div><p class="text-[10px] text-slate-500 mb-1">Recherche</p><div class="h-7 bg-slate-50 rounded text-xs flex items-center px-2 text-slate-400">🔍 Client ou numéro</div></div>
+                      <div><p class="text-[10px] text-slate-500 mb-1">Mois</p><div class="h-7 bg-slate-50 rounded text-xs flex items-center px-2 text-slate-400">---- ----</div></div>
+                      <div><p class="text-[10px] text-slate-500 mb-1">Statut</p><div class="h-7 bg-slate-50 rounded text-xs flex items-center px-2 text-slate-700">Tous statuts</div></div>
+                      <div class="flex items-end"><div class="bg-emerald-600 text-white text-xs rounded h-7 w-full flex items-center justify-center font-semibold">Filtrer</div></div>
                     </div>
-                    <div class="px-5 mt-4">
-                      <p class="text-[11px] font-semibold text-slate-900">Suggestions de Tania</p>
-                      <p class="text-[9px] text-slate-500">Recommandations basées sur votre activité.</p>
-                      <div class="grid grid-cols-2 gap-2 mt-2">
-                        <div class="bg-white border border-slate-200 rounded-lg p-2.5">
-                          <div class="w-5 h-5 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600 text-xs">✓</div>
-                          <p class="text-[10px] font-semibold text-slate-900 mt-1.5">Bravo pour vos premières factures&nbsp;!</p>
-                          <p class="text-[9px] text-slate-500 mt-0.5">Vous êtes officiellement opérationnel sur Tania.</p>
-                        </div>
-                        <div class="bg-white border border-slate-200 rounded-lg p-2.5">
-                          <div class="w-5 h-5 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600 text-xs">✓</div>
-                          <p class="text-[10px] font-semibold text-slate-900 mt-1.5">Tout est encaissé&nbsp;💚</p>
-                          <p class="text-[9px] text-slate-500 mt-0.5">Aucune facture en attente de paiement.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Vue Factures -->
-                  <div class="hero-view hero-view-factures">
-                    <div class="flex items-start justify-between px-5 py-4 border-b border-slate-100">
-                      <div>
-                        <h3 class="text-base font-bold text-slate-900 leading-tight">Factures</h3>
-                        <p class="text-[10px] text-slate-500 mt-0.5">3 factures au total</p>
-                      </div>
-                      <button class="bg-emerald-600 text-white text-[10px] font-semibold px-2.5 py-1.5 rounded-md">💬 Envoyer à Tania</button>
-                    </div>
-                    <div class="mx-5 mt-3 grid grid-cols-4 gap-2 bg-white border border-slate-200 rounded-lg p-2">
-                      <div><p class="text-[8px] text-slate-500">Recherche</p><div class="h-5 bg-slate-50 rounded text-[9px] flex items-center px-1.5 text-slate-400">🔍 Client…</div></div>
-                      <div><p class="text-[8px] text-slate-500">Mois</p><div class="h-5 bg-slate-50 rounded text-[9px] flex items-center px-1.5 text-slate-400">---- ----</div></div>
-                      <div><p class="text-[8px] text-slate-500">Statut</p><div class="h-5 bg-slate-50 rounded text-[9px] flex items-center px-1.5 text-slate-700">Tous statuts</div></div>
-                      <div class="flex items-end"><div class="bg-emerald-600 text-white text-[9px] rounded h-5 w-full flex items-center justify-center font-semibold">Filtrer</div></div>
-                    </div>
-                    <div class="mx-5 mt-3 bg-white border border-slate-200 rounded-lg overflow-hidden">
-                      <div class="grid grid-cols-7 gap-1 px-2 py-1.5 bg-slate-50 text-[8px] uppercase tracking-wider font-semibold text-slate-500 border-b border-slate-200">
+                    <div class="mx-6 mt-3 bg-white border border-slate-200 rounded-lg overflow-hidden">
+                      <div class="grid grid-cols-7 gap-2 px-3 py-2 bg-slate-50 text-[10px] uppercase tracking-wider font-semibold text-slate-500 border-b border-slate-200">
                         <span>Date</span><span>Numéro</span><span>Client</span><span class="text-right">Montant</span><span>Statut</span><span>Factur-X</span><span>PPF</span>
                       </div>
-                      <div class="hero-row-new grid grid-cols-7 gap-1 px-2 py-2 text-[9px] items-center border-b border-slate-100">
-                        <span class="text-slate-700">20/05/2026</span><span class="text-slate-900 font-medium">F-2026-0003</span><span class="text-slate-700">Géraldine Payet</span><span class="text-right text-slate-900 font-semibold">450,00&nbsp;€</span><span><span class="bg-emerald-50 text-emerald-700 px-1.5 py-0.5 rounded text-[8px] font-medium">Payée</span></span><span class="text-emerald-600">✓</span><span class="text-slate-300">—</span>
+                      <div class="hero-row-new grid grid-cols-7 gap-2 px-3 py-3 text-xs items-center border-b border-slate-100">
+                        <span class="text-slate-700">20/05/2026</span><span class="text-slate-900 font-medium">F-2026-0003</span><span class="text-slate-700">Géraldine Payet</span><span class="text-right text-slate-900 font-semibold">450,00&nbsp;€</span><span><span class="bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded text-[10px] font-medium">Payée</span></span><span class="text-emerald-600">✓</span><span class="text-slate-300">—</span>
                       </div>
-                      <div class="grid grid-cols-7 gap-1 px-2 py-2 text-[9px] items-center border-b border-slate-100">
-                        <span class="text-slate-700">20/05/2026</span><span class="text-slate-900 font-medium">F-2026-0002</span><span class="text-slate-700">Marie Hoareau</span><span class="text-right text-slate-900 font-semibold">80,00&nbsp;€</span><span><span class="bg-emerald-50 text-emerald-700 px-1.5 py-0.5 rounded text-[8px] font-medium">Payée</span></span><span class="text-emerald-600">✓</span><span class="text-slate-300">—</span>
+                      <div class="grid grid-cols-7 gap-2 px-3 py-3 text-xs items-center border-b border-slate-100">
+                        <span class="text-slate-700">20/05/2026</span><span class="text-slate-900 font-medium">F-2026-0002</span><span class="text-slate-700">Marie Hoareau</span><span class="text-right text-slate-900 font-semibold">80,00&nbsp;€</span><span><span class="bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded text-[10px] font-medium">Payée</span></span><span class="text-emerald-600">✓</span><span class="text-slate-300">—</span>
                       </div>
-                      <div class="grid grid-cols-7 gap-1 px-2 py-2 text-[9px] items-center">
-                        <span class="text-slate-700">20/05/2026</span><span class="text-slate-900 font-medium">F-2026-0001</span><span class="text-slate-700">Marie Hoareau</span><span class="text-right text-slate-900 font-semibold">150,00&nbsp;€</span><span><span class="bg-emerald-50 text-emerald-700 px-1.5 py-0.5 rounded text-[8px] font-medium">Payée</span></span><span class="text-emerald-600">✓</span><span class="text-slate-300">—</span>
+                      <div class="grid grid-cols-7 gap-2 px-3 py-3 text-xs items-center">
+                        <span class="text-slate-700">20/05/2026</span><span class="text-slate-900 font-medium">F-2026-0001</span><span class="text-slate-700">Marie Hoareau</span><span class="text-right text-slate-900 font-semibold">150,00&nbsp;€</span><span><span class="bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded text-[10px] font-medium">Payée</span></span><span class="text-emerald-600">✓</span><span class="text-slate-300">—</span>
                       </div>
                     </div>
                   </div>
                 </main>
-
-                <!-- Curseur fake -->
-                <svg class="hero-cursor" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-                  <path d="M5 3l14 9-6 1-3 7-5-17z" fill="#0f172a" stroke="white" stroke-width="1.2" stroke-linejoin="round"/>
-                </svg>
               </div>
             </div>
 
