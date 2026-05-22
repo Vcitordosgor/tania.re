@@ -47,7 +47,6 @@
 
   <style>
     html { scroll-behavior: smooth; }
-    body { overflow-x: clip; }
     body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
 
     /* ─── Halo doux derrière le mockup hero ─── */
@@ -163,20 +162,16 @@
 
     .chat-scroll { scroll-behavior: smooth; }
 
-    /* MacBook : crossfade, 16:9, contenu dans sa colonne (jamais clippé) */
+    /* MacBook : crossfade, 16:9, ancré à droite, peut déborder uniquement vers la droite */
     .hero-macbook {
-      position: absolute; top: 50%; right: 0;
-      width: 100%; max-width: 100%;
+      position: absolute; top: 50%; right: -60px;
+      width: calc(100% + 80px); max-width: calc(100vw - 48px);
       transform: translateY(-50%) scale(0.97);
       pointer-events: none; opacity: 0;
       animation: mb-cycle 11s cubic-bezier(0.65, 0, 0.35, 1) infinite;
     }
-    /* xl+ : on autorise un léger débordement dans l'espace libre à droite du container (jamais sur le texte ni hors viewport) */
     @media (min-width: 1280px) {
-      .hero-macbook {
-        width: calc(100% + 80px); max-width: calc(100vw - 24px);
-        right: -80px;
-      }
+      .hero-macbook { width: 720px; right: -100px; }
     }
     @keyframes mb-cycle {
       0%, 30%  { opacity: 0; transform: translateY(-50%) scale(0.97); }
@@ -380,7 +375,7 @@
   <!-- ═════════════════════════════════════════════ -->
   <!-- SECTION 1 — HERO                              -->
   <!-- ═════════════════════════════════════════════ -->
-  <section class="relative bg-gradient-to-b from-emerald-50/60 to-white">
+  <section class="relative overflow-hidden bg-gradient-to-b from-emerald-50/60 to-white">
     <div class="max-w-6xl mx-auto px-6 lg:px-8 py-20 lg:py-28">
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
