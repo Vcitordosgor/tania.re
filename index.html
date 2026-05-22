@@ -1262,61 +1262,68 @@ Je peux préparer un message de relance prêt à envoyer.<div class="text-[10px]
         </p>
       </div>
 
-      <!-- Layout 2 zones : Réforme (gauche, compact) vs Avec Tania (droite, mis en avant) -->
-      <div class="grid lg:grid-cols-5 gap-6 mt-14 items-stretch">
+      <!-- Layout 2 zones : Réforme (gauche, mis en avant) vs Avec Tania (droite, solution) -->
+      <div class="grid lg:grid-cols-2 gap-6 mt-14 items-stretch">
 
-        <!-- Bloc gauche : Ce qui change (2 mini-cartes empilées) -->
-        <div class="lg:col-span-2 reveal flex flex-col" data-delay="1">
-          <p class="text-slate-400 font-semibold text-xs uppercase tracking-wider mb-4">Ce qui change</p>
-          <div class="flex flex-col gap-3 flex-1">
-            <div class="bg-slate-800 border border-slate-700 rounded-xl p-5 flex-1 flex flex-col justify-center">
-              <div class="flex items-center gap-3">
-                <span class="w-9 h-9 rounded-full bg-slate-700 text-emerald-400 font-semibold text-xs flex items-center justify-center shrink-0">2026</span>
-                <h3 class="text-base font-semibold text-white">Réception</h3>
+        <!-- Bloc gauche : Ce qui change vraiment (2 grandes cartes empilées) -->
+        <div class="reveal flex flex-col" data-delay="1">
+          <p class="text-slate-400 font-semibold text-xs uppercase tracking-wider mb-4">Ce qui change vraiment</p>
+          <div class="flex flex-col gap-4 flex-1">
+
+            <!-- Carte 2026 -->
+            <div class="relative bg-gradient-to-br from-slate-800 to-slate-800/60 border border-slate-700 rounded-xl p-6 lg:p-7 flex-1 flex flex-col">
+              <div class="flex items-baseline gap-3">
+                <span class="text-3xl lg:text-4xl font-bold text-emerald-400 tracking-tight">2026</span>
+                <span class="text-xs uppercase tracking-wider text-slate-500 font-semibold">Étape 1</span>
               </div>
-              <p class="mt-3 text-sm text-slate-300 leading-relaxed">Les entreprises devront pouvoir recevoir des factures électroniques via le nouveau circuit officiel.</p>
+              <h3 class="mt-3 text-xl lg:text-2xl font-bold text-white leading-tight">Réception obligatoire</h3>
+              <p class="mt-3 text-sm lg:text-base text-slate-300 leading-relaxed">Les entreprises devront pouvoir recevoir des factures électroniques via le nouveau circuit officiel.</p>
             </div>
-            <div class="bg-slate-800 border border-slate-700 rounded-xl p-5 flex-1 flex flex-col justify-center">
-              <div class="flex items-center gap-3">
-                <span class="w-9 h-9 rounded-full bg-slate-700 text-emerald-400 font-semibold text-xs flex items-center justify-center shrink-0">2027</span>
-                <h3 class="text-base font-semibold text-white">Émission</h3>
+
+            <!-- Carte 2027 -->
+            <div class="relative bg-gradient-to-br from-slate-800 to-slate-800/60 border border-slate-700 rounded-xl p-6 lg:p-7 flex-1 flex flex-col">
+              <div class="flex items-baseline gap-3">
+                <span class="text-3xl lg:text-4xl font-bold text-emerald-400 tracking-tight">2027</span>
+                <span class="text-xs uppercase tracking-wider text-slate-500 font-semibold">Étape 2</span>
               </div>
-              <p class="mt-3 text-sm text-slate-300 leading-relaxed">Les TPE et PME devront aussi émettre leurs factures dans un format structuré.</p>
+              <h3 class="mt-3 text-xl lg:text-2xl font-bold text-white leading-tight">Émission pour les TPE/PME</h3>
+              <p class="mt-3 text-sm lg:text-base text-slate-300 leading-relaxed">Les TPE et PME devront aussi émettre leurs factures dans un format structuré.</p>
             </div>
+
           </div>
         </div>
 
-        <!-- Bloc droite : Avec Tania (carte principale, mise en avant) -->
-        <div class="lg:col-span-3 reveal flex flex-col" data-delay="2">
+        <!-- Bloc droite : Avec Tania (solution, moins dominant) -->
+        <div class="reveal flex flex-col" data-delay="2">
           <p class="text-emerald-400 font-semibold text-xs uppercase tracking-wider mb-4">Avec Tania</p>
-          <div class="relative bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-2xl p-8 lg:p-10 shadow-2xl overflow-hidden flex-1 flex flex-col justify-center">
-            <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" aria-hidden="true"></div>
+          <div class="relative bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-xl p-6 lg:p-8 shadow-xl overflow-hidden flex-1 flex flex-col justify-center">
+            <div class="absolute top-0 right-0 w-48 h-48 bg-white/8 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" aria-hidden="true"></div>
             <div class="relative">
               <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-medium">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                 Solution simple
               </div>
-              <h3 class="mt-5 text-2xl md:text-3xl font-bold text-white leading-tight">WhatsApp devant. Le circuit officiel derrière.</h3>
-              <p class="mt-4 text-base lg:text-lg text-emerald-50 leading-relaxed">Tania prépare vos factures au format Factur-X et prévoit une connexion à une Plateforme Agréée partenaire.</p>
+              <h3 class="mt-4 text-xl lg:text-2xl font-bold text-white leading-tight">WhatsApp devant. Le circuit officiel derrière.</h3>
+              <p class="mt-3 text-sm lg:text-base text-emerald-50 leading-relaxed">Tania prépare vos factures au format Factur-X et prévoit une connexion à une Plateforme Agréée partenaire.</p>
 
-              <ul class="mt-6 space-y-3 text-white">
+              <ul class="mt-5 space-y-2.5 text-white">
                 <li class="flex items-start gap-3">
                   <span class="mt-0.5 w-5 h-5 rounded-full bg-white/25 flex items-center justify-center shrink-0">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                   </span>
-                  <span class="text-base">Documents structurés</span>
+                  <span class="text-sm lg:text-base">Documents structurés</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <span class="mt-0.5 w-5 h-5 rounded-full bg-white/25 flex items-center justify-center shrink-0">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                   </span>
-                  <span class="text-base">Données prêtes pour le comptable</span>
+                  <span class="text-sm lg:text-base">Données prêtes pour le comptable</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <span class="mt-0.5 w-5 h-5 rounded-full bg-white/25 flex items-center justify-center shrink-0">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                   </span>
-                  <span class="text-base">Suivi simple depuis votre dashboard</span>
+                  <span class="text-sm lg:text-base">Suivi simple depuis votre dashboard</span>
                 </li>
               </ul>
             </div>
