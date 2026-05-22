@@ -32,14 +32,6 @@
         extend: {
           fontFamily: { sans: ['Inter', 'ui-sans-serif', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'] },
           letterSpacing: { tighter2: '-0.02em' },
-          colors: {
-            brand: {
-              primary: '#10b981',
-              primaryDark: '#059669',
-              primaryLight: '#ecfdf5',
-              secondary: '#0f172a',
-            },
-          },
         },
       },
     };
@@ -47,8 +39,7 @@
 
   <style>
     html { scroll-behavior: smooth; }
-    body { overflow-x: clip; }
-    body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+    body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; overflow-x: clip; }
 
     /* ─── Halo doux derrière le mockup hero ─── */
     .hero-halo::before {
@@ -102,12 +93,9 @@
       font-weight: 600; font-size: 1em;
       letter-spacing: -0.025em; line-height: 1; color: inherit;
     }
-    /* Tailles */
-    .tania-logo.sm { font-size: 20px; }
+    /* Taille (md = 32px, utilisée partout) */
     .tania-logo.md { font-size: 32px; }
-    .tania-logo.lg { font-size: 48px; }
-    .tania-logo.xl { font-size: 64px; }
-    /* Variante sur fond sombre : "ania" et T restent emerald (contraste OK) */
+    /* Variante sur fond sombre : le logo reste emerald (contraste OK) */
     .tania-logo.on-slate-900 { color: #10b981; }
 
     /* Animation des 2 barres du T (cycle 6s) */
@@ -285,14 +273,6 @@
       .hero-macbook { display: none; }
     }
 
-    /* ─── Pulse dot (optionnel) ─── */
-    @keyframes tania-pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.6; transform: scale(1.15); }
-    }
-    .tania-pulse-dot { position: relative; display: inline-block; width: 15px; height: 15px; flex-shrink: 0; }
-    .tania-pulse-dot .halo { position: absolute; inset: 0; background: #10b981; border-radius: 50%; opacity: 0.3; animation: tania-pulse 2.5s ease-in-out infinite; }
-    .tania-pulse-dot .core { position: absolute; inset: 3px; background: #10b981; border-radius: 50%; }
 
     /* ─── Reduced motion ─── */
     @media (prefers-reduced-motion: reduce) {
