@@ -162,13 +162,16 @@
 
     .chat-scroll { scroll-behavior: smooth; }
 
-    /* MacBook : crossfade, 16:9, débordement large vers la gauche */
+    /* MacBook : crossfade, 16:9, ancré à droite, peut déborder uniquement vers la droite */
     .hero-macbook {
-      position: absolute; top: 50%; right: -40px;
-      width: 960px; max-width: calc(100vw - 48px);
+      position: absolute; top: 50%; right: -60px;
+      width: calc(100% + 80px); max-width: calc(100vw - 48px);
       transform: translateY(-50%) scale(0.97);
       pointer-events: none; opacity: 0;
       animation: mb-cycle 11s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+    }
+    @media (min-width: 1280px) {
+      .hero-macbook { width: 720px; right: -100px; }
     }
     @keyframes mb-cycle {
       0%, 30%  { opacity: 0; transform: translateY(-50%) scale(0.97); }
@@ -374,17 +377,17 @@
   <!-- ═════════════════════════════════════════════ -->
   <section class="relative overflow-hidden bg-gradient-to-b from-emerald-50/60 to-white">
     <div class="max-w-6xl mx-auto px-6 lg:px-8 py-20 lg:py-28">
-      <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-        <!-- Colonne texte (60%) -->
-        <div class="lg:col-span-3">
-          <h1 class="reveal text-[36px] leading-[44px] md:text-5xl md:leading-[56px] lg:text-[56px] lg:leading-[64px] font-bold text-slate-900 tracking-tighter2">
+        <!-- Colonne texte (compact, max 520px) -->
+        <div class="lg:max-w-[520px]">
+          <h1 class="reveal text-[36px] leading-[44px] md:text-5xl md:leading-[56px] lg:text-[52px] lg:leading-[60px] font-bold text-slate-900 tracking-tighter2">
             Vos devis et factures,<br />simplement par <span class="text-emerald-500">WhatsApp</span>.
           </h1>
-          <p class="reveal mt-6 text-lg lg:text-xl text-slate-700 leading-relaxed max-w-xl font-medium" data-delay="1">
+          <p class="reveal mt-6 text-lg lg:text-xl text-slate-700 leading-relaxed font-medium" data-delay="1">
             Votre assistante administrative, dans WhatsApp.
           </p>
-          <p class="reveal mt-4 text-base lg:text-lg text-slate-600 leading-relaxed max-w-xl" data-delay="1">
+          <p class="reveal mt-4 text-base lg:text-lg text-slate-600 leading-relaxed" data-delay="1">
             Vous envoyez vos prestations comme un message. Tania prépare vos documents, suit vos paiements et vous accompagne vers la facturation électronique avec une connexion prévue à une Plateforme Agréée.
           </p>
 
@@ -404,8 +407,8 @@
           </ul>
         </div>
 
-        <!-- Colonne mockup (40%) -->
-        <div class="lg:col-span-2 relative hero-halo">
+        <!-- Colonne mockup (anim ancrée à droite) -->
+        <div class="relative hero-halo">
           <div class="hero-stage" aria-label="Démonstration animée : envoi d'un message WhatsApp à Tania, réception d'une facture conforme, et accès au tableau de bord.">
 
             <!-- ═══ iPhone (Phases 1-4) ═══ -->
