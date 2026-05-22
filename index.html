@@ -136,24 +136,24 @@
     /* Fond WhatsApp light mode propre (cream chaud, sans doodle visible) */
     .wa-bg { background-color: #ECE5DD; }
 
-    /* iPhone (cycle 11s, crossfade pur) */
+    /* iPhone (cycle 14s avec idle ~3s, crossfade pur) */
     .hero-iphone {
       max-width: 280px; margin: 0 auto;
-      animation: iphone-cycle 11s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+      animation: iphone-cycle 14s cubic-bezier(0.65, 0, 0.35, 1) infinite;
     }
     @keyframes iphone-cycle {
-      0%, 30%  { opacity: 1; transform: scale(1); }
-      36%, 95% { opacity: 0; transform: scale(0.97); }
+      0%, 24%  { opacity: 1; transform: scale(1); }
+      28%, 99% { opacity: 0; transform: scale(0.97); }
       100%     { opacity: 1; transform: scale(1); }
     }
-    /* Bulles : phone phase 2.5x avec lecture allongée sur B2 (cycle 11s) */
+    /* Bulles : phone phase 2.5x avec lecture allongée sur B2 (cycle 14s avec idle ~3s) */
     .hero-b1, .hero-t1, .hero-b2 { opacity: 0; transform: translateY(8px) scale(0.96); }
-    .hero-b1 { animation: hb1 11s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
-    .hero-t1 { animation: ht1 11s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
-    .hero-b2 { animation: hb2 11s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
-    @keyframes hb1 { 0%, 1% { opacity:0; transform:translateY(8px) scale(.96); } 4%, 30% { opacity:1; transform:translateY(0) scale(1); } 36%, 100% { opacity:0; } }
-    @keyframes ht1 { 0%, 10% { opacity:0; transform:translateY(8px) scale(.96); } 12%, 15% { opacity:1; transform:translateY(0) scale(1); } 17%, 100% { opacity:0; } }
-    @keyframes hb2 { 0%, 15% { opacity:0; transform:translateY(8px) scale(.96); } 18%, 30% { opacity:1; transform:translateY(0) scale(1); } 36%, 100% { opacity:0; } }
+    .hero-b1 { animation: hb1 14s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
+    .hero-t1 { animation: ht1 14s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
+    .hero-b2 { animation: hb2 14s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
+    @keyframes hb1 { 0%, 1% { opacity:0; transform:translateY(8px) scale(.96); } 3%, 24% { opacity:1; transform:translateY(0) scale(1); } 28%, 100% { opacity:0; } }
+    @keyframes ht1 { 0%, 8% { opacity:0; transform:translateY(8px) scale(.96); } 9%, 12% { opacity:1; transform:translateY(0) scale(1); } 13%, 100% { opacity:0; } }
+    @keyframes hb2 { 0%, 12% { opacity:0; transform:translateY(8px) scale(.96); } 14%, 24% { opacity:1; transform:translateY(0) scale(1); } 28%, 100% { opacity:0; } }
 
     .hero-t1 .dot { animation: typdot 1s ease-in-out infinite; }
     .hero-t1 .dot:nth-child(2) { animation-delay: .15s; }
@@ -168,12 +168,12 @@
       width: 960px; max-width: calc(100vw - 48px);
       transform: translateY(-50%) scale(0.97);
       pointer-events: none; opacity: 0;
-      animation: mb-cycle 11s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+      animation: mb-cycle 14s cubic-bezier(0.65, 0, 0.35, 1) infinite;
     }
     @keyframes mb-cycle {
-      0%, 30%  { opacity: 0; transform: translateY(-50%) scale(0.97); }
-      36%, 95% { opacity: 1; transform: translateY(-50%) scale(1); }
-      100%     { opacity: 0; transform: translateY(-50%) scale(0.97); }
+      0%, 24%  { opacity: 0; transform: translateY(-50%) scale(0.97); }
+      28%, 75% { opacity: 1; transform: translateY(-50%) scale(1); }
+      80%, 100% { opacity: 0; transform: translateY(-50%) scale(0.97); }
     }
     .hero-macbook-frame {
       width: 100%; aspect-ratio: 16 / 9; max-height: 540px;
@@ -183,33 +183,33 @@
     }
     .hero-mb-sidebar { width: 200px; background: white; border-right: 1px solid #e2e8f0; padding: 18px 12px; display: flex; flex-direction: column; flex-shrink: 0; }
     .hero-mb-nav { display: flex; align-items: center; gap: 8px; padding: 7px 10px; border-radius: 6px; color: #334155; font-size: 12px; cursor: default; transition: background 0.25s ease, color 0.25s ease, transform 0.15s ease; }
-    .hero-mb-nav.hero-nav-accueil { animation: nav-accueil 11s linear infinite; }
-    .hero-mb-nav.hero-nav-factures { animation: nav-factures 11s linear infinite; }
+    .hero-mb-nav.hero-nav-accueil { animation: nav-accueil 14s linear infinite; }
+    .hero-mb-nav.hero-nav-factures { animation: nav-factures 14s linear infinite; }
     @keyframes nav-accueil {
-      0%, 52%  { background: #ecfdf5; color: #047857; font-weight: 500; }
-      58%, 100% { background: transparent; color: #334155; font-weight: 400; }
+      0%, 41%  { background: #ecfdf5; color: #047857; font-weight: 500; }
+      46%, 100% { background: transparent; color: #334155; font-weight: 400; }
     }
     @keyframes nav-factures {
-      0%, 52%  { background: transparent; color: #334155; font-weight: 400; transform: scale(1); }
-      55%      { background: #ecfdf5; color: #047857; font-weight: 500; transform: scale(0.94); }
-      59%, 100% { background: #ecfdf5; color: #047857; font-weight: 500; transform: scale(1); }
+      0%, 41%  { background: transparent; color: #334155; font-weight: 400; transform: scale(1); }
+      43%      { background: #ecfdf5; color: #047857; font-weight: 500; transform: scale(0.94); }
+      46%, 100% { background: #ecfdf5; color: #047857; font-weight: 500; transform: scale(1); }
     }
     .hero-mb-main { flex: 1; background: #f8fafc; overflow: hidden; position: relative; }
     /* Vues */
-    .hero-view-accueil { opacity: 0; animation: view-accueil 11s ease-out infinite; }
-    .hero-view-factures { opacity: 0; animation: view-factures 11s ease-out infinite; }
+    .hero-view-accueil { opacity: 0; animation: view-accueil 14s ease-out infinite; }
+    .hero-view-factures { opacity: 0; animation: view-factures 14s ease-out infinite; }
     @keyframes view-accueil {
-      0%, 35% { opacity: 0; }
-      41%, 52% { opacity: 1; }
-      57%, 100% { opacity: 0; }
+      0%, 28% { opacity: 0; }
+      32%, 41% { opacity: 1; }
+      45%, 100% { opacity: 0; }
     }
     @keyframes view-factures {
-      0%, 55% { opacity: 0; }
-      59%, 95% { opacity: 1; }
-      99%, 100% { opacity: 0; }
+      0%, 43% { opacity: 0; }
+      46%, 75% { opacity: 1; }
+      78%, 100% { opacity: 0; }
     }
     /* Overlay PDF facture */
-    .hero-pdf-overlay { position: absolute; inset: 0; opacity: 0; pointer-events: none; animation: pdf-cycle 11s ease-out infinite; z-index: 20; }
+    .hero-pdf-overlay { position: absolute; inset: 0; opacity: 0; pointer-events: none; animation: pdf-cycle 14s ease-out infinite; z-index: 20; }
     .hero-pdf-backdrop { position: absolute; inset: 0; background: rgba(15, 23, 42, 0.45); }
     .hero-pdf-sheet {
       position: absolute; top: 50%; left: 50%;
@@ -219,53 +219,53 @@
       box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3);
       padding: 18px 20px;
       display: flex; flex-direction: column;
-      animation: pdf-sheet-cycle 11s ease-out infinite;
+      animation: pdf-sheet-cycle 14s ease-out infinite;
     }
     @keyframes pdf-cycle {
-      0%, 77% { opacity: 0; }
-      81%, 95% { opacity: 1; }
-      99%, 100% { opacity: 0; }
+      0%, 60% { opacity: 0; }
+      64%, 75% { opacity: 1; }
+      78%, 100% { opacity: 0; }
     }
     @keyframes pdf-sheet-cycle {
-      0%, 77% { transform: translate(-50%, -45%) scale(0.92); }
-      81%, 95% { transform: translate(-50%, -50%) scale(1); }
-      99%, 100% { transform: translate(-50%, -55%) scale(0.92); }
+      0%, 60% { transform: translate(-50%, -45%) scale(0.92); }
+      64%, 75% { transform: translate(-50%, -50%) scale(1); }
+      78%, 100% { transform: translate(-50%, -55%) scale(0.92); }
     }
     /* Curseur macOS : 2 stops — Factures (sidebar), puis œil F-2026-0003 (row), clics aux deux */
-    .hero-cursor { position: absolute; left: 0; top: 0; opacity: 0; animation: cursor-cycle 11s cubic-bezier(0.4, 0, 0.2, 1) infinite; pointer-events: none; z-index: 30; filter: drop-shadow(0 2px 3px rgba(0,0,0,0.25)); }
+    .hero-cursor { position: absolute; left: 0; top: 0; opacity: 0; animation: cursor-cycle 14s cubic-bezier(0.4, 0, 0.2, 1) infinite; pointer-events: none; z-index: 30; filter: drop-shadow(0 2px 3px rgba(0,0,0,0.25)); }
     @keyframes cursor-cycle {
       /* parking caché */
-      0%, 38%    { opacity: 0; transform: translate(620px, 320px); }
+      0%, 30%    { opacity: 0; transform: translate(620px, 320px); }
       /* apparition */
-      42%        { opacity: 1; transform: translate(620px, 320px); }
+      33%        { opacity: 1; transform: translate(620px, 320px); }
       /* glisse vers Factures (sidebar item 2) */
-      51%        { opacity: 1; transform: translate(48px, 112px); }
-      53%        { opacity: 1; transform: translate(48px, 112px); }
+      40%        { opacity: 1; transform: translate(48px, 112px); }
+      42%        { opacity: 1; transform: translate(48px, 112px); }
       /* clic Factures */
-      54%        { opacity: 1; transform: translate(48px, 112px) scale(0.82); }
-      56%, 63%   { opacity: 1; transform: translate(48px, 112px) scale(1); }
+      43%        { opacity: 1; transform: translate(48px, 112px) scale(0.82); }
+      44%, 50%   { opacity: 1; transform: translate(48px, 112px) scale(1); }
       /* glisse vers l'œil de F-2026-0003 */
-      73%        { opacity: 1; transform: translate(845px, 232px) scale(1); }
-      74%        { opacity: 1; transform: translate(845px, 232px) scale(1); }
+      57%        { opacity: 1; transform: translate(845px, 232px) scale(1); }
+      58%        { opacity: 1; transform: translate(845px, 232px) scale(1); }
       /* clic œil */
-      76%        { opacity: 1; transform: translate(845px, 232px) scale(0.82); }
-      78%, 92%   { opacity: 1; transform: translate(845px, 232px) scale(1); }
+      60%        { opacity: 1; transform: translate(845px, 232px) scale(0.82); }
+      61%, 72%   { opacity: 1; transform: translate(845px, 232px) scale(1); }
       /* fade out final */
-      98%, 100%  { opacity: 0; transform: translate(845px, 232px) scale(1); }
+      77%, 100%  { opacity: 0; transform: translate(845px, 232px) scale(1); }
     }
     /* Eye icon : pulse subtil quand le curseur arrive (66-71%) */
-    .hero-eye-target { animation: eye-pulse 11s ease-out infinite; }
+    .hero-eye-target { animation: eye-pulse 14s ease-out infinite; }
     @keyframes eye-pulse {
-      0%, 68% { stroke: #64748b; transform: scale(1); }
-      73%, 76% { stroke: #059669; transform: scale(1.2); }
-      80%, 100% { stroke: #64748b; transform: scale(1); }
+      0%, 53% { stroke: #64748b; transform: scale(1); }
+      57%, 60% { stroke: #059669; transform: scale(1.2); }
+      63%, 100% { stroke: #64748b; transform: scale(1); }
     }
     /* Highlight row F-2026-0003 (juste après le clic Factures) */
-    .hero-row-new { animation: row-highlight-cycle 11s ease-out infinite; }
+    .hero-row-new { animation: row-highlight-cycle 14s ease-out infinite; }
     @keyframes row-highlight-cycle {
-      0%, 56% { background-color: white; box-shadow: none; }
-      61%, 72% { background-color: #ecfdf5; box-shadow: inset 0 0 0 1.5px #6ee7b7; }
-      77%, 100% { background-color: white; box-shadow: none; }
+      0%, 44% { background-color: white; box-shadow: none; }
+      48%, 57% { background-color: #ecfdf5; box-shadow: inset 0 0 0 1.5px #6ee7b7; }
+      61%, 100% { background-color: white; box-shadow: none; }
     }
 
     /* Mobile : iPhone seul, pas de MacBook, durée 6s */
