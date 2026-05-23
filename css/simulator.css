@@ -4,6 +4,9 @@
 
 .sim-wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
 
+/* Offset pour éviter que le header sticky (64px) ne cache le haut au scrollIntoView */
+.sim-quiz, .sim-result, #sim-question-container { scroll-margin-top: 80px; }
+
 /* ─── Hero ─── */
 .sim-hero { padding: 3rem 0 1.5rem; text-align: center; }
 .sim-badge {
