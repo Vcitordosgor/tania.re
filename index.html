@@ -1622,7 +1622,13 @@ Je peux préparer un message de relance prêt à envoyer.<div class="text-[10px]
         Réservez une démo gratuite. En 15 minutes, vous voyez comment Tania peut créer vos devis, factures et suivis directement depuis WhatsApp.
       </p>
 
-      <form id="waitlist-form" action="/api/waitlist" method="POST" class="mt-10 bg-white rounded-2xl p-8 max-w-xl mx-auto text-left shadow-lg">
+      <form id="waitlist-form" action="https://formsubmit.co/contact@tania.re" method="POST" class="mt-10 bg-white rounded-2xl p-8 max-w-xl mx-auto text-left shadow-lg">
+        <input type="hidden" name="_subject" value="Nouvelle demande de démo Tania" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="https://tania.re/?demo=ok" />
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
         <label for="wl-name" class="block text-sm font-semibold text-slate-700">Votre nom</label>
         <input id="wl-name" name="name" type="text" required placeholder="Marc Hoareau" class="w-full mt-2 px-4 py-3.5 rounded-lg border border-slate-200 text-base text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100" />
 
@@ -1768,21 +1774,21 @@ Je peux préparer un message de relance prêt à envoyer.<div class="text-[10px]
       form.addEventListener('submit', async (ev) => {
         ev.preventDefault();
         status.textContent = 'Envoi en cours…';
-        const data = Object.fromEntries(new FormData(form).entries());
+        const formData = new FormData(form);
         try {
-          const res = await fetch('/api/waitlist', {
+          const res = await fetch('https://formsubmit.co/ajax/contact@tania.re', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data),
+            headers: { 'Accept': 'application/json' },
+            body: formData,
           });
           if (res.ok) {
             status.textContent = 'Merci ! Je vous réponds sous 24 h pour planifier la démo.';
             form.reset();
           } else {
-            status.textContent = 'Une erreur est survenue. Réessayez ou contactez-nous sur WhatsApp.';
+            status.textContent = 'Une erreur est survenue. Écrivez-nous à contact@tania.re.';
           }
         } catch (_e) {
-          status.textContent = 'Connexion impossible. Réessayez plus tard ou écrivez-nous sur WhatsApp.';
+          status.textContent = 'Connexion impossible. Écrivez-nous à contact@tania.re.';
         }
       });
     }
