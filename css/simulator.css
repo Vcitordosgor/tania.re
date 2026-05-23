@@ -1,0 +1,561 @@
+/* ─────────────────────────────────────────────────────────
+   Tania — styles du simulateur /test-facturation-electronique-reunion
+   ───────────────────────────────────────────────────────── */
+
+.sim-wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+
+/* ─── Hero ─── */
+.sim-hero { padding: 3rem 0 1.5rem; text-align: center; }
+.sim-badge {
+  display: inline-block;
+  background: #d1fae5;
+  color: #047857;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  margin-bottom: 1.25rem;
+}
+.sim-hero h1 {
+  font-size: 2.1rem;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: #0f172a;
+  margin: 0 0 1rem;
+}
+.sim-hero .sim-sub {
+  font-size: 1.1rem;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0 auto 2rem;
+  max-width: 560px;
+}
+
+/* ─── Réassurance (4 puces) ─── */
+.sim-reassure {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+  max-width: 480px;
+  margin: 0 auto 2rem;
+  list-style: none;
+  padding: 0;
+}
+.sim-reassure li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.92rem;
+  color: #334155;
+  font-weight: 500;
+}
+
+/* ─── CTA Hero ─── */
+.sim-cta-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0 0 2rem;
+}
+.sim-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #10b981;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 1.1rem 2rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 6px 16px -4px rgba(16, 185, 129, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  min-height: 52px;
+  width: 100%;
+  max-width: 320px;
+}
+.sim-btn-primary:hover {
+  background: #059669;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px -6px rgba(16, 185, 129, 0.45);
+  color: #fff;
+}
+.sim-btn-secondary {
+  color: #047857;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-size: 0.95rem;
+}
+.sim-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #fff;
+  color: #047857;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.9rem 1.4rem;
+  border-radius: 12px;
+  border: 2px solid #10b981;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease;
+  min-height: 48px;
+}
+.sim-btn-outline:hover { background: #ecfdf5; color: #047857; }
+
+/* ─── Cartes confiance ─── */
+.sim-trust {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+  margin: 0 0 3rem;
+}
+.sim-trust-card {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 1.1rem 1.3rem;
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+}
+.sim-trust-card .sim-trust-icon { font-size: 1.6rem; line-height: 1; flex-shrink: 0; }
+.sim-trust-card .sim-trust-title {
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 1rem;
+  margin: 0 0 0.25rem;
+}
+.sim-trust-card .sim-trust-text {
+  font-size: 0.93rem;
+  color: #64748b;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ─── Quiz ─── */
+.sim-quiz { display: none; padding: 1rem 0 3rem; }
+.sim-quiz.active { display: block; }
+
+.sim-progress {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+.sim-progress-bar {
+  flex: 1;
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.sim-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981, #059669);
+  transition: width 0.35s ease;
+  border-radius: 999px;
+}
+.sim-progress-label {
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.sim-question {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 1.75rem 1.5rem;
+  box-shadow: 0 10px 30px -16px rgba(15, 23, 42, 0.12);
+  animation: simFadeIn 0.3s ease-out;
+}
+@keyframes simFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.sim-question h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.35;
+  margin: 0 0 1.25rem;
+  letter-spacing: -0.01em;
+}
+
+.sim-options { list-style: none; padding: 0; margin: 0 0 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; }
+.sim-options label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #f9fafb;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 0.95rem 1rem;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+  font-size: 1rem;
+  color: #1e293b;
+  min-height: 52px;
+}
+.sim-options label:hover { background: #f0fdf4; border-color: #a7f3d0; }
+.sim-options input[type="radio"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #cbd5e1;
+  border-radius: 999px;
+  background: #fff;
+  cursor: pointer;
+  flex-shrink: 0;
+  position: relative;
+  transition: border-color 0.15s ease;
+}
+.sim-options input[type="radio"]:checked { border-color: #10b981; }
+.sim-options input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  background: #10b981;
+  border-radius: 999px;
+}
+.sim-options label:has(input:checked) {
+  background: #ecfdf5;
+  border-color: #10b981;
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.10);
+}
+.sim-options input[type="radio"]:focus-visible { outline: 2px solid #10b981; outline-offset: 3px; }
+
+.sim-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+.sim-nav-prev {
+  background: transparent;
+  color: #64748b;
+  border: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 0.65rem 0.5rem;
+}
+.sim-nav-prev:hover { color: #0f172a; }
+.sim-nav-prev:disabled { opacity: 0.35; cursor: default; }
+.sim-nav-next {
+  background: #10b981;
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 12px;
+  cursor: pointer;
+  min-height: 48px;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+.sim-nav-next:hover:not(:disabled) { background: #059669; transform: translateY(-1px); }
+.sim-nav-next:disabled { background: #d1d5db; cursor: not-allowed; }
+
+/* ─── Résultat ─── */
+.sim-result { display: none; padding: 1rem 0 3rem; }
+.sim-result.active { display: block; animation: simFadeIn 0.35s ease-out; }
+
+.sim-result-header {
+  text-align: center;
+  padding: 1.5rem 1rem 2rem;
+}
+.sim-result-header h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.025em;
+  margin: 0 0 1.25rem;
+}
+.sim-level-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.01em;
+}
+.sim-level-badge::before {
+  content: '';
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: currentColor;
+}
+.sim-level-prepare { background: #fef3c7; color: #b45309; }
+.sim-level-verify  { background: #fef9c3; color: #a16207; }
+.sim-level-clarify { background: #e0e7ff; color: #4338ca; }
+
+.sim-diag-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 1.3rem 1.4rem;
+  margin-bottom: 0.85rem;
+  border-left: 4px solid #10b981;
+}
+.sim-diag-title {
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.sim-diag-text {
+  font-size: 0.98rem;
+  color: #475569;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.sim-actions-block {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 1.3rem 1.4rem;
+  margin: 1.5rem 0;
+}
+.sim-actions-block h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.85rem;
+}
+.sim-actions-list { list-style: none; padding: 0; margin: 0; }
+.sim-actions-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  padding: 0.55rem 0;
+  font-size: 0.95rem;
+  color: #334155;
+  line-height: 1.55;
+  border-bottom: 1px dashed #e5e7eb;
+}
+.sim-actions-list li:last-child { border-bottom: none; }
+.sim-actions-list li::before {
+  content: '☐';
+  color: #10b981;
+  font-size: 1.15rem;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+
+.sim-result-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1.5rem 0 1rem;
+}
+.sim-btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: #25D366;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.02rem;
+  padding: 1rem 1.4rem;
+  border-radius: 12px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+  min-height: 52px;
+}
+.sim-btn-whatsapp:hover { background: #1ebe5d; transform: translateY(-2px); color: #fff; }
+.sim-btn-copy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #fff;
+  color: #047857;
+  border: 2px solid #10b981;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.9rem 1.3rem;
+  border-radius: 12px;
+  cursor: pointer;
+  min-height: 52px;
+  transition: background 0.15s ease;
+}
+.sim-btn-copy:hover { background: #ecfdf5; }
+.sim-btn-copy.copied { background: #d1fae5; border-color: #059669; color: #065f46; }
+
+/* ─── Share ─── */
+.sim-share {
+  background: #f8fafc;
+  border-radius: 14px;
+  padding: 1.1rem 1.3rem;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+.sim-share-title {
+  font-size: 0.95rem;
+  color: #475569;
+  margin: 0 0 0.85rem;
+  font-weight: 600;
+}
+.sim-share-row {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.sim-share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #fff;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  padding: 0.55rem 0.9rem;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+.sim-share-btn:hover { border-color: #10b981; color: #047857; }
+.sim-share-btn.copied { background: #d1fae5; border-color: #059669; color: #065f46; }
+
+/* ─── CTA final Tania ─── */
+.sim-final {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  border-radius: 20px;
+  padding: 2.25rem 1.5rem;
+  text-align: center;
+  margin: 2.5rem 0 2rem;
+  color: #fff;
+}
+.sim-final h2 {
+  font-size: 1.55rem;
+  margin: 0 0 0.85rem;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+.sim-final p { color: #d1fae5; margin: 0 0 1.5rem; font-size: 0.98rem; line-height: 1.6; }
+.sim-final .sim-btn-primary {
+  background: #fff;
+  color: #047857;
+  box-shadow: 0 4px 14px -2px rgba(0,0,0,0.2);
+  width: auto;
+}
+.sim-final .sim-btn-primary:hover { background: #f0fdf4; color: #047857; }
+.sim-final .sim-btn-outline {
+  background: transparent;
+  border-color: #fff;
+  color: #fff;
+  margin-top: 0.85rem;
+  width: auto;
+}
+.sim-final .sim-btn-outline:hover { background: rgba(255,255,255,0.1); color: #fff; }
+
+/* ─── FAQ ─── */
+.sim-faq h2 {
+  font-size: 1.45rem;
+  color: #0f172a;
+  margin: 2.5rem 0 1.25rem;
+  font-weight: 700;
+}
+.sim-faq details {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 0.65rem;
+  background: #fff;
+  transition: border-color 0.2s ease;
+}
+.sim-faq details[open] { border-color: #10b981; box-shadow: 0 4px 12px -4px rgba(16, 185, 129, 0.15); }
+.sim-faq summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #0f172a;
+  font-size: 1rem;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.sim-faq summary::-webkit-details-marker { display: none; }
+.sim-faq summary::after { content: '+'; font-size: 1.45rem; color: #10b981; transition: transform 0.2s ease; line-height: 1; }
+.sim-faq details[open] summary::after { transform: rotate(45deg); }
+.sim-faq .faq-a { margin-top: 0.7rem; color: #475569; font-size: 0.95rem; line-height: 1.65; }
+
+/* ─── Mention finale ─── */
+.sim-disclaimer {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #94a3b8;
+  border-radius: 0 10px 10px 0;
+  padding: 0.9rem 1.1rem;
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 2rem 0;
+}
+
+/* ─── Toast feedback ─── */
+.sim-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: #0f172a;
+  color: #fff;
+  padding: 0.8rem 1.3rem;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+  z-index: 100;
+  box-shadow: 0 10px 30px -8px rgba(0,0,0,0.3);
+}
+.sim-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* ─── Tablet ─── */
+@media (min-width: 640px) {
+  .sim-trust { grid-template-columns: repeat(3, 1fr); }
+  .sim-reassure { grid-template-columns: repeat(4, 1fr); }
+  .sim-cta-row { flex-direction: row; justify-content: center; }
+  .sim-btn-primary { width: auto; }
+  .sim-result-actions { flex-direction: row; justify-content: center; }
+  .sim-btn-whatsapp, .sim-btn-copy { flex: 1; max-width: 280px; }
+  .sim-hero h1 { font-size: 2.4rem; }
+}
+
+/* ─── Reduced motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  .sim-question, .sim-result, .sim-progress-fill, .sim-btn-primary, .sim-btn-whatsapp, .sim-btn-copy { animation: none !important; transition: none !important; }
+}
