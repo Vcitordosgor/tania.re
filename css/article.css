@@ -1,0 +1,363 @@
+/* ─────────────────────────────────────────────────────────
+   Tania — styles dédiés aux pages "article" (pilier SEO)
+   ───────────────────────────────────────────────────────── */
+
+.article-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.article h1 {
+  font-size: 2.25rem;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: #0f172a;
+  margin: 0 0 1.25rem;
+}
+
+.article h2 {
+  font-size: 1.875rem;
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+  margin: 3.5rem 0 1rem;
+  scroll-margin-top: 90px;
+}
+
+.article h3 {
+  font-size: 1.375rem;
+  line-height: 1.3;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 2.25rem 0 0.75rem;
+}
+
+.article p {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: #334155;
+  margin: 0 0 1.1rem;
+}
+
+.article p strong, .article li strong { color: #0f172a; font-weight: 600; }
+
+.article ul, .article ol {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: #334155;
+  padding-left: 1.5rem;
+  margin: 0 0 1.25rem;
+}
+.article ul { list-style: disc; }
+.article ol { list-style: decimal; }
+.article li { margin-bottom: 0.4rem; }
+
+.article a {
+  color: #047857;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.article a:hover { color: #065f46; text-decoration-thickness: 2px; }
+
+/* Lede / chapeau */
+.article .lede { font-size: 1.15rem; line-height: 1.7; color: #475569; }
+
+/* ─── Callouts ─── */
+.callout {
+  border-left: 4px solid #10b981;
+  background: #ecfdf5;
+  border-radius: 0 10px 10px 0;
+  padding: 1.25rem 1.4rem;
+  margin: 1.75rem 0;
+}
+.callout-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #047857;
+  margin: 0 0 0.6rem;
+}
+.callout p, .callout ul { margin-bottom: 0.5rem; font-size: 1rem; }
+.callout ul { padding-left: 1.25rem; }
+.callout li { margin-bottom: 0.3rem; }
+
+.callout-info {
+  border-left-color: #3b82f6;
+  background: #eff6ff;
+}
+.callout-info .callout-title { color: #1d4ed8; }
+
+.callout-light {
+  border-left-color: #cbd5e1;
+  background: #f8fafc;
+}
+.callout-light .callout-title { color: #475569; }
+
+/* ─── Table of contents ─── */
+.toc {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.4rem 1.6rem;
+  margin: 2.5rem 0;
+}
+.toc-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #475569;
+  margin: 0 0 0.85rem;
+}
+.toc ol {
+  list-style: decimal;
+  padding-left: 1.4rem;
+  margin: 0;
+  font-size: 1rem;
+}
+.toc li { margin-bottom: 0.4rem; }
+.toc a {
+  color: #0f172a;
+  text-decoration: none;
+  border-bottom: 1px dotted #94a3b8;
+}
+.toc a:hover { color: #047857; border-bottom-color: #047857; }
+
+/* ─── Tables ─── */
+.article-table-wrap { overflow-x: auto; margin: 1.5rem 0; }
+.article-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.article-table th, .article-table td {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+  vertical-align: top;
+}
+.article-table th {
+  background: #f1f5f9;
+  font-weight: 600;
+  color: #0f172a;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.article-table tr:last-child td { border-bottom: none; }
+.article-table td:first-child { font-weight: 600; color: #0f172a; white-space: nowrap; }
+
+/* ─── Bloc réponse FAQ ─── */
+.answer-block {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #10b981;
+  border-radius: 0 10px 10px 0;
+  padding: 1.1rem 1.4rem;
+  margin: 1.5rem 0 2rem;
+}
+.answer-block .answer-q {
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+.answer-block .answer-r {
+  color: #475569;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* ─── Source ─── */
+.source-line {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin-top: 0.5rem;
+}
+
+/* ─── Checklist ─── */
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.55rem 0;
+  font-size: 1rem;
+  color: #0f172a;
+  border-bottom: 1px dashed #e2e8f0;
+}
+.checklist li:last-child { border-bottom: none; }
+.checklist input[type="checkbox"] {
+  margin-top: 0.35rem;
+  width: 18px;
+  height: 18px;
+  accent-color: #10b981;
+  flex-shrink: 0;
+}
+
+/* ─── FAQ accordéons ─── */
+.faq-list { margin: 1.5rem 0 2rem; }
+.faq-item {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.1rem 1.3rem;
+  margin-bottom: 0.75rem;
+  background: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.faq-item[open] {
+  border-color: #10b981;
+  box-shadow: 0 4px 12px -4px rgba(16, 185, 129, 0.15);
+}
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #0f172a;
+  font-size: 1.05rem;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+';
+  font-size: 1.5rem;
+  color: #10b981;
+  font-weight: 400;
+  transition: transform 0.2s ease;
+  line-height: 1;
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item .faq-answer {
+  margin-top: 0.85rem;
+  color: #475569;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+.faq-item .faq-answer p { margin: 0; font-size: 1rem; color: #475569; }
+
+/* ─── CTA section ─── */
+.article-cta {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  border-radius: 18px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  margin: 3rem 0 2rem;
+  color: #fff;
+}
+.article-cta h2 {
+  color: #fff;
+  margin: 0 0 1rem;
+  font-size: 1.75rem;
+}
+.article-cta p { color: #d1fae5; margin: 0 0 1.5rem; font-size: 1.05rem; }
+.article-cta .cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fff;
+  color: #047857;
+  font-weight: 700;
+  padding: 1rem 1.8rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 1.05rem;
+  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.article-cta .cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px -2px rgba(0, 0, 0, 0.25);
+  color: #047857;
+}
+.article-cta .cta-fine { font-size: 0.85rem; color: #a7f3d0; margin-top: 1rem; }
+
+/* ─── Related articles ─── */
+.related-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+}
+.related-card {
+  display: block;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.25rem 1.4rem;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.related-card:hover {
+  transform: translateY(-2px);
+  border-color: #10b981;
+  box-shadow: 0 8px 20px -8px rgba(15, 23, 42, 0.12);
+}
+.related-card .related-title {
+  font-weight: 600;
+  color: #0f172a;
+  font-size: 1.05rem;
+  margin: 0 0 0.35rem;
+}
+.related-card .related-sub {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.55;
+}
+
+/* ─── Breadcrumb ─── */
+.breadcrumb {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0 0 1.5rem;
+}
+.breadcrumb a {
+  color: #64748b;
+  text-decoration: none;
+}
+.breadcrumb a:hover { color: #047857; }
+.breadcrumb-sep { margin: 0 0.4rem; color: #cbd5e1; }
+
+/* ─── Updated date ─── */
+.article-meta {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 640px) {
+  .article-container { padding: 0 18px; }
+  .article h1 { font-size: 1.75rem; }
+  .article h2 { font-size: 1.5rem; margin-top: 2.5rem; }
+  .article h3 { font-size: 1.2rem; }
+  .article p, .article ul, .article ol { font-size: 1rem; }
+  .toc { padding: 1.1rem 1.2rem; }
+  .article-cta { padding: 2rem 1.25rem; }
+  .article-cta h2 { font-size: 1.45rem; }
+  .article-table { font-size: 0.9rem; }
+  .article-table th, .article-table td { padding: 0.65rem 0.75rem; }
+}
