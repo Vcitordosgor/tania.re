@@ -220,6 +220,28 @@
     return o ? o.label : (val || '—');
   };
 
+  // ─── Chips courts pour la carte profil ───
+  const shortLabel = (qid, val) => {
+    const map = {
+      q2: { micro: 'Micro-entreprise', ei: 'Entreprise individuelle', societe: 'Société', association: 'Association', inconnu: 'Statut à clarifier' },
+      q3: { franchise: 'Franchise TVA', tva: 'Assujetti TVA', inconnu: 'TVA à clarifier' },
+      q4: { particuliers: 'Clients particuliers', entreprises: 'Clients entreprises', mixte: 'Clients mixtes', aucun: 'Pas encore de facturation' },
+      q5: { '0-5': '0–5/mois', '6-20': '6–20/mois', '21-50': '21–50/mois', '50+': '50+/mois' },
+      q6: { excel: 'Excel / Word', logiciel: 'Logiciel facturation', comptable: 'Via comptable', main: 'Manuel / PDF', aucune: 'Pas de méthode' }
+    };
+    return (map[qid] && map[qid][val]) || labelFor(qid, val);
+  };
+
+  // ─── Principale échéance selon profil ───
+  const computeMainDeadline = (a) => {
+    const isB2B = a.q4 === 'entreprises' || a.q4 === 'mixte';
+    const isUnclear = a.q4 === 'aucun' || a.q1 === 'non' || a.q2 === 'inconnu';
+    if (isUnclear) return { label: 'À clarifier', subtitle: 'Selon votre situation finale', highlight: null };
+    if (isB2B) return { label: '1er septembre 2027', subtitle: 'Émission électronique obligatoire (B2B)', highlight: '2027' };
+    // Default : particuliers → réception 2026 reste l'enjeu principal
+    return { label: '1er septembre 2026', subtitle: 'Réception électronique obligatoire', highlight: '2026' };
+  };
+
   // ─── State + storage ───
   const STORAGE_KEY = 'tania_sim_answers_v1';
   const state = { answers: {}, idx: 0 };
@@ -345,6 +367,13 @@ Pouvez-vous me dire comment Tania peut m'aider à préparer simplement la réfor
     return `https://wa.me/33648345707?text=${encodeURIComponent(message)}`;
   };
 
+  // ─── Construction lien mailto (envoi du plan par email) ───
+  const buildMailtoLink = (a, level, actions) => {
+    const subject = 'Mon plan d’action facturation électronique — Tania';
+    const body = buildPlanText(a, computeBlocks(a), level, actions);
+    return `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
+
   // ─── Construction texte "Copier mon plan" ───
   const buildPlanText = (a, blocks, level, actions) => {
     const meaningPart = blocks.map(k => `- ${BLOCKS[k].title}\n  ${BLOCKS[k].text}`).join('\n\n');
@@ -404,11 +433,44 @@ https://tania.re/facturation-electronique-reunion
       </li>
     `).join('');
 
+    const deadline = computeMainDeadline(a);
+    const chipsHTML = ['q2','q3','q4','q5','q6'].map(qid => `<span class="sim-chip">${shortLabel(qid, a[qid])}</span>`).join('');
+
     el.result.innerHTML = `
       <header class="sim-plan-header">
         <h2>Votre plan d’action facturation électronique</h2>
         <p>D’après vos réponses, voici votre priorité pour préparer progressivement les échéances 2026-2027.</p>
       </header>
+
+      <article class="sim-card sim-profile">
+        <div class="sim-profile__left">
+          <p class="sim-card-title">Votre profil</p>
+          <div class="sim-chips">${chipsHTML}</div>
+        </div>
+        <div class="sim-profile__right">
+          <p class="sim-card-title">Principale échéance</p>
+          <p class="sim-deadline">${deadline.label}</p>
+          <p class="sim-deadline__sub">${deadline.subtitle}</p>
+        </div>
+      </article>
+
+      <article class="sim-card sim-timeline-card">
+        <p class="sim-card-title">Votre positionnement sur la réforme</p>
+        <div class="sim-timeline" role="img" aria-label="Échéances 2026 et 2027">
+          <div class="sim-timeline__line"></div>
+          <div class="sim-timeline__milestone ${deadline.highlight === '2026' ? 'is-current' : ''}">
+            <span class="sim-timeline__dot" aria-hidden="true"></span>
+            <p class="sim-timeline__date">1er sept. 2026</p>
+            <p class="sim-timeline__label">Réception<br/>obligatoire</p>
+          </div>
+          <div class="sim-timeline__milestone ${deadline.highlight === '2027' ? 'is-current' : ''}">
+            <span class="sim-timeline__dot" aria-hidden="true"></span>
+            <p class="sim-timeline__date">1er sept. 2027</p>
+            <p class="sim-timeline__label">Émission TPE,<br/>PME, micro</p>
+          </div>
+        </div>
+        ${deadline.highlight ? `<p class="sim-timeline__hint">Votre échéance prioritaire est en <strong>${deadline.highlight}</strong>.</p>` : '<p class="sim-timeline__hint">Votre échéance prioritaire dépend de votre situation à clarifier.</p>'}
+      </article>
 
       <article class="sim-card sim-card-level">
         <span class="sim-level-badge ${level.cls}">${level.label}</span>
@@ -428,19 +490,27 @@ https://tania.re/facturation-electronique-reunion
       <article class="sim-card sim-card-tania">
         <h3 class="sim-card-title">Comment Tania peut vous aider</h3>
         <p class="sim-tania-text">Tania ne remplace pas votre comptable et n’est pas une Plateforme Agréée. L’objectif est plus simple&nbsp;: vous aider à garder une méthode claire depuis WhatsApp pour créer, suivre et retrouver vos devis, factures et relances, tout en préparant progressivement une organisation compatible avec la réforme.</p>
-        <div class="sim-result-actions">
-          <a href="${buildWhatsAppLink(a, level, actions)}" target="_blank" rel="noopener" class="sim-btn-whatsapp" id="sim-wa-btn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-1 1.1-.2.2-.4.2-.7.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2.1-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.4.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
-            Recevoir mon plan par WhatsApp
+        <a href="${buildWhatsAppLink(a, level, actions)}" target="_blank" rel="noopener" class="sim-btn-whatsapp sim-btn-block" id="sim-wa-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-1 1.1-.2.2-.4.2-.7.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2.1-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.4.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+          Recevoir mon plan par WhatsApp
+        </a>
+        <div class="sim-utils-row">
+          <a href="${buildMailtoLink(a, level, actions)}" class="sim-btn-util" id="sim-email-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Envoyer par email
           </a>
-          <button type="button" class="sim-btn-copy" id="sim-copy-btn">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-            <span>Copier mon plan</span>
+          <button type="button" class="sim-btn-util" id="sim-pdf-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Télécharger en PDF
           </button>
-          <a href="/facturation-electronique-reunion" class="sim-btn-ghost">Lire le guide
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
+          <button type="button" class="sim-btn-util" id="sim-copy-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            <span>Copier</span>
+          </button>
         </div>
+        <a href="/facturation-electronique-reunion" class="sim-btn-ghost sim-btn-ghost-center">Lire le guide complet
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
       </article>
 
       <div class="sim-share">
@@ -484,6 +554,15 @@ https://tania.re/facturation-electronique-reunion
 
     document.getElementById('sim-wa-btn').addEventListener('click', () => safeTrack('whatsapp_diagnostic_clicked'));
     document.getElementById('sim-share-wa').addEventListener('click', () => safeTrack('whatsapp_share_clicked'));
+
+    const emailBtn = document.getElementById('sim-email-btn');
+    if (emailBtn) emailBtn.addEventListener('click', () => safeTrack('email_diagnostic_clicked'));
+
+    const pdfBtn = document.getElementById('sim-pdf-btn');
+    if (pdfBtn) pdfBtn.addEventListener('click', () => {
+      safeTrack('pdf_download_clicked');
+      window.print();
+    });
 
     const shareLinkBtn = document.getElementById('sim-share-link');
     shareLinkBtn.addEventListener('click', async () => {
