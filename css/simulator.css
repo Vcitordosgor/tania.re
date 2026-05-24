@@ -632,7 +632,111 @@ body { background: var(--bg); color: var(--text-1); }
   font-weight: 500;
 }
 
-/* Carte Tania */
+/* ─── Carte profil (chips + principale échéance) ─── */
+.sim-profile {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 1.25rem;
+}
+.sim-profile__left .sim-card-title,
+.sim-profile__right .sim-card-title { margin-bottom: 0.5rem; }
+.sim-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.sim-chip {
+  display: inline-flex;
+  align-items: center;
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  color: var(--text-2);
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.sim-deadline {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--brand-deep);
+  margin: 0;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+}
+.sim-deadline__sub {
+  font-size: 0.82rem;
+  color: var(--text-3);
+  margin: 0.25rem 0 0;
+  line-height: 1.4;
+}
+
+/* ─── Timeline 2026 / 2027 ─── */
+.sim-timeline-card { padding: 1.25rem; }
+.sim-timeline {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem 0.5rem 0.5rem;
+  margin-bottom: 0.85rem;
+}
+.sim-timeline__line {
+  position: absolute;
+  top: 1.3rem;
+  left: 12%;
+  right: 12%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--border) 0%, var(--brand-line) 50%, var(--border) 100%);
+  border-radius: 999px;
+  z-index: 0;
+}
+.sim-timeline__milestone {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  text-align: center;
+  width: 130px;
+  max-width: 45%;
+}
+.sim-timeline__dot {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 2.5px solid var(--text-muted);
+  margin: 0 auto 0.5rem;
+  transition: all 0.2s ease;
+}
+.sim-timeline__milestone.is-current .sim-timeline__dot {
+  background: var(--brand);
+  border-color: var(--brand);
+  box-shadow: 0 0 0 5px rgba(16, 185, 129, 0.18);
+  transform: scale(1.15);
+}
+.sim-timeline__date {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-2);
+  margin: 0 0 0.15rem;
+}
+.sim-timeline__milestone.is-current .sim-timeline__date { color: var(--brand-deep); }
+.sim-timeline__label {
+  font-size: 0.75rem;
+  color: var(--text-3);
+  margin: 0;
+  line-height: 1.35;
+}
+.sim-timeline__hint {
+  font-size: 0.85rem;
+  color: var(--text-2);
+  text-align: center;
+  margin: 0;
+  padding-top: 0.5rem;
+  border-top: 1px dashed var(--border-soft);
+}
+.sim-timeline__hint strong { color: var(--brand-deep); }
+
+/* ─── Carte Tania ─── */
 .sim-card-tania {
   background: linear-gradient(135deg, var(--brand-soft) 0%, var(--surface) 100%);
   border-color: var(--brand-line);
@@ -644,6 +748,48 @@ body { background: var(--bg); color: var(--text-1); }
   color: var(--text-1);
   line-height: 1.6;
   margin: 0 0 1rem;
+}
+
+/* ─── Boutons résultat — hiérarchie claire ─── */
+.sim-btn-block { width: 100%; }
+
+.sim-utils-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.4rem;
+  margin: 0.7rem 0 0;
+}
+.sim-btn-util {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  background: var(--surface);
+  color: var(--text-2);
+  border: 1px solid var(--border);
+  font-weight: 500;
+  font-size: 0.88rem;
+  padding: 0.65rem 0.9rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-decoration: none;
+  min-height: 40px;
+  transition: all 0.15s ease;
+}
+.sim-btn-util:hover {
+  border-color: var(--brand-line);
+  color: var(--brand-deep);
+  background: var(--brand-soft);
+}
+.sim-btn-util.copied { background: var(--brand-soft); border-color: var(--brand); color: var(--brand-deep); }
+.sim-btn-util svg { color: var(--text-3); }
+.sim-btn-util:hover svg { color: var(--brand); }
+
+.sim-btn-ghost-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.85rem auto 0;
 }
 
 .sim-result-actions {
@@ -846,10 +992,33 @@ body { background: var(--bg); color: var(--text-1); }
     gap: 4rem;
     padding: 4rem 0 3rem;
   }
-  .sim-result-actions { flex-direction: row; align-items: center; }
-  .sim-btn-whatsapp { flex: 1 1 auto; }
-  .sim-btn-copy { flex: 0 1 auto; }
-  .sim-btn-ghost { flex: 0 0 auto; margin-left: auto; }
+  .sim-profile {
+    grid-template-columns: 1.5fr 1fr;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  .sim-profile__right {
+    border-left: 1px solid var(--border-soft);
+    padding-left: 1.5rem;
+  }
+  .sim-utils-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ─── Print stylesheet (PDF via window.print()) ─── */
+@media print {
+  body { background: #fff !important; }
+  header, footer, .sim-hero, .sim-change, .sim-quiz, .sim-faq,
+  .sim-share, .sim-restart-row, .sim-toast,
+  .sim-btn-whatsapp, .sim-utils-row, .sim-btn-ghost-center { display: none !important; }
+  .sim-result { display: block !important; max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
+  .sim-result .sim-card { box-shadow: none !important; border: 1px solid #e2e8f0 !important; break-inside: avoid; page-break-inside: avoid; }
+  .sim-card-tania { background: #f9fafb !important; }
+  .sim-tania-text { margin-bottom: 0 !important; }
+  .sim-plan-header { padding: 0 0 1rem !important; }
+  .sim-plan-header h2 { font-size: 1.5rem !important; }
+  .sim-timeline-card { break-inside: avoid; }
 }
 
 /* ─── Tablet ─── */
