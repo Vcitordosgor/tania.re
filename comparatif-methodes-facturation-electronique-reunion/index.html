@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Excel, logiciel, comptable ou Tania : comparatif Réunion</title>
+  <meta name="description" content="Comparez Excel, logiciel de facturation, comptable et Tania pour préparer votre facturation électronique 2026-2027 à La Réunion." />
+  <link rel="canonical" href="https://tania.re/comparatif-methodes-facturation-electronique-reunion/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+
+  <meta property="og:title" content="Excel, logiciel, comptable ou Tania : quelle méthode choisir ?" />
+  <meta property="og:description" content="Un comparatif clair pour aider les TPE réunionnaises à choisir leur méthode de facturation avant 2026-2027." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://tania.re/comparatif-methodes-facturation-electronique-reunion/" />
+  <meta property="og:image" content="https://tania.re/og-image.png" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Tania" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Excel, logiciel, comptable ou Tania : quelle méthode choisir ?" />
+  <meta name="twitter:description" content="Comparatif pour les TPE réunionnaises avant 2026-2027." />
+  <meta name="twitter:image" content="https://tania.re/og-image.png" />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/css/article.css" />
+
+  <style>
+    body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    .tania-logo { display: inline-flex; align-items: center; line-height: 1; color: #10b981; text-decoration: none; }
+    .tania-T { height: 1em; width: 0.69em; display: block; }
+    .tania-ania { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1em; letter-spacing: -0.025em; line-height: 1; color: inherit; }
+    .tania-logo.md { font-size: 32px; }
+    .hero-cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.5rem 0 2rem; }
+    .hero-cta-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: #10b981; color: #fff; font-weight: 600; padding: 0.85rem 1.4rem; border-radius: 12px; text-decoration: none; box-shadow: 0 8px 22px -8px rgba(16,185,129,0.45); transition: all 0.18s ease; }
+    .hero-cta-primary:hover { background: #059669; transform: translateY(-1px); color: #fff; }
+    .hero-cta-secondary { display: inline-flex; align-items: center; gap: 0.5rem; color: #047857; font-weight: 600; padding: 0.85rem 1rem; text-decoration: underline; text-underline-offset: 4px; }
+    .hero-cta-secondary:hover { color: #065f46; }
+    /* Tableau comparatif desktop */
+    .compare-wrap { overflow-x: auto; margin: 1.5rem 0; -webkit-overflow-scrolling: touch; }
+    .compare-table { width: 100%; min-width: 720px; border-collapse: separate; border-spacing: 0; background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; overflow: hidden; font-size: 0.92rem; }
+    .compare-table th, .compare-table td { padding: 0.85rem 1rem; text-align: left; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+    .compare-table thead th { background: #f1f5f9; font-weight: 700; color: #0f172a; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; }
+    .compare-table tbody tr:last-child td { border-bottom: none; }
+    .compare-table td:first-child, .compare-table th:first-child { font-weight: 700; color: #0f172a; }
+    .compare-table tr.tania-row { background: #ecfdf5; }
+    .compare-table tr.tania-row td:first-child { color: #047857; }
+    .compare-table ul { margin: 0; padding-left: 1.1rem; font-size: 0.9rem; line-height: 1.55; color: #475569; }
+    .compare-table ul li { margin-bottom: 0.2rem; }
+    /* Version cartes mobile */
+    .compare-mobile { display: none; margin: 1.5rem 0; flex-direction: column; gap: 1rem; }
+    .compare-mcard { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 1.1rem 1.25rem; }
+    .compare-mcard.tania-card { background: #ecfdf5; border-color: #10b981; }
+    .compare-mcard h3 { font-size: 1.05rem; font-weight: 700; color: #0f172a; margin: 0 0 0.75rem; }
+    .compare-mcard.tania-card h3 { color: #047857; }
+    .compare-mcard h4 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #64748b; margin: 0.75rem 0 0.3rem; }
+    .compare-mcard ul { margin: 0; padding-left: 1rem; font-size: 0.88rem; line-height: 1.55; color: #475569; }
+    .compare-mcard ul li { margin-bottom: 0.15rem; }
+    @media (max-width: 767px) {
+      .compare-wrap { display: none; }
+      .compare-mobile { display: flex; }
+    }
+    .risk-cards { display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin: 1.5rem 0; }
+    @media (min-width: 768px) { .risk-cards { grid-template-columns: repeat(2, 1fr); } }
+    .risk-card { background: #fff; border: 1px solid #e2e8f0; border-left: 3px solid #f59e0b; border-radius: 0 12px 12px 0; padding: 0.85rem 1.1rem; }
+    .risk-card p { font-size: 0.92rem; color: #334155; line-height: 1.5; margin: 0; }
+    .profile-cards { display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin: 1.5rem 0; }
+    @media (min-width: 768px) { .profile-cards { grid-template-columns: 1fr 1fr; } }
+    .profile-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 1.1rem 1.3rem; }
+    .profile-card h4 { font-size: 1.02rem; font-weight: 700; color: #0f172a; margin: 0 0 0.5rem; }
+    .profile-card p { font-size: 0.91rem; color: #475569; line-height: 1.55; margin: 0; }
+    .res-grid { display: grid; grid-template-columns: 1fr; gap: 0.5rem; margin: 1.25rem 0; }
+    @media (min-width: 640px) { .res-grid { grid-template-columns: 1fr 1fr; } }
+    .res-link { display: flex; align-items: center; gap: 0.65rem; padding: 0.7rem 0.95rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; text-decoration: none; color: #0f172a; font-size: 0.93rem; font-weight: 500; transition: all 0.15s ease; }
+    .res-link:hover { background: #fff; border-color: #10b981; color: #047857; }
+    .res-link::before { content: '›'; color: #10b981; font-weight: 700; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Excel, logiciel, comptable ou Tania : quelle méthode choisir avant la facturation électronique ?",
+    "description": "Comparatif honnête de 4 méthodes pour gérer vos devis, factures, paiements et relances à La Réunion avant les échéances 2026-2027.",
+    "image": "https://tania.re/og-image.png",
+    "datePublished": "2026-05-24",
+    "dateModified": "2026-05-24",
+    "inLanguage": "fr-FR",
+    "author": { "@type": "Organization", "name": "Tania", "url": "https://tania.re" },
+    "publisher": { "@type": "Organization", "name": "Tania", "url": "https://tania.re", "logo": { "@type": "ImageObject", "url": "https://tania.re/favicon.svg" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://tania.re/comparatif-methodes-facturation-electronique-reunion/" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Excel sera-t-il interdit avec la facturation électronique ?", "acceptedAnswer": { "@type": "Answer", "text": "Non, Excel n'est pas interdit en tant que tel. Mais Excel seul ne produit pas de données structurées exploitables par les Plateformes Agréées. À partir des échéances 2026-2027, votre méthode devra être complétée pour produire des factures électroniques au sens de la réforme." } },
+      { "@type": "Question", "name": "Un logiciel de facturation classique suffit-il ?", "acceptedAnswer": { "@type": "Answer", "text": "Pas automatiquement. Un logiciel de facturation peut être un bon choix, à condition qu'il soit compatible Factur-X et raccordé à une Plateforme Agréée (ou en cours de l'être). Demandez à votre éditeur s'il est prêt pour 2026-2027." } },
+      { "@type": "Question", "name": "Mon comptable peut-il tout gérer pour moi ?", "acceptedAnswer": { "@type": "Answer", "text": "Votre comptable peut vous accompagner dans le choix de la Plateforme Agréée et la mise en place. En revanche, vous restez responsable de l'émission de vos factures dans les délais et du suivi quotidien. C'est un travail conjoint." } },
+      { "@type": "Question", "name": "Tania remplace-t-elle mon comptable ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. Tania ne remplace pas votre expert-comptable. Tania vous aide à structurer progressivement vos devis, factures, relances et suivis depuis WhatsApp, en complément de votre comptable." } },
+      { "@type": "Question", "name": "Tania est-elle une Plateforme Agréée ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. Tania n'est pas une Plateforme Agréée. L'objectif est de prévoir une articulation avec une Plateforme Agréée partenaire lorsque le parcours sera stabilisé." } },
+      { "@type": "Question", "name": "Quelle méthode choisir si je suis micro-entrepreneur ?", "acceptedAnswer": { "@type": "Answer", "text": "Si vous êtes micro-entrepreneur avec peu de factures, une méthode simple (comme Tania depuis WhatsApp) peut convenir au quotidien. L'important est d'anticiper la réception électronique en 2026 et l'émission en 2027 si vous facturez des entreprises. Voir notre page dédiée micro-entrepreneur." } }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://tania.re/" },
+      { "@type": "ListItem", "position": 2, "name": "Ressources", "item": "https://tania.re/ressources-facturation-electronique-reunion/" },
+      { "@type": "ListItem", "position": 3, "name": "Comparatif des méthodes", "item": "https://tania.re/comparatif-methodes-facturation-electronique-reunion/" }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-white text-slate-900">
+
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-100">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="/" aria-label="Tania — Accueil" class="tania-logo md">
+        <svg class="tania-T" viewBox="0 0 80 80" preserveAspectRatio="xMinYMid meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="0" y="14" width="80" height="18" fill="#10b981"/><rect x="31" y="42" width="18" height="38" fill="#10b981"/>
+        </svg>
+        <span class="tania-ania">ania</span>
+      </a>
+      <a href="/#cta-final" class="inline-flex items-center bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-semibold px-4 py-2 rounded-md shadow-sm transition-all">Demander une démo</a>
+    </div>
+  </header>
+
+  <main class="article-container py-12 lg:py-16">
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <a href="/">Accueil</a><span class="breadcrumb-sep">›</span>
+      <a href="/ressources-facturation-electronique-reunion/">Ressources</a><span class="breadcrumb-sep">›</span>
+      <span>Comparatif des méthodes</span>
+    </nav>
+
+    <article class="article">
+      <h1>Excel, logiciel, comptable ou Tania&#8239;: quelle méthode choisir avant la facturation électronique&#8239;?</h1>
+      <p class="article-meta">Mis à jour le 24 mai 2026 · Comparatif 4 méthodes</p>
+
+      <p class="lede">Comparez les principales méthodes pour gérer vos devis, factures, paiements et relances à La Réunion avant les échéances 2026-2027. Chaque méthode a ses avantages et ses limites&#8239;: le bon choix dépend de votre situation.</p>
+
+      <div class="hero-cta-row">
+        <a href="/test-facturation-electronique-reunion/" class="hero-cta-primary">Obtenir mon plan d’action
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="/ressources-facturation-electronique-reunion/" class="hero-cta-secondary">Voir toutes les ressources</a>
+      </div>
+
+      <h2 id="reponse">La meilleure méthode dépend surtout de votre situation</h2>
+      <p>Il n’y a pas de réponse universelle. Si vous faites peu de factures, Excel peut sembler suffisant aujourd’hui. Avec plus de clients, un logiciel devient utile. Si votre situation fiscale est complexe, le comptable reste essentiel. Et si vous voulez rester simple au quotidien sans rien lâcher, Tania peut aider à structurer votre méthode depuis WhatsApp.</p>
+
+      <aside class="callout">
+        <p class="callout-title">À retenir</p>
+        <ul>
+          <li><strong>Excel / Word / PDF</strong>&#8239;: simple aujourd’hui, mais fragile demain.</li>
+          <li><strong>Logiciel classique</strong>&#8239;: structuré, mais parfois lourd pour les très petites activités.</li>
+          <li><strong>Comptable</strong>&#8239;: indispensable pour valider, mais pas l’outil du quotidien.</li>
+          <li><strong>Tania</strong>&#8239;: simple depuis WhatsApp, complémentaire du comptable.</li>
+        </ul>
+      </aside>
+
+      <h2 id="tableau">Comparatif des méthodes</h2>
+
+      <!-- Tableau desktop -->
+      <div class="compare-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Méthode</th>
+              <th>Points forts</th>
+              <th>Limites</th>
+              <th>Pour qui&#8239;?</th>
+              <th>À vérifier avant 2026-2027</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Excel / Word / PDF</td>
+              <td><ul><li>Simple</li><li>Gratuit ou déjà maîtrisé</li><li>Rapide pour commencer</li></ul></td>
+              <td><ul><li>Fichiers dispersés</li><li>Relances manuelles</li><li>Données peu structurées</li><li>Risque d’erreurs de numérotation</li></ul></td>
+              <td>Très petites activités avec peu de factures</td>
+              <td>Compatibilité avec les exigences futures et le circuit officiel</td>
+            </tr>
+            <tr>
+              <td>Logiciel classique</td>
+              <td><ul><li>Structuré</li><li>Suivi propre</li><li>Export possible</li><li>Adapté au volume</li></ul></td>
+              <td><ul><li>Peut être lourd</li><li>Nécessite de se connecter</li><li>Peu utilisé par les profils terrain</li></ul></td>
+              <td>TPE déjà organisées ou avec volume régulier</td>
+              <td>Compatibilité Factur-X, Plateforme Agréée ou intégration</td>
+            </tr>
+            <tr>
+              <td>Comptable</td>
+              <td><ul><li>Conseil</li><li>Validation fiscale</li><li>Accompagnement</li><li>Expertise</li></ul></td>
+              <td><ul><li>Pas toujours disponible au quotidien</li><li>Ne remplace pas une organisation interne</li><li>Dépend du cabinet</li></ul></td>
+              <td>Entreprises qui veulent sécuriser leur situation</td>
+              <td>Quelle Plateforme Agréée recommandée, et quel rôle reste à l’entreprise</td>
+            </tr>
+            <tr class="tania-row">
+              <td>Tania</td>
+              <td><ul><li>Simple depuis WhatsApp</li><li>Adapté aux habitudes terrain</li><li>Suivi devis / factures / paiements / relances</li><li>Aide à structurer progressivement</li></ul></td>
+              <td><ul><li>Ne remplace pas le comptable</li><li>N’est pas une Plateforme Agréée</li><li>Certaines fonctionnalités dépendent du parcours produit et de partenaires</li></ul></td>
+              <td>TPE, artisans, indépendants, micro-entrepreneurs qui veulent rester simples</td>
+              <td>Comment articuler Tania avec le comptable et la Plateforme Agréée</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Version cartes mobile -->
+      <div class="compare-mobile">
+
+        <div class="compare-mcard">
+          <h3>Excel / Word / PDF</h3>
+          <h4>Points forts</h4>
+          <ul><li>Simple</li><li>Gratuit ou déjà maîtrisé</li><li>Rapide pour commencer</li></ul>
+          <h4>Limites</h4>
+          <ul><li>Fichiers dispersés</li><li>Relances manuelles</li><li>Données peu structurées</li><li>Risque d’erreurs de numérotation</li></ul>
+          <h4>Pour qui</h4>
+          <ul><li>Très petites activités avec peu de factures</li></ul>
+          <h4>À vérifier</h4>
+          <ul><li>Compatibilité avec les exigences futures et le circuit officiel</li></ul>
+        </div>
+
+        <div class="compare-mcard">
+          <h3>Logiciel classique</h3>
+          <h4>Points forts</h4>
+          <ul><li>Structuré</li><li>Suivi propre</li><li>Export possible</li><li>Adapté au volume</li></ul>
+          <h4>Limites</h4>
+          <ul><li>Peut être lourd</li><li>Nécessite de se connecter</li><li>Peu utilisé par les profils terrain</li></ul>
+          <h4>Pour qui</h4>
+          <ul><li>TPE déjà organisées ou avec volume régulier</li></ul>
+          <h4>À vérifier</h4>
+          <ul><li>Compatibilité Factur-X, Plateforme Agréée ou intégration</li></ul>
+        </div>
+
+        <div class="compare-mcard">
+          <h3>Comptable</h3>
+          <h4>Points forts</h4>
+          <ul><li>Conseil</li><li>Validation fiscale</li><li>Accompagnement</li><li>Expertise</li></ul>
+          <h4>Limites</h4>
+          <ul><li>Pas toujours disponible au quotidien</li><li>Ne remplace pas une organisation interne</li><li>Dépend du cabinet</li></ul>
+          <h4>Pour qui</h4>
+          <ul><li>Entreprises qui veulent sécuriser leur situation</li></ul>
+          <h4>À vérifier</h4>
+          <ul><li>Quelle Plateforme Agréée recommandée, et quel rôle reste à l’entreprise</li></ul>
+        </div>
+
+        <div class="compare-mcard tania-card">
+          <h3>Tania</h3>
+          <h4>Points forts</h4>
+          <ul><li>Simple depuis WhatsApp</li><li>Adapté aux habitudes terrain</li><li>Suivi devis / factures / paiements / relances</li><li>Aide à structurer progressivement</li></ul>
+          <h4>Limites</h4>
+          <ul><li>Ne remplace pas le comptable</li><li>N’est pas une Plateforme Agréée</li><li>Certaines fonctionnalités dépendent du parcours produit et de partenaires</li></ul>
+          <h4>Pour qui</h4>
+          <ul><li>TPE, artisans, indépendants, micro-entrepreneurs qui veulent rester simples</li></ul>
+          <h4>À vérifier</h4>
+          <ul><li>Comment articuler Tania avec le comptable et la Plateforme Agréée</li></ul>
+        </div>
+
+      </div>
+
+      <h2 id="excel-fragile">Quand une méthode simple devient fragile</h2>
+      <p>Cinq signaux pour savoir si votre méthode actuelle (Excel, Word, PDF) commence à montrer ses limites&#8239;:</p>
+
+      <div class="risk-cards">
+        <div class="risk-card"><p><strong>1.</strong> Vous oubliez parfois d’envoyer une facture.</p></div>
+        <div class="risk-card"><p><strong>2.</strong> Vous ne savez plus qui a payé.</p></div>
+        <div class="risk-card"><p><strong>3.</strong> Vous relancez vos clients à la main.</p></div>
+        <div class="risk-card"><p><strong>4.</strong> Vos devis et factures sont dispersés.</p></div>
+        <div class="risk-card"><p><strong>5.</strong> Vous facturez à la fois des particuliers et des entreprises.</p></div>
+      </div>
+
+      <p>Pour aller plus loin sur ce sujet&#8239;: <a href="/excel-word-pdf-facturation-electronique-reunion/">Excel, Word ou PDF&#8239;: est-ce suffisant&#8239;?</a></p>
+
+      <h2 id="logiciel">Quand un logiciel de facturation peut être pertinent</h2>
+      <p>Un logiciel de facturation classique n’est pas toujours utile pour une très petite activité. Mais il devient pertinent dans plusieurs cas&#8239;:</p>
+      <ul>
+        <li>Volume plus important (plus de 30 factures par mois).</li>
+        <li>Besoin de reporting et d’analyses (chiffre d’affaires, marges).</li>
+        <li>Équipe plus structurée avec plusieurs personnes qui facturent.</li>
+        <li>Suivi comptable plus formalisé (TVA mensuelle, exports réguliers).</li>
+      </ul>
+      <p>Les logiciels classiques ont une vraie valeur. Le sujet n’est pas de les remplacer&#8239;: c’est de vérifier qu’ils restent compatibles avec la réforme et qu’ils correspondent à vos habitudes terrain.</p>
+
+      <h2 id="comptable">Pourquoi le comptable reste important</h2>
+      <p>Aucun outil ne remplace votre comptable. Son rôle reste essentiel pour&#8239;:</p>
+      <ul>
+        <li>Confirmer votre régime TVA (franchise, réel simplifié, réel normal).</li>
+        <li>Recommander la Plateforme Agréée la plus adaptée à votre activité.</li>
+        <li>Vérifier votre situation fiscale globale et anticiper les déclarations.</li>
+        <li>Structurer votre organisation comptable.</li>
+        <li>Articuler les outils que vous utilisez avec le circuit officiel.</li>
+      </ul>
+      <p><strong>Tania ne remplace pas votre comptable.</strong> Tania est un outil de quotidien, votre comptable reste votre conseil de fond.</p>
+
+      <h2 id="tania-position">Tania&#8239;: une méthode simple pour le quotidien</h2>
+      <p>Tania ne remplace pas votre comptable et n’est pas une Plateforme Agréée. Tania vous aide à structurer vos devis, factures, relances et suivis depuis WhatsApp, avec l’objectif de préparer progressivement une organisation compatible avec la réforme.</p>
+      <ul>
+        <li><strong>Vous écrivez une prestation comme un message</strong> — Tania transforme votre message en devis ou facture rangés.</li>
+        <li><strong>Tania aide à structurer l’information</strong> — adresses, SIRET, mentions obligatoires gérées.</li>
+        <li><strong>Vous retrouvez vos devis et factures</strong> — centralisés, accessibles depuis votre téléphone.</li>
+        <li><strong>Vous suivez vos paiements</strong> — tableau de bord léger, pas d’usine à gaz.</li>
+        <li><strong>Vous relancez plus clairement</strong> — moins d’oublis, moins de stress.</li>
+      </ul>
+
+      <div class="hero-cta-row">
+        <a href="/" class="hero-cta-primary">Découvrir Tania
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="/test-facturation-electronique-reunion/" class="hero-cta-secondary">Faire le test gratuit</a>
+      </div>
+
+      <h2 id="profil">Quelle méthode choisir selon votre profil&#8239;?</h2>
+
+      <div class="profile-cards">
+        <div class="profile-card">
+          <h4>Vous faites moins de 5 factures par mois</h4>
+          <p>Excel peut suffire à court terme, mais il faut vérifier votre méthode avant 2026-2027. Anticiper évite la précipitation.</p>
+        </div>
+        <div class="profile-card">
+          <h4>Vous utilisez déjà un logiciel</h4>
+          <p>Vérifiez sa compatibilité avec la réforme (Factur-X, Plateforme Agréée) auprès de votre éditeur et de votre comptable.</p>
+        </div>
+        <div class="profile-card">
+          <h4>Vous êtes souvent sur le terrain</h4>
+          <p>Une méthode simple depuis WhatsApp peut éviter de perdre les informations entre deux chantiers. Tania a été conçue pour ça.</p>
+        </div>
+        <div class="profile-card">
+          <h4>Vous facturez des professionnels</h4>
+          <p>Anticipez l’émission électronique B2B prévue pour 2027 et le rôle de la Plateforme Agréée. Voir notre page <a href="/plateforme-agreee-reunion/">Choisir sa Plateforme Agréée</a>.</p>
+        </div>
+        <div class="profile-card">
+          <h4>Vous facturez surtout des particuliers</h4>
+          <p>Le sujet principal est l’e-reporting et la réception de vos factures fournisseurs en 2026. Pas la facturation B2B au sens strict.</p>
+        </div>
+      </div>
+
+      <div class="hero-cta-row">
+        <a href="/test-facturation-electronique-reunion/" class="hero-cta-primary">Faire le test gratuit
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+      <h2 id="ressources">Pour aller plus loin</h2>
+      <div class="res-grid">
+        <a href="/facturation-electronique-reunion" class="res-link">Guide facturation électronique Réunion</a>
+        <a href="/test-facturation-electronique-reunion/" class="res-link">Faire le test gratuit</a>
+        <a href="/checklist-facturation-electronique-reunion/" class="res-link">Checklist 10 points</a>
+        <a href="/excel-word-pdf-facturation-electronique-reunion/" class="res-link">Excel, Word ou PDF, est-ce suffisant&#8239;?</a>
+        <a href="/cas-concrets-facturation-electronique-reunion/" class="res-link">8 cas concrets métiers</a>
+        <a href="/calendrier-facturation-electronique-reunion/" class="res-link">Calendrier 2026-2027</a>
+        <a href="/glossaire-facturation-electronique-reunion/" class="res-link">Glossaire des termes</a>
+        <a href="/faq-facturation-electronique-reunion/" class="res-link">FAQ 25 questions</a>
+      </div>
+
+      <h2 id="faq">Foire aux questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Excel sera-t-il interdit avec la facturation électronique&#8239;?</summary>
+          <div class="faq-answer"><p>Non, Excel n’est pas interdit en tant que tel. Mais Excel seul ne produit pas de données structurées exploitables par les Plateformes Agréées. À partir des échéances 2026-2027, votre méthode devra être complétée pour produire des factures électroniques au sens de la réforme.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Un logiciel de facturation classique suffit-il&#8239;?</summary>
+          <div class="faq-answer"><p>Pas automatiquement. Un logiciel de facturation peut être un bon choix, à condition qu’il soit compatible Factur-X et raccordé à une Plateforme Agréée (ou en cours de l’être). Demandez à votre éditeur s’il est prêt pour 2026-2027.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Mon comptable peut-il tout gérer pour moi&#8239;?</summary>
+          <div class="faq-answer"><p>Votre comptable peut vous accompagner dans le choix de la Plateforme Agréée et la mise en place. En revanche, vous restez responsable de l’émission de vos factures dans les délais et du suivi quotidien. C’est un travail conjoint.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Tania remplace-t-elle mon comptable&#8239;?</summary>
+          <div class="faq-answer"><p>Non. Tania ne remplace pas votre expert-comptable. Tania vous aide à structurer progressivement vos devis, factures, relances et suivis depuis WhatsApp, en complément de votre comptable.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Tania est-elle une Plateforme Agréée&#8239;?</summary>
+          <div class="faq-answer"><p>Non. Tania n’est pas une Plateforme Agréée. L’objectif est de prévoir une articulation avec une Plateforme Agréée partenaire lorsque le parcours sera stabilisé.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Quelle méthode choisir si je suis micro-entrepreneur&#8239;?</summary>
+          <div class="faq-answer"><p>Si vous êtes micro-entrepreneur avec peu de factures, une méthode simple (comme Tania depuis WhatsApp) peut convenir au quotidien. L’important est d’anticiper la réception électronique en 2026 et l’émission en 2027 si vous facturez des entreprises. Voir <a href="/facturation-electronique-micro-entrepreneur-reunion/">notre page dédiée micro-entrepreneur</a>.</p></div>
+        </details>
+      </div>
+
+      <section class="article-cta">
+        <h2 style="margin-top:0">Vous voulez savoir quelle méthode est la plus adaptée à votre situation&#8239;?</h2>
+        <p>Répondez à 6 questions et obtenez une première indication sur votre niveau de préparation et vos 3 prochaines actions.</p>
+        <a href="/test-facturation-electronique-reunion/" class="cta-button">Obtenir mon plan d’action →</a>
+        <p class="cta-fine">Gratuit · 2 minutes · Indication pédagogique</p>
+      </section>
+
+      <p style="text-align:center;margin:2rem 0;font-size:0.95rem;"><a href="/ressources-facturation-electronique-reunion/">Voir toutes les ressources facturation électronique →</a></p>
+
+      <h2 id="sources">Sources officielles</h2>
+      <ul>
+        <li><a href="https://www.impots.gouv.fr/professionnel/je-passe-la-facturation-electronique" target="_blank" rel="noopener">impots.gouv.fr — Je passe à la facturation électronique</a></li>
+        <li><a href="https://entreprendre.service-public.fr/vosdroits/F23208" target="_blank" rel="noopener">service-public.fr — Facturation entre professionnels et calendrier</a></li>
+        <li><a href="https://entreprendre.service-public.fr/vosdroits/F31808" target="_blank" rel="noopener">service-public.fr — Mentions obligatoires sur une facture</a></li>
+        <li><a href="https://www.impots.gouv.fr/liste-des-plateformes-agreees-immatriculees-sous-reserve" target="_blank" rel="noopener">impots.gouv.fr — Liste officielle des Plateformes Agréées</a></li>
+      </ul>
+
+      <div style="margin-top:2rem;background:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #94a3b8;border-radius:0 10px 10px 0;padding:0.9rem 1.1rem;font-size:0.85rem;color:#64748b;line-height:1.6;">
+        <strong>Cette ressource fournit une première indication pédagogique.</strong> Elle ne remplace pas l’avis de votre expert-comptable ni les informations officielles de l’administration fiscale.
+      </div>
+    </article>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-400 py-12 mt-16">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 text-sm flex flex-col md:flex-row items-center justify-between gap-4">
+      <p>© 2026 Tania · Tous droits réservés.</p>
+      <div class="flex items-center gap-6 flex-wrap justify-center">
+        <a href="/" class="hover:text-white transition-colors">Accueil</a>
+        <a href="/facturation-electronique-reunion" class="hover:text-white transition-colors">Guide</a>
+        <a href="/test-facturation-electronique-reunion/" class="hover:text-white transition-colors">Test</a>
+        <a href="/ressources-facturation-electronique-reunion/" class="hover:text-white transition-colors">Ressources</a>
+        <a href="/mentions-legales.html" class="hover:text-white transition-colors">Mentions légales</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
