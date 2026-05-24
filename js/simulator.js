@@ -67,6 +67,16 @@
     }
   ];
 
+  // ─── Icônes SVG (Lucide style, stroke 2) ───
+  const SVG = {
+    A: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>',
+    B: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>',
+    C: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
+    D: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+    E: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>',
+    F: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>'
+  };
+
   // ─── Textes des blocs "Ce que cela signifie" ───
   // tone: 'default' = vert brand, 'warn' = orange, 'info' = indigo
   const BLOCKS = {
@@ -77,7 +87,7 @@
     C: { tone: 'warn', title: 'Franchise de TVA : attention',
       text: 'La franchise de TVA ne signifie pas forcément que vous êtes hors réforme. Vous pouvez aussi être concerné par la réception, puis par l’émission selon vos clients.' },
     D: { tone: 'info', title: 'Clients particuliers',
-      text: 'Les ventes aux particuliers relèvent plutôt de l’e-reporting que de la facturation électronique B2B classique. Il faut donc bien distinguer vos clients professionnels et particuliers.' },
+      text: 'Les ventes aux particuliers relèvent plutôt de l’e-reporting que de la facturation électronique B2B classique. Il faut donc bien identifier vos clients professionnels et particuliers.' },
     E: { tone: 'warn', title: 'Excel, Word ou PDF : à anticiper',
       text: 'Votre méthode actuelle risque de ne pas suffire pour produire des factures structurées. L’objectif est de préparer une transition sans tout changer au dernier moment.' },
     F: { tone: 'info', title: 'Situation à clarifier',
@@ -154,7 +164,15 @@
     const candidates = [];
 
     if (a.q3 === 'inconnu') candidates.push({ s: 100, t: 'Vérifier votre régime TVA.' });
-    if (isParticuliers) candidates.push({ s: 90, t: 'Distinguer vos clients professionnels et particuliers.' });
+
+    // Clients — formulation adaptée selon le profil
+    if (a.q4 === 'mixte') {
+      candidates.push({ s: 92, t: 'Distinguer vos clients professionnels et particuliers.' });
+    } else if (a.q4 === 'particuliers') {
+      candidates.push({ s: 90, t: 'Vérifier si certains de vos clients sont des professionnels.' });
+    } else if (a.q4 === 'entreprises' && !isClarify) {
+      candidates.push({ s: 92, t: 'Préparer l’émission électronique à partir de 2027.' });
+    }
 
     // Comptable : boosté en cas de clarify pour aller en tête
     candidates.push({ s: isClarify ? 88 : 70, t: 'Demander à votre comptable quelle Plateforme Agréée il recommande.' });
@@ -164,8 +182,8 @@
 
     // Méthode fragile : actions réduites en cas de clarify pour rester prudent
     if (methodFragile) {
-      candidates.push({ s: isClarify ? 65 : 85, t: 'Choisir un outil capable de préparer des factures structurées.' });
-      candidates.push({ s: isClarify ? 64 : 84, t: 'Éviter de rester uniquement sur Excel, Word ou des PDF simples.' });
+      candidates.push({ s: isClarify ? 65 : 86, t: 'Choisir un outil capable de préparer des factures structurées.' });
+      candidates.push({ s: isClarify ? 64 : 85, t: 'Éviter de rester uniquement sur Excel, Word ou des PDF simples.' });
     }
     if (methodOK) {
       candidates.push({ s: 78, t: 'Tester la création d’une facture structurée avant l’échéance.' });
@@ -371,7 +389,7 @@ https://tania.re/facturation-electronique-reunion
       const toneCls = b.tone === 'warn' ? 'sim-meaning-item--warn' : b.tone === 'info' ? 'sim-meaning-item--info' : '';
       return `
       <div class="sim-meaning-item ${toneCls}">
-        <span class="sim-meaning-letter" aria-hidden="true">${k}</span>
+        <span class="sim-meaning-icon" aria-hidden="true">${SVG[k]}</span>
         <div>
           <p class="sim-meaning-title">${b.title}</p>
           <p class="sim-meaning-text">${b.text}</p>
@@ -409,7 +427,7 @@ https://tania.re/facturation-electronique-reunion
 
       <article class="sim-card sim-card-tania">
         <h3 class="sim-card-title">Comment Tania peut vous aider</h3>
-        <p class="sim-tania-text">Tania n’est pas une Plateforme Agréée et ne remplace pas votre comptable. Tania vous aide à garder une méthode simple depuis WhatsApp pour créer, suivre et retrouver vos devis, factures et relances, tout en préparant progressivement une organisation compatible avec la réforme.</p>
+        <p class="sim-tania-text">Tania ne remplace pas votre comptable et n’est pas une Plateforme Agréée. L’objectif est plus simple&nbsp;: vous aider à garder une méthode claire depuis WhatsApp pour créer, suivre et retrouver vos devis, factures et relances, tout en préparant progressivement une organisation compatible avec la réforme.</p>
         <div class="sim-result-actions">
           <a href="${buildWhatsAppLink(a, level, actions)}" target="_blank" rel="noopener" class="sim-btn-whatsapp" id="sim-wa-btn">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-1 1.1-.2.2-.4.2-.7.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2.1-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.4.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
