@@ -1127,25 +1127,28 @@ Je peux préparer un message de relance prêt à envoyer.<div class="text-[10px]
         </div>
 
       </div>
-    </div>
-  </section>
 
-  <!-- ═════════════════════════════════════════════ -->
-  <!-- SECTION 6 — VOTRE TABLEAU DE BORD (style Indy) -->
-  <!-- ═════════════════════════════════════════════ -->
-  <section id="dashboard" class="bg-white py-16 lg:py-24">
-    <div class="max-w-6xl mx-auto px-6 lg:px-8">
-      <div class="grid lg:grid-cols-5 gap-12 items-center">
+      <!-- ═══════ Transition vers le dashboard ═══════ -->
+      <div class="reveal mt-20 lg:mt-24 flex flex-col items-center" data-delay="1">
+        <div class="w-px h-10 bg-gradient-to-b from-transparent to-slate-300"></div>
+        <span class="my-3 inline-flex items-center gap-2 bg-white border border-slate-200 rounded-full px-4 py-1.5 shadow-sm">
+          <span class="inline-flex w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span class="text-xs font-bold text-emerald-700 uppercase tracking-[0.14em]">… et tout se range dans votre dashboard</span>
+        </span>
+        <div class="w-px h-10 bg-gradient-to-b from-slate-300 to-transparent"></div>
+      </div>
 
-        <!-- Colonne gauche -->
+      <!-- ═══════ Block B : Dashboard global ═══════ -->
+      <div id="dashboard" class="mt-12 lg:mt-16 grid lg:grid-cols-5 gap-12 items-center">
+
+        <!-- Texte gauche -->
         <div class="lg:col-span-2 reveal">
-          <p class="text-emerald-600 font-semibold text-sm uppercase tracking-wider">Votre tableau de bord</p>
-          <h2 class="mt-3 text-3xl md:text-4xl lg:text-[40px] lg:leading-[48px] font-bold text-slate-900 tracking-tighter2">
-            Tout ce que vous envoyez à Tania se retrouve ici.
-          </h2>
-          <div class="mt-6 text-lg text-slate-700 leading-relaxed max-w-md space-y-5">
-            <p>Chaque message WhatsApp devient une donnée claire&nbsp;: devis, factures, paiements, clients, relances.</p>
-            <ul class="space-y-3 text-base">
+          <h3 class="text-2xl md:text-3xl lg:text-[34px] lg:leading-[40px] font-bold text-slate-900 tracking-tight">
+            Tout retrouvable, sans tableur.
+          </h3>
+          <div class="mt-5 text-base text-slate-700 leading-relaxed max-w-md space-y-4">
+            <p>Vos KPI mensuels, vos factures, vos relances et vos encaissements — visibles d’un seul coup d’œil, prêts pour votre comptable.</p>
+            <ul class="space-y-2.5 text-[15px]">
               <li class="flex items-start gap-3">
                 <span class="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-50 flex items-center justify-center mt-0.5">
                   <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#047857" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
@@ -1165,19 +1168,18 @@ Je peux préparer un message de relance prêt à envoyer.<div class="text-[10px]
                 <span class="text-slate-800">Factures à relancer signalées</span>
               </li>
             </ul>
-            <p>Vous gardez le contrôle, sans recopier vos messages dans Excel.</p>
           </div>
-          <a href="#demande-demo" class="mt-8 inline-flex items-center bg-white border-2 border-slate-900 hover:bg-slate-50 text-slate-900 font-semibold px-6 py-3 rounded-md transition-colors">
-            Voir une démo →
+          <a href="#cta-final" class="mt-7 inline-flex items-center bg-white border-2 border-slate-900 hover:bg-slate-50 text-slate-900 font-semibold px-6 py-3 rounded-md transition-colors">
+            Voir une démo
+            <svg class="ml-2" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
         </div>
 
-        <!-- Colonne droite (mockup dashboard) -->
+        <!-- Mockup dashboard à droite -->
         <div class="lg:col-span-3 reveal" data-delay="1">
-          <div class="relative rounded-2xl p-6 md:p-10" style="background-color: #f6f9f3;">
+          <div class="relative rounded-2xl p-6 md:p-10" style="background-color: #ecfdf5;">
 
-            <!-- Mockup -->
-            <div class="relative rounded-xl bg-white shadow-md border border-slate-200 overflow-hidden">
+            <div class="relative rounded-xl bg-white border border-slate-200 overflow-hidden" style="box-shadow: 0 24px 48px -24px rgba(15,23,42,0.18);">
 
               <!-- Header dashboard -->
               <div class="flex items-center justify-between px-5 py-3 border-b border-slate-200 bg-white">
@@ -1233,7 +1235,7 @@ Je peux préparer un message de relance prêt à envoyer.<div class="text-[10px]
                 </div>
               </div>
 
-              <!-- Liste mixte : factures + devis (colonne Client masquée sur mobile) -->
+              <!-- Liste mixte : factures + devis -->
               <div class="p-4 bg-white">
                 <div class="grid grid-cols-3 sm:grid-cols-4 gap-2 text-[10px] uppercase tracking-wider text-slate-500 font-semibold pb-2 border-b border-slate-200">
                   <span>Numéro</span><span class="hidden sm:inline">Client</span><span class="text-right">Montant</span><span class="text-right">Statut</span>
@@ -1255,7 +1257,7 @@ Je peux préparer un message de relance prêt à envoyer.<div class="text-[10px]
               </div>
             </div>
 
-            <!-- UI overlay flottante : Point rapide (desktop) -->
+            <!-- Overlay flottante : Point rapide (desktop) -->
             <div class="reveal hidden lg:block absolute bg-white border border-slate-200 rounded-2xl p-5 max-w-[280px]" style="top: -28px; right: -36px; box-shadow: 0 24px 48px -16px rgba(15,23,42,0.18);" data-delay="3">
               <div class="flex items-center gap-2.5">
                 <span class="w-8 h-8 rounded-full bg-emerald-50 flex items-center justify-center">
@@ -1289,13 +1291,13 @@ Je peux préparer un message de relance prêt à envoyer.<div class="text-[10px]
         </div>
 
       </div>
+
     </div>
   </section>
-
   <!-- ═════════════════════════════════════════════ -->
   <!-- SECTION 7 — CONFORMITÉ VALIDÉE                 -->
   <!-- ═════════════════════════════════════════════ -->
-  <section id="conformite" class="bg-slate-50 py-16 lg:py-24">
+  <section id="conformite" class="bg-white py-16 lg:py-24">
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
       <div class="text-center reveal">
         <p class="text-emerald-600 font-semibold text-sm uppercase tracking-wider">Prêt pour la réforme 2026</p>
