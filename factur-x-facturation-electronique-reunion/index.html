@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Factur-X et facturation électronique à La Réunion</title>
+  <meta name="description" content="Comprenez simplement Factur-X, les données structurées et le rôle du PDF dans la facturation électronique 2026-2027 à La Réunion." />
+  <link rel="canonical" href="https://tania.re/factur-x-facturation-electronique-reunion/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+
+  <meta property="og:title" content="Factur-X et facturation électronique à La Réunion" />
+  <meta property="og:description" content="Une ressource simple pour comprendre Factur-X, PDF, XML et données structurées sans jargon technique." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://tania.re/factur-x-facturation-electronique-reunion/" />
+  <meta property="og:image" content="https://tania.re/og-image.png" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Tania" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Factur-X et facturation électronique à La Réunion" />
+  <meta name="twitter:description" content="PDF, XML, données structurées : comprendre sans jargon." />
+  <meta name="twitter:image" content="https://tania.re/og-image.png" />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/css/article.css" />
+
+  <style>
+    body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    .tania-logo { display: inline-flex; align-items: center; line-height: 1; color: #10b981; text-decoration: none; }
+    .tania-T { height: 1em; width: 0.69em; display: block; }
+    .tania-ania { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1em; letter-spacing: -0.025em; line-height: 1; color: inherit; }
+    .tania-logo.md { font-size: 32px; }
+    .hero-cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.5rem 0 2rem; }
+    .hero-cta-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: #10b981; color: #fff; font-weight: 600; padding: 0.85rem 1.4rem; border-radius: 12px; text-decoration: none; box-shadow: 0 8px 22px -8px rgba(16,185,129,0.45); transition: all 0.18s ease; }
+    .hero-cta-primary:hover { background: #059669; transform: translateY(-1px); color: #fff; }
+    .hero-cta-secondary { display: inline-flex; align-items: center; gap: 0.5rem; color: #047857; font-weight: 600; padding: 0.85rem 1rem; text-decoration: underline; text-underline-offset: 4px; }
+    .hero-cta-secondary:hover { color: #065f46; }
+
+    /* Schéma Factur-X */
+    .schema-fx { display: grid; grid-template-columns: 1fr; gap: 0.85rem; align-items: stretch; margin: 1.5rem 0; }
+    @media (min-width: 768px) { .schema-fx { grid-template-columns: 1fr auto 1fr auto 1.1fr; align-items: stretch; } }
+    .schema-box { background: #fff; border: 1.5px solid #e2e8f0; border-radius: 14px; padding: 1.1rem 1.25rem; text-align: center; display: flex; flex-direction: column; justify-content: center; }
+    .schema-box.fx { background: linear-gradient(135deg, #ecfdf5 0%, #fff 100%); border-color: #10b981; }
+    .schema-box .cat { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #64748b; margin: 0 0 0.45rem; }
+    .schema-box.fx .cat { color: #047857; }
+    .schema-box h3 { font-size: 0.98rem; font-weight: 700; color: #0f172a; margin: 0 0 0.3rem; }
+    .schema-box p { font-size: 0.85rem; color: #475569; line-height: 1.5; margin: 0; }
+    .schema-sign { text-align: center; font-size: 1.5rem; font-weight: 700; color: #94a3b8; align-self: center; padding: 0.3rem 0; }
+    @media (min-width: 768px) { .schema-sign { padding: 0; } }
+
+    /* Tableau PDF vs Factur-X */
+    .compare-wrap { overflow-x: auto; margin: 1.5rem 0; -webkit-overflow-scrolling: touch; }
+    .compare-table { width: 100%; min-width: 640px; border-collapse: separate; border-spacing: 0; background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; overflow: hidden; font-size: 0.9rem; }
+    .compare-table th, .compare-table td { padding: 0.75rem 0.9rem; text-align: left; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+    .compare-table thead th { background: #f1f5f9; font-weight: 700; color: #0f172a; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; }
+    .compare-table tbody tr:last-child td { border-bottom: none; }
+    .compare-table td:first-child, .compare-table th:first-child { font-weight: 700; color: #0f172a; }
+    .compare-table .yes { color: #047857; font-weight: 700; }
+    .compare-table .no { color: #b45309; font-weight: 700; }
+    .compare-table .partial { color: #6b7280; font-weight: 600; }
+    .compare-table tr.fx-row { background: #ecfdf5; }
+    .compare-table tr.fx-row td:first-child { color: #047857; }
+    .compare-mobile { display: none; margin: 1.5rem 0; flex-direction: column; gap: 0.9rem; }
+    .cmp-mcard { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 1rem 1.2rem; }
+    .cmp-mcard.fx-card { background: #ecfdf5; border-color: #10b981; }
+    .cmp-mcard h3 { font-size: 1rem; font-weight: 700; color: #0f172a; margin: 0 0 0.5rem; }
+    .cmp-mcard.fx-card h3 { color: #047857; }
+    .cmp-mcard .row { font-size: 0.88rem; color: #475569; margin: 0.35rem 0; }
+    .cmp-mcard .row strong { color: #0f172a; }
+    @media (max-width: 639px) {
+      .compare-wrap { display: none; }
+      .compare-mobile { display: flex; }
+    }
+
+    /* Cartes acteurs */
+    .actor-cards { display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin: 1.5rem 0; }
+    @media (min-width: 768px) { .actor-cards { grid-template-columns: repeat(2, 1fr); } }
+    .actor-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 1.1rem 1.3rem; }
+    .actor-card.tania-card { background: #ecfdf5; border-color: #10b981; }
+    .actor-card h3 { font-size: 1.02rem; font-weight: 700; color: #0f172a; margin: 0 0 0.5rem; }
+    .actor-card.tania-card h3 { color: #047857; }
+    .actor-card p { font-size: 0.9rem; color: #475569; line-height: 1.55; margin: 0; }
+    .actor-card .mention { display: block; margin-top: 0.45rem; font-size: 0.82rem; color: #047857; font-weight: 600; }
+
+    /* Data list */
+    .data-pill-list { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 1rem 0 1.5rem; }
+    .data-pill { display: inline-flex; align-items: center; background: #f8fafc; border: 1px solid #e2e8f0; color: #334155; padding: 0.35rem 0.75rem; border-radius: 999px; font-size: 0.85rem; font-weight: 500; }
+
+    .check-list { list-style: none; padding: 0; margin: 1.25rem 0; counter-reset: chk; display: flex; flex-direction: column; gap: 0.55rem; }
+    .check-list li { counter-increment: chk; display: flex; align-items: flex-start; gap: 0.85rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 0.85rem 1rem; }
+    .check-list li::before { content: counter(chk); flex-shrink: 0; width: 26px; height: 26px; border-radius: 999px; background: #10b981; color: #fff; font-weight: 700; font-size: 0.85rem; display: inline-flex; align-items: center; justify-content: center; margin-top: 1px; }
+    .check-list li span { font-size: 0.94rem; color: #0f172a; line-height: 1.5; font-weight: 500; }
+
+    .error-cards { display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin: 1.5rem 0; }
+    @media (min-width: 768px) { .error-cards { grid-template-columns: 1fr 1fr; } }
+    .error-card { background: #fff; border: 1px solid #e2e8f0; border-left: 3px solid #f59e0b; border-radius: 0 12px 12px 0; padding: 0.95rem 1.15rem; }
+    .error-card h4 { font-size: 0.97rem; font-weight: 700; color: #0f172a; margin: 0 0 0.35rem; line-height: 1.35; }
+    .error-card p { font-size: 0.88rem; color: #475569; line-height: 1.5; margin: 0 0 0.3rem; }
+    .error-card .action { font-size: 0.83rem; color: #047857; font-weight: 600; }
+
+    .res-grid { display: grid; grid-template-columns: 1fr; gap: 0.5rem; margin: 1.25rem 0; }
+    @media (min-width: 640px) { .res-grid { grid-template-columns: 1fr 1fr; } }
+    .res-link { display: flex; align-items: center; gap: 0.65rem; padding: 0.7rem 0.95rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; text-decoration: none; color: #0f172a; font-size: 0.93rem; font-weight: 500; transition: all 0.15s ease; }
+    .res-link:hover { background: #fff; border-color: #10b981; color: #047857; }
+    .res-link::before { content: '›'; color: #10b981; font-weight: 700; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Factur-X et facturation électronique à La Réunion : comprendre sans jargon",
+    "description": "Comprendre simplement Factur-X, la différence avec un PDF ordinaire, le rôle des données structurées et ce que les TPE réunionnaises doivent préparer avant 2026-2027.",
+    "image": "https://tania.re/og-image.png",
+    "datePublished": "2026-05-24",
+    "dateModified": "2026-05-24",
+    "inLanguage": "fr-FR",
+    "author": { "@type": "Organization", "name": "Tania", "url": "https://tania.re" },
+    "publisher": { "@type": "Organization", "name": "Tania", "url": "https://tania.re", "logo": { "@type": "ImageObject", "url": "https://tania.re/favicon.svg" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://tania.re/factur-x-facturation-electronique-reunion/" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Factur-X, c'est quoi ?", "acceptedAnswer": { "@type": "Answer", "text": "Factur-X est un format mixte de facture électronique. Il combine une partie lisible par un humain (un PDF visuel) et des données structurées exploitables automatiquement par les systèmes. C'est l'un des formats utilisés dans le cadre de la réforme française de la facturation électronique." } },
+      { "@type": "Question", "name": "Quelle est la différence entre un PDF et Factur-X ?", "acceptedAnswer": { "@type": "Answer", "text": "Un PDF ordinaire est lisible par un humain mais ne contient pas de données structurées exploitables automatiquement. Factur-X est un PDF qui embarque en plus des données structurées, lisibles par les Plateformes Agréées et les logiciels comptables." } },
+      { "@type": "Question", "name": "Un PDF envoyé par mail est-il une facture électronique ?", "acceptedAnswer": { "@type": "Answer", "text": "Pas au sens de la réforme. Un PDF envoyé par mail reste un document numérique mais pas forcément une facture électronique structurée. La réforme demande des données structurées et une transmission via une Plateforme Agréée." } },
+      { "@type": "Question", "name": "Dois-je comprendre le XML pour être prêt ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. Une TPE n'a pas besoin de manipuler du XML. L'enjeu est de produire des informations propres (client, montant, dates, TVA) et de s'appuyer sur un outil ou un partenaire qui prend en charge la partie technique." } },
+      { "@type": "Question", "name": "Factur-X remplace-t-il la Plateforme Agréée ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. Factur-X est un format de facture. La Plateforme Agréée est l'opérateur qui transmet la facture dans le circuit officiel. Les deux sont complémentaires." } },
+      { "@type": "Question", "name": "Tania génère-t-elle des Factur-X conformes ?", "acceptedAnswer": { "@type": "Answer", "text": "Tania ne promet pas de garantir seule la conformité Factur-X et n'est pas une Plateforme Agréée. L'objectif de Tania est d'aider les entrepreneurs à mieux structurer leurs informations de devis, factures, relances et suivis, en articulation avec leur comptable et le circuit officiel." } },
+      { "@type": "Question", "name": "Que dois-je faire maintenant si j'utilise encore Excel, Word ou PDF ?", "acceptedAnswer": { "@type": "Answer", "text": "Commencez par vérifier que vos informations de facture sont propres : SIRET, numéros continus, mentions obligatoires, distinction clients pros/particuliers. Puis amorcez la réflexion avec votre comptable sur la Plateforme Agréée et l'outil à utiliser." } }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://tania.re/" },
+      { "@type": "ListItem", "position": 2, "name": "Ressources", "item": "https://tania.re/ressources-facturation-electronique-reunion/" },
+      { "@type": "ListItem", "position": 3, "name": "Factur-X facturation électronique", "item": "https://tania.re/factur-x-facturation-electronique-reunion/" }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-white text-slate-900">
+
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-100">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="/" aria-label="Tania — Accueil" class="tania-logo md">
+        <svg class="tania-T" viewBox="0 0 80 80" preserveAspectRatio="xMinYMid meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="0" y="14" width="80" height="18" fill="#10b981"/><rect x="31" y="42" width="18" height="38" fill="#10b981"/>
+        </svg>
+        <span class="tania-ania">ania</span>
+      </a>
+      <a href="/#cta-final" class="inline-flex items-center bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-semibold px-4 py-2 rounded-md shadow-sm transition-all">Demander une démo</a>
+    </div>
+  </header>
+
+  <main class="article-container py-12 lg:py-16">
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <a href="/">Accueil</a><span class="breadcrumb-sep">›</span>
+      <a href="/ressources-facturation-electronique-reunion/">Ressources</a><span class="breadcrumb-sep">›</span>
+      <span>Factur-X facturation électronique</span>
+    </nav>
+
+    <article class="article">
+      <h1>Factur-X et facturation électronique à La Réunion&#8239;: comprendre sans jargon</h1>
+      <p class="article-meta">Mis à jour le 24 mai 2026 · Pédagogique, sans XML</p>
+
+      <p class="lede">PDF, XML, données structurées&#8239;: la facturation électronique vient avec un nouveau vocabulaire. Cette page explique Factur-X simplement, sans détail technique, pour les TPE, indépendants, micro-entrepreneurs et commerçants réunionnais. L’objectif&#8239;: comprendre l’enjeu, pas devenir développeur.</p>
+
+      <div class="hero-cta-row">
+        <a href="/test-facturation-electronique-reunion/" class="hero-cta-primary">Faire le test gratuit
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="/ressources-facturation-electronique-reunion/" class="hero-cta-secondary">Voir toutes les ressources</a>
+      </div>
+
+      <h2 id="reponse">La réponse courte&#8239;: Factur-X n’est pas juste un PDF</h2>
+      <p>Factur-X est un <strong>format mixte</strong>. Il combine&#8239;:</p>
+      <ul>
+        <li>une partie <strong>lisible par un humain</strong> (un PDF visuel, comme une facture classique),</li>
+        <li>et des <strong>données structurées</strong> exploitables automatiquement par les systèmes (Plateformes Agréées, logiciels comptables).</li>
+      </ul>
+      <p>Pour une TPE, l’enjeu n’est pas de comprendre le XML. C’est de produire des <strong>informations propres</strong>&#8239;: client, SIRET, montants, TVA, dates, prestations, conditions de paiement.</p>
+
+      <aside class="callout">
+        <p class="callout-title">À retenir</p>
+        <ul>
+          <li>Factur-X = facture lisible + données structurées.</li>
+          <li>Un PDF ordinaire ne suffit pas forcément.</li>
+          <li>Le circuit officiel passe par une Plateforme Agréée.</li>
+          <li>Votre comptable ou votre solution doit confirmer la compatibilité.</li>
+        </ul>
+      </aside>
+
+      <h2 id="definition">Factur-X, c’est quoi exactement&#8239;?</h2>
+      <p>Imaginez une facture classique en PDF, que votre client peut ouvrir, lire et imprimer. Maintenant imaginez que, à l’intérieur de ce même fichier, il y a aussi un petit «&nbsp;ticket d’identité&nbsp;» que les ordinateurs savent lire automatiquement. Ce ticket contient les informations importantes&#8239;: SIRET, montant HT, TVA, dates.</p>
+      <p>C’est ça, Factur-X. Un seul fichier, deux usages&#8239;: lecture humaine et lecture machine. La partie humaine ne change pas vraiment pour votre client. La partie machine, elle, permet aux Plateformes Agréées et logiciels de traiter automatiquement la facture sans tout retaper.</p>
+
+      <div class="schema-fx" role="img" aria-label="Schéma Factur-X : facture lisible plus données structurées équivaut à Factur-X">
+        <div class="schema-box">
+          <p class="cat">Partie visible</p>
+          <h3>Facture lisible</h3>
+          <p>Ce que voit votre client (PDF classique).</p>
+        </div>
+        <div class="schema-sign">+</div>
+        <div class="schema-box">
+          <p class="cat">Partie machine</p>
+          <h3>Données structurées</h3>
+          <p>Informations exploitables par les systèmes.</p>
+        </div>
+        <div class="schema-sign">=</div>
+        <div class="schema-box fx">
+          <p class="cat">Résultat</p>
+          <h3>Factur-X</h3>
+          <p>Un seul fichier, deux usages.</p>
+        </div>
+      </div>
+
+      <h2 id="pdf-vs-fx">PDF simple ou Factur-X&#8239;: quelle différence&#8239;?</h2>
+      <p>Le sujet n’est pas «&nbsp;Excel et PDF sont interdits&nbsp;». Le sujet est&#8239;: tout PDF n’est pas une facture électronique au sens de la réforme.</p>
+
+      <div class="compare-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Type de fichier</th>
+              <th>Lisible humain</th>
+              <th>Données structurées</th>
+              <th>Adapté au circuit ?</th>
+              <th>À retenir</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>PDF simple (exporté manuellement)</td>
+              <td class="yes">Oui</td>
+              <td class="no">Non</td>
+              <td class="no">Pas forcément</td>
+              <td>Utile aujourd’hui, mais ne correspond pas à une facture électronique au sens de la réforme.</td>
+            </tr>
+            <tr>
+              <td>PDF généré depuis Word / Excel</td>
+              <td class="yes">Oui</td>
+              <td class="no">Non</td>
+              <td class="no">Pas forcément</td>
+              <td>Idem. La mise en forme est correcte, les données structurées manquent.</td>
+            </tr>
+            <tr class="fx-row">
+              <td>Factur-X</td>
+              <td class="yes">Oui</td>
+              <td class="yes">Oui</td>
+              <td class="yes">Oui</td>
+              <td>Format mixte recommandé pour les TPE françaises.</td>
+            </tr>
+            <tr>
+              <td>Autres formats structurés (UBL, CII)</td>
+              <td class="partial">Variable</td>
+              <td class="yes">Oui</td>
+              <td class="yes">Oui</td>
+              <td>Plus techniques, utilisés à l’international ou par les grandes entreprises.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="compare-mobile">
+        <div class="cmp-mcard">
+          <h3>PDF simple (exporté manuellement)</h3>
+          <p class="row"><strong>Lisible humain&#8239;:</strong> oui</p>
+          <p class="row"><strong>Données structurées&#8239;:</strong> non</p>
+          <p class="row"><strong>Adapté au circuit&#8239;:</strong> pas forcément</p>
+          <p class="row">Utile aujourd’hui, mais ne correspond pas à une facture électronique au sens de la réforme.</p>
+        </div>
+        <div class="cmp-mcard">
+          <h3>PDF généré depuis Word / Excel</h3>
+          <p class="row"><strong>Lisible humain&#8239;:</strong> oui</p>
+          <p class="row"><strong>Données structurées&#8239;:</strong> non</p>
+          <p class="row"><strong>Adapté au circuit&#8239;:</strong> pas forcément</p>
+          <p class="row">Idem. La mise en forme est correcte, les données structurées manquent.</p>
+        </div>
+        <div class="cmp-mcard fx-card">
+          <h3>Factur-X</h3>
+          <p class="row"><strong>Lisible humain&#8239;:</strong> oui</p>
+          <p class="row"><strong>Données structurées&#8239;:</strong> oui</p>
+          <p class="row"><strong>Adapté au circuit&#8239;:</strong> oui</p>
+          <p class="row">Format mixte recommandé pour les TPE françaises.</p>
+        </div>
+        <div class="cmp-mcard">
+          <h3>Autres formats structurés (UBL, CII)</h3>
+          <p class="row"><strong>Lisible humain&#8239;:</strong> variable</p>
+          <p class="row"><strong>Données structurées&#8239;:</strong> oui</p>
+          <p class="row"><strong>Adapté au circuit&#8239;:</strong> oui</p>
+          <p class="row">Plus techniques, utilisés à l’international ou par les grandes entreprises.</p>
+        </div>
+      </div>
+
+      <p>Pour aller plus loin sur les outils de facturation actuels&#8239;: <a href="/excel-word-pdf-facturation-electronique-reunion/">Excel, Word ou PDF&#8239;: est-ce suffisant&#8239;?</a></p>
+
+      <h2 id="donnees">Pourquoi les données structurées deviennent importantes</h2>
+      <p>Les données structurées d’une facture sont les informations utiles que les Plateformes Agréées et logiciels comptables peuvent lire automatiquement. Sans elles, chaque facture doit être ressaisie à la main quelque part.</p>
+
+      <div class="data-pill-list">
+        <span class="data-pill">Numéro de facture</span>
+        <span class="data-pill">Date</span>
+        <span class="data-pill">SIRET émetteur</span>
+        <span class="data-pill">SIRET client</span>
+        <span class="data-pill">Montant HT</span>
+        <span class="data-pill">TVA ou franchise</span>
+        <span class="data-pill">Montant TTC</span>
+        <span class="data-pill">Lignes de prestation</span>
+        <span class="data-pill">Échéance de paiement</span>
+        <span class="data-pill">Statut de paiement</span>
+      </div>
+
+      <p>Tania aide à mieux ranger ces informations au quotidien, sans demander à l’entrepreneur de devenir expert technique. Pour aller plus loin sur les mentions obligatoires&#8239;: <a href="/modele-facture-micro-entrepreneur-reunion/">modèle de facture micro-entrepreneur</a>.</p>
+
+      <h2 id="acteurs">Factur-X, Plateforme Agréée, comptable&#8239;: qui fait quoi&#8239;?</h2>
+
+      <div class="actor-cards">
+        <div class="actor-card">
+          <h3>Factur-X</h3>
+          <p><strong>Rôle&#8239;:</strong> format ou type de facture structuré (PDF + données XML embarquées). C’est le «&nbsp;contenant&nbsp;» et son contenu structuré.</p>
+        </div>
+        <div class="actor-card">
+          <h3>Plateforme Agréée</h3>
+          <p><strong>Rôle&#8239;:</strong> circuit d’émission, réception et transmission dans le cadre de la réforme. C’est le «&nbsp;facteur officiel&nbsp;». Pour aller plus loin&#8239;: <a href="/plateforme-agreee-facturation-electronique-reunion/">page dédiée</a>.</p>
+        </div>
+        <div class="actor-card">
+          <h3>Expert-comptable</h3>
+          <p><strong>Rôle&#8239;:</strong> vérification de votre situation, organisation fiscale, recommandation de la Plateforme Agréée à utiliser. Indispensable pour valider votre cas.</p>
+        </div>
+        <div class="actor-card tania-card">
+          <h3>Tania</h3>
+          <p><strong>Rôle&#8239;:</strong> aide à structurer devis, factures, relances et suivis depuis WhatsApp.</p>
+          <span class="mention">Tania n’est pas une Plateforme Agréée et ne remplace pas le comptable.</span>
+        </div>
+      </div>
+
+      <h2 id="preparer">Ce que vous pouvez préparer dès maintenant</h2>
+
+      <ol class="check-list">
+        <li><span>Vérifier les informations de votre entreprise (SIRET, adresse, IBAN, régime).</span></li>
+        <li><span>Vérifier vos informations clients (raison sociale, SIRET, adresse).</span></li>
+        <li><span>Clarifier votre situation TVA ou franchise de TVA.</span></li>
+        <li><span>Distinguer clients professionnels et particuliers dans votre suivi.</span></li>
+        <li><span>Éviter les factures dispersées dans plusieurs fichiers (Excel, Word, drive, WhatsApp).</span></li>
+        <li><span>Demander à votre comptable comment il prévoit la transition et la Plateforme Agréée.</span></li>
+        <li><span>Vérifier comment votre outil actuel gère les données structurées (compatibilité Factur-X).</span></li>
+      </ol>
+
+      <div class="hero-cta-row">
+        <a href="/test-facturation-electronique-reunion/" class="hero-cta-primary">Obtenir mon plan d’action
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+      <h2 id="erreurs">Erreurs fréquentes à éviter</h2>
+
+      <div class="error-cards">
+        <div class="error-card">
+          <h4>Penser qu’un PDF envoyé par mail suffit forcément</h4>
+          <p>Un PDF ordinaire est un document numérique, mais pas une facture électronique au sens de la réforme.</p>
+          <span class="action">Action&#8239;: amorcer la réflexion sur un format structuré.</span>
+        </div>
+        <div class="error-card">
+          <h4>Croire que Factur-X est seulement un design de facture</h4>
+          <p>Factur-X est un format mixte&#8239;: ce qui compte, ce sont les données structurées intégrées, pas la mise en forme.</p>
+          <span class="action">Action&#8239;: comprendre que l’apparence ne suffit pas.</span>
+        </div>
+        <div class="error-card">
+          <h4>Attendre 2027 pour vérifier sa méthode</h4>
+          <p>Le rush des derniers mois est prévisible. Les Plateformes Agréées et les comptables seront probablement saturés.</p>
+          <span class="action">Action&#8239;: amorcer la réflexion avant l’été 2026.</span>
+        </div>
+        <div class="error-card">
+          <h4>Confondre format de facture et Plateforme Agréée</h4>
+          <p>Factur-X est un format. La Plateforme Agréée est le circuit. Les deux sont complémentaires.</p>
+          <span class="action">Action&#8239;: bien distinguer les deux niveaux.</span>
+        </div>
+        <div class="error-card">
+          <h4>Penser que Tania remplace le comptable ou la plateforme</h4>
+          <p>Tania aide à structurer les informations au quotidien, mais n’est pas une Plateforme Agréée ni un comptable.</p>
+          <span class="action">Action&#8239;: voir Tania comme un complément, pas un substitut.</span>
+        </div>
+      </div>
+
+      <h2 id="tania">Comment Tania peut vous aider à préparer des factures mieux structurées</h2>
+      <p>Tania ne remplace pas votre comptable et n’est pas une Plateforme Agréée. Tania vous aide à structurer vos devis, factures, relances et suivis depuis WhatsApp, avec l’objectif de préparer progressivement une organisation compatible avec la réforme.</p>
+      <p>L’enjeu n’est pas de vous faire manipuler du XML. L’enjeu est de <strong>ne plus perdre les informations utiles</strong>&#8239;: client, prestation, montant, paiement, relance.</p>
+
+      <ul>
+        <li>Informations client mieux rangées (raison sociale, SIRET, IBAN).</li>
+        <li>Devis et factures plus faciles à retrouver.</li>
+        <li>Suivi de paiement plus clair.</li>
+        <li>Méthode plus propre avant échange avec le comptable et la Plateforme Agréée.</li>
+      </ul>
+
+      <div class="hero-cta-row" style="margin-top:1.5rem;">
+        <a href="/" class="hero-cta-primary">Découvrir Tania
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="/test-facturation-electronique-reunion/" class="hero-cta-secondary">Faire le test gratuit</a>
+      </div>
+
+      <h2 id="ressources">Pour aller plus loin</h2>
+      <div class="res-grid">
+        <a href="/facturation-electronique-reunion" class="res-link">Guide facturation électronique Réunion</a>
+        <a href="/test-facturation-electronique-reunion/" class="res-link">Faire le test gratuit</a>
+        <a href="/ressources-facturation-electronique-reunion/" class="res-link">Hub ressources</a>
+        <a href="/checklist-facturation-electronique-reunion/" class="res-link">Checklist 10 points</a>
+        <a href="/glossaire-facturation-electronique-reunion/" class="res-link">Glossaire des termes</a>
+        <a href="/calendrier-facturation-electronique-reunion/" class="res-link">Calendrier 2026-2027</a>
+        <a href="/faq-facturation-electronique-reunion/" class="res-link">FAQ 25 questions</a>
+        <a href="/comparatif-methodes-facturation-electronique-reunion/" class="res-link">Comparatif des méthodes</a>
+        <a href="/excel-word-pdf-facturation-electronique-reunion/" class="res-link">Excel, Word ou PDF, est-ce suffisant&#8239;?</a>
+        <a href="/modele-facture-micro-entrepreneur-reunion/" class="res-link">Modèle de facture micro-entrepreneur</a>
+        <a href="/plateforme-agreee-facturation-electronique-reunion/" class="res-link">Plateforme Agréée et facturation électronique</a>
+        <a href="/kit-facturation-electronique-reunion/" class="res-link">Kit gratuit complet</a>
+      </div>
+
+      <h2 id="faq">Foire aux questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Factur-X, c’est quoi&#8239;?</summary>
+          <div class="faq-answer"><p>Factur-X est un format mixte de facture électronique. Il combine une partie lisible par un humain (un PDF visuel) et des données structurées exploitables automatiquement par les systèmes. C’est l’un des formats utilisés dans le cadre de la réforme française de la facturation électronique.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Quelle est la différence entre un PDF et Factur-X&#8239;?</summary>
+          <div class="faq-answer"><p>Un PDF ordinaire est lisible par un humain mais ne contient pas de données structurées exploitables automatiquement. Factur-X est un PDF qui embarque en plus des données structurées, lisibles par les Plateformes Agréées et les logiciels comptables.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Un PDF envoyé par mail est-il une facture électronique&#8239;?</summary>
+          <div class="faq-answer"><p>Pas au sens de la réforme. Un PDF envoyé par mail reste un document numérique mais pas forcément une facture électronique structurée. La réforme demande des données structurées et une transmission via une Plateforme Agréée.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Dois-je comprendre le XML pour être prêt&#8239;?</summary>
+          <div class="faq-answer"><p>Non. Une TPE n’a pas besoin de manipuler du XML. L’enjeu est de produire des informations propres (client, montant, dates, TVA) et de s’appuyer sur un outil ou un partenaire qui prend en charge la partie technique.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Factur-X remplace-t-il la Plateforme Agréée&#8239;?</summary>
+          <div class="faq-answer"><p>Non. Factur-X est un format de facture. La Plateforme Agréée est l’opérateur qui transmet la facture dans le circuit officiel. Les deux sont complémentaires. Voir notre page&#8239;: <a href="/plateforme-agreee-facturation-electronique-reunion/">Plateforme Agréée et facturation électronique</a>.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Tania génère-t-elle des Factur-X conformes&#8239;?</summary>
+          <div class="faq-answer"><p>Tania ne promet pas de garantir seule la conformité Factur-X et n’est pas une Plateforme Agréée. L’objectif de Tania est d’aider les entrepreneurs à mieux structurer leurs informations de devis, factures, relances et suivis, en articulation avec leur comptable et le circuit officiel.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Que dois-je faire maintenant si j’utilise encore Excel, Word ou PDF&#8239;?</summary>
+          <div class="faq-answer"><p>Commencez par vérifier que vos informations de facture sont propres&#8239;: SIRET, numéros continus, mentions obligatoires, distinction clients pros/particuliers. Puis amorcez la réflexion avec votre comptable sur la Plateforme Agréée et l’outil à utiliser. Voir&#8239;: <a href="/excel-word-pdf-facturation-electronique-reunion/">Excel, Word ou PDF, est-ce suffisant&#8239;?</a></p></div>
+        </details>
+      </div>
+
+      <section class="article-cta">
+        <h2 style="margin-top:0">Vous voulez savoir si votre méthode actuelle est assez structurée&#8239;?</h2>
+        <p>Répondez à 6 questions et obtenez une première indication sur votre niveau de préparation.</p>
+        <a href="/test-facturation-electronique-reunion/" class="cta-button">Obtenir mon plan d’action →</a>
+        <p class="cta-fine">Gratuit · 2 minutes · Indication pédagogique</p>
+      </section>
+
+      <p style="text-align:center;margin:2rem 0;font-size:0.95rem;"><a href="/ressources-facturation-electronique-reunion/">Voir toutes les ressources facturation électronique →</a></p>
+
+      <h2 id="sources">Sources officielles</h2>
+      <ul>
+        <li><a href="https://www.impots.gouv.fr/professionnel/je-passe-la-facturation-electronique" target="_blank" rel="noopener">impots.gouv.fr — Je passe à la facturation électronique</a></li>
+        <li><a href="https://www.impots.gouv.fr/liste-des-plateformes-agreees-immatriculees-sous-reserve" target="_blank" rel="noopener">impots.gouv.fr — Liste officielle des Plateformes Agréées</a></li>
+        <li><a href="https://entreprendre.service-public.fr/vosdroits/F23208" target="_blank" rel="noopener">service-public.fr — Facturation entre professionnels et calendrier</a></li>
+      </ul>
+
+      <div style="margin-top:2rem;background:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #94a3b8;border-radius:0 10px 10px 0;padding:0.9rem 1.1rem;font-size:0.85rem;color:#64748b;line-height:1.6;">
+        <strong>Cette ressource fournit une première indication pédagogique.</strong> Elle ne remplace pas l’avis de votre expert-comptable ni les informations officielles de l’administration fiscale.
+      </div>
+    </article>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-400 py-12 mt-16">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 text-sm flex flex-col md:flex-row items-center justify-between gap-4">
+      <p>© 2026 Tania · Tous droits réservés.</p>
+      <div class="flex items-center gap-6 flex-wrap justify-center">
+        <a href="/" class="hover:text-white transition-colors">Accueil</a>
+        <a href="/facturation-electronique-reunion" class="hover:text-white transition-colors">Guide</a>
+        <a href="/test-facturation-electronique-reunion/" class="hover:text-white transition-colors">Test</a>
+        <a href="/ressources-facturation-electronique-reunion/" class="hover:text-white transition-colors">Ressources</a>
+        <a href="/mentions-legales.html" class="hover:text-white transition-colors">Mentions légales</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
