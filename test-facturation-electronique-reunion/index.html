@@ -28,7 +28,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="/css/simulator.css" />
 
   <style>
@@ -118,10 +117,10 @@
   }
   </script>
 </head>
-<body class="bg-white text-slate-900">
+<body>
 
-  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-100">
-    <div class="max-w-6xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
+  <header class="sim-site-header">
+    <div class="sim-site-header__inner">
       <a href="/" aria-label="Tania — Accueil" class="tania-logo md">
         <svg class="tania-T" viewBox="0 0 80 80" preserveAspectRatio="xMinYMid meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <rect x="0" y="14" width="80" height="18" fill="#10b981"/>
@@ -129,7 +128,7 @@
         </svg>
         <span class="tania-ania">ania</span>
       </a>
-      <a href="/#cta-final" class="inline-flex items-center bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-semibold px-4 py-2 rounded-md shadow-sm transition-all">Demander une démo</a>
+      <a href="/#cta-final" class="sim-header-cta">Demander une démo</a>
     </div>
   </header>
 
@@ -248,16 +247,16 @@
 
   <div class="sim-toast" id="sim-toast" role="status" aria-live="polite"></div>
 
-  <footer class="bg-slate-900 text-slate-400 py-12 mt-8">
-    <div class="max-w-6xl mx-auto px-6 lg:px-8 text-sm flex flex-col md:flex-row items-center justify-between gap-4">
-      <p>© 2026 Tania · Tous droits réservés.</p>
-      <div class="flex items-center gap-6 flex-wrap justify-center">
-        <a href="/" class="hover:text-white transition-colors">Accueil</a>
-        <a href="/facturation-electronique-reunion" class="hover:text-white transition-colors">Guide</a>
-        <a href="/mentions-legales.html" class="hover:text-white transition-colors">Mentions légales</a>
-        <a href="/cgu.html" class="hover:text-white transition-colors">CGU</a>
-        <a href="/politique-confidentialite.html" class="hover:text-white transition-colors">Confidentialité</a>
-        <a href="/rgpd.html" class="hover:text-white transition-colors">RGPD</a>
+  <footer class="sim-site-footer">
+    <div class="sim-site-footer__inner">
+      <p style="margin:0">© 2026 Tania · Tous droits réservés.</p>
+      <div class="sim-site-footer__links">
+        <a href="/">Accueil</a>
+        <a href="/facturation-electronique-reunion">Guide</a>
+        <a href="/mentions-legales.html">Mentions légales</a>
+        <a href="/cgu.html">CGU</a>
+        <a href="/politique-confidentialite.html">Confidentialité</a>
+        <a href="/rgpd.html">RGPD</a>
       </div>
     </div>
   </footer>
