@@ -1865,60 +1865,49 @@ Je peux préparer un message de relance prêt à envoyer.<div class="text-[10px]
         <!-- Halo diffus -->
         <circle cx="500" cy="380" r="380" fill="url(#reunion-glow)"/>
 
-        <!-- Contour de La Réunion (stylisé, orienté N-up) -->
-        <path d="
-          M 500 75
-          C 565 78, 625 92, 680 120
-          C 730 148, 770 188, 798 245
-          C 820 295, 832 350, 830 405
-          C 826 460, 808 510, 778 558
-          C 745 608, 700 648, 645 678
-          C 590 705, 530 718, 470 715
-          C 408 712, 350 695, 298 665
-          C 248 635, 210 595, 188 545
-          C 168 498, 162 445, 172 392
-          C 182 340, 205 290, 240 248
-          C 278 202, 325 165, 380 138
-          C 425 115, 462 92, 500 75
-          Z
+        <!-- Contour réel de La Réunion (clockwise, Nord-haut) :
+             Saint-Denis (N) → Sainte-Suzanne → Saint-André → Saint-Benoît (E)
+             → Sainte-Rose → Saint-Philippe (SE, Piton Fournaise)
+             → Saint-Joseph → Saint-Pierre → Saint-Louis (S)
+             → Étang-Salé → Saint-Leu → Saint-Paul (W)
+             → Le Port → La Possession (NW) → retour Saint-Denis -->
+        <path id="reunion-shape" d="
+          M 500 90
+          L 530 92 L 560 100 L 588 108 L 612 118 L 636 132
+          L 660 148 L 682 168 L 700 192 L 716 218 L 730 246
+          L 742 274 L 752 304 L 762 334 L 770 364 L 776 394
+          L 782 422 L 786 450 L 788 476 L 786 500 L 780 522
+          L 768 542 L 752 560 L 732 574 L 708 586 L 682 596
+          L 654 604 L 624 610 L 592 612 L 558 612 L 524 608
+          L 492 600 L 462 588 L 432 574 L 404 556 L 378 536
+          L 354 514 L 332 490 L 312 464 L 294 436 L 280 406
+          L 268 374 L 258 342 L 250 310 L 244 278 L 240 246
+          L 240 216 L 244 188 L 254 162 L 270 140 L 290 122
+          L 314 110 L 340 102 L 368 96 L 396 92 L 424 92
+          L 452 92 L 478 92 L 500 90 Z
         " fill="#10b981" fill-opacity="0.07"/>
 
-        <!-- Contour de trait subtil -->
-        <path d="
-          M 500 75
-          C 565 78, 625 92, 680 120
-          C 730 148, 770 188, 798 245
-          C 820 295, 832 350, 830 405
-          C 826 460, 808 510, 778 558
-          C 745 608, 700 648, 645 678
-          C 590 705, 530 718, 470 715
-          C 408 712, 350 695, 298 665
-          C 248 635, 210 595, 188 545
-          C 168 498, 162 445, 172 392
-          C 182 340, 205 290, 240 248
-          C 278 202, 325 165, 380 138
-          C 425 115, 462 92, 500 75
-          Z
-        " stroke="#10b981" stroke-opacity="0.18" stroke-width="2" fill="none" stroke-linejoin="round"/>
+        <!-- Stroke bien visible pour faire ressortir le contour -->
+        <use href="#reunion-shape" stroke="#10b981" stroke-opacity="0.40" stroke-width="2.5" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
 
-        <!-- Reliefs principaux : Piton des Neiges (centre) -->
-        <g stroke="#047857" stroke-opacity="0.25" stroke-width="1.5" fill="none">
-          <circle cx="455" cy="375" r="42"/>
-          <circle cx="455" cy="375" r="22"/>
-          <circle cx="455" cy="375" r="6" fill="#047857" fill-opacity="0.35" stroke="none"/>
-        </g>
-
-        <!-- Piton de la Fournaise (SE) -->
+        <!-- Piton des Neiges (centre-ouest, ~Cilaos/Mafate) -->
         <g stroke="#047857" stroke-opacity="0.22" stroke-width="1.5" fill="none">
-          <circle cx="640" cy="520" r="34"/>
-          <circle cx="640" cy="520" r="16"/>
-          <circle cx="640" cy="520" r="5" fill="#047857" fill-opacity="0.30" stroke="none"/>
+          <circle cx="420" cy="340" r="34"/>
+          <circle cx="420" cy="340" r="18"/>
+          <circle cx="420" cy="340" r="5" fill="#047857" fill-opacity="0.35" stroke="none"/>
         </g>
 
-        <!-- Repère discret Saint-Denis (étiquette de point cardinal nord) -->
-        <g opacity="0.18">
-          <circle cx="500" cy="120" r="3" fill="#047857"/>
-          <text x="500" y="105" text-anchor="middle" fill="#047857" font-size="11" font-family="Inter, sans-serif" font-weight="600">N</text>
+        <!-- Piton de la Fournaise (sud-est) -->
+        <g stroke="#047857" stroke-opacity="0.20" stroke-width="1.5" fill="none">
+          <circle cx="630" cy="470" r="28"/>
+          <circle cx="630" cy="470" r="13"/>
+          <circle cx="630" cy="470" r="4" fill="#047857" fill-opacity="0.30" stroke="none"/>
+        </g>
+
+        <!-- Repère cardinal N (Saint-Denis) -->
+        <g opacity="0.24">
+          <circle cx="500" cy="118" r="3" fill="#047857"/>
+          <text x="500" y="103" text-anchor="middle" fill="#047857" font-size="11" font-family="Inter, sans-serif" font-weight="600">N</text>
         </g>
       </svg>
     </div>
