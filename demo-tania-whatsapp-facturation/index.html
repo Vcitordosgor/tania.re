@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Démo Tania WhatsApp : devis et factures pour TPE Réunion</title>
+  <meta name="description" content="Découvrez comment Tania aide les TPE à créer, suivre et retrouver devis, factures, paiements et relances depuis WhatsApp." />
+  <link rel="canonical" href="https://tania.re/demo-tania-whatsapp-facturation/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+
+  <meta property="og:title" content="Démo Tania WhatsApp" />
+  <meta property="og:description" content="Un message simple, des informations structurées, un suivi plus clair pour vos devis, factures et relances." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tania.re/demo-tania-whatsapp-facturation/" />
+  <meta property="og:image" content="https://tania.re/og-image.png" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Tania" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Démo Tania WhatsApp" />
+  <meta name="twitter:description" content="Un message simple, des informations structurées, un suivi plus clair pour vos devis, factures et relances." />
+  <meta name="twitter:image" content="https://tania.re/og-image.png" />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/css/article.css" />
+
+  <style>
+    body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    .tania-logo { display: inline-flex; align-items: center; line-height: 1; color: #10b981; text-decoration: none; }
+    .tania-T { height: 1em; width: 0.69em; display: block; }
+    .tania-ania { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1em; letter-spacing: -0.025em; line-height: 1; color: inherit; }
+    .tania-logo.md { font-size: 32px; }
+    html { scroll-behavior: smooth; }
+    .hero-cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.5rem 0 2rem; }
+    .hero-cta-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: #10b981; color: #fff; font-weight: 600; padding: 0.85rem 1.4rem; border-radius: 12px; text-decoration: none; box-shadow: 0 8px 22px -8px rgba(16,185,129,0.45); transition: all 0.18s ease; }
+    .hero-cta-primary:hover { background: #059669; transform: translateY(-1px); color: #fff; }
+    .hero-cta-secondary { display: inline-flex; align-items: center; gap: 0.5rem; color: #047857; font-weight: 600; padding: 0.85rem 1rem; text-decoration: underline; text-underline-offset: 4px; }
+    .hero-cta-secondary:hover { color: #065f46; }
+
+    .steps { display: grid; grid-template-columns: 1fr; gap: 0.9rem; margin: 1.5rem 0 2rem; counter-reset: stp; }
+    @media (min-width: 768px) { .steps { grid-template-columns: repeat(2, 1fr); } }
+    .step { counter-increment: stp; background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 1.1rem 1.3rem; position: relative; }
+    .step::before { content: counter(stp); position: absolute; top: 1.1rem; right: 1.2rem; width: 28px; height: 28px; border-radius: 999px; background: #ecfdf5; color: #047857; font-weight: 700; font-size: 0.9rem; display: inline-flex; align-items: center; justify-content: center; }
+    .step h3 { font-size: 1.02rem; font-weight: 700; color: #0f172a; margin: 0 0 0.4rem; padding-right: 2.5rem; line-height: 1.35; }
+    .step p { font-size: 0.92rem; color: #475569; line-height: 1.55; margin: 0; }
+
+    .demo-frame { display: grid; grid-template-columns: 1fr; gap: 1rem; margin: 1.5rem 0 1rem; align-items: start; }
+    @media (min-width: 768px) { .demo-frame { grid-template-columns: 1fr 1fr; } }
+    .wa-screen { background: #ece5dd; border-radius: 18px; padding: 1rem 0.9rem; border: 1px solid #cbd5e1; }
+    .wa-header { background: #075e54; color: #fff; padding: 0.55rem 0.85rem; border-radius: 10px 10px 0 0; margin: -1rem -0.9rem 0.6rem; font-weight: 600; font-size: 0.92rem; display: flex; align-items: center; gap: 0.55rem; }
+    .wa-dot { width: 9px; height: 9px; border-radius: 999px; background: #25d366; box-shadow: 0 0 0 2px rgba(255,255,255,0.25); }
+    .wa-msg { background: #fff; border-radius: 10px; padding: 0.55rem 0.75rem; font-size: 0.88rem; color: #0f172a; line-height: 1.45; margin-bottom: 0.45rem; max-width: 92%; box-shadow: 0 1px 1px rgba(15,23,42,0.05); }
+    .wa-msg.me { background: #dcf8c6; margin-left: auto; }
+    .wa-meta { font-size: 0.7rem; color: #64748b; text-align: right; margin-top: 0.15rem; }
+    .tania-panel { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 1.1rem 1.3rem; }
+    .tania-panel h4 { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #047857; margin: 0 0 0.75rem; }
+    .tania-panel dl { display: grid; grid-template-columns: max-content 1fr; column-gap: 0.85rem; row-gap: 0.4rem; margin: 0 0 1rem; }
+    .tania-panel dt { font-weight: 600; color: #64748b; font-size: 0.82rem; }
+    .tania-panel dd { font-size: 0.9rem; color: #0f172a; margin: 0; }
+    .status-pill { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.3rem 0.65rem; border-radius: 999px; font-size: 0.78rem; font-weight: 600; }
+    .status-attente { background: #fef3c7; color: #92400e; }
+    .status-paye { background: #d1fae5; color: #047857; }
+    .demo-note { font-size: 0.82rem; color: #64748b; font-style: italic; margin: 0.3rem 0 1.75rem; }
+
+    .feat-cards { display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin: 1.5rem 0; }
+    @media (min-width: 640px) { .feat-cards { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .feat-cards { grid-template-columns: repeat(3, 1fr); } }
+    .feat-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1rem 1.2rem; }
+    .feat-card h4 { font-size: 0.98rem; font-weight: 700; color: #0f172a; margin: 0 0 0.35rem; }
+    .feat-card p { font-size: 0.88rem; color: #475569; line-height: 1.5; margin: 0; }
+
+    .metiers-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0 2rem; }
+    .metiers-row span { display: inline-flex; padding: 0.45rem 0.85rem; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 999px; font-size: 0.88rem; color: #0f172a; font-weight: 500; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Démo Tania WhatsApp",
+    "url": "https://tania.re/demo-tania-whatsapp-facturation/",
+    "inLanguage": "fr-FR",
+    "description": "Découvrez comment Tania aide les TPE réunionnaises à créer, suivre et retrouver devis, factures, paiements et relances depuis WhatsApp."
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Tania fonctionne-t-elle directement dans WhatsApp ?", "acceptedAnswer": { "@type": "Answer", "text": "L'idée de Tania est de partir des messages WhatsApp pour structurer devis, factures, paiements et relances. Le parcours exact peut évoluer selon le produit, mais l'objectif est de rester au plus proche de l'usage WhatsApp quotidien." } },
+      { "@type": "Question", "name": "Tania remplace-t-elle un logiciel de facturation ?", "acceptedAnswer": { "@type": "Answer", "text": "Tania n'est pas un logiciel de facturation classique. Tania aide à structurer les informations et à préparer une organisation plus claire. Selon votre situation, un logiciel ou un comptable peut rester nécessaire." } },
+      { "@type": "Question", "name": "Tania remplace-t-elle mon comptable ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. Tania ne remplace pas votre comptable. Tania peut vous aider à mieux structurer vos informations pour préparer plus simplement vos échanges avec votre comptable." } },
+      { "@type": "Question", "name": "Tania est-elle une Plateforme Agréée ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. Tania n'est pas une Plateforme Agréée immatriculée par l'État. Le circuit officiel de facturation électronique passera par une Plateforme Agréée, choisie avec votre comptable." } },
+      { "@type": "Question", "name": "Puis-je tester Tania avant de m'engager ?", "acceptedAnswer": { "@type": "Answer", "text": "Vous pouvez commencer par le test gratuit en ligne (2 minutes) pour identifier votre niveau de préparation, puis demander une démo via contact@tania.re." } }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://tania.re/" },
+      { "@type": "ListItem", "position": 2, "name": "Démo Tania WhatsApp", "item": "https://tania.re/demo-tania-whatsapp-facturation/" }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-white text-slate-900">
+
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-100">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="/" aria-label="Tania — Accueil" class="tania-logo md">
+        <svg class="tania-T" viewBox="0 0 80 80" preserveAspectRatio="xMinYMid meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="0" y="14" width="80" height="18" fill="#10b981"/>
+          <rect x="31" y="42" width="18" height="38" fill="#10b981"/>
+        </svg>
+        <span class="tania-ania">ania</span>
+      </a>
+      <a href="/test-facturation-electronique-reunion/" class="inline-flex items-center bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-semibold px-4 py-2 rounded-md shadow-sm transition-all">Faire le test</a>
+    </div>
+  </header>
+
+  <main class="article-container py-12 lg:py-16">
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <a href="/">Accueil</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>Démo Tania WhatsApp</span>
+    </nav>
+
+    <article class="article">
+      <h1>Découvrez comment Tania fonctionne depuis WhatsApp</h1>
+      <p class="lede">Un message simple, des informations structurées, un suivi plus clair pour vos devis, factures, paiements et relances.</p>
+
+      <div class="hero-cta-row">
+        <a href="/test-facturation-electronique-reunion/" class="hero-cta-primary">
+          Faire le test gratuit
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="/ressources-facturation-electronique-reunion/" class="hero-cta-secondary">Voir toutes les ressources</a>
+      </div>
+
+      <h2 id="etapes">Une démo en 4 étapes</h2>
+      <div class="steps">
+        <div class="step">
+          <h3>Vous écrivez votre demande dans WhatsApp</h3>
+          <p>Comme d’habitude. Un message texte, vocal ou photo, pour un devis, une facture ou un suivi de chantier.</p>
+        </div>
+        <div class="step">
+          <h3>Tania identifie les informations importantes</h3>
+          <p>Client, prestation, montant, date, type de document, statut. Plus besoin de tout retaper.</p>
+        </div>
+        <div class="step">
+          <h3>Tania aide à structurer le devis ou la facture</h3>
+          <p>L’objectif est d’organiser les informations et de préparer un document structuré selon le parcours produit.</p>
+        </div>
+        <div class="step">
+          <h3>Vous suivez paiement et relance</h3>
+          <p>Statut payé, en attente, à relancer&#8239;: tout reste retrouvable sans tableurs éparpillés.</p>
+        </div>
+      </div>
+
+      <h2 id="exemple">Exemple concret</h2>
+      <p>Voici à quoi ressemblerait, schématiquement, le passage d’un message WhatsApp à un suivi structuré.</p>
+
+      <div class="demo-frame">
+        <div class="wa-screen" role="img" aria-label="Aperçu fictif d'une conversation WhatsApp">
+          <div class="wa-header"><span class="wa-dot"></span> Tania · en ligne</div>
+          <div class="wa-msg me">Salut, peux-tu faire la facture pour M. Payet&#8239;? Réparation chauffe-eau, 180 €, intervention du 12 mai.<div class="wa-meta">14:32 ✓✓</div></div>
+          <div class="wa-msg">C’est noté. Je prépare la facture FA-2026-0142 au nom de M. Payet, 180 € TTC, prestation du 12/05/2026.<div class="wa-meta">14:32</div></div>
+          <div class="wa-msg me">Parfait, envoie-la.<div class="wa-meta">14:33 ✓✓</div></div>
+        </div>
+
+        <div class="tania-panel">
+          <h4>Informations détectées</h4>
+          <dl>
+            <dt>Client</dt><dd>M. Payet</dd>
+            <dt>Prestation</dt><dd>Réparation chauffe-eau</dd>
+            <dt>Date</dt><dd>12/05/2026</dd>
+            <dt>Montant</dt><dd>180,00 € TTC</dd>
+            <dt>Document</dt><dd>Facture FA-2026-0142</dd>
+            <dt>Statut</dt><dd><span class="status-pill status-attente">En attente de paiement</span></dd>
+          </dl>
+          <h4>Suivi</h4>
+          <p style="font-size:0.9rem;color:#475569;line-height:1.55;margin:0;">Relance automatique programmée à J+15 si le paiement n’est pas reçu. Statut mis à jour dès l’encaissement&#8239;: <span class="status-pill status-paye">Payé</span>.</p>
+        </div>
+      </div>
+      <p class="demo-note">Exemple pédagogique fictif. Le parcours réel peut évoluer selon le produit.</p>
+
+      <h2 id="capacites">Ce que Tania peut faire</h2>
+      <div class="feat-cards">
+        <div class="feat-card"><h4>Créer une base de devis</h4><p>Vos devis sont structurés et retrouvables par client.</p></div>
+        <div class="feat-card"><h4>Préparer une facture</h4><p>Les informations clés (client, montant, date, mentions) sont rassemblées.</p></div>
+        <div class="feat-card"><h4>Suivre les paiements</h4><p>Statut payé, en attente, à relancer&#8239;: visible en un coup d’œil.</p></div>
+        <div class="feat-card"><h4>Organiser les relances</h4><p>Plus de relance oubliée perdue dans le fil WhatsApp.</p></div>
+        <div class="feat-card"><h4>Retrouver les informations</h4><p>Une recherche par client ou par mission, sans fouiller les fichiers.</p></div>
+        <div class="feat-card"><h4>Préparer une organisation plus claire</h4><p>Pour des échanges plus simples avec votre comptable.</p></div>
+      </div>
+
+      <h2 id="limites">Ce que Tania ne remplace pas</h2>
+      <ul>
+        <li><strong>Votre comptable</strong>&#8239;: Tania ne remplace pas l’avis d’un expert-comptable.</li>
+        <li><strong>Une Plateforme Agréée</strong>&#8239;: le circuit officiel passe par une Plateforme Agréée immatriculée par l’État.</li>
+        <li><strong>Votre caisse</strong>&#8239;: Tania ne remplace pas un logiciel de caisse pour les commerces et restaurants.</li>
+        <li><strong>Un conseil fiscal personnalisé</strong>&#8239;: les indications fournies sont pédagogiques.</li>
+      </ul>
+
+      <h2 id="metiers">Pour quels métiers&#8239;?</h2>
+      <div class="metiers-row">
+        <span>Artisans</span><span>Commerçants</span><span>Freelances</span>
+        <span>Prestataires de services</span><span>Micro-entrepreneurs</span><span>TPE locales</span>
+      </div>
+
+      <h2 id="faq">Foire aux questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Tania fonctionne-t-elle directement dans WhatsApp&#8239;?</summary>
+          <div class="faq-answer"><p>L’idée de Tania est de partir des messages WhatsApp pour structurer devis, factures, paiements et relances. Le parcours exact peut évoluer selon le produit, mais l’objectif est de rester au plus proche de l’usage WhatsApp quotidien.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Tania remplace-t-elle un logiciel de facturation&#8239;?</summary>
+          <div class="faq-answer"><p>Tania n’est pas un logiciel de facturation classique. Tania aide à structurer les informations et à préparer une organisation plus claire. Selon votre situation, un logiciel ou un comptable peut rester nécessaire.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Tania remplace-t-elle mon comptable&#8239;?</summary>
+          <div class="faq-answer"><p>Non. Tania ne remplace pas votre comptable. Tania peut vous aider à mieux structurer vos informations pour préparer plus simplement vos échanges avec votre comptable.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Tania est-elle une Plateforme Agréée&#8239;?</summary>
+          <div class="faq-answer"><p>Non. Tania n’est pas une Plateforme Agréée immatriculée par l’État. Le circuit officiel de facturation électronique passera par une Plateforme Agréée, choisie avec votre comptable.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Puis-je tester Tania avant de m’engager&#8239;?</summary>
+          <div class="faq-answer"><p>Vous pouvez commencer par <a href="/test-facturation-electronique-reunion/">le test gratuit en ligne</a> (2 minutes) pour identifier votre niveau de préparation, puis demander une démo via <a href="mailto:contact@tania.re">contact@tania.re</a>.</p></div>
+        </details>
+      </div>
+
+      <section class="article-cta">
+        <h2 style="margin-top:0">Vous voulez voir si Tania convient à votre activité&#8239;?</h2>
+        <p>Répondez à 6 questions et obtenez une première indication sur votre niveau de préparation.</p>
+        <a href="/test-facturation-electronique-reunion/" class="cta-button">Faire le test gratuit →</a>
+        <p class="cta-fine">Gratuit · 2 minutes · <a href="/ressources-facturation-electronique-reunion/">Voir toutes les ressources</a></p>
+      </section>
+
+      <div class="sim-disclaimer" style="margin-top:2rem;background:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #94a3b8;border-radius:0 10px 10px 0;padding:0.9rem 1.1rem;font-size:0.85rem;color:#64748b;line-height:1.6;">
+        <strong>Cette ressource fournit une première indication pédagogique.</strong> Elle ne remplace pas l’avis de votre expert-comptable ni les informations officielles de l’administration fiscale.
+      </div>
+
+    </article>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-400 py-12 mt-16">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 text-sm flex flex-col md:flex-row items-center justify-between gap-4">
+      <p>© 2026 Tania · Tous droits réservés.</p>
+      <div class="flex items-center gap-6 flex-wrap justify-center">
+        <a href="/" class="hover:text-white transition-colors">Accueil</a>
+        <a href="/a-propos/" class="hover:text-white transition-colors">À propos</a>
+        <a href="/demo-tania-whatsapp-facturation/" class="hover:text-white transition-colors">Démo</a>
+        <a href="/facturation-electronique-reunion" class="hover:text-white transition-colors">Guide</a>
+        <a href="/mentions-legales.html" class="hover:text-white transition-colors">Mentions légales</a>
+        <a href="/cgu.html" class="hover:text-white transition-colors">CGU</a>
+        <a href="/politique-confidentialite.html" class="hover:text-white transition-colors">Confidentialité</a>
+        <a href="/rgpd.html" class="hover:text-white transition-colors">RGPD</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
