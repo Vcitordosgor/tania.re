@@ -133,36 +133,74 @@
     </div>
   </header>
 
-  <main class="sim-wrap">
+  <main>
 
-    <!-- HERO -->
-    <section id="sim-hero" class="sim-hero" aria-labelledby="sim-h1">
-      <span class="sim-badge">Test gratuit · 2 minutes</span>
-      <h1 id="sim-h1">Votre entreprise est-elle prête pour la facturation électronique&#8239;?</h1>
-      <p class="sim-sub">Répondez à 6 questions et obtenez un plan d’action simple pour savoir quoi préparer avant les échéances 2026-2027 à La Réunion.</p>
+    <!-- HERO (deux colonnes desktop) -->
+    <section id="sim-hero" class="sim-page sim-hero" aria-labelledby="sim-h1">
+      <div class="sim-hero__content">
+        <span class="sim-badge">
+          <span class="sim-badge__dot" aria-hidden="true"></span>
+          Test gratuit · 2 minutes
+        </span>
+        <h1 id="sim-h1">Votre entreprise est-elle prête pour la <em>facturation électronique</em>&#8239;?</h1>
+        <p class="sim-sub">Répondez à 6 questions et obtenez un plan d’action simple pour savoir quoi préparer avant les échéances 2026-2027 à La Réunion.</p>
 
-      <div class="sim-cta-row">
-        <button type="button" id="sim-start" class="sim-btn-primary">Faire le test gratuit →</button>
-        <a href="/facturation-electronique-reunion" class="sim-btn-secondary">Lire le guide complet</a>
+        <div class="sim-cta-row">
+          <button type="button" id="sim-start" class="sim-btn-primary">
+            Faire le test gratuit
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+          <a href="/facturation-electronique-reunion" class="sim-btn-secondary">Lire le guide complet</a>
+        </div>
+
+        <ul class="sim-pills" aria-label="Garanties">
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Résultat immédiat</li>
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Sans inscription</li>
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Pensé pour les TPE à La Réunion</li>
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Indication pédagogique</li>
+        </ul>
       </div>
 
-      <ul class="sim-reassure" aria-label="Garanties">
-        <li><span aria-hidden="true">⚡</span> Résultat immédiat</li>
-        <li><span aria-hidden="true">🔒</span> Sans inscription</li>
-        <li><span aria-hidden="true">📍</span> Pensé pour les TPE à La Réunion</li>
-        <li><span aria-hidden="true">⚠️</span> Indication pédagogique, pas un avis comptable</li>
-      </ul>
-
-      <aside class="sim-intro-card">
-        <p>En <strong>2026</strong>, les entreprises devront pouvoir <strong>recevoir</strong> des factures électroniques. En <strong>2027</strong>, les TPE et micro-entreprises devront aussi <strong>émettre</strong> leurs factures dans le nouveau circuit. Ce test vous aide à identifier votre priorité.</p>
+      <!-- Preview card (visuelle, non interactive) -->
+      <aside class="sim-preview" aria-hidden="true">
+        <div class="sim-preview__chrome">
+          <span class="sim-preview__dot"></span>
+          <span class="sim-preview__chrome-title">Simulation Tania</span>
+          <span class="sim-preview__chrome-step">Question 1 sur 6</span>
+        </div>
+        <div class="sim-preview__bar"><span></span></div>
+        <p class="sim-preview__q">Votre activité est-elle basée à La Réunion&#8239;?</p>
+        <div class="sim-preview__opts">
+          <div class="sim-preview__opt is-selected">Oui</div>
+          <div class="sim-preview__opt">Non</div>
+          <div class="sim-preview__opt">Pas encore, mais je travaille avec des clients à La Réunion</div>
+        </div>
+        <div class="sim-preview__footer">
+          <span class="sim-preview__footer-tag">À la fin</span>
+          <span>votre plan d’action en 3 priorités</span>
+        </div>
       </aside>
     </section>
 
+    <!-- Ce qui change -->
+    <aside class="sim-change">
+      <span class="sim-change__icon" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      </span>
+      <div>
+        <p class="sim-change__title">Ce qui change</p>
+        <p class="sim-change__text">En <strong>2026</strong>, les entreprises devront pouvoir recevoir des factures électroniques. En <strong>2027</strong>, les TPE et micro-entreprises devront aussi émettre leurs factures dans le nouveau circuit.</p>
+        <p class="sim-change__text-final">Le test vous aide à identifier votre priorité.</p>
+      </div>
+    </aside>
+
+    <div class="sim-wrap">
+
     <!-- QUIZ -->
     <section id="sim-quiz" class="sim-quiz" aria-live="polite">
-      <div class="sim-progress" role="progressbar" aria-valuemin="1" aria-valuemax="6">
+      <div class="sim-quiz__head" role="progressbar" aria-valuemin="1" aria-valuemax="6">
         <div class="sim-progress-bar"><div class="sim-progress-fill" id="sim-progress-fill" style="width:0%"></div></div>
-        <span class="sim-progress-label" id="sim-progress-label" aria-current="step">Question 1/6</span>
+        <span class="sim-progress-label" id="sim-progress-label" aria-current="step">Question 1 sur 6</span>
       </div>
       <div id="sim-question-container"></div>
     </section>
@@ -205,6 +243,7 @@
       <strong>Ce test fournit une première indication pédagogique.</strong> Il ne remplace pas l’avis de votre expert-comptable ni les informations officielles de l’administration fiscale. Pour aller plus loin, consultez le <a href="/facturation-electronique-reunion">guide complet de la facturation électronique à La Réunion</a>.
     </div>
 
+    </div><!-- /.sim-wrap -->
   </main>
 
   <div class="sim-toast" id="sim-toast" role="status" aria-live="polite"></div>

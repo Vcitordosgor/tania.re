@@ -68,37 +68,20 @@
   ];
 
   // ─── Textes des blocs "Ce que cela signifie" ───
+  // tone: 'default' = vert brand, 'warn' = orange, 'info' = indigo
   const BLOCKS = {
-    A: {
-      icon: '📥',
-      title: 'À partir de 2026 : recevoir',
-      text: 'Votre entreprise devra probablement pouvoir recevoir des factures électroniques à partir du 1er septembre 2026. L’enjeu est d’anticiper le bon outil et le bon circuit avec votre comptable.'
-    },
-    B: {
-      icon: '📤',
-      title: 'À partir de 2027 : émettre',
-      text: 'Si vous facturez des entreprises françaises, l’émission électronique deviendra probablement obligatoire à partir de 2027 pour les TPE, PME et micro-entreprises.'
-    },
-    C: {
-      icon: '💼',
-      title: 'Franchise de TVA : attention',
-      text: 'La franchise de TVA ne signifie pas forcément que vous êtes hors réforme. Vous pouvez aussi être concerné par la réception, puis par l’émission selon vos clients.'
-    },
-    D: {
-      icon: '🏪',
-      title: 'Clients particuliers',
-      text: 'Les ventes aux particuliers relèvent plutôt de l’e-reporting que de la facturation électronique B2B classique. Il faut donc bien distinguer vos clients professionnels et particuliers.'
-    },
-    E: {
-      icon: '⚠️',
-      title: 'Excel, Word ou PDF : à anticiper',
-      text: 'Votre méthode actuelle risque de ne pas suffire pour produire des factures structurées. L’objectif est de préparer une transition sans tout changer au dernier moment.'
-    },
-    F: {
-      icon: '🔍',
-      title: 'Situation à clarifier',
-      text: 'Votre statut ou votre régime mérite une vérification. Le plus simple est de confirmer votre cas avec votre comptable avant de choisir un outil.'
-    }
+    A: { tone: 'default', title: 'À partir de 2026 : recevoir',
+      text: 'Votre entreprise devra probablement pouvoir recevoir des factures électroniques à partir du 1er septembre 2026. L’enjeu est d’anticiper le bon outil et le bon circuit avec votre comptable.' },
+    B: { tone: 'default', title: 'À partir de 2027 : émettre',
+      text: 'Si vous facturez des entreprises françaises, l’émission électronique deviendra probablement obligatoire à partir de 2027 pour les TPE, PME et micro-entreprises.' },
+    C: { tone: 'warn', title: 'Franchise de TVA : attention',
+      text: 'La franchise de TVA ne signifie pas forcément que vous êtes hors réforme. Vous pouvez aussi être concerné par la réception, puis par l’émission selon vos clients.' },
+    D: { tone: 'info', title: 'Clients particuliers',
+      text: 'Les ventes aux particuliers relèvent plutôt de l’e-reporting que de la facturation électronique B2B classique. Il faut donc bien distinguer vos clients professionnels et particuliers.' },
+    E: { tone: 'warn', title: 'Excel, Word ou PDF : à anticiper',
+      text: 'Votre méthode actuelle risque de ne pas suffire pour produire des factures structurées. L’objectif est de préparer une transition sans tout changer au dernier moment.' },
+    F: { tone: 'info', title: 'Situation à clarifier',
+      text: 'Votre statut ou votre régime mérite une vérification. Le plus simple est de confirmer votre cas avec votre comptable avant de choisir un outil.' }
   };
 
   // ─── Sélection des blocs (max 4) ───
@@ -383,15 +366,18 @@ https://tania.re/facturation-electronique-reunion
     el.quiz.classList.remove('active');
     el.result.classList.add('active');
 
-    const blocksHTML = blocks.map(k => `
-      <div class="sim-meaning-item">
-        <span class="sim-meaning-icon" aria-hidden="true">${BLOCKS[k].icon}</span>
+    const blocksHTML = blocks.map(k => {
+      const b = BLOCKS[k];
+      const toneCls = b.tone === 'warn' ? 'sim-meaning-item--warn' : b.tone === 'info' ? 'sim-meaning-item--info' : '';
+      return `
+      <div class="sim-meaning-item ${toneCls}">
+        <span class="sim-meaning-letter" aria-hidden="true">${k}</span>
         <div>
-          <p class="sim-meaning-title">${BLOCKS[k].title}</p>
-          <p class="sim-meaning-text">${BLOCKS[k].text}</p>
+          <p class="sim-meaning-title">${b.title}</p>
+          <p class="sim-meaning-text">${b.text}</p>
         </div>
-      </div>
-    `).join('');
+      </div>`;
+    }).join('');
 
     const actionsHTML = actions.map((act, i) => `
       <li class="sim-action-item">
@@ -426,27 +412,35 @@ https://tania.re/facturation-electronique-reunion
         <p class="sim-tania-text">Tania n’est pas une Plateforme Agréée et ne remplace pas votre comptable. Tania vous aide à garder une méthode simple depuis WhatsApp pour créer, suivre et retrouver vos devis, factures et relances, tout en préparant progressivement une organisation compatible avec la réforme.</p>
         <div class="sim-result-actions">
           <a href="${buildWhatsAppLink(a, level, actions)}" target="_blank" rel="noopener" class="sim-btn-whatsapp" id="sim-wa-btn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-1 1.1-.2.2-.4.2-.7.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2.1-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.4.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-1 1.1-.2.2-.4.2-.7.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2.1-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.4.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
             Recevoir mon plan par WhatsApp
           </a>
           <button type="button" class="sim-btn-copy" id="sim-copy-btn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-            <span>Copier mon plan d’action</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            <span>Copier mon plan</span>
           </button>
-          <a href="/facturation-electronique-reunion" class="sim-btn-ghost">Lire le guide complet</a>
+          <a href="/facturation-electronique-reunion" class="sim-btn-ghost">Lire le guide
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
         </div>
       </article>
 
       <div class="sim-share">
         <p class="sim-share-title">Vous connaissez d’autres entrepreneurs concernés&#8239;?</p>
         <div class="sim-share-row">
-          <a href="https://wa.me/?text=${encodeURIComponent('J’ai trouvé ce test utile pour savoir si une entreprise est concernée par la facturation électronique à La Réunion : https://tania.re/test-facturation-electronique-reunion')}" target="_blank" rel="noopener" class="sim-share-btn" id="sim-share-wa">📱 Partager sur WhatsApp</a>
-          <button type="button" class="sim-share-btn" id="sim-share-link">🔗 Copier le lien</button>
+          <a href="https://wa.me/?text=${encodeURIComponent('J’ai trouvé ce test utile pour savoir si une entreprise est concernée par la facturation électronique à La Réunion : https://tania.re/test-facturation-electronique-reunion')}" target="_blank" rel="noopener" class="sim-share-btn" id="sim-share-wa">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-1 1.1-.2.2-.4.2-.7.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2.1-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.4.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+            Partager sur WhatsApp
+          </a>
+          <button type="button" class="sim-share-btn" id="sim-share-link">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            Copier le lien
+          </button>
         </div>
       </div>
 
       <div class="sim-restart-row">
-        <button type="button" id="sim-restart" class="sim-btn-restart">↺ Recommencer le test</button>
+        <button type="button" id="sim-restart" class="sim-btn-restart">Recommencer le test</button>
       </div>
 
       <div class="sim-disclaimer">
@@ -462,9 +456,9 @@ https://tania.re/facturation-electronique-reunion
       const ok = await copyToClipboard(planText);
       if (ok) {
         copyBtn.classList.add('copied');
-        copyBtn.querySelector('span').textContent = 'Plan copié ✅';
+        copyBtn.querySelector('span').textContent = 'Plan copié';
         safeTrack('diagnostic_copied');
-        setTimeout(() => { copyBtn.classList.remove('copied'); copyBtn.querySelector('span').textContent = 'Copier mon plan d’action'; }, 2400);
+        setTimeout(() => { copyBtn.classList.remove('copied'); copyBtn.querySelector('span').textContent = 'Copier mon plan'; }, 2400);
       } else {
         showToast('Copie indisponible — sélectionnez le texte manuellement.');
       }
@@ -478,9 +472,12 @@ https://tania.re/facturation-electronique-reunion
       const ok = await copyToClipboard('https://tania.re/test-facturation-electronique-reunion');
       if (ok) {
         shareLinkBtn.classList.add('copied');
-        shareLinkBtn.textContent = '✅ Lien copié !';
+        shareLinkBtn.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Lien copié';
         safeTrack('link_share_clicked');
-        setTimeout(() => { shareLinkBtn.classList.remove('copied'); shareLinkBtn.textContent = '🔗 Copier le lien'; }, 2400);
+        setTimeout(() => {
+          shareLinkBtn.classList.remove('copied');
+          shareLinkBtn.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg> Copier le lien';
+        }, 2400);
       } else { showToast('Copie indisponible.'); }
     });
 
