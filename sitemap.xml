@@ -79,6 +79,30 @@
     <priority>0.75</priority>
   </url>
   <url>
+    <loc>https://tania.re/a-propos/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tania.re/demo-tania-whatsapp-facturation/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://tania.re/logiciel-facturation-whatsapp-reunion/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://tania.re/facturation-electronique-tpe-pme-reunion/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://tania.re/mentions-legales</loc>
     <lastmod>2026-05-23</lastmod>
     <changefreq>yearly</changefreq>
