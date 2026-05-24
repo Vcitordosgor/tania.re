@@ -755,70 +755,126 @@
         <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Pas besoin d&rsquo;apprendre un logiciel&nbsp;: vous envoyez vos infos comme un message WhatsApp, Tania les transforme en documents et en suivi clair.</p>
       </div>
 
-      <div class="relative mt-16 grid md:grid-cols-3 gap-12 md:gap-6">
-        <!-- Ligne de connexion (desktop : horizontale ; mobile : verticale) -->
-        <div class="hidden md:block absolute top-6 left-0 right-0 h-px border-t border-dashed border-slate-200 z-0" aria-hidden="true"></div>
-        <div class="md:hidden absolute top-6 bottom-6 left-1/2 w-px border-l border-dashed border-slate-200 z-0" aria-hidden="true"></div>
+      <div class="relative mt-16 grid md:grid-cols-3 gap-10 md:gap-6 lg:gap-8">
+        <!-- Ligne de connexion gradient (desktop) -->
+        <div class="hidden md:block absolute top-7 left-[12%] right-[12%] h-[2px] z-0" aria-hidden="true" style="background: linear-gradient(to right, transparent 0%, #a7f3d0 15%, #10b981 50%, #a7f3d0 85%, transparent 100%);"></div>
+        <div class="md:hidden absolute top-7 bottom-7 left-1/2 w-[2px] z-0" aria-hidden="true" style="background: linear-gradient(to bottom, transparent 0%, #a7f3d0 15%, #10b981 50%, #a7f3d0 85%, transparent 100%);"></div>
 
-        <!-- Étape 1 -->
+        <!-- Étape 1 — WhatsApp mockup -->
         <div class="reveal text-center relative z-10 flex flex-col" data-delay="1">
-          <div class="mx-auto w-12 h-12 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-bold text-lg flex items-center justify-center">1</div>
-          <h3 class="mt-6 text-xl font-semibold text-slate-900 min-h-[1.75rem]">Vous envoyez un simple message</h3>
-          <p class="mt-3 text-base text-slate-600 leading-relaxed min-h-[5rem]">Une prestation, un client, un montant, un paiement. Vous écrivez comme vous parleriez à une assistante.</p>
-          <div class="mt-6 mx-auto w-full max-w-sm h-[160px] bg-slate-50 border border-slate-200 rounded-2xl p-4 flex items-center overflow-hidden">
-            <div class="flex w-full"><div class="ml-auto rounded-xl px-3 py-2 text-[13px] text-slate-900" style="background:#D9FDD3;">Géraldine Payet Sainte Marie travaux d&rsquo;étanchéité 450€ payé en CB</div></div>
+          <div class="mx-auto w-14 h-14 rounded-full bg-white border-2 border-emerald-500 text-emerald-700 font-bold text-xl flex items-center justify-center tabular-nums" style="box-shadow: 0 8px 20px -8px rgba(16,185,129,0.35);">1</div>
+          <h3 class="mt-6 text-xl font-bold text-slate-900 min-h-[1.75rem] tracking-tight">Vous envoyez un simple message</h3>
+          <p class="mt-3 text-base text-slate-600 leading-relaxed min-h-[5rem] max-w-xs mx-auto">Une prestation, un client, un montant, un paiement. Vous écrivez comme à une assistante.</p>
+
+          <div class="mt-7 mx-auto w-full max-w-sm bg-white border border-slate-200 rounded-2xl overflow-hidden text-left" style="box-shadow: 0 10px 30px -16px rgba(15,23,42,0.15);">
+            <!-- Mini header WhatsApp -->
+            <div class="flex items-center gap-2.5 px-3.5 py-2.5" style="background:#075E54;">
+              <div class="w-7 h-7 rounded-full bg-emerald-600 flex items-center justify-center shrink-0">
+                <svg viewBox="0 0 80 80" preserveAspectRatio="xMidYMid meet" width="16" height="16" aria-hidden="true">
+                  <rect x="8" y="20" width="64" height="14" fill="white"/>
+                  <rect x="33" y="42" width="14" height="32" fill="white"/>
+                </svg>
+              </div>
+              <div>
+                <div class="text-white font-semibold text-[11px] leading-tight">Tania</div>
+                <div class="text-emerald-100 text-[9px] leading-tight">en ligne</div>
+              </div>
+            </div>
+            <!-- Bulles -->
+            <div class="px-3 py-3 flex flex-col gap-1.5" style="background:#ECE5DD;">
+              <div class="flex"><div class="ml-auto rounded-xl px-2.5 py-1.5 text-[12px] text-slate-900 leading-snug max-w-[88%] shadow-sm" style="background:#D9FDD3;">Géraldine Payet, étanchéité, 450&nbsp;€, payé CB<div class="text-[9px] text-right mt-0.5" style="color:#667781;">10:08 <span style="color:#34B7F1;">✓✓</span></div></div></div>
+              <div class="flex"><div class="ml-auto rounded-xl px-2.5 py-1.5 text-[11px] text-slate-500 italic" style="background:#D9FDD3; opacity:0.6;"><span class="inline-flex gap-0.5 items-center"><span class="w-1 h-1 rounded-full bg-slate-400 animate-pulse"></span><span class="w-1 h-1 rounded-full bg-slate-400 animate-pulse" style="animation-delay:0.2s"></span><span class="w-1 h-1 rounded-full bg-slate-400 animate-pulse" style="animation-delay:0.4s"></span></span></div></div>
+            </div>
           </div>
         </div>
 
-        <!-- Étape 2 -->
+        <!-- Étape 2 — Mini-facture mockup -->
         <div class="reveal text-center relative z-10 flex flex-col" data-delay="2">
-          <div class="mx-auto w-12 h-12 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-bold text-lg flex items-center justify-center">2</div>
-          <h3 class="mt-6 text-xl font-semibold text-slate-900 min-h-[1.75rem]">Tania prépare votre facture</h3>
-          <p class="mt-3 text-base text-slate-600 leading-relaxed min-h-[5rem]">Les informations sont structurées, le document est généré et prêt pour votre suivi administratif.</p>
-          <div class="mt-6 mx-auto w-full max-w-sm h-[160px] bg-slate-50 border border-slate-200 rounded-2xl p-4 flex items-center overflow-hidden">
-            <div class="flex w-full"><div class="mr-auto bg-white shadow-sm rounded-xl px-3 py-2 text-[13px] text-slate-900 leading-snug">✅ Facture F-2026-0003 conforme Factur-X.<br/>Vous pouvez la télécharger <span class="text-emerald-600 underline underline-offset-2">ici</span> ou directement sur votre <span class="text-emerald-600 underline underline-offset-2">dashboard</span>.</div></div>
+          <div class="mx-auto w-14 h-14 rounded-full bg-white border-2 border-emerald-500 text-emerald-700 font-bold text-xl flex items-center justify-center tabular-nums" style="box-shadow: 0 8px 20px -8px rgba(16,185,129,0.35);">2</div>
+          <h3 class="mt-6 text-xl font-bold text-slate-900 min-h-[1.75rem] tracking-tight">Tania prépare votre facture</h3>
+          <p class="mt-3 text-base text-slate-600 leading-relaxed min-h-[5rem] max-w-xs mx-auto">Les informations sont structurées, le document est généré au format Factur-X.</p>
+
+          <div class="mt-7 mx-auto w-full max-w-sm bg-white border border-slate-200 rounded-2xl overflow-hidden text-left relative" style="box-shadow: 0 10px 30px -16px rgba(15,23,42,0.15);">
+            <!-- Badge Factur-X flottant -->
+            <span class="absolute top-2.5 right-2.5 inline-flex items-center gap-1 bg-emerald-50 border border-emerald-200 text-emerald-700 text-[9px] font-bold uppercase tracking-wider px-2 py-1 rounded-md z-10">
+              <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Factur-X
+            </span>
+            <!-- Mini PDF -->
+            <div class="px-4 py-3.5 border-b border-slate-100">
+              <div class="text-[8px] uppercase tracking-wider text-slate-400 font-semibold">Facture</div>
+              <div class="text-[13px] font-bold text-slate-900 tracking-tight mt-0.5">F-2026-0003</div>
+            </div>
+            <div class="px-4 py-2.5 space-y-1.5">
+              <div class="flex items-center justify-between text-[10px]">
+                <span class="text-slate-500">Client</span>
+                <span class="text-slate-900 font-medium">G. Payet</span>
+              </div>
+              <div class="flex items-center justify-between text-[10px]">
+                <span class="text-slate-500">Prestation</span>
+                <span class="text-slate-900 font-medium">Étanchéité</span>
+              </div>
+              <div class="flex items-center justify-between text-[10px]">
+                <span class="text-slate-500">Date</span>
+                <span class="text-slate-900 font-medium">20/05/2026</span>
+              </div>
+            </div>
+            <div class="px-4 py-2.5 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-[9px] uppercase tracking-wider text-slate-500 font-semibold">Total TTC</span>
+              <span class="text-[15px] font-bold text-slate-900 tabular-nums">450,00&nbsp;€</span>
+            </div>
+            <div class="px-4 py-2 flex items-center justify-between text-[10px]">
+              <span class="inline-flex items-center gap-1 text-emerald-700 font-semibold">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                Payée · CB
+              </span>
+              <span class="text-emerald-600 font-semibold underline underline-offset-2 cursor-pointer">Télécharger</span>
+            </div>
           </div>
         </div>
 
-        <!-- Étape 3 -->
+        <!-- Étape 3 — Dashboard mini -->
         <div class="reveal text-center relative z-10 flex flex-col" data-delay="3">
-          <div class="mx-auto w-12 h-12 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-bold text-lg flex items-center justify-center">3</div>
-          <h3 class="mt-6 text-xl font-semibold text-slate-900 min-h-[1.75rem]">Tout se range automatiquement</h3>
-          <p class="mt-3 text-base text-slate-600 leading-relaxed min-h-[5rem]">Factures, paiements, clients et montants restent accessibles dans votre dashboard.</p>
-          <div class="mt-6 mx-auto w-full max-w-sm h-[160px] bg-slate-50 border border-slate-200 rounded-2xl p-3 flex items-center overflow-hidden">
-            <div class="w-full bg-white border border-slate-200 rounded-xl overflow-hidden text-left">
-              <div class="grid grid-cols-12 gap-1 px-3 py-1.5 bg-slate-50 text-[9px] uppercase tracking-wider font-semibold text-slate-500 border-b border-slate-200">
-                <span class="col-span-2">Date</span>
-                <span class="col-span-3">Numéro</span>
-                <span class="col-span-3">Client</span>
-                <span class="col-span-2 text-right">Montant</span>
-                <span class="col-span-1">Statut</span>
-                <span class="col-span-1 text-center">FX</span>
+          <div class="mx-auto w-14 h-14 rounded-full bg-emerald-500 text-white font-bold text-xl flex items-center justify-center tabular-nums" style="box-shadow: 0 12px 28px -8px rgba(16,185,129,0.55);">3</div>
+          <h3 class="mt-6 text-xl font-bold text-slate-900 min-h-[1.75rem] tracking-tight">Tout se range automatiquement</h3>
+          <p class="mt-3 text-base text-slate-600 leading-relaxed min-h-[5rem] max-w-xs mx-auto">Factures, paiements, clients et montants restent accessibles dans votre dashboard.</p>
+
+          <div class="mt-7 mx-auto w-full max-w-sm bg-white border border-slate-200 rounded-2xl overflow-hidden text-left" style="box-shadow: 0 10px 30px -16px rgba(15,23,42,0.15);">
+            <!-- Mini stat header -->
+            <div class="px-4 py-3 border-b border-slate-100 flex items-center justify-between">
+              <div>
+                <p class="text-[9px] uppercase tracking-wider text-slate-500 font-semibold">Ce mois-ci</p>
+                <p class="text-[15px] font-bold text-slate-900 tabular-nums mt-0.5">680&nbsp;€ encaissés</p>
               </div>
-              <div class="grid grid-cols-12 gap-1 px-3 py-1.5 text-[10px] items-center border-b border-slate-100 text-slate-700">
-                <span class="col-span-2">20/05</span>
-                <span class="col-span-3 text-slate-900 font-medium">F-2026-0003</span>
-                <span class="col-span-3">G. Payet</span>
-                <span class="col-span-2 text-right text-slate-900 font-semibold">450 €</span>
-                <span class="col-span-1"><span class="bg-emerald-50 text-emerald-700 px-1.5 py-0.5 rounded text-[9px] font-medium">Payée</span></span>
-                <span class="col-span-1 text-center text-emerald-600">✓</span>
-              </div>
-              <div class="grid grid-cols-12 gap-1 px-3 py-1.5 text-[10px] items-center border-b border-slate-100 text-slate-700">
-                <span class="col-span-2">20/05</span>
-                <span class="col-span-3 text-slate-900 font-medium">F-2026-0002</span>
-                <span class="col-span-3">M. Hoareau</span>
-                <span class="col-span-2 text-right text-slate-900 font-semibold">80 €</span>
-                <span class="col-span-1"><span class="bg-emerald-50 text-emerald-700 px-1.5 py-0.5 rounded text-[9px] font-medium">Payée</span></span>
-                <span class="col-span-1 text-center text-emerald-600">✓</span>
-              </div>
-              <div class="grid grid-cols-12 gap-1 px-3 py-1.5 text-[10px] items-center text-slate-700">
-                <span class="col-span-2">20/05</span>
-                <span class="col-span-3 text-slate-900 font-medium">F-2026-0001</span>
-                <span class="col-span-3">M. Hoareau</span>
-                <span class="col-span-2 text-right text-slate-900 font-semibold">150 €</span>
-                <span class="col-span-1"><span class="bg-emerald-50 text-emerald-700 px-1.5 py-0.5 rounded text-[9px] font-medium">Payée</span></span>
-                <span class="col-span-1 text-center text-emerald-600">✓</span>
-              </div>
+              <span class="inline-flex items-center gap-1 bg-emerald-50 text-emerald-700 text-[9px] font-bold px-2 py-1 rounded-md">
+                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+                3 factures
+              </span>
+            </div>
+            <!-- Lignes factures -->
+            <div class="px-4 py-2 grid grid-cols-12 gap-1 text-[8px] uppercase tracking-wider font-semibold text-slate-400 bg-slate-50/50 border-b border-slate-100">
+              <span class="col-span-2">Date</span>
+              <span class="col-span-4">Numéro</span>
+              <span class="col-span-3">Client</span>
+              <span class="col-span-3 text-right">Montant</span>
+            </div>
+            <div class="grid grid-cols-12 gap-1 px-4 py-2 text-[10px] items-center border-b border-slate-100">
+              <span class="col-span-2 text-slate-500 tabular-nums">20/05</span>
+              <span class="col-span-4 text-slate-900 font-semibold tabular-nums">F-26-0003</span>
+              <span class="col-span-3 text-slate-700">G. Payet</span>
+              <span class="col-span-3 text-right text-slate-900 font-semibold tabular-nums">450&nbsp;€</span>
+            </div>
+            <div class="grid grid-cols-12 gap-1 px-4 py-2 text-[10px] items-center border-b border-slate-100">
+              <span class="col-span-2 text-slate-500 tabular-nums">18/05</span>
+              <span class="col-span-4 text-slate-900 font-semibold tabular-nums">F-26-0002</span>
+              <span class="col-span-3 text-slate-700">M. Hoareau</span>
+              <span class="col-span-3 text-right text-slate-900 font-semibold tabular-nums">80&nbsp;€</span>
+            </div>
+            <div class="grid grid-cols-12 gap-1 px-4 py-2 text-[10px] items-center">
+              <span class="col-span-2 text-slate-500 tabular-nums">15/05</span>
+              <span class="col-span-4 text-slate-900 font-semibold tabular-nums">F-26-0001</span>
+              <span class="col-span-3 text-slate-700">M. Hoareau</span>
+              <span class="col-span-3 text-right text-slate-900 font-semibold tabular-nums">150&nbsp;€</span>
             </div>
           </div>
         </div>
