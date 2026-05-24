@@ -2,21 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://tania.re/</loc>
-    <lastmod>2026-05-23</lastmod>
+    <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://tania.re/facturation-electronique-reunion</loc>
-    <lastmod>2026-05-23</lastmod>
+    <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://tania.re/test-facturation-electronique-reunion</loc>
-    <lastmod>2026-05-23</lastmod>
+    <loc>https://tania.re/test-facturation-electronique-reunion/</loc>
+    <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://tania.re/ressources-facturation-electronique-reunion/</loc>
@@ -25,91 +25,7 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://tania.re/checklist-facturation-electronique-reunion/</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://tania.re/glossaire-facturation-electronique-reunion/</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://tania.re/calendrier-facturation-electronique-reunion/</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://tania.re/faq-facturation-electronique-reunion/</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://tania.re/cas-concrets-facturation-electronique-reunion/</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://tania.re/facturation-electronique-micro-entrepreneur-reunion/</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://tania.re/excel-word-pdf-facturation-electronique-reunion/</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://tania.re/reforme-facturation-electronique-2026-reunion/</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://tania.re/factur-x-reunion/</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://tania.re/plateforme-agreee-reunion/</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://tania.re/comparatif-methodes-facturation-electronique-reunion/</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-    <loc>https://tania.re/kit-facturation-electronique-reunion/</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <loc>https://tania.re/modele-facture-micro-entrepreneur-reunion/</loc>
-    <loc>https://tania.re/plateforme-agreee-facturation-electronique-reunion/</loc>
-    <loc>https://tania.re/factur-x-facturation-electronique-reunion/</loc>
-    <loc>https://tania.re/e-reporting-clients-particuliers-reunion/</loc>
-    <loc>https://tania.re/facturation-electronique-artisan-btp-reunion/</loc>
-    <loc>https://tania.re/facturation-electronique-commerce-restaurant-reunion/</loc>
-    <loc>https://tania.re/facturation-electronique-freelance-prestataire-reunion/</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-    <loc>https://tania.re/a-propos/</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://tania.re/demo-tania-whatsapp-facturation/</loc>
+    <loc>https://tania.re/facturation-electronique-tpe-pme-reunion/</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
@@ -121,10 +37,118 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://tania.re/facturation-electronique-tpe-pme-reunion/</loc>
+    <loc>https://tania.re/demo-tania-whatsapp-facturation/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://tania.re/checklist-facturation-electronique-reunion/</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tania.re/calendrier-facturation-electronique-reunion/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tania.re/faq-facturation-electronique-reunion/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tania.re/glossaire-facturation-electronique-reunion/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://tania.re/kit-facturation-electronique-reunion/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tania.re/cas-concrets-facturation-electronique-reunion/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tania.re/comparatif-methodes-facturation-electronique-reunion/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tania.re/modele-facture-micro-entrepreneur-reunion/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tania.re/facturation-electronique-micro-entrepreneur-reunion/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tania.re/facturation-electronique-artisan-btp-reunion/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tania.re/facturation-electronique-commerce-restaurant-reunion/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tania.re/facturation-electronique-freelance-prestataire-reunion/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tania.re/excel-word-pdf-facturation-electronique-reunion/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://tania.re/factur-x-facturation-electronique-reunion/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tania.re/plateforme-agreee-facturation-electronique-reunion/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tania.re/e-reporting-clients-particuliers-reunion/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://tania.re/reforme-facturation-electronique-2026-reunion/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://tania.re/a-propos/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://tania.re/mentions-legales</loc>
