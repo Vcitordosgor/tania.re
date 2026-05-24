@@ -4,6 +4,25 @@
 
 .sim-wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
 
+/* Offset pour éviter que le header sticky (64px) ne cache le haut au scrollIntoView */
+.sim-quiz, .sim-result, #sim-question-container { scroll-margin-top: 80px; }
+
+/* ─── Intro card (sous hero, bloc pédagogique) ─── */
+.sim-intro-card {
+  background: #f0fdf4;
+  border: 1px solid #a7f3d0;
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  margin: 0 auto;
+  max-width: 600px;
+}
+.sim-intro-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #065f46;
+}
+
 /* ─── Hero ─── */
 .sim-hero { padding: 3rem 0 1.5rem; text-align: center; }
 .sim-badge {
@@ -115,36 +134,6 @@
   min-height: 48px;
 }
 .sim-btn-outline:hover { background: #ecfdf5; color: #047857; }
-
-/* ─── Cartes confiance ─── */
-.sim-trust {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.85rem;
-  margin: 0 0 3rem;
-}
-.sim-trust-card {
-  background: #f9fafb;
-  border: 1px solid #e5e7eb;
-  border-radius: 14px;
-  padding: 1.1rem 1.3rem;
-  display: flex;
-  gap: 0.85rem;
-  align-items: flex-start;
-}
-.sim-trust-card .sim-trust-icon { font-size: 1.6rem; line-height: 1; flex-shrink: 0; }
-.sim-trust-card .sim-trust-title {
-  font-weight: 700;
-  color: #0f172a;
-  font-size: 1rem;
-  margin: 0 0 0.25rem;
-}
-.sim-trust-card .sim-trust-text {
-  font-size: 0.93rem;
-  color: #64748b;
-  line-height: 1.55;
-  margin: 0;
-}
 
 /* ─── Quiz ─── */
 .sim-quiz { display: none; padding: 1rem 0 3rem; }
@@ -277,17 +266,54 @@
 .sim-result { display: none; padding: 1rem 0 3rem; }
 .sim-result.active { display: block; animation: simFadeIn 0.35s ease-out; }
 
-.sim-result-header {
+/* ─── Plan d'action header ─── */
+.sim-plan-header {
   text-align: center;
-  padding: 1.5rem 1rem 2rem;
+  padding: 1.25rem 0.5rem 1.75rem;
 }
-.sim-result-header h2 {
+.sim-plan-header h2 {
   font-size: 1.75rem;
   font-weight: 800;
   color: #0f172a;
   letter-spacing: -0.025em;
-  margin: 0 0 1.25rem;
+  margin: 0 0 0.5rem;
 }
+.sim-plan-header p {
+  font-size: 1rem;
+  color: #475569;
+  margin: 0;
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.55;
+}
+
+/* ─── Carte résultat générique ─── */
+.sim-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 1.5rem 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 8px 24px -16px rgba(15, 23, 42, 0.10);
+}
+.sim-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 1rem;
+  letter-spacing: -0.01em;
+}
+
+/* ─── Carte niveau ─── */
+.sim-card-level { text-align: center; padding: 1.5rem 1.25rem; }
+.sim-card-level .sim-level-badge { margin-bottom: 0.85rem; }
+.sim-level-desc {
+  font-size: 0.98rem;
+  color: #475569;
+  margin: 0;
+  line-height: 1.6;
+}
+
 .sim-level-badge {
   display: inline-flex;
   align-items: center;
@@ -309,69 +335,124 @@
 .sim-level-verify  { background: #fef9c3; color: #a16207; }
 .sim-level-clarify { background: #e0e7ff; color: #4338ca; }
 
-.sim-diag-card {
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 16px;
-  padding: 1.3rem 1.4rem;
-  margin-bottom: 0.85rem;
-  border-left: 4px solid #10b981;
+/* ─── "Ce que cela signifie" — blocs ─── */
+.sim-meaning-list { display: flex; flex-direction: column; gap: 1rem; }
+.sim-meaning-item {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
 }
-.sim-diag-title {
-  font-size: 1.08rem;
+.sim-meaning-icon {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ecfdf5;
+  border-radius: 10px;
+}
+.sim-meaning-title {
+  font-size: 1rem;
   font-weight: 700;
   color: #0f172a;
-  margin: 0 0 0.5rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  margin: 0 0 0.25rem;
 }
-.sim-diag-text {
-  font-size: 0.98rem;
+.sim-meaning-text {
+  font-size: 0.95rem;
   color: #475569;
-  line-height: 1.65;
+  line-height: 1.6;
   margin: 0;
 }
 
-.sim-actions-block {
-  background: #f9fafb;
-  border: 1px solid #e5e7eb;
-  border-radius: 16px;
-  padding: 1.3rem 1.4rem;
-  margin: 1.5rem 0;
-}
-.sim-actions-block h3 {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #0f172a;
-  margin: 0 0 0.85rem;
-}
-.sim-actions-list { list-style: none; padding: 0; margin: 0; }
-.sim-actions-list li {
+/* ─── Actions numérotées ─── */
+.sim-card-actions { background: #f8fafc; border-color: #e2e8f0; }
+.sim-actions-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; }
+.sim-action-item {
   display: flex;
   align-items: flex-start;
-  gap: 0.65rem;
-  padding: 0.55rem 0;
-  font-size: 0.95rem;
-  color: #334155;
-  line-height: 1.55;
-  border-bottom: 1px dashed #e5e7eb;
+  gap: 0.85rem;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
 }
-.sim-actions-list li:last-child { border-bottom: none; }
-.sim-actions-list li::before {
-  content: '☐';
-  color: #10b981;
-  font-size: 1.15rem;
-  line-height: 1.4;
+.sim-action-num {
   flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: #10b981;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.sim-action-text {
+  font-size: 0.98rem;
+  color: #0f172a;
+  line-height: 1.5;
+  padding-top: 0.3rem;
+  font-weight: 500;
+}
+
+/* ─── Carte Tania ─── */
+.sim-card-tania {
+  background: linear-gradient(180deg, #ecfdf5 0%, #ffffff 100%);
+  border-color: #a7f3d0;
+}
+.sim-tania-text {
+  font-size: 0.97rem;
+  color: #064e3b;
+  line-height: 1.65;
+  margin: 0 0 1.25rem;
 }
 
 .sim-result-actions {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  margin: 1.5rem 0 1rem;
+  gap: 0.6rem;
+  margin: 0;
 }
+
+.sim-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: #475569;
+  border: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.65rem 1rem;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-align: center;
+  cursor: pointer;
+}
+.sim-btn-ghost:hover { color: #0f172a; }
+
+/* ─── Restart ─── */
+.sim-restart-row {
+  text-align: center;
+  margin: 1.5rem 0 0.5rem;
+}
+.sim-btn-restart {
+  background: transparent;
+  border: 1px solid #cbd5e1;
+  color: #64748b;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.sim-btn-restart:hover { border-color: #94a3b8; color: #0f172a; background: #f8fafc; }
 .sim-btn-whatsapp {
   display: inline-flex;
   align-items: center;
