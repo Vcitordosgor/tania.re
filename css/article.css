@@ -63,6 +63,31 @@
 }
 .article a:hover { color: #065f46; text-decoration-thickness: 2px; }
 
+/* Les boutons CTA gardent leur style propre (texte blanc, pas de soulignement) */
+.article a.hero-cta-primary,
+.article a.hub-btn-primary,
+.article a.cta-button {
+  text-decoration: none;
+}
+.article a.hero-cta-primary,
+.article a.hero-cta-primary:hover,
+.article a.hub-btn-primary,
+.article a.hub-btn-primary:hover {
+  color: #fff;
+}
+.article a.cta-button,
+.article a.cta-button:hover {
+  color: #047857;
+}
+.article a.hero-cta-secondary,
+.article a.hub-btn-secondary {
+  color: #047857;
+}
+.article a.hero-cta-secondary:hover,
+.article a.hub-btn-secondary:hover {
+  color: #065f46;
+}
+
 /* Lede / chapeau */
 .article .lede { font-size: 1.15rem; line-height: 1.7; color: #475569; }
 
