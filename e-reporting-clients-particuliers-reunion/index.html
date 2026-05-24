@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>E-reporting et clients particuliers à La Réunion</title>
+  <meta name="description" content="Vous facturez surtout des particuliers ? Comprenez l'e-reporting, la réception 2026 et ce que votre TPE doit vérifier à La Réunion." />
+  <link rel="canonical" href="https://tania.re/e-reporting-clients-particuliers-reunion/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+
+  <meta property="og:title" content="E-reporting et clients particuliers à La Réunion" />
+  <meta property="og:description" content="Une ressource simple pour comprendre ce que la réforme change quand votre entreprise facture surtout des particuliers." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://tania.re/e-reporting-clients-particuliers-reunion/" />
+  <meta property="og:image" content="https://tania.re/og-image.png" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Tania" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="E-reporting et clients particuliers à La Réunion" />
+  <meta name="twitter:description" content="Comprendre l'e-reporting pour les TPE qui facturent des particuliers." />
+  <meta name="twitter:image" content="https://tania.re/og-image.png" />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/css/article.css" />
+
+  <style>
+    body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    .tania-logo { display: inline-flex; align-items: center; line-height: 1; color: #10b981; text-decoration: none; }
+    .tania-T { height: 1em; width: 0.69em; display: block; }
+    .tania-ania { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1em; letter-spacing: -0.025em; line-height: 1; color: inherit; }
+    .tania-logo.md { font-size: 32px; }
+    .hero-cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.5rem 0 2rem; }
+    .hero-cta-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: #10b981; color: #fff; font-weight: 600; padding: 0.85rem 1.4rem; border-radius: 12px; text-decoration: none; box-shadow: 0 8px 22px -8px rgba(16,185,129,0.45); transition: all 0.18s ease; }
+    .hero-cta-primary:hover { background: #059669; transform: translateY(-1px); color: #fff; }
+    .hero-cta-secondary { display: inline-flex; align-items: center; gap: 0.5rem; color: #047857; font-weight: 600; padding: 0.85rem 1rem; text-decoration: underline; text-underline-offset: 4px; }
+    .hero-cta-secondary:hover { color: #065f46; }
+
+    .compare-wrap { overflow-x: auto; margin: 1.5rem 0; -webkit-overflow-scrolling: touch; }
+    .compare-table { width: 100%; min-width: 640px; border-collapse: separate; border-spacing: 0; background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; overflow: hidden; font-size: 0.9rem; }
+    .compare-table th, .compare-table td { padding: 0.8rem 0.95rem; text-align: left; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+    .compare-table thead th { background: #f1f5f9; font-weight: 700; color: #0f172a; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; }
+    .compare-table tbody tr:last-child td { border-bottom: none; }
+    .compare-table td:first-child, .compare-table th:first-child { font-weight: 700; color: #0f172a; }
+    .compare-mobile { display: none; margin: 1.5rem 0; flex-direction: column; gap: 0.9rem; }
+    .cmp-mcard { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 1rem 1.2rem; }
+    .cmp-mcard h3 { font-size: 1rem; font-weight: 700; color: #0f172a; margin: 0 0 0.5rem; }
+    .cmp-mcard h4 { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #64748b; margin: 0.6rem 0 0.2rem; }
+    .cmp-mcard p { font-size: 0.88rem; color: #475569; line-height: 1.5; margin: 0; }
+    @media (max-width: 639px) {
+      .compare-wrap { display: none; }
+      .compare-mobile { display: flex; }
+    }
+
+    .case-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 1.2rem 1.4rem; margin-bottom: 0.95rem; }
+    .case-card h3 { font-size: 1.05rem; font-weight: 700; color: #0f172a; margin: 0 0 0.5rem; }
+    .case-row { display: flex; gap: 0.55rem; align-items: flex-start; padding: 0.35rem 0; border-top: 1px dashed #e2e8f0; font-size: 0.88rem; }
+    .case-row:first-of-type { border-top: none; padding-top: 0; }
+    .case-row .lab { flex-shrink: 0; width: 110px; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; padding-top: 2px; }
+    .case-row .txt { flex: 1; color: #334155; line-height: 1.5; }
+    .case-row .txt strong { color: #0f172a; }
+    .case-action { margin-top: 0.65rem; padding: 0.55rem 0.85rem; background: #ecfdf5; border-left: 3px solid #10b981; border-radius: 0 8px 8px 0; font-size: 0.85rem; color: #064e3b; }
+
+    .check-list { list-style: none; padding: 0; margin: 1.25rem 0; counter-reset: chk; display: flex; flex-direction: column; gap: 0.55rem; }
+    .check-list li { counter-increment: chk; display: flex; align-items: flex-start; gap: 0.85rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 0.85rem 1rem; }
+    .check-list li::before { content: counter(chk); flex-shrink: 0; width: 26px; height: 26px; border-radius: 999px; background: #10b981; color: #fff; font-weight: 700; font-size: 0.85rem; display: inline-flex; align-items: center; justify-content: center; margin-top: 1px; }
+    .check-list li span { font-size: 0.94rem; color: #0f172a; line-height: 1.5; font-weight: 500; }
+
+    .res-grid { display: grid; grid-template-columns: 1fr; gap: 0.5rem; margin: 1.25rem 0; }
+    @media (min-width: 640px) { .res-grid { grid-template-columns: 1fr 1fr; } }
+    .res-link { display: flex; align-items: center; gap: 0.65rem; padding: 0.7rem 0.95rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; text-decoration: none; color: #0f172a; font-size: 0.93rem; font-weight: 500; transition: all 0.15s ease; }
+    .res-link:hover { background: #fff; border-color: #10b981; color: #047857; }
+    .res-link::before { content: '›'; color: #10b981; font-weight: 700; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "E-reporting et clients particuliers à La Réunion : ce que les TPE doivent comprendre",
+    "description": "Restaurants, commerces, instituts, coachs, prestataires : comprendre ce que la réforme change quand vous facturez surtout des particuliers, avec l'e-reporting et la réception 2026 expliqués simplement.",
+    "image": "https://tania.re/og-image.png",
+    "datePublished": "2026-05-24",
+    "dateModified": "2026-05-24",
+    "inLanguage": "fr-FR",
+    "author": { "@type": "Organization", "name": "Tania", "url": "https://tania.re" },
+    "publisher": { "@type": "Organization", "name": "Tania", "url": "https://tania.re", "logo": { "@type": "ImageObject", "url": "https://tania.re/favicon.svg" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://tania.re/e-reporting-clients-particuliers-reunion/" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Si je facture surtout des particuliers, suis-je concerné par la facturation électronique ?", "acceptedAnswer": { "@type": "Answer", "text": "Vos ventes aux particuliers ne relèvent pas de la facturation électronique B2B au sens strict, mais elles peuvent entrer dans le périmètre de l'e-reporting selon les cas. Vous devez aussi anticiper la réception électronique de vos factures fournisseurs à partir de 2026. Votre situation est à vérifier avec votre comptable." } },
+      { "@type": "Question", "name": "Qu'est-ce que l'e-reporting ?", "acceptedAnswer": { "@type": "Answer", "text": "L'e-reporting correspond à la transmission de certaines données à l'administration fiscale. Il concerne notamment les opérations qui ne relèvent pas de la facturation électronique B2B classique, comme les ventes à des particuliers ou certaines opérations à l'international." } },
+      { "@type": "Question", "name": "Quelle est la différence entre e-reporting et facturation électronique B2B ?", "acceptedAnswer": { "@type": "Answer", "text": "La facturation électronique B2B concerne les échanges entre entreprises françaises et transite via une Plateforme Agréée. L'e-reporting est une transmission de données à l'administration, qui s'applique à d'autres opérations (B2C notamment). Le calendrier global est aligné." } },
+      { "@type": "Question", "name": "Je suis commerçant ou restaurateur, que dois-je vérifier ?", "acceptedAnswer": { "@type": "Answer", "text": "Vérifier votre logiciel de caisse, identifier vos rares factures professionnelles, et anticiper la réception électronique de vos factures fournisseurs à partir de 2026. Le détail dépend de votre activité, à valider avec votre comptable." } },
+      { "@type": "Question", "name": "Je reçois des factures fournisseurs, est-ce que ça me concerne dès 2026 ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui, probablement. À partir du 1er septembre 2026, toutes les entreprises assujetties à la TVA doivent pouvoir recevoir des factures électroniques via une Plateforme Agréée. Cela inclut les entreprises qui facturent surtout des particuliers." } },
+      { "@type": "Question", "name": "Tania peut-elle remplacer mon comptable pour l'e-reporting ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. Tania ne remplace pas votre comptable et n'est pas une Plateforme Agréée. Tania peut vous aider à mieux structurer vos informations, devis, factures, paiements et relances, pour préparer plus simplement vos échanges avec votre comptable." } },
+      { "@type": "Question", "name": "Que faire si je facture à la fois particuliers et entreprises ?", "acceptedAnswer": { "@type": "Answer", "text": "Vous devez bien séparer les flux. Vos factures B2B entrent dans la facturation électronique en 2027, vos ventes B2C relèvent plutôt de l'e-reporting, et vos factures fournisseurs arriveront via Plateforme Agréée en 2026. À organiser dès maintenant avec votre comptable." } }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://tania.re/" },
+      { "@type": "ListItem", "position": 2, "name": "Ressources", "item": "https://tania.re/ressources-facturation-electronique-reunion/" },
+      { "@type": "ListItem", "position": 3, "name": "E-reporting et clients particuliers", "item": "https://tania.re/e-reporting-clients-particuliers-reunion/" }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-white text-slate-900">
+
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-100">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="/" aria-label="Tania — Accueil" class="tania-logo md">
+        <svg class="tania-T" viewBox="0 0 80 80" preserveAspectRatio="xMinYMid meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="0" y="14" width="80" height="18" fill="#10b981"/><rect x="31" y="42" width="18" height="38" fill="#10b981"/>
+        </svg>
+        <span class="tania-ania">ania</span>
+      </a>
+      <a href="/#cta-final" class="inline-flex items-center bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-semibold px-4 py-2 rounded-md shadow-sm transition-all">Demander une démo</a>
+    </div>
+  </header>
+
+  <main class="article-container py-12 lg:py-16">
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <a href="/">Accueil</a><span class="breadcrumb-sep">›</span>
+      <a href="/ressources-facturation-electronique-reunion/">Ressources</a><span class="breadcrumb-sep">›</span>
+      <span>E-reporting et clients particuliers</span>
+    </nav>
+
+    <article class="article">
+      <h1>E-reporting et clients particuliers à La Réunion&#8239;: ce que les TPE doivent comprendre</h1>
+      <p class="article-meta">Mis à jour le 24 mai 2026 · Pédagogique · TPE B2C</p>
+
+      <p class="lede">Restaurants, commerces, instituts de beauté, coachs, prestataires de service&#8239;: si vous facturez surtout des particuliers à La Réunion, vous vous demandez sans doute si la réforme de la facturation électronique vous concerne. La réponse est rarement «&nbsp;non&nbsp;» — c’est plutôt «&nbsp;pas de la même façon&nbsp;». Cette page vous aide à comprendre où vous en êtes.</p>
+
+      <div class="hero-cta-row">
+        <a href="/test-facturation-electronique-reunion/" class="hero-cta-primary">Faire le test gratuit
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="/ressources-facturation-electronique-reunion/" class="hero-cta-secondary">Voir toutes les ressources</a>
+      </div>
+
+      <h2 id="reponse">La réponse courte&#8239;: «&nbsp;particuliers&nbsp;» ne veut pas dire «&nbsp;rien à préparer&nbsp;»</h2>
+      <p>Vos ventes aux particuliers ne relèvent pas de la facturation électronique B2B au sens strict. Mais elles peuvent entrer dans le périmètre de l’<strong>e-reporting</strong> selon les cas. Et même si toute votre activité est B2C, vous devrez aussi <strong>recevoir des factures électroniques de vos fournisseurs</strong> à partir de 2026.</p>
+      <p>Si en plus vous facturez quelques entreprises (mariages, partenariats, livraisons à des pros…), vous devrez bien <strong>séparer vos flux</strong>. Le sujet n’est donc pas «&nbsp;est-ce que je fais du B2B ?&nbsp;», mais «&nbsp;quels types de flux ai-je dans mon activité ?&nbsp;»</p>
+
+      <aside class="callout">
+        <p class="callout-title">À retenir</p>
+        <ul>
+          <li><strong>B2B</strong>&#8239;: facturation électronique via Plateforme Agréée.</li>
+          <li><strong>B2C</strong>&#8239;: plutôt e-reporting selon les cas.</li>
+          <li><strong>Fournisseurs</strong>&#8239;: réception électronique à anticiper en 2026.</li>
+          <li>Votre situation est à vérifier avec votre comptable.</li>
+        </ul>
+      </aside>
+
+      <h2 id="ereporting">L’e-reporting, c’est quoi&#8239;?</h2>
+      <p>L’e-reporting correspond à la <strong>transmission de certaines données à l’administration fiscale</strong>, en dehors du circuit de la facturation électronique B2B classique. Concrètement, cela concerne notamment&#8239;:</p>
+      <ul>
+        <li>les <strong>ventes aux particuliers</strong> (B2C), selon les cas et l’activité,</li>
+        <li>certaines opérations à l’<strong>international</strong> (B2B avec entreprises non établies en France),</li>
+        <li>les transmissions de données de transactions à des fins de TVA.</li>
+      </ul>
+      <p>L’idée n’est <strong>pas d’envoyer une facture électronique à chaque particulier</strong>. C’est plutôt de transmettre des informations agrégées sur votre activité, selon des modalités qui dépendent de votre situation. Le détail technique est à valider avec votre comptable.</p>
+
+      <h2 id="b2b-vs-b2c">Facturation électronique B2B ou e-reporting&#8239;: quelle différence&#8239;?</h2>
+
+      <div class="compare-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Situation</th>
+              <th>Exemple</th>
+              <th>Sujet principal</th>
+              <th>À vérifier</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Vous facturez une entreprise française</td>
+              <td>Facture à un syndic, une SARL, une agence</td>
+              <td>Émission électronique B2B dès 2027</td>
+              <td>Plateforme Agréée + format structuré (Factur-X)</td>
+            </tr>
+            <tr>
+              <td>Vous facturez un particulier</td>
+              <td>Repas au restaurant, soin esthétique, séance coaching</td>
+              <td>Plutôt e-reporting selon les cas</td>
+              <td>Logiciel de caisse ou outil compatible</td>
+            </tr>
+            <tr>
+              <td>Vous facturez les deux</td>
+              <td>Restaurant qui livre aussi à des entreprises</td>
+              <td>Séparer les flux B2B et B2C</td>
+              <td>Distinguer dès maintenant dans le suivi</td>
+            </tr>
+            <tr>
+              <td>Vous recevez des factures fournisseurs</td>
+              <td>EDF, loueur de local, fournisseur de produits</td>
+              <td>Réception électronique dès 2026</td>
+              <td>Choisir une Plateforme Agréée avant l’été 2026</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="compare-mobile">
+        <div class="cmp-mcard">
+          <h3>Vous facturez une entreprise française</h3>
+          <h4>Exemple</h4><p>Facture à un syndic, une SARL, une agence.</p>
+          <h4>Sujet principal</h4><p>Émission électronique B2B dès 2027.</p>
+          <h4>À vérifier</h4><p>Plateforme Agréée + format structuré (Factur-X).</p>
+        </div>
+        <div class="cmp-mcard">
+          <h3>Vous facturez un particulier</h3>
+          <h4>Exemple</h4><p>Repas au restaurant, soin esthétique, séance coaching.</p>
+          <h4>Sujet principal</h4><p>Plutôt e-reporting selon les cas.</p>
+          <h4>À vérifier</h4><p>Logiciel de caisse ou outil compatible.</p>
+        </div>
+        <div class="cmp-mcard">
+          <h3>Vous facturez les deux</h3>
+          <h4>Exemple</h4><p>Restaurant qui livre aussi à des entreprises.</p>
+          <h4>Sujet principal</h4><p>Séparer les flux B2B et B2C.</p>
+          <h4>À vérifier</h4><p>Distinguer dès maintenant dans le suivi.</p>
+        </div>
+        <div class="cmp-mcard">
+          <h3>Vous recevez des factures fournisseurs</h3>
+          <h4>Exemple</h4><p>EDF, loueur de local, fournisseur de produits.</p>
+          <h4>Sujet principal</h4><p>Réception électronique dès 2026.</p>
+          <h4>À vérifier</h4><p>Choisir une Plateforme Agréée avant l’été 2026.</p>
+        </div>
+      </div>
+
+      <h2 id="exemples">Exemples concrets à La Réunion</h2>
+      <p>Cinq situations courantes chez les TPE réunionnaises qui facturent surtout des particuliers.</p>
+
+      <div class="case-card">
+        <h3>Un snack ou restaurant</h3>
+        <div class="case-row"><span class="lab">Situation</span><span class="txt">Clients <strong>particuliers</strong>, fournisseurs professionnels nombreux (produits, énergie, loueur), parfois prestations pour entreprises (traiteur, livraisons).</span></div>
+        <div class="case-row"><span class="lab">Ce qui change</span><span class="txt">Réception électronique des factures fournisseurs dès 2026. E-reporting pour ventes B2C. Émission électronique pour les rares factures B2B en 2027.</span></div>
+        <div class="case-row"><span class="lab">À vérifier</span><span class="txt">Compatibilité du logiciel de caisse avec l’e-reporting, choix d’une Plateforme Agréée pour la réception.</span></div>
+        <p class="case-action"><strong>Action&#8239;:</strong> identifier ses fournisseurs et ses flux B2B occasionnels avec son comptable.</p>
+      </div>
+
+      <div class="case-card">
+        <h3>Un institut de beauté</h3>
+        <div class="case-row"><span class="lab">Situation</span><span class="txt">Clients <strong>particuliers à 90&#8239;%</strong>, parfois bons cadeaux, prestations événements ou partenariats avec hôtels et entreprises.</span></div>
+        <div class="case-row"><span class="lab">Ce qui change</span><span class="txt">Logiciel de caisse à vérifier pour l’e-reporting. Réception fournisseurs dès 2026. Émission B2B pour les rares prestations professionnelles.</span></div>
+        <div class="case-row"><span class="lab">À vérifier</span><span class="txt">Bien séparer les rares factures B2B des ventes B2C dans le suivi.</span></div>
+        <p class="case-action"><strong>Action&#8239;:</strong> demander à l’éditeur du logiciel de caisse où il en est sur la réforme.</p>
+      </div>
+
+      <div class="case-card">
+        <h3>Un coach sportif</h3>
+        <div class="case-row"><span class="lab">Situation</span><span class="txt">Séances individuelles à des <strong>particuliers</strong>, parfois interventions pour entreprises (séminaires, team-building) ou associations.</span></div>
+        <div class="case-row"><span class="lab">Ce qui change</span><span class="txt">B2C → e-reporting selon les cas. B2B → émission électronique en 2027. Réception fournisseurs en 2026.</span></div>
+        <div class="case-row"><span class="lab">À vérifier</span><span class="txt">Régime TVA, organisation des devis et factures, distinction des clients.</span></div>
+        <p class="case-action"><strong>Action&#8239;:</strong> structurer dès maintenant la distinction pros/particuliers dans le suivi.</p>
+      </div>
+
+      <div class="case-card">
+        <h3>Un commerçant</h3>
+        <div class="case-row"><span class="lab">Situation</span><span class="txt">Ventes <strong>majoritairement B2C</strong>, fournisseurs réguliers (textile, énergie, immobilier commercial).</span></div>
+        <div class="case-row"><span class="lab">Ce qui change</span><span class="txt">Réception électronique fournisseurs dès 2026 (sujet majeur). E-reporting B2C selon les cas.</span></div>
+        <div class="case-row"><span class="lab">À vérifier</span><span class="txt">Identifier rapidement une Plateforme Agréée pour ne pas être surpris par les fournisseurs.</span></div>
+        <p class="case-action"><strong>Action&#8239;:</strong> anticiper la réception bien avant le 1er septembre 2026.</p>
+      </div>
+
+      <div class="case-card">
+        <h3>Un artisan qui travaille surtout avec des particuliers</h3>
+        <div class="case-row"><span class="lab">Situation</span><span class="txt">Devis, acomptes, factures à des <strong>particuliers</strong>, parfois quelques clients professionnels (syndics, entreprises).</span></div>
+        <div class="case-row"><span class="lab">Ce qui change</span><span class="txt">B2C → e-reporting selon les cas. B2B → émission en 2027. Réception fournisseurs en 2026. Devis et acomptes à mieux structurer.</span></div>
+        <div class="case-row"><span class="lab">À vérifier</span><span class="txt">Méthode actuelle (Excel, Word, PDF) et compatibilité avec la transition.</span></div>
+        <p class="case-action"><strong>Action&#8239;:</strong> voir <a href="/cas-concrets-facturation-electronique-reunion/">les cas concrets métiers</a> pour aller plus loin.</p>
+      </div>
+
+      <p><em>Ces exemples sont des illustrations pédagogiques. Votre situation peut différer selon votre activité réelle et votre régime exact.</em></p>
+
+      <h2 id="separer">Pourquoi il faut séparer clients particuliers et clients professionnels</h2>
+      <p>Beaucoup de TPE ont des <strong>flux mixtes</strong> sans s’en rendre compte. Un restaurateur qui livre parfois un buffet à une entreprise. Un coach qui anime un séminaire d’entreprise. Une esthéticienne qui prépare un mariage. Une fois la réforme en place, les obligations ne seront pas les mêmes selon le type de client.</p>
+      <p>Séparer dès maintenant les particuliers, les professionnels et les fournisseurs dans votre suivi vous aidera à&#8239;:</p>
+      <ul>
+        <li>identifier vos rares factures B2B à anticiper pour 2027,</li>
+        <li>vérifier ce qui relève de l’e-reporting,</li>
+        <li>recevoir proprement les factures fournisseurs en 2026,</li>
+        <li>échanger plus simplement avec votre comptable.</li>
+      </ul>
+
+      <div class="hero-cta-row">
+        <a href="/test-facturation-electronique-reunion/" class="hero-cta-primary">Obtenir mon plan d’action
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+      <h2 id="actions">Les 6 actions à faire maintenant</h2>
+
+      <ol class="check-list">
+        <li><span>Lister vos types de clients&#8239;: particuliers, entreprises, associations.</span></li>
+        <li><span>Identifier vos fournisseurs principaux (loueur, énergie, produits, prestations).</span></li>
+        <li><span>Vérifier votre régime TVA (franchise ou non).</span></li>
+        <li><span>Demander à votre comptable si certaines ventes relèvent de l’e-reporting.</span></li>
+        <li><span>Vérifier si votre méthode actuelle sépare bien B2B et B2C.</span></li>
+        <li><span>Tester votre situation avec le simulateur Tania.</span></li>
+      </ol>
+
+      <h2 id="tania">Comment Tania peut aider une TPE qui facture des particuliers</h2>
+      <p>Tania ne remplace pas votre comptable et n’est pas une Plateforme Agréée. Tania vous aide à structurer vos devis, factures, relances et suivis depuis WhatsApp, avec l’objectif de préparer progressivement une organisation compatible avec la réforme.</p>
+      <p>Pour une entreprise qui facture surtout des particuliers, l’enjeu est souvent de <strong>ne pas mélanger les flux</strong>&#8239;: clients particuliers, clients professionnels, fournisseurs, paiements et relances. Tania aide à&#8239;:</p>
+      <ul>
+        <li>mieux classer les clients (pro vs particulier),</li>
+        <li>retrouver les devis et factures rapidement,</li>
+        <li>suivre les paiements,</li>
+        <li>éviter les informations dispersées entre Word, Excel et WhatsApp,</li>
+        <li>préparer les échanges avec le comptable.</li>
+      </ul>
+
+      <div class="hero-cta-row" style="margin-top:1.5rem;">
+        <a href="/" class="hero-cta-primary">Découvrir Tania
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="/test-facturation-electronique-reunion/" class="hero-cta-secondary">Faire le test gratuit</a>
+      </div>
+
+      <h2 id="ressources">Pour aller plus loin</h2>
+      <div class="res-grid">
+        <a href="/facturation-electronique-reunion" class="res-link">Guide facturation électronique Réunion</a>
+        <a href="/test-facturation-electronique-reunion/" class="res-link">Faire le test gratuit</a>
+        <a href="/ressources-facturation-electronique-reunion/" class="res-link">Hub ressources</a>
+        <a href="/checklist-facturation-electronique-reunion/" class="res-link">Checklist 10 points</a>
+        <a href="/glossaire-facturation-electronique-reunion/" class="res-link">Glossaire des termes</a>
+        <a href="/calendrier-facturation-electronique-reunion/" class="res-link">Calendrier 2026-2027</a>
+        <a href="/faq-facturation-electronique-reunion/" class="res-link">FAQ 25 questions</a>
+        <a href="/cas-concrets-facturation-electronique-reunion/" class="res-link">8 cas concrets métiers</a>
+        <a href="/comparatif-methodes-facturation-electronique-reunion/" class="res-link">Comparatif des méthodes</a>
+        <a href="/facturation-electronique-micro-entrepreneur-reunion/" class="res-link">Micro-entrepreneur à La Réunion</a>
+        <a href="/excel-word-pdf-facturation-electronique-reunion/" class="res-link">Excel, Word ou PDF, est-ce suffisant&#8239;?</a>
+        <a href="/plateforme-agreee-facturation-electronique-reunion/" class="res-link">Plateforme Agréée et facturation électronique</a>
+        <a href="/factur-x-facturation-electronique-reunion/" class="res-link">Factur-X et facturation électronique</a>
+        <a href="/kit-facturation-electronique-reunion/" class="res-link">Kit gratuit complet</a>
+      </div>
+
+      <h2 id="faq">Foire aux questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Si je facture surtout des particuliers, suis-je concerné par la facturation électronique&#8239;?</summary>
+          <div class="faq-answer"><p>Vos ventes aux particuliers ne relèvent pas de la facturation électronique B2B au sens strict, mais elles peuvent entrer dans le périmètre de l’e-reporting selon les cas. Vous devez aussi anticiper la réception électronique de vos factures fournisseurs à partir de 2026. Votre situation est à vérifier avec votre comptable.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Qu’est-ce que l’e-reporting&#8239;?</summary>
+          <div class="faq-answer"><p>L’e-reporting correspond à la transmission de certaines données à l’administration fiscale. Il concerne notamment les opérations qui ne relèvent pas de la facturation électronique B2B classique, comme les ventes à des particuliers ou certaines opérations à l’international.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Quelle est la différence entre e-reporting et facturation électronique B2B&#8239;?</summary>
+          <div class="faq-answer"><p>La facturation électronique B2B concerne les échanges entre entreprises françaises et transite via une Plateforme Agréée. L’e-reporting est une transmission de données à l’administration, qui s’applique à d’autres opérations (B2C notamment). Le calendrier global est aligné.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Je suis commerçant ou restaurateur, que dois-je vérifier&#8239;?</summary>
+          <div class="faq-answer"><p>Vérifier votre logiciel de caisse, identifier vos rares factures professionnelles, et anticiper la réception électronique de vos factures fournisseurs à partir de 2026. Le détail dépend de votre activité, à valider avec votre comptable.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Je reçois des factures fournisseurs, est-ce que ça me concerne dès 2026&#8239;?</summary>
+          <div class="faq-answer"><p>Oui, probablement. À partir du 1er septembre 2026, toutes les entreprises assujetties à la TVA doivent pouvoir recevoir des factures électroniques via une Plateforme Agréée. Cela inclut les entreprises qui facturent surtout des particuliers. Voir <a href="/plateforme-agreee-facturation-electronique-reunion/">Plateforme Agréée et facturation électronique</a>.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Tania peut-elle remplacer mon comptable pour l’e-reporting&#8239;?</summary>
+          <div class="faq-answer"><p>Non. Tania ne remplace pas votre comptable et n’est pas une Plateforme Agréée. Tania peut vous aider à mieux structurer vos informations, devis, factures, paiements et relances, pour préparer plus simplement vos échanges avec votre comptable.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Que faire si je facture à la fois particuliers et entreprises&#8239;?</summary>
+          <div class="faq-answer"><p>Vous devez bien séparer les flux. Vos factures B2B entrent dans la facturation électronique en 2027, vos ventes B2C relèvent plutôt de l’e-reporting, et vos factures fournisseurs arriveront via Plateforme Agréée en 2026. À organiser dès maintenant avec votre comptable.</p></div>
+        </details>
+      </div>
+
+      <section class="article-cta">
+        <h2 style="margin-top:0">Vous voulez savoir quoi préparer selon vos clients&#8239;?</h2>
+        <p>Répondez à 6 questions et obtenez une première indication sur votre niveau de préparation.</p>
+        <a href="/test-facturation-electronique-reunion/" class="cta-button">Obtenir mon plan d’action →</a>
+        <p class="cta-fine">Gratuit · 2 minutes · Indication pédagogique</p>
+      </section>
+
+      <p style="text-align:center;margin:2rem 0;font-size:0.95rem;"><a href="/ressources-facturation-electronique-reunion/">Voir toutes les ressources facturation électronique →</a></p>
+
+      <h2 id="sources">Sources officielles</h2>
+      <ul>
+        <li><a href="https://www.impots.gouv.fr/professionnel/je-passe-la-facturation-electronique" target="_blank" rel="noopener">impots.gouv.fr — Je passe à la facturation électronique</a></li>
+        <li><a href="https://entreprendre.service-public.fr/vosdroits/F23208" target="_blank" rel="noopener">service-public.fr — Facturation entre professionnels et calendrier</a></li>
+        <li><a href="https://www.impots.gouv.fr/liste-des-plateformes-agreees-immatriculees-sous-reserve" target="_blank" rel="noopener">impots.gouv.fr — Liste officielle des Plateformes Agréées</a></li>
+      </ul>
+
+      <div style="margin-top:2rem;background:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #94a3b8;border-radius:0 10px 10px 0;padding:0.9rem 1.1rem;font-size:0.85rem;color:#64748b;line-height:1.6;">
+        <strong>Cette ressource fournit une première indication pédagogique.</strong> Elle ne remplace pas l’avis de votre expert-comptable ni les informations officielles de l’administration fiscale.
+      </div>
+    </article>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-400 py-12 mt-16">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 text-sm flex flex-col md:flex-row items-center justify-between gap-4">
+      <p>© 2026 Tania · Tous droits réservés.</p>
+      <div class="flex items-center gap-6 flex-wrap justify-center">
+        <a href="/" class="hover:text-white transition-colors">Accueil</a>
+        <a href="/facturation-electronique-reunion" class="hover:text-white transition-colors">Guide</a>
+        <a href="/test-facturation-electronique-reunion/" class="hover:text-white transition-colors">Test</a>
+        <a href="/ressources-facturation-electronique-reunion/" class="hover:text-white transition-colors">Ressources</a>
+        <a href="/mentions-legales.html" class="hover:text-white transition-colors">Mentions légales</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
