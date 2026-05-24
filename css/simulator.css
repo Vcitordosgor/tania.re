@@ -32,6 +32,9 @@
   --radius-xl:     24px;
 }
 
+/* Offset pour éviter que le header sticky (64px) ne cache le haut au scrollIntoView */
+.sim-quiz, .sim-result, #sim-question-container { scroll-margin-top: 80px; }
+
 body { background: var(--bg); color: var(--text-1); margin: 0; }
 
 /* ─── Header sticky (remplace Tailwind) ─── */
