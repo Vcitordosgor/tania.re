@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Plateforme Agréée facturation électronique à La Réunion</title>
+  <meta name="description" content="Comprenez le rôle d'une Plateforme Agréée dans la facturation électronique 2026-2027 et ce que les TPE à La Réunion doivent vérifier." />
+  <link rel="canonical" href="https://tania.re/plateforme-agreee-facturation-electronique-reunion/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+
+  <meta property="og:title" content="Plateforme Agréée facturation électronique à La Réunion" />
+  <meta property="og:description" content="Une ressource simple pour comprendre le rôle des Plateformes Agréées et préparer votre entreprise à La Réunion." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://tania.re/plateforme-agreee-facturation-electronique-reunion/" />
+  <meta property="og:image" content="https://tania.re/og-image.png" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Tania" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Plateforme Agréée facturation électronique à La Réunion" />
+  <meta name="twitter:description" content="Comprendre le rôle des plateformes dans le nouveau circuit." />
+  <meta name="twitter:image" content="https://tania.re/og-image.png" />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/css/article.css" />
+
+  <style>
+    body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    .tania-logo { display: inline-flex; align-items: center; line-height: 1; color: #10b981; text-decoration: none; }
+    .tania-T { height: 1em; width: 0.69em; display: block; }
+    .tania-ania { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1em; letter-spacing: -0.025em; line-height: 1; color: inherit; }
+    .tania-logo.md { font-size: 32px; }
+    .hero-cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.5rem 0 2rem; }
+    .hero-cta-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: #10b981; color: #fff; font-weight: 600; padding: 0.85rem 1.4rem; border-radius: 12px; text-decoration: none; box-shadow: 0 8px 22px -8px rgba(16,185,129,0.45); transition: all 0.18s ease; }
+    .hero-cta-primary:hover { background: #059669; transform: translateY(-1px); color: #fff; }
+    .hero-cta-secondary { display: inline-flex; align-items: center; gap: 0.5rem; color: #047857; font-weight: 600; padding: 0.85rem 1rem; text-decoration: underline; text-underline-offset: 4px; }
+    .hero-cta-secondary:hover { color: #065f46; }
+
+    /* Tableau acteurs : tableau desktop + cartes mobile */
+    .actors-wrap { overflow-x: auto; margin: 1.5rem 0; -webkit-overflow-scrolling: touch; }
+    .actors-table { width: 100%; min-width: 720px; border-collapse: separate; border-spacing: 0; background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; overflow: hidden; font-size: 0.92rem; }
+    .actors-table th, .actors-table td { padding: 0.85rem 1rem; text-align: left; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+    .actors-table thead th { background: #f1f5f9; font-weight: 700; color: #0f172a; font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; }
+    .actors-table tbody tr:last-child td { border-bottom: none; }
+    .actors-table td:first-child, .actors-table th:first-child { font-weight: 700; color: #0f172a; }
+    .actors-table tr.tania-row { background: #ecfdf5; }
+    .actors-table tr.tania-row td:first-child { color: #047857; }
+    .actors-mobile { display: none; margin: 1.5rem 0; flex-direction: column; gap: 1rem; }
+    .actor-mcard { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 1.1rem 1.25rem; }
+    .actor-mcard.tania-card { background: #ecfdf5; border-color: #10b981; }
+    .actor-mcard h3 { font-size: 1.05rem; font-weight: 700; color: #0f172a; margin: 0 0 0.6rem; }
+    .actor-mcard.tania-card h3 { color: #047857; }
+    .actor-mcard h4 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #64748b; margin: 0.65rem 0 0.25rem; }
+    .actor-mcard p { font-size: 0.88rem; color: #475569; line-height: 1.55; margin: 0; }
+    @media (max-width: 767px) {
+      .actors-wrap { display: none; }
+      .actors-mobile { display: flex; }
+    }
+
+    .check-list { list-style: none; padding: 0; margin: 1.25rem 0; counter-reset: chk; display: flex; flex-direction: column; gap: 0.55rem; }
+    .check-list li { counter-increment: chk; display: flex; align-items: flex-start; gap: 0.85rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 0.85rem 1rem; }
+    .check-list li::before { content: counter(chk); flex-shrink: 0; width: 26px; height: 26px; border-radius: 999px; background: #10b981; color: #fff; font-weight: 700; font-size: 0.85rem; display: inline-flex; align-items: center; justify-content: center; margin-top: 1px; }
+    .check-list li span { font-size: 0.94rem; color: #0f172a; line-height: 1.5; font-weight: 500; }
+
+    .error-cards { display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin: 1.5rem 0; }
+    @media (min-width: 768px) { .error-cards { grid-template-columns: 1fr 1fr; } }
+    .error-card { background: #fff; border: 1px solid #e2e8f0; border-left: 3px solid #f59e0b; border-radius: 0 12px 12px 0; padding: 0.95rem 1.15rem; }
+    .error-card h4 { font-size: 0.97rem; font-weight: 700; color: #0f172a; margin: 0 0 0.35rem; line-height: 1.35; }
+    .error-card p { font-size: 0.88rem; color: #475569; line-height: 1.5; margin: 0 0 0.3rem; }
+    .error-card .action { font-size: 0.83rem; color: #047857; font-weight: 600; }
+
+    .res-grid { display: grid; grid-template-columns: 1fr; gap: 0.5rem; margin: 1.25rem 0; }
+    @media (min-width: 640px) { .res-grid { grid-template-columns: 1fr 1fr; } }
+    .res-link { display: flex; align-items: center; gap: 0.65rem; padding: 0.7rem 0.95rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; text-decoration: none; color: #0f172a; font-size: 0.93rem; font-weight: 500; transition: all 0.15s ease; }
+    .res-link:hover { background: #fff; border-color: #10b981; color: #047857; }
+    .res-link::before { content: '›'; color: #10b981; font-weight: 700; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Plateforme Agréée et facturation électronique à La Réunion : ce que les TPE doivent comprendre",
+    "description": "Comprendre simplement le rôle d'une Plateforme Agréée dans le nouveau circuit de facturation électronique 2026-2027 et préparer son choix avec son comptable à La Réunion.",
+    "image": "https://tania.re/og-image.png",
+    "datePublished": "2026-05-24",
+    "dateModified": "2026-05-24",
+    "inLanguage": "fr-FR",
+    "author": { "@type": "Organization", "name": "Tania", "url": "https://tania.re" },
+    "publisher": { "@type": "Organization", "name": "Tania", "url": "https://tania.re", "logo": { "@type": "ImageObject", "url": "https://tania.re/favicon.svg" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://tania.re/plateforme-agreee-facturation-electronique-reunion/" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Qu'est-ce qu'une Plateforme Agréée ?", "acceptedAnswer": { "@type": "Answer", "text": "Une Plateforme Agréée est un opérateur immatriculé par l'État dans le cadre de la réforme de la facturation électronique. Elle intervient pour émettre, recevoir et transmettre les factures et les données concernées entre entreprises et avec l'administration fiscale." } },
+      { "@type": "Question", "name": "Dois-je choisir une Plateforme Agréée si je suis une TPE ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui, si vous êtes dans le périmètre de la réforme. Toutes les entreprises concernées devront passer par une Plateforme Agréée, directement ou via une solution compatible raccordée à une Plateforme Agréée." } },
+      { "@type": "Question", "name": "Mon comptable peut-il choisir la plateforme pour moi ?", "acceptedAnswer": { "@type": "Answer", "text": "Votre comptable peut vous accompagner dans ce choix et le coordonner avec son propre fonctionnement. En revanche, vous restez responsable du choix final pour votre entreprise. C'est un travail conjoint." } },
+      { "@type": "Question", "name": "Un logiciel de facturation est-il forcément une Plateforme Agréée ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. Un logiciel de facturation classique n'est pas automatiquement une Plateforme Agréée. Il doit être compatible avec une Plateforme Agréée (raccordement, formats attendus) pour s'intégrer dans le nouveau circuit. À vérifier avec votre éditeur." } },
+      { "@type": "Question", "name": "Où trouver la liste officielle des Plateformes Agréées ?", "acceptedAnswer": { "@type": "Answer", "text": "Sur le site impots.gouv.fr, qui publie et met à jour régulièrement la liste officielle des plateformes immatriculées sous réserve. C'est la seule référence officielle." } },
+      { "@type": "Question", "name": "Tania est-elle une Plateforme Agréée ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. Tania n'est pas une Plateforme Agréée. L'objectif est de prévoir une articulation avec une Plateforme Agréée partenaire lorsque le parcours sera stabilisé." } },
+      { "@type": "Question", "name": "Que dois-je faire maintenant si je ne sais pas quelle plateforme choisir ?", "acceptedAnswer": { "@type": "Answer", "text": "Commencez par identifier votre situation (régime TVA, type de clients, volume), demandez à votre comptable quelle plateforme il recommande, et consultez la liste officielle. Le simulateur Tania peut vous donner une première indication sur votre situation." } }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://tania.re/" },
+      { "@type": "ListItem", "position": 2, "name": "Ressources", "item": "https://tania.re/ressources-facturation-electronique-reunion/" },
+      { "@type": "ListItem", "position": 3, "name": "Plateforme Agréée facturation électronique", "item": "https://tania.re/plateforme-agreee-facturation-electronique-reunion/" }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-white text-slate-900">
+
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-100">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="/" aria-label="Tania — Accueil" class="tania-logo md">
+        <svg class="tania-T" viewBox="0 0 80 80" preserveAspectRatio="xMinYMid meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="0" y="14" width="80" height="18" fill="#10b981"/><rect x="31" y="42" width="18" height="38" fill="#10b981"/>
+        </svg>
+        <span class="tania-ania">ania</span>
+      </a>
+      <a href="/#cta-final" class="inline-flex items-center bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-semibold px-4 py-2 rounded-md shadow-sm transition-all">Demander une démo</a>
+    </div>
+  </header>
+
+  <main class="article-container py-12 lg:py-16">
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <a href="/">Accueil</a><span class="breadcrumb-sep">›</span>
+      <a href="/ressources-facturation-electronique-reunion/">Ressources</a><span class="breadcrumb-sep">›</span>
+      <span>Plateforme Agréée facturation électronique</span>
+    </nav>
+
+    <article class="article">
+      <h1>Plateforme Agréée et facturation électronique à La Réunion&#8239;: ce que les TPE doivent comprendre</h1>
+      <p class="article-meta">Mis à jour le 24 mai 2026 · Repère pédagogique</p>
+
+      <p class="lede">Une Plateforme Agréée devient un passage clé dans le nouveau circuit de la facturation électronique. Cette page explique simplement son rôle, comment elle s’articule avec votre comptable, votre logiciel ou Tania, et ce que les TPE réunionnaises doivent vérifier avant 2026-2027.</p>
+
+      <div class="hero-cta-row">
+        <a href="/test-facturation-electronique-reunion/" class="hero-cta-primary">Faire le test gratuit
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="/ressources-facturation-electronique-reunion/" class="hero-cta-secondary">Voir toutes les ressources</a>
+      </div>
+
+      <h2 id="reponse">La réponse courte&#8239;: une Plateforme Agréée devient un passage clé</h2>
+      <p>Avec la réforme 2026-2027, vos factures B2B ne circuleront plus seulement de votre boîte mail à celle de votre client. Elles devront passer par un opérateur dédié, immatriculé par l’État&#8239;: une <strong>Plateforme Agréée</strong>. Elle joue le rôle de tiers de confiance dans le nouveau circuit.</p>
+      <p>Toutes les TPE concernées devront en utiliser une, directement ou via une solution compatible. Le choix dépend de votre situation, de votre comptable et de vos outils. Anticiper ce sujet, c’est éviter la précipitation au moment des échéances.</p>
+
+      <aside class="callout">
+        <p class="callout-title">À retenir</p>
+        <ul>
+          <li>Une Plateforme Agréée n’est pas un simple logiciel classique.</li>
+          <li>La <strong>liste officielle</strong> est tenue par l’administration fiscale (impots.gouv.fr).</li>
+          <li>Le choix doit être vérifié avec votre <strong>comptable</strong>.</li>
+          <li><strong>Tania n’est pas une Plateforme Agréée</strong>.</li>
+        </ul>
+      </aside>
+
+      <h2 id="definition">Qu’est-ce qu’une Plateforme Agréée&#8239;?</h2>
+      <p>C’est un opérateur immatriculé par l’administration fiscale dans le cadre de la réforme. Concrètement, elle&#8239;:</p>
+      <ul>
+        <li>Émet vos factures électroniques dans le bon format.</li>
+        <li>Transmet ces factures à la Plateforme Agréée de vos clients.</li>
+        <li>Reçoit les factures de vos fournisseurs et vous les rend lisibles.</li>
+        <li>Transmet les données fiscales utiles à l’administration (e-reporting).</li>
+        <li>Conserve les factures dans le respect des obligations légales.</li>
+      </ul>
+      <p>À noter&#8239;: ce terme remplace progressivement le nom PDP (Plateforme de Dématérialisation Partenaire) qu’on croise encore dans certaines communications. Le rôle est le même.</p>
+
+      <h2 id="pourquoi">Pourquoi les TPE réunionnaises doivent s’y intéresser maintenant</h2>
+      <p>Les échéances arrivent par étapes&#8239;: 1er septembre 2026 pour la <strong>réception</strong>, 1er septembre 2027 pour l’<strong>émission</strong> des PME, TPE et micro-entreprises dans le périmètre concerné. À La Réunion, le calendrier est identique à la métropole.</p>
+      <p>Même les petites entreprises doivent comprendre&#8239;:</p>
+      <ul>
+        <li>Qui reçoit leurs factures et par quel circuit.</li>
+        <li>Comment leurs factures vont être émises.</li>
+        <li>Si leur méthode actuelle (Excel, Word, PDF, logiciel) pourra s’articuler avec le nouveau circuit.</li>
+      </ul>
+      <p>Les <a href="/facturation-electronique-micro-entrepreneur-reunion/">micro-entrepreneurs</a> et les entreprises en franchise de TVA sont concernés également selon leur situation. Pour aller plus loin sur les outils&#8239;: <a href="/excel-word-pdf-facturation-electronique-reunion/">Excel, Word ou PDF&#8239;: est-ce suffisant&#8239;?</a></p>
+
+      <h2 id="acteurs">Plateforme Agréée, comptable, logiciel&#8239;: qui fait quoi&#8239;?</h2>
+
+      <div class="actors-wrap">
+        <table class="actors-table">
+          <thead>
+            <tr>
+              <th>Acteur</th>
+              <th>Rôle</th>
+              <th>Ne fait pas forcément</th>
+              <th>À vérifier</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Plateforme Agréée</td>
+              <td>Émission, réception et transmission des factures dans le circuit officiel.</td>
+              <td>Organisation quotidienne des devis, paiements et relances.</td>
+              <td>Immatriculation officielle, compatibilité avec votre comptable et vos outils.</td>
+            </tr>
+            <tr>
+              <td>Expert-comptable</td>
+              <td>Conseil fiscal, organisation comptable, accompagnement réforme.</td>
+              <td>Gestion quotidienne de chaque devis, facture ou relance.</td>
+              <td>Quelle Plateforme Agréée il recommande, et comment organiser les flux.</td>
+            </tr>
+            <tr>
+              <td>Logiciel de facturation</td>
+              <td>Création et suivi des devis, factures et paiements.</td>
+              <td>Connexion effective à une Plateforme Agréée (à vérifier auprès de l’éditeur).</td>
+              <td>Compatibilité Factur-X et raccordement à une Plateforme Agréée.</td>
+            </tr>
+            <tr class="tania-row">
+              <td>Tania</td>
+              <td>Structurer devis, factures, relances et suivis depuis WhatsApp.</td>
+              <td>Comptabilité officielle, conseil fiscal, rôle de Plateforme Agréée.</td>
+              <td>Articulation avec votre comptable et la Plateforme Agréée choisie.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="actors-mobile">
+        <div class="actor-mcard">
+          <h3>Plateforme Agréée</h3>
+          <h4>Rôle</h4><p>Émission, réception et transmission des factures dans le circuit officiel.</p>
+          <h4>Ne fait pas forcément</h4><p>Organisation quotidienne des devis, paiements et relances.</p>
+          <h4>À vérifier</h4><p>Immatriculation officielle, compatibilité avec votre comptable et vos outils.</p>
+        </div>
+        <div class="actor-mcard">
+          <h3>Expert-comptable</h3>
+          <h4>Rôle</h4><p>Conseil fiscal, organisation comptable, accompagnement réforme.</p>
+          <h4>Ne fait pas forcément</h4><p>Gestion quotidienne de chaque devis, facture ou relance.</p>
+          <h4>À vérifier</h4><p>Quelle Plateforme Agréée il recommande, et comment organiser les flux.</p>
+        </div>
+        <div class="actor-mcard">
+          <h3>Logiciel de facturation</h3>
+          <h4>Rôle</h4><p>Création et suivi des devis, factures et paiements.</p>
+          <h4>Ne fait pas forcément</h4><p>Connexion effective à une Plateforme Agréée (à vérifier auprès de l’éditeur).</p>
+          <h4>À vérifier</h4><p>Compatibilité Factur-X et raccordement à une Plateforme Agréée.</p>
+        </div>
+        <div class="actor-mcard tania-card">
+          <h3>Tania</h3>
+          <h4>Rôle</h4><p>Structurer devis, factures, relances et suivis depuis WhatsApp.</p>
+          <h4>Ne fait pas</h4><p>Comptabilité officielle, conseil fiscal, rôle de Plateforme Agréée.</p>
+          <h4>À vérifier</h4><p>Articulation avec votre comptable et la Plateforme Agréée choisie.</p>
+        </div>
+      </div>
+
+      <h2 id="choisir">Comment préparer votre choix de Plateforme Agréée&#8239;?</h2>
+      <p>Une checklist simple à parcourir, idéalement avec votre comptable&#8239;:</p>
+
+      <ol class="check-list">
+        <li><span>Vérifier votre régime TVA (franchise en base, réel simplifié, réel normal).</span></li>
+        <li><span>Distinguer clients professionnels et particuliers dans votre suivi.</span></li>
+        <li><span>Identifier votre volume de factures (5, 30, 100 par mois&#8239;?).</span></li>
+        <li><span>Demander à votre comptable quelle Plateforme Agréée il recommande.</span></li>
+        <li><span>Vérifier si votre logiciel actuel prévoit une connexion ou un partenariat.</span></li>
+        <li><span>Vérifier comment vous suivez devis, paiements et relances au quotidien.</span></li>
+        <li><span>Consulter la <a href="https://www.impots.gouv.fr/liste-des-plateformes-agreees-immatriculees-sous-reserve" target="_blank" rel="noopener">liste officielle sur impots.gouv.fr</a>.</span></li>
+      </ol>
+
+      <div class="hero-cta-row">
+        <a href="/test-facturation-electronique-reunion/" class="hero-cta-primary">Obtenir mon plan d’action
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+      <h2 id="erreurs">Erreurs fréquentes à éviter</h2>
+
+      <div class="error-cards">
+        <div class="error-card">
+          <h4>Penser que son PDF actuel suffira forcément</h4>
+          <p>Un PDF envoyé par mail aujourd’hui ne sera plus suffisant pour les transactions B2B après 2027. La facture devra transiter par une Plateforme Agréée.</p>
+          <span class="action">Action&#8239;: anticiper le passage à un format structuré.</span>
+        </div>
+        <div class="error-card">
+          <h4>Confondre logiciel de facturation et Plateforme Agréée</h4>
+          <p>Avoir un logiciel ne suffit pas&#8239;: il doit être <strong>raccordé</strong> à une Plateforme Agréée ou en cours de l’être. Beaucoup d’éditeurs préparent cette intégration.</p>
+          <span class="action">Action&#8239;: demander à votre éditeur où il en est.</span>
+        </div>
+        <div class="error-card">
+          <h4>Attendre 2027 pour se poser la question</h4>
+          <p>Le rush des derniers mois est prévisible. Les Plateformes Agréées seront probablement saturées en support, et votre comptable aussi.</p>
+          <span class="action">Action&#8239;: amorcer la réflexion avant l’été 2026.</span>
+        </div>
+        <div class="error-card">
+          <h4>Penser que le comptable gérera tout sans coordination</h4>
+          <p>Votre comptable peut vous accompagner, mais vous restez responsable de l’émission de vos factures et du suivi quotidien.</p>
+          <span class="action">Action&#8239;: travailler en coordination, pas en délégation.</span>
+        </div>
+        <div class="error-card">
+          <h4>Croire qu’une petite entreprise n’est pas concernée</h4>
+          <p>Toutes les entreprises assujetties à la TVA sont concernées par la réception en 2026. Et les TPE/PME/micro-entreprises par l’émission en 2027.</p>
+          <span class="action">Action&#8239;: vérifier votre périmètre avec votre comptable.</span>
+        </div>
+      </div>
+
+      <h2 id="tania">Où Tania se positionne dans ce circuit&#8239;?</h2>
+      <p>Tania ne remplace pas votre comptable et n’est pas une Plateforme Agréée. Tania vous aide à structurer vos devis, factures, relances et suivis depuis WhatsApp, avec l’objectif de préparer progressivement une organisation compatible avec la réforme.</p>
+      <p>L’enjeu pour une TPE n’est pas seulement de choisir une plateforme. C’est aussi d’avoir des <strong>informations propres</strong>, des <strong>factures bien suivies</strong> et une <strong>méthode claire</strong> au quotidien.</p>
+
+      <ul>
+        <li>Informations mieux rangées (clients, SIRET, IBAN).</li>
+        <li>Devis et factures plus faciles à suivre.</li>
+        <li>Paiements et relances plus lisibles.</li>
+        <li>Préparation plus simple avant d’échanger avec le comptable et la Plateforme Agréée.</li>
+      </ul>
+
+      <div class="hero-cta-row" style="margin-top:1.5rem;">
+        <a href="/" class="hero-cta-primary">Découvrir Tania
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="/test-facturation-electronique-reunion/" class="hero-cta-secondary">Faire le test gratuit</a>
+      </div>
+
+      <h2 id="ressources">Pour aller plus loin</h2>
+      <div class="res-grid">
+        <a href="/facturation-electronique-reunion" class="res-link">Guide facturation électronique Réunion</a>
+        <a href="/test-facturation-electronique-reunion/" class="res-link">Faire le test gratuit</a>
+        <a href="/ressources-facturation-electronique-reunion/" class="res-link">Hub ressources</a>
+        <a href="/checklist-facturation-electronique-reunion/" class="res-link">Checklist 10 points</a>
+        <a href="/glossaire-facturation-electronique-reunion/" class="res-link">Glossaire des termes</a>
+        <a href="/calendrier-facturation-electronique-reunion/" class="res-link">Calendrier 2026-2027</a>
+        <a href="/faq-facturation-electronique-reunion/" class="res-link">FAQ 25 questions</a>
+        <a href="/comparatif-methodes-facturation-electronique-reunion/" class="res-link">Comparatif des méthodes</a>
+        <a href="/excel-word-pdf-facturation-electronique-reunion/" class="res-link">Excel, Word ou PDF, est-ce suffisant&#8239;?</a>
+        <a href="/facturation-electronique-micro-entrepreneur-reunion/" class="res-link">Micro-entrepreneur à La Réunion</a>
+        <a href="/kit-facturation-electronique-reunion/" class="res-link">Kit gratuit complet</a>
+      </div>
+
+      <h2 id="faq">Foire aux questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Qu’est-ce qu’une Plateforme Agréée&#8239;?</summary>
+          <div class="faq-answer"><p>Une Plateforme Agréée est un opérateur immatriculé par l’État dans le cadre de la réforme de la facturation électronique. Elle intervient pour émettre, recevoir et transmettre les factures et les données concernées entre entreprises et avec l’administration fiscale.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Dois-je choisir une Plateforme Agréée si je suis une TPE&#8239;?</summary>
+          <div class="faq-answer"><p>Oui, si vous êtes dans le périmètre de la réforme. Toutes les entreprises concernées devront passer par une Plateforme Agréée, directement ou via une solution compatible raccordée à une Plateforme Agréée.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Mon comptable peut-il choisir la plateforme pour moi&#8239;?</summary>
+          <div class="faq-answer"><p>Votre comptable peut vous accompagner dans ce choix et le coordonner avec son propre fonctionnement. En revanche, vous restez responsable du choix final pour votre entreprise. C’est un travail conjoint.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Un logiciel de facturation est-il forcément une Plateforme Agréée&#8239;?</summary>
+          <div class="faq-answer"><p>Non. Un logiciel de facturation classique n’est pas automatiquement une Plateforme Agréée. Il doit être compatible avec une Plateforme Agréée (raccordement, formats attendus) pour s’intégrer dans le nouveau circuit. À vérifier avec votre éditeur.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Où trouver la liste officielle des Plateformes Agréées&#8239;?</summary>
+          <div class="faq-answer"><p>Sur le site <a href="https://www.impots.gouv.fr/liste-des-plateformes-agreees-immatriculees-sous-reserve" target="_blank" rel="noopener">impots.gouv.fr</a>, qui publie et met à jour régulièrement la liste officielle des plateformes immatriculées sous réserve. C’est la seule référence officielle.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Tania est-elle une Plateforme Agréée&#8239;?</summary>
+          <div class="faq-answer"><p>Non. Tania n’est pas une Plateforme Agréée. L’objectif est de prévoir une articulation avec une Plateforme Agréée partenaire lorsque le parcours sera stabilisé.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Que dois-je faire maintenant si je ne sais pas quelle plateforme choisir&#8239;?</summary>
+          <div class="faq-answer"><p>Commencez par identifier votre situation (régime TVA, type de clients, volume), demandez à votre comptable quelle plateforme il recommande, et consultez la liste officielle. Le simulateur Tania peut vous donner une première indication sur votre situation.</p></div>
+        </details>
+      </div>
+
+      <section class="article-cta">
+        <h2 style="margin-top:0">Vous voulez savoir quoi vérifier dans votre situation&#8239;?</h2>
+        <p>Répondez à 6 questions et obtenez une première indication sur votre niveau de préparation.</p>
+        <a href="/test-facturation-electronique-reunion/" class="cta-button">Obtenir mon plan d’action →</a>
+        <p class="cta-fine">Gratuit · 2 minutes · Indication pédagogique</p>
+      </section>
+
+      <p style="text-align:center;margin:2rem 0;font-size:0.95rem;"><a href="/ressources-facturation-electronique-reunion/">Voir toutes les ressources facturation électronique →</a></p>
+
+      <h2 id="sources">Sources officielles</h2>
+      <ul>
+        <li><a href="https://www.impots.gouv.fr/liste-des-plateformes-agreees-immatriculees-sous-reserve" target="_blank" rel="noopener">impots.gouv.fr — Liste officielle des Plateformes Agréées</a></li>
+        <li><a href="https://www.impots.gouv.fr/professionnel/je-passe-la-facturation-electronique" target="_blank" rel="noopener">impots.gouv.fr — Je passe à la facturation électronique</a></li>
+        <li><a href="https://entreprendre.service-public.fr/vosdroits/F23208" target="_blank" rel="noopener">service-public.fr — Facturation entre professionnels et calendrier</a></li>
+      </ul>
+
+      <div style="margin-top:2rem;background:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #94a3b8;border-radius:0 10px 10px 0;padding:0.9rem 1.1rem;font-size:0.85rem;color:#64748b;line-height:1.6;">
+        <strong>Cette ressource fournit une première indication pédagogique.</strong> Elle ne remplace pas l’avis de votre expert-comptable ni les informations officielles de l’administration fiscale. La liste des Plateformes Agréées est tenue par l’administration fiscale et peut évoluer&#8239;: consultez la source officielle.
+      </div>
+    </article>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-400 py-12 mt-16">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 text-sm flex flex-col md:flex-row items-center justify-between gap-4">
+      <p>© 2026 Tania · Tous droits réservés.</p>
+      <div class="flex items-center gap-6 flex-wrap justify-center">
+        <a href="/" class="hover:text-white transition-colors">Accueil</a>
+        <a href="/facturation-electronique-reunion" class="hover:text-white transition-colors">Guide</a>
+        <a href="/test-facturation-electronique-reunion/" class="hover:text-white transition-colors">Test</a>
+        <a href="/ressources-facturation-electronique-reunion/" class="hover:text-white transition-colors">Ressources</a>
+        <a href="/mentions-legales.html" class="hover:text-white transition-colors">Mentions légales</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
