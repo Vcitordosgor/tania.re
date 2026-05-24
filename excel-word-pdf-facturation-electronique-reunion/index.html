@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Excel, Word, PDF et facturation électronique à La Réunion</title>
+  <meta name="description" content="Vous faites vos factures sur Excel, Word ou PDF ? Découvrez ce qui change avec la facturation électronique 2026-2027 à La Réunion." />
+  <link rel="canonical" href="https://tania.re/excel-word-pdf-facturation-electronique-reunion/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Excel, Word, PDF et facturation électronique à La Réunion" />
+  <meta property="og:description" content="Comprenez pourquoi les factures simples sur Excel, Word ou PDF peuvent devenir insuffisantes avec la réforme 2026-2027." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://tania.re/excel-word-pdf-facturation-electronique-reunion/" />
+  <meta property="og:image" content="https://tania.re/og-image.png" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Tania" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Excel, Word, PDF et facturation électronique à La Réunion" />
+  <meta name="twitter:description" content="Comprenez pourquoi les factures simples sur Excel, Word ou PDF peuvent devenir insuffisantes avec la réforme 2026-2027." />
+  <meta name="twitter:image" content="https://tania.re/og-image.png" />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/css/article.css" />
+
+  <style>
+    body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    .tania-logo { display: inline-flex; align-items: center; line-height: 1; color: #10b981; text-decoration: none; }
+    .tania-T { height: 1em; width: 0.69em; display: block; }
+    .tania-ania { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1em; letter-spacing: -0.025em; line-height: 1; color: inherit; }
+    .tania-logo.md { font-size: 32px; }
+    html { scroll-behavior: smooth; }
+    .hero-cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.5rem 0 2rem; }
+    .hero-cta-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: #10b981; color: #fff; font-weight: 600; padding: 0.85rem 1.4rem; border-radius: 12px; text-decoration: none; box-shadow: 0 8px 22px -8px rgba(16,185,129,0.45); transition: all 0.18s ease; }
+    .hero-cta-primary:hover { background: #059669; transform: translateY(-1px); color: #fff; }
+    .hero-cta-secondary { display: inline-flex; align-items: center; gap: 0.5rem; color: #047857; font-weight: 600; padding: 0.85rem 1rem; text-decoration: underline; text-underline-offset: 4px; }
+    .hero-cta-secondary:hover { color: #065f46; }
+    .timeline-list { list-style: none; padding: 0; margin: 1.25rem 0 1.5rem; position: relative; }
+    .timeline-list::before { content: ''; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 1px; background: #e2e8f0; }
+    .timeline-list li { position: relative; padding-left: 1.75rem; margin-bottom: 1rem; }
+    .timeline-list li::before { content: ''; position: absolute; left: 0; top: 6px; width: 15px; height: 15px; border-radius: 999px; background: #fff; border: 2px solid #10b981; }
+    .timeline-list li.current::before { background: #10b981; box-shadow: 0 0 0 3px #d1fae5; }
+    .timeline-list .tl-date { font-weight: 700; color: #0f172a; font-size: 1rem; }
+    .timeline-list li.current .tl-date { color: #047857; }
+    .timeline-list .tl-text { display: block; font-size: 0.95rem; color: #475569; margin-top: 0.15rem; line-height: 1.5; }
+    .risk-cards { display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin: 1.5rem 0; }
+    @media (min-width: 768px) { .risk-cards { grid-template-columns: repeat(2, 1fr); } }
+    .risk-card { background: #fff; border: 1px solid #e2e8f0; border-left: 3px solid #f59e0b; border-radius: 0 12px 12px 0; padding: 1rem 1.2rem; }
+    .risk-card h4 { font-size: 0.98rem; font-weight: 700; color: #0f172a; margin: 0 0 0.35rem; line-height: 1.35; }
+    .risk-card p { font-size: 0.9rem; color: #475569; line-height: 1.55; margin: 0; }
+    .actions-numbered { list-style: none; padding: 0; margin: 1.5rem 0; counter-reset: act; display: flex; flex-direction: column; gap: 0.55rem; }
+    .actions-numbered li { counter-increment: act; display: flex; align-items: flex-start; gap: 0.85rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 0.85rem 1rem; }
+    .actions-numbered li::before { content: counter(act); flex-shrink: 0; width: 26px; height: 26px; border-radius: 999px; background: #10b981; color: #fff; font-weight: 700; font-size: 0.85rem; display: inline-flex; align-items: center; justify-content: center; margin-top: 1px; }
+    .actions-numbered li span { font-size: 0.95rem; color: #0f172a; line-height: 1.5; font-weight: 500; }
+    .case-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 1.25rem 1.4rem; margin-bottom: 1rem; }
+    .case-card h3 { font-size: 1.1rem; font-weight: 700; color: #0f172a; margin: 0 0 0.6rem; }
+    .case-card p { font-size: 0.94rem; color: #475569; line-height: 1.6; margin: 0 0 0.5rem; }
+    .case-card p:last-child { margin-bottom: 0; }
+  </style>
+
+  <!-- Schema 1 : Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Excel, Word ou PDF : est-ce suffisant avec la facturation électronique à La Réunion ?",
+    "description": "Pourquoi les factures faites sur Excel, Word, Canva ou un simple PDF peuvent devenir insuffisantes avec la réforme 2026-2027, et comment préparer la transition à La Réunion.",
+    "image": "https://tania.re/og-image.png",
+    "datePublished": "2026-05-24",
+    "dateModified": "2026-05-24",
+    "inLanguage": "fr-FR",
+    "author": { "@type": "Organization", "name": "Tania", "url": "https://tania.re" },
+    "publisher": {
+      "@type": "Organization", "name": "Tania", "url": "https://tania.re",
+      "logo": { "@type": "ImageObject", "url": "https://tania.re/favicon.svg" }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://tania.re/excel-word-pdf-facturation-electronique-reunion/"
+    }
+  }
+  </script>
+
+  <!-- Schema 2 : FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Excel sera-t-il interdit avec la facturation électronique ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Non, Excel n'est pas interdit en tant que tel. Le sujet est ailleurs : à partir des échéances 2026-2027, une facture devra circuler dans un circuit officiel via une Plateforme Agréée et contenir des données structurées exploitables. Excel seul, en l'état, n'est pas conçu pour cela."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Un PDF envoyé par mail est-il une facture électronique ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pas au sens de la réforme. Un PDF envoyé par email reste un document numérique, pas une facture électronique structurée. La facture électronique implique un format de données lisible par machine et une transmission via une Plateforme Agréée."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Word ou Canva suffisent-ils pour faire mes factures ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Aujourd'hui, ces outils permettent de produire une facture visuellement correcte. Mais ils ne génèrent pas les données structurées attendues par la réforme. Il faudra donc préparer une méthode plus complète avant les échéances."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Pourquoi parle-t-on de données structurées ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Parce que la réforme ne porte pas seulement sur le document que voit votre client : elle porte aussi sur les données transmises (montant, TVA, SIRET, dates…) que les Plateformes Agréées et l'administration peuvent traiter automatiquement. C'est ce qu'on appelle un format structuré, comme Factur-X."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Je facture surtout des particuliers, suis-je concerné ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Vous relevez plutôt de l'e-reporting que de la facturation électronique B2B au sens strict. Mais vous devez aussi anticiper la réception électronique de vos factures fournisseurs à partir de 2026, et clarifier vos flux si vous avez aussi des clients professionnels."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Dois-je choisir une Plateforme Agréée si j'utilise Excel ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, si vous êtes dans le périmètre de la réforme. Que vous utilisiez Excel, Word, PDF ou un logiciel, vos factures devront passer par une Plateforme Agréée (ou une solution compatible raccordée à une Plateforme Agréée). Le sujet n'est pas l'outil de saisie mais le circuit officiel."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Tania remplace-t-elle mon comptable ou une Plateforme Agréée ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Non. Tania n'est pas une Plateforme Agréée et ne remplace pas votre comptable. Tania aide à structurer progressivement vos devis, factures, relances et suivis depuis WhatsApp, pour préparer une organisation compatible avec la réforme."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Schema 3 : BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://tania.re/" },
+      { "@type": "ListItem", "position": 2, "name": "Excel, Word, PDF et facturation électronique à La Réunion", "item": "https://tania.re/excel-word-pdf-facturation-electronique-reunion/" }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-white text-slate-900">
+
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-100">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="/" aria-label="Tania — Accueil" class="tania-logo md">
+        <svg class="tania-T" viewBox="0 0 80 80" preserveAspectRatio="xMinYMid meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="0" y="14" width="80" height="18" fill="#10b981"/>
+          <rect x="31" y="42" width="18" height="38" fill="#10b981"/>
+        </svg>
+        <span class="tania-ania">ania</span>
+      </a>
+      <a href="/#cta-final" class="inline-flex items-center bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-semibold px-4 py-2 rounded-md shadow-sm transition-all">Demander une démo</a>
+    </div>
+  </header>
+
+  <main class="article-container py-12 lg:py-16">
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <a href="/">Accueil</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>Excel, Word, PDF et facturation électronique</span>
+    </nav>
+
+    <article class="article">
+      <h1>Excel, Word ou PDF&#8239;: est-ce suffisant avec la facturation électronique à La Réunion&#8239;?</h1>
+      <p class="article-meta">Mis à jour le 24 mai 2026 · Lecture : ~10 min</p>
+
+      <p class="lede">Beaucoup d’indépendants, artisans et TPE à La Réunion créent encore leurs factures avec Excel, Word, Canva ou un simple PDF. Cela peut fonctionner aujourd’hui, mais la facturation électronique change progressivement les règles du jeu. L’objectif de cette page n’est pas de vous faire paniquer&#8239;: c’est de vous aider à comprendre ce qui change et quoi préparer, sans tout bouleverser d’un coup.</p>
+
+      <div class="hero-cta-row">
+        <a href="/test-facturation-electronique-reunion/" class="hero-cta-primary">
+          Obtenir mon plan d’action
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="/facturation-electronique-reunion" class="hero-cta-secondary">Lire le guide complet</a>
+      </div>
+
+      <!-- SECTION 1 — Réponse rapide -->
+      <h2 id="reponse-rapide">La réponse courte&#8239;: Excel, Word ou PDF peuvent devenir insuffisants seuls</h2>
+      <p>Aujourd’hui, beaucoup de TPE et d’indépendants utilisent Excel, Word, Canva ou un PDF pour faire leurs factures. Le problème n’est pas le visuel de votre facture&#8239;: c’est ce qu’il y a derrière. À partir des échéances 2026-2027, vos factures B2B devront circuler dans un nouveau circuit officiel, via une <strong>Plateforme Agréée</strong>, et contenir des <strong>données structurées</strong> que les machines peuvent traiter.</p>
+      <p>Excel, Word ou un simple PDF ne sont pas conçus pour cela. Ils restent utiles pour la mise en forme, mais ils ne suffiront probablement pas seuls pour respecter le nouveau circuit.</p>
+
+      <aside class="callout">
+        <p class="callout-title">À retenir</p>
+        <ul>
+          <li>Excel, Word et PDF ne sont pas «&nbsp;interdits&nbsp;» en tant que tels.</li>
+          <li>Mais ils peuvent ne pas suffire seuls pour respecter la réforme.</li>
+          <li>L’enjeu est la <strong>structuration des données</strong> et le passage par une Plateforme Agréée.</li>
+          <li>Il faut <strong>vérifier votre méthode</strong> avant les échéances 2026-2027.</li>
+        </ul>
+      </aside>
+
+      <!-- SECTION 2 — PDF ne suffit pas -->
+      <h2 id="donnees-structurees">Le sujet n’est pas seulement le PDF&#8239;: ce sont les données derrière</h2>
+      <p>Une facture électronique au sens de la réforme n’est pas simplement un PDF envoyé par mail. C’est un document qui combine deux choses&#8239;:</p>
+      <ul>
+        <li>une partie visible <strong>lisible par un humain</strong> (le document que voit votre client)&#8239;;</li>
+        <li>une partie <strong>structurée et lisible par un ordinateur</strong> (montant, dates, TVA, SIRET, mentions obligatoires), exploitable par les Plateformes Agréées et l’administration.</li>
+      </ul>
+      <p>Le format <strong>Factur-X</strong> illustre bien cette logique&#8239;: un PDF lisible avec un fichier XML structuré intégré. C’est le format le plus répandu en France pour les TPE et PME.</p>
+      <p>Un PDF Word/Canva exporté à la main contient bien des informations visuelles, mais pas ces données structurées. Pour aller plus loin, voyez le <a href="/facturation-electronique-reunion#facturx">format Factur-X expliqué dans notre guide</a>.</p>
+
+      <!-- SECTION 3 — Calendrier -->
+      <h2 id="calendrier">Ce qui change avec la réforme 2026-2027</h2>
+      <p>Les échéances s’appliquent à La Réunion à l’identique de la métropole.</p>
+
+      <ol class="timeline-list">
+        <li>
+          <span class="tl-date">1er septembre 2026</span>
+          <span class="tl-text">Toutes les entreprises assujetties à la TVA doivent pouvoir <strong>recevoir</strong> des factures électroniques via une Plateforme Agréée.</span>
+        </li>
+        <li>
+          <span class="tl-date">1er septembre 2027</span>
+          <span class="tl-text">Les TPE, PME et micro-entreprises concernées devront <strong>émettre</strong> leurs factures B2B électroniquement.</span>
+        </li>
+        <li class="current">
+          <span class="tl-date">Dès maintenant</span>
+          <span class="tl-text">Vérifier votre outil, votre régime TVA, vos clients et votre méthode. Anticiper, c’est éviter la précipitation au dernier moment.</span>
+        </li>
+      </ol>
+
+      <!-- SECTION 4 — Cas Excel/Word fragiles -->
+      <h2 id="risques">Quand Excel, Word ou PDF deviennent une méthode fragile</h2>
+      <p>Au-delà de la conformité future, ces outils créent souvent des problèmes opérationnels dès aujourd’hui. Cinq signaux à surveiller&#8239;:</p>
+
+      <div class="risk-cards">
+        <div class="risk-card">
+          <h4>Vous oubliez des factures ou des relances</h4>
+          <p>Les fichiers se perdent, les rappels manuels finissent par sauter. Résultat&#8239;: trésorerie qui souffre et stress du suivi.</p>
+        </div>
+        <div class="risk-card">
+          <h4>Vos numéros de facture ne sont pas toujours propres</h4>
+          <p>La numérotation continue est obligatoire. Avec un modèle Word ou Excel copié-collé, il est facile de sauter un numéro ou d’en doubler un.</p>
+        </div>
+        <div class="risk-card">
+          <h4>Vos informations clients sont dispersées</h4>
+          <p>Adresses, SIRET, IBAN dans des fichiers différents, parfois sur WhatsApp. À l’heure de la réforme, ces données devront être propres et structurées.</p>
+        </div>
+        <div class="risk-card">
+          <h4>Vous facturez à la fois des particuliers et des professionnels</h4>
+          <p>Les obligations diffèrent (facturation B2B électronique vs e-reporting B2C). Sans outil pour distinguer les flux, le risque de confusion grimpe.</p>
+        </div>
+        <div class="risk-card">
+          <h4>Vous devez retrouver rapidement une facture ou un paiement</h4>
+          <p>Excel et Word ne sont pas des outils de recherche. Quand un client demande une facture envoyée il y a 6 mois, retrouver le bon fichier prend du temps.</p>
+        </div>
+      </div>
+
+      <p>Tania ne prétend pas résoudre tous ces points magiquement. Mais l’outil est conçu pour réduire ces frictions au quotidien, depuis WhatsApp, sans imposer de logiciel compliqué.</p>
+
+      <!-- SECTION 5 — Clients B2B/B2C -->
+      <h2 id="clients">Clients particuliers ou professionnels&#8239;: vos factures ne suivent pas toujours la même logique</h2>
+      <p>La réforme distingue deux périmètres&#8239;:</p>
+      <ul>
+        <li><strong>B2B</strong> (vos clients sont des entreprises françaises)&#8239;: facturation électronique obligatoire via une Plateforme Agréée à partir de 2027 pour les TPE/PME.</li>
+        <li><strong>B2C</strong> (vos clients sont des particuliers)&#8239;: pas de facturation électronique au sens strict, mais un <strong>e-reporting</strong> à anticiper selon les cas.</li>
+      </ul>
+      <p>Si vous avez les deux types de clients, vous devez <strong>clarifier vos flux</strong>. C’est l’une des actions les plus utiles à faire dès maintenant. Pour aller plus loin sur la situation des micro-entrepreneurs, consultez notre page <a href="/facturation-electronique-micro-entrepreneur-reunion/">facturation électronique micro-entrepreneur à La Réunion</a>.</p>
+
+      <div style="text-align:center;margin:1.75rem 0 2.25rem;padding:1rem 1.25rem;background:#ecfdf5;border:1px solid #a7f3d0;border-radius:12px;">
+        <p style="margin:0;font-size:1rem;">Vous voulez savoir où vous en êtes&#8239;? <a href="/test-facturation-electronique-reunion/" style="font-weight:600;">Faire le test gratuit en 2 minutes →</a></p>
+      </div>
+
+      <!-- SECTION 6 — 5 actions -->
+      <h2 id="actions">Les 5 actions à faire maintenant</h2>
+      <p>Si vous utilisez encore Excel, Word, Canva ou des PDF, voici par où commencer&#8239;:</p>
+
+      <ol class="actions-numbered">
+        <li><span>Faire la liste de vos modèles de factures actuels (Word, Excel, Canva, PDF…).</span></li>
+        <li><span>Vérifier que vos numéros de facture sont propres et continus, sans trous.</span></li>
+        <li><span>Distinguer vos clients professionnels et particuliers dans votre suivi.</span></li>
+        <li><span>Demander à votre comptable quelle Plateforme Agréée il recommande.</span></li>
+        <li><span>Choisir une méthode capable de structurer progressivement vos devis, factures et relances.</span></li>
+      </ol>
+
+      <!-- SECTION 7 — Cas concrets -->
+      <h2 id="cas-concrets">Exemples concrets à La Réunion</h2>
+
+      <div class="case-card">
+        <h3>Un plombier qui fait ses factures sur Word</h3>
+        <p><strong>Méthode actuelle&#8239;:</strong> Stéphane fait ses devis et factures sur Word depuis 5 ans, à partir d’un modèle qu’il copie-colle. Il facture syndics et particuliers, 25 interventions par mois.</p>
+        <p><strong>Risque&#8239;:</strong> ses factures aux syndics passent en B2B et devront probablement transiter par une Plateforme Agréée en 2027. Word seul ne produira pas les données structurées attendues.</p>
+        <p><strong>À préparer&#8239;:</strong> identifier une méthode capable de générer du Factur-X et choisir une Plateforme Agréée avec son comptable.</p>
+      </div>
+
+      <div class="case-card">
+        <h3>Une graphiste qui envoie des PDF à ses clients professionnels</h3>
+        <p><strong>Méthode actuelle&#8239;:</strong> Aurélie utilise un template Canva pour ses factures, qu’elle exporte en PDF et envoie par email. 12 clients pros par mois, en franchise de TVA.</p>
+        <p><strong>Risque&#8239;:</strong> ses PDF Canva ne contiennent pas de données structurées. À partir de 2027, ses clients pros attendront un envoi via Plateforme Agréée avec un format structuré.</p>
+        <p><strong>À préparer&#8239;:</strong> passer progressivement à un outil qui prépare du Factur-X et choisir une Plateforme Agréée.</p>
+      </div>
+
+      <div class="case-card">
+        <h3>Un institut de beauté qui facture surtout des particuliers</h3>
+        <p><strong>Méthode actuelle&#8239;:</strong> Marie tient son salon avec un logiciel de caisse et fait quelques factures Excel pour des entreprises partenaires (mariages, événements).</p>
+        <p><strong>Risque&#8239;:</strong> ses ventes B2C relèvent de l’e-reporting (logiciel de caisse à vérifier). Et ses quelques factures B2B en Excel devront passer par une Plateforme Agréée en 2027.</p>
+        <p><strong>À préparer&#8239;:</strong> vérifier que son logiciel de caisse est compatible e-reporting, et adopter un outil simple pour ses factures B2B occasionnelles.</p>
+      </div>
+
+      <p><em>Ces exemples sont des illustrations pédagogiques. Votre situation réelle peut différer selon votre activité et vos clients.</em></p>
+
+      <!-- SECTION 8 — Tania -->
+      <h2 id="tania">Comment Tania peut remplacer le bricolage sans vous imposer un logiciel compliqué</h2>
+      <p>Tania ne remplace pas votre comptable et n’est pas une Plateforme Agréée. L’objectif est plus simple&#8239;: vous aider à garder une méthode claire depuis WhatsApp pour créer, suivre et retrouver vos devis, factures et relances, tout en préparant progressivement une organisation compatible avec la réforme.</p>
+
+      <ul>
+        <li><strong>Écrire une prestation depuis WhatsApp</strong> — un message structuré devient un devis ou une facture en quelques secondes.</li>
+        <li><strong>Retrouver les informations clients</strong> — adresses, SIRET, IBAN rangés, pas dispersés.</li>
+        <li><strong>Suivre les devis, factures, paiements et relances</strong> — un tableau de bord léger et lisible.</li>
+        <li><strong>Éviter les fichiers dispersés</strong> — tout est centralisé, pas perdu entre Word et le dossier Téléchargements.</li>
+        <li><strong>Préparer des documents mieux structurés</strong> — format Factur-X préparé, mentions obligatoires gérées.</li>
+      </ul>
+
+      <p>Tania est conçue à La Réunion, pour les artisans, commerçants, indépendants et micro-entrepreneurs locaux.</p>
+
+      <div class="hero-cta-row" style="margin-top:1.5rem;">
+        <a href="/test-facturation-electronique-reunion/" class="hero-cta-primary">
+          Obtenir mon plan d’action
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="/" class="hero-cta-secondary">Découvrir Tania</a>
+      </div>
+
+      <!-- SECTION 9 — FAQ -->
+      <h2 id="faq">Foire aux questions</h2>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Excel sera-t-il interdit avec la facturation électronique&#8239;?</summary>
+          <div class="faq-answer"><p>Non, Excel n’est pas interdit en tant que tel. Le sujet est ailleurs&#8239;: à partir des échéances 2026-2027, une facture devra circuler dans un circuit officiel via une Plateforme Agréée et contenir des données structurées exploitables. Excel seul, en l’état, n’est pas conçu pour cela.</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Un PDF envoyé par mail est-il une facture électronique&#8239;?</summary>
+          <div class="faq-answer"><p>Pas au sens de la réforme. Un PDF envoyé par email reste un document numérique, pas une facture électronique structurée. La facture électronique implique un format de données lisible par machine et une transmission via une Plateforme Agréée.</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Word ou Canva suffisent-ils pour faire mes factures&#8239;?</summary>
+          <div class="faq-answer"><p>Aujourd’hui, ces outils permettent de produire une facture visuellement correcte. Mais ils ne génèrent pas les données structurées attendues par la réforme. Il faudra donc préparer une méthode plus complète avant les échéances.</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Pourquoi parle-t-on de données structurées&#8239;?</summary>
+          <div class="faq-answer"><p>Parce que la réforme ne porte pas seulement sur le document que voit votre client&#8239;: elle porte aussi sur les données transmises (montant, TVA, SIRET, dates…) que les Plateformes Agréées et l’administration peuvent traiter automatiquement. C’est ce qu’on appelle un format structuré, comme Factur-X.</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Je facture surtout des particuliers, suis-je concerné&#8239;?</summary>
+          <div class="faq-answer"><p>Vous relevez plutôt de l’e-reporting que de la facturation électronique B2B au sens strict. Mais vous devez aussi anticiper la réception électronique de vos factures fournisseurs à partir de 2026, et clarifier vos flux si vous avez aussi des clients professionnels.</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Dois-je choisir une Plateforme Agréée si j’utilise Excel&#8239;?</summary>
+          <div class="faq-answer"><p>Oui, si vous êtes dans le périmètre de la réforme. Que vous utilisiez Excel, Word, PDF ou un logiciel, vos factures devront passer par une Plateforme Agréée (ou une solution compatible raccordée à une Plateforme Agréée). Le sujet n’est pas l’outil de saisie mais le circuit officiel.</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Tania remplace-t-elle mon comptable ou une Plateforme Agréée&#8239;?</summary>
+          <div class="faq-answer"><p>Non. Tania n’est pas une Plateforme Agréée et ne remplace pas votre comptable. Tania aide à structurer progressivement vos devis, factures, relances et suivis depuis WhatsApp, pour préparer une organisation compatible avec la réforme.</p></div>
+        </details>
+      </div>
+
+      <!-- Sources -->
+      <h2 id="sources">Sources officielles</h2>
+      <p>Cette page s’appuie sur les ressources officielles suivantes&#8239;:</p>
+      <ul>
+        <li><a href="https://www.impots.gouv.fr/professionnel/je-passe-la-facturation-electronique" target="_blank" rel="noopener">impots.gouv.fr — Je passe à la facturation électronique</a></li>
+        <li><a href="https://www.impots.gouv.fr/professionnel/questions/quelles-sont-les-mentions-obligatoires-dune-facture" target="_blank" rel="noopener">impots.gouv.fr — Mentions obligatoires d’une facture</a></li>
+        <li><a href="https://entreprendre.service-public.fr/vosdroits/F23208" target="_blank" rel="noopener">service-public.fr — Facturation entre professionnels et calendrier</a></li>
+        <li><a href="https://entreprendre.service-public.fr/vosdroits/F31808" target="_blank" rel="noopener">service-public.fr — Mentions obligatoires sur une facture</a></li>
+        <li><a href="https://www.impots.gouv.fr/liste-des-plateformes-agreees-immatriculees-sous-reserve" target="_blank" rel="noopener">impots.gouv.fr — Liste officielle des Plateformes Agréées</a></li>
+      </ul>
+
+      <!-- CTA final -->
+      <section class="article-cta">
+        <h2 style="margin-top:0">Vous voulez savoir si votre méthode actuelle suffit&#8239;?</h2>
+        <p>Répondez à 6 questions et obtenez une première indication sur votre niveau de préparation, vos points à vérifier et vos 3 prochaines actions.</p>
+        <a href="/test-facturation-electronique-reunion/" class="cta-button">Obtenir mon plan d’action →</a>
+        <p class="cta-fine">Gratuit · 2 minutes · Indication pédagogique</p>
+      </section>
+
+      <div style="margin-top:2rem;background:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #94a3b8;border-radius:0 10px 10px 0;padding:0.9rem 1.1rem;font-size:0.85rem;color:#64748b;line-height:1.6;">
+        <strong>Cette page fournit une première indication pédagogique.</strong> Elle ne remplace pas l’avis de votre expert-comptable ni les informations officielles de l’administration fiscale.
+      </div>
+
+    </article>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-400 py-12 mt-16">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 text-sm flex flex-col md:flex-row items-center justify-between gap-4">
+      <p>© 2026 Tania · Tous droits réservés.</p>
+      <div class="flex items-center gap-6 flex-wrap justify-center">
+        <a href="/" class="hover:text-white transition-colors">Accueil</a>
+        <a href="/facturation-electronique-reunion" class="hover:text-white transition-colors">Guide</a>
+        <a href="/test-facturation-electronique-reunion/" class="hover:text-white transition-colors">Test</a>
+        <a href="/mentions-legales.html" class="hover:text-white transition-colors">Mentions légales</a>
+        <a href="/cgu.html" class="hover:text-white transition-colors">CGU</a>
+        <a href="/politique-confidentialite.html" class="hover:text-white transition-colors">Confidentialité</a>
+        <a href="/rgpd.html" class="hover:text-white transition-colors">RGPD</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
