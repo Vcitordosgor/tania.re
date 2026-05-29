@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tania — Facturation par WhatsApp pour les TPE et PME de La Réunion</title>
-  <meta name="description" content="Conforme à la réforme du 1er septembre 2026. Conçu à La Réunion pour les TPE et PME. Vos factures par WhatsApp, simplement." />
+  <meta name="description" content="Conçu à La Réunion pour les TPE et PME : préparez vos factures, suivez vos paiements et anticipez la réforme 2026, simplement par WhatsApp." />
   <meta name="theme-color" content="#10b981" />
 
   <meta property="og:title" content="Tania — Facturation par WhatsApp" />
@@ -402,14 +402,20 @@
 
           <div class="reveal mt-10 flex flex-col sm:flex-row gap-4" data-delay="2">
             <a href="#cta-final" class="inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-white px-7 py-4 rounded-xl font-semibold text-base shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all" data-track="hero-cta">
-              Demander une démo →
+              Réserver ma démo →
             </a>
             <a href="#comment-ca-marche" class="inline-flex items-center justify-center bg-white border-2 border-slate-900 hover:bg-slate-50 text-slate-900 px-7 py-4 rounded-xl font-semibold text-base transition-all hover:-translate-y-0.5" data-track="hero-secondary">
-              Découvrir Tania
+              Voir comment ça marche
             </a>
           </div>
 
-          <ul class="reveal mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-500" data-delay="3">
+          <!-- Phrase de contrôle / validation humaine -->
+          <p class="reveal mt-6 inline-flex items-center gap-2 text-sm font-semibold text-slate-700" data-delay="3">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            Tania prépare. Vous validez. Rien ne part sans vous.
+          </p>
+
+          <ul class="reveal mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-500" data-delay="3">
             <li class="inline-flex items-center gap-1.5"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Sans engagement</li>
             <li class="inline-flex items-center gap-1.5"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Démo en 15 minutes</li>
             <li class="inline-flex items-center gap-1.5"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Réponse sous 24 h</li>
@@ -501,7 +507,7 @@
                 <!-- Sidebar -->
                 <aside class="hero-mb-sidebar">
                   <div class="px-2 mb-4">
-                    <span class="tania-logo" style="font-size:18px;">
+                    <span class="tania-logo" style="font-size:18px;" role="img" aria-label="Tania">
                       <svg class="tania-T" viewBox="0 0 80 80" preserveAspectRatio="xMinYMid meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <rect class="t-bar" x="0" y="14" width="80" height="18" fill="#10b981"/>
                         <rect class="t-stem" x="31" y="42" width="18" height="38" fill="#10b981"/>
@@ -541,20 +547,20 @@
                     </div>
                     <div class="grid grid-cols-4 gap-3 px-6 mt-4">
                       <div class="bg-emerald-50 border border-emerald-100 rounded-lg p-3">
-                        <p class="text-[10px] text-slate-500">💰 CA HT</p>
-                        <p class="text-lg font-bold text-slate-900 mt-1">680,00&nbsp;€</p>
+                        <p class="text-[10px] text-slate-500">CA</p>
+                        <p class="text-lg font-bold text-slate-900 mt-1">3&nbsp;920,00&nbsp;€</p>
                       </div>
                       <div class="bg-white border border-slate-200 rounded-lg p-3">
-                        <p class="text-[10px] text-slate-500">💵 CA TTC</p>
-                        <p class="text-lg font-bold text-slate-900 mt-1">680,00&nbsp;€</p>
+                        <p class="text-[10px] text-slate-500">Encaissé</p>
+                        <p class="text-lg font-bold text-slate-900 mt-1">3&nbsp;500,00&nbsp;€</p>
                       </div>
                       <div class="bg-white border border-slate-200 rounded-lg p-3">
-                        <p class="text-[10px] text-slate-500">💚 Encaissé</p>
-                        <p class="text-lg font-bold text-slate-900 mt-1">680,00&nbsp;€</p>
+                        <p class="text-[10px] text-slate-500">À encaisser</p>
+                        <p class="text-lg font-bold text-slate-900 mt-1">420,00&nbsp;€</p>
                       </div>
                       <div class="bg-white border border-slate-200 rounded-lg p-3">
-                        <p class="text-[10px] text-slate-500">⏳ À encaisser</p>
-                        <p class="text-lg font-bold text-slate-900 mt-1">0,00&nbsp;€</p>
+                        <p class="text-[10px] text-slate-500">À relancer</p>
+                        <p class="text-lg font-bold text-amber-600 mt-1">1</p>
                       </div>
                     </div>
                     <div class="px-6 mt-5">
@@ -562,14 +568,14 @@
                       <p class="text-[10px] text-slate-500">Recommandations basées sur votre activité.</p>
                       <div class="grid grid-cols-2 gap-3 mt-3">
                         <div class="bg-white border border-slate-200 rounded-lg p-3">
-                          <div class="w-6 h-6 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600 text-xs">✓</div>
-                          <p class="text-xs font-semibold text-slate-900 mt-2">Bravo pour vos premières factures&nbsp;!</p>
-                          <p class="text-[10px] text-slate-500 mt-1">Vous êtes officiellement opérationnel sur Tania.</p>
+                          <div class="w-6 h-6 rounded-full bg-amber-50 flex items-center justify-center text-amber-600 text-xs">!</div>
+                          <p class="text-xs font-semibold text-slate-900 mt-2">1 facture à relancer</p>
+                          <p class="text-[10px] text-slate-500 mt-1">Marie Hoareau · 240&nbsp;€ · émise il y a 18 jours.</p>
                         </div>
                         <div class="bg-white border border-slate-200 rounded-lg p-3">
                           <div class="w-6 h-6 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600 text-xs">✓</div>
-                          <p class="text-xs font-semibold text-slate-900 mt-2">Tout est encaissé&nbsp;💚</p>
-                          <p class="text-[10px] text-slate-500 mt-1">Aucune facture en attente de paiement.</p>
+                          <p class="text-xs font-semibold text-slate-900 mt-2">Export comptable prêt</p>
+                          <p class="text-[10px] text-slate-500 mt-1">Vos pièces de mai sont prêtes à transmettre.</p>
                         </div>
                       </div>
                     </div>
@@ -598,10 +604,10 @@
                         <span class="text-slate-700">20/05/2026</span><span class="text-slate-900 font-medium">F-2026-0003</span><span class="text-slate-700">Géraldine Payet</span><span class="text-right text-slate-900 font-semibold">450,00&nbsp;€</span><span><span class="bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded text-[10px] font-medium">Payée</span></span><span class="text-emerald-600">✓</span><span class="flex items-center gap-1.5"><span class="text-slate-300">—</span><svg class="hero-eye-target" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></span>
                       </div>
                       <div class="grid grid-cols-7 gap-2 px-3 py-3 text-xs items-center border-b border-slate-100">
-                        <span class="text-slate-700">20/05/2026</span><span class="text-slate-900 font-medium">F-2026-0002</span><span class="text-slate-700">Marie Hoareau</span><span class="text-right text-slate-900 font-semibold">80,00&nbsp;€</span><span><span class="bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded text-[10px] font-medium">Payée</span></span><span class="text-emerald-600">✓</span><span class="text-slate-300">—</span>
+                        <span class="text-slate-700">02/05/2026</span><span class="text-slate-900 font-medium">F-2026-0002</span><span class="text-slate-700">Marie Hoareau</span><span class="text-right text-slate-900 font-semibold">240,00&nbsp;€</span><span><span class="bg-amber-50 text-amber-700 px-2 py-0.5 rounded text-[10px] font-medium">À relancer</span></span><span class="text-emerald-600">✓</span><span class="text-slate-300">—</span>
                       </div>
                       <div class="grid grid-cols-7 gap-2 px-3 py-3 text-xs items-center">
-                        <span class="text-slate-700">20/05/2026</span><span class="text-slate-900 font-medium">F-2026-0001</span><span class="text-slate-700">Marie Hoareau</span><span class="text-right text-slate-900 font-semibold">150,00&nbsp;€</span><span><span class="bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded text-[10px] font-medium">Payée</span></span><span class="text-emerald-600">✓</span><span class="text-slate-300">—</span>
+                        <span class="text-slate-700">07/05/2026</span><span class="text-slate-900 font-medium">F-2026-0001</span><span class="text-slate-700">Lambert</span><span class="text-right text-slate-900 font-semibold">180,00&nbsp;€</span><span><span class="bg-slate-100 text-slate-600 px-2 py-0.5 rounded text-[10px] font-medium">En attente</span></span><span class="text-emerald-600">✓</span><span class="text-slate-300">—</span>
                       </div>
                     </div>
                   </div>
@@ -650,7 +656,7 @@
                     <div class="mt-auto">
                       <p class="text-[8px] font-bold text-slate-700">Conditions de paiement</p>
                       <p class="text-[7px] text-slate-600 leading-tight">Délai de paiement&nbsp;: 30 jours. Aucun escompte pour paiement anticipé. Pénalités de retard&nbsp;: taux d&rsquo;intérêt légal majoré de 10 points. Indemnité forfaitaire pour frais de recouvrement&nbsp;: 40&nbsp;€.</p>
-                      <p class="text-[8px] text-slate-400 mt-3 flex items-center gap-1">Facture générée avec <span class="tania-logo" style="font-size:10px;"><svg class="tania-T" viewBox="0 0 80 80" preserveAspectRatio="xMinYMid meet" aria-hidden="true"><rect x="0" y="14" width="80" height="18" fill="#10b981"/><rect x="31" y="42" width="18" height="38" fill="#10b981"/></svg><span class="tania-ania">ania</span></span> · tania.re</p>
+                      <p class="text-[8px] text-slate-400 mt-3 flex items-center gap-1">Facture générée avec <span class="tania-logo" style="font-size:10px;" role="img" aria-label="Tania"><svg class="tania-T" viewBox="0 0 80 80" preserveAspectRatio="xMinYMid meet" aria-hidden="true"><rect x="0" y="14" width="80" height="18" fill="#10b981"/><rect x="31" y="42" width="18" height="38" fill="#10b981"/></svg><span class="tania-ania">ania</span></span> · tania.re</p>
                     </div>
                   </div>
                 </div>
@@ -1052,7 +1058,7 @@ Je peux préparer un message de relance prêt à envoyer.<div class="text-[10px]
             </ul>
           </div>
           <a href="#cta-final" class="mt-7 inline-flex items-center bg-white border-2 border-slate-900 hover:bg-slate-50 text-slate-900 font-semibold px-6 py-3 rounded-md transition-colors">
-            Voir une démo
+            Réserver ma démo
             <svg class="ml-2" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
         </div>
@@ -1066,7 +1072,7 @@ Je peux préparer un message de relance prêt à envoyer.<div class="text-[10px]
               <!-- Header dashboard -->
               <div class="flex items-center justify-between px-5 py-3 border-b border-slate-200 bg-white">
                 <div class="flex items-center gap-3">
-                  <span class="tania-logo" style="font-size: 18px;">
+                  <span class="tania-logo" style="font-size: 18px;" role="img" aria-label="Tania">
                     <svg class="tania-T" viewBox="0 0 80 80" preserveAspectRatio="xMinYMid meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                       <rect class="t-bar" x="0" y="14" width="80" height="18" fill="#10b981"/>
                       <rect class="t-stem" x="31" y="42" width="18" height="38" fill="#10b981"/>
@@ -1187,7 +1193,7 @@ Je peux préparer un message de relance prêt à envoyer.<div class="text-[10px]
           WhatsApp devant. Une Plateforme Agréée derrière.
         </h2>
         <p class="mt-4 text-lg text-slate-700 max-w-2xl mx-auto leading-relaxed">
-          Pour vous, rien ne change&nbsp;: vous envoyez vos prestations à Tania comme à une assistante. Derrière, Tania prépare vos factures au format Factur-X et les connecte au circuit officiel de la facturation électronique via une Plateforme Agréée.
+          Pour vous, rien ne change&nbsp;: vous envoyez vos prestations à Tania comme à une assistante. Derrière, Tania prépare vos factures au format Factur-X et prévoit une connexion à une Plateforme Agréée partenaire pour accompagner la réforme.
         </p>
       </div>
 
@@ -1250,7 +1256,7 @@ Je peux préparer un message de relance prêt à envoyer.<div class="text-[10px]
               </div>
               <p class="mt-4 text-xs font-bold uppercase tracking-[0.14em] text-emerald-600">Étape 4</p>
               <h3 class="mt-1.5 text-xl font-bold text-slate-900 tracking-tight">Plateforme Agréée</h3>
-              <p class="mt-2 text-sm text-slate-600 leading-relaxed max-w-[220px] mx-auto">Tania s’appuie sur une PA pour entrer dans le circuit officiel.</p>
+              <p class="mt-2 text-sm text-slate-600 leading-relaxed max-w-[220px] mx-auto">Tania prévoit une connexion à une Plateforme Agréée partenaire.</p>
             </div>
 
           </div>
@@ -1263,7 +1269,7 @@ Je peux préparer un message de relance prêt à envoyer.<div class="text-[10px]
         <div class="mt-12 lg:mt-14 mx-auto max-w-3xl bg-white border border-slate-200 rounded-2xl p-5 lg:p-6 flex items-start gap-4">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
           <p class="text-sm text-slate-600 leading-relaxed">
-            <strong class="text-slate-900">Tania n’est pas une Plateforme Agréée.</strong> Tania s’appuie sur une Plateforme Agréée immatriculée par l’administration fiscale française pour l’émission officielle de vos factures électroniques. Vous gardez le bénéfice de l’interface WhatsApp, sans avoir à gérer la technique du circuit officiel.
+            <strong class="text-slate-900">Tania n’est pas une Plateforme Agréée.</strong> Tania prépare vos factures au format Factur-X et prévoit une connexion à une Plateforme Agréée partenaire pour accompagner la réforme. Vous gardez le bénéfice de l’interface WhatsApp, sans gérer la technique du circuit officiel.
           </p>
         </div>
       </div>
@@ -1279,145 +1285,109 @@ Je peux préparer un message de relance prêt à envoyer.<div class="text-[10px]
         <h2 class="text-3xl md:text-4xl lg:text-[40px] lg:leading-[48px] font-bold text-slate-900 tracking-tighter2">
           Pour toutes les TPE et PME de La Réunion.
         </h2>
-        <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Quel que soit votre métier, si vous facturez, Tania est faite pour vous.</p>
+        <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Pensé pour les pros qui facturent souvent et travaillent déjà par message.</p>
       </div>
     </div>
 
     <!-- Carrousel pleine largeur -->
-    <div class="trades-viewport mt-12 relative" aria-hidden="false">
+    <div class="trades-viewport mt-12 relative">
       <div class="trades-track gap-4">
-        <!-- Liste dupliquée 2× pour boucle infinie -->
-        <!-- (les SVG sont stroke emerald-600 monochromes) -->
-        <!-- bloc 1 -->
+        <!-- Liste de métiers (11) -->
         <div class="flex gap-4 pr-4" id="trades-list">
-          <!-- Plombier -->
           <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
             <span class="text-sm font-medium text-slate-700">Plombier</span>
           </div>
-          <!-- Électricien -->
           <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13,2 3,14 12,14 11,22 21,10 12,10"/></svg>
             <span class="text-sm font-medium text-slate-700">Électricien</span>
           </div>
-          <!-- Maçon -->
           <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-5 9 5"/><path d="M5 9v11h14V9"/><path d="M9 20v-6h6v6"/></svg>
             <span class="text-sm font-medium text-slate-700">Maçon</span>
           </div>
-          <!-- Coiffeur -->
           <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
             <span class="text-sm font-medium text-slate-700">Coiffeur</span>
           </div>
-          <!-- Esthéticienne -->
           <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><line x1="12" y1="15" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg>
             <span class="text-sm font-medium text-slate-700">Esthéticienne</span>
           </div>
-          <!-- Paysagiste -->
           <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 014 13c0-5 7-11 7-11s7 6 7 11a7 7 0 01-7 7z"/><line x1="11" y1="11" x2="11" y2="20"/></svg>
             <span class="text-sm font-medium text-slate-700">Paysagiste</span>
           </div>
-          <!-- Mécanicien -->
           <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 00-.2-1.7l2-1.5-2-3.4-2.3.9a7 7 0 00-2.9-1.7L13 2h-2l-.5 2.6a7 7 0 00-2.9 1.7L5.2 5.4l-2 3.4 2 1.5A7 7 0 005 12c0 .6.1 1.1.2 1.7l-2 1.5 2 3.4 2.3-.9a7 7 0 002.9 1.7L11 22h2l.5-2.6a7 7 0 002.9-1.7l2.3.9 2-3.4-2-1.5c.1-.6.2-1.1.2-1.7z"/></svg>
             <span class="text-sm font-medium text-slate-700">Mécanicien</span>
           </div>
-          <!-- Boulanger -->
           <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 14c0-3 4-5 9-5s9 2 9 5-4 5-9 5-9-2-9-5z"/><line x1="7" y1="12" x2="17" y2="16"/><line x1="9" y1="11" x2="19" y2="15"/></svg>
             <span class="text-sm font-medium text-slate-700">Boulanger</span>
           </div>
-          <!-- Photographe -->
           <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
             <span class="text-sm font-medium text-slate-700">Photographe</span>
           </div>
-          <!-- Restaurateur -->
           <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 2v6a3 3 0 003 3v11"/><path d="M10 2v9"/><path d="M7 2v9"/><path d="M14 8c0-3 1-6 4-6v20"/></svg>
             <span class="text-sm font-medium text-slate-700">Restaurateur</span>
           </div>
-          <!-- Tailleur -->
           <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2"/><path d="M7.5 7.5L21 21"/><line x1="8" y1="5" x2="20" y2="17"/></svg>
-            <span class="text-sm font-medium text-slate-700">Tailleur</span>
-          </div>
-          <!-- Décorateur -->
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="7.5" cy="10" r="1"/><circle cx="12" cy="7" r="1"/><circle cx="16.5" cy="10" r="1"/><circle cx="15" cy="15" r="1"/></svg>
-            <span class="text-sm font-medium text-slate-700">Décorateur</span>
-          </div>
-          <!-- Chauffagiste -->
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 14.76V3a2 2 0 10-4 0v11.76a4 4 0 104 0z"/></svg>
-            <span class="text-sm font-medium text-slate-700">Chauffagiste</span>
-          </div>
-          <!-- Garagiste -->
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 16H9m10 0h2v-3l-2-5H5l-2 5v3h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
-            <span class="text-sm font-medium text-slate-700">Garagiste</span>
-          </div>
-          <!-- Fleuriste -->
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M12 11v10"/><path d="M9 5a3 3 0 016 0"/><path d="M12 11l-4 4"/><path d="M12 11l4 4"/></svg>
-            <span class="text-sm font-medium text-slate-700">Fleuriste</span>
-          </div>
-          <!-- Cordonnier -->
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18h18l-2-7H8L6 6H3v12z"/></svg>
-            <span class="text-sm font-medium text-slate-700">Cordonnier</span>
-          </div>
-          <!-- Tatoueur -->
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="21" x2="13" y2="11"/><path d="M13 11l4-4 4 4-4 4z"/></svg>
-            <span class="text-sm font-medium text-slate-700">Tatoueur</span>
-          </div>
-          <!-- Kinésithérapeute -->
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11V6a2 2 0 114 0v5"/><path d="M13 11V4a2 2 0 114 0v7"/><path d="M17 11V6a2 2 0 114 0v9a6 6 0 01-12 0V8a2 2 0 114 0v3"/></svg>
-            <span class="text-sm font-medium text-slate-700">Kinésithérapeute</span>
-          </div>
-          <!-- Vétérinaire -->
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="15" r="4"/><circle cx="6" cy="9" r="2"/><circle cx="10" cy="6" r="2"/><circle cx="14" cy="6" r="2"/><circle cx="18" cy="9" r="2"/></svg>
-            <span class="text-sm font-medium text-slate-700">Vétérinaire</span>
-          </div>
-          <!-- Traiteur -->
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h20"/><path d="M2 12a10 10 0 0120 0"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
-            <span class="text-sm font-medium text-slate-700">Traiteur</span>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            <span class="text-sm font-medium text-slate-700">Consultant</span>
           </div>
         </div>
-        <!-- Duplication identique pour effet infini -->
+        <!-- Duplication pour boucle infinie (masquée aux lecteurs d'écran) -->
         <div class="flex gap-4 pr-4" aria-hidden="true">
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg><span class="text-sm font-medium text-slate-700">Plombier</span></div>
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13,2 3,14 12,14 11,22 21,10 12,10"/></svg><span class="text-sm font-medium text-slate-700">Électricien</span></div>
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l9-5 9 5"/><path d="M5 9v11h14V9"/><path d="M9 20v-6h6v6"/></svg><span class="text-sm font-medium text-slate-700">Maçon</span></div>
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg><span class="text-sm font-medium text-slate-700">Coiffeur</span></div>
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><line x1="12" y1="15" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg><span class="text-sm font-medium text-slate-700">Esthéticienne</span></div>
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 014 13c0-5 7-11 7-11s7 6 7 11a7 7 0 01-7 7z"/><line x1="11" y1="11" x2="11" y2="20"/></svg><span class="text-sm font-medium text-slate-700">Paysagiste</span></div>
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/></svg><span class="text-sm font-medium text-slate-700">Mécanicien</span></div>
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14c0-3 4-5 9-5s9 2 9 5-4 5-9 5-9-2-9-5z"/></svg><span class="text-sm font-medium text-slate-700">Boulanger</span></div>
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg><span class="text-sm font-medium text-slate-700">Photographe</span></div>
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v6a3 3 0 003 3v11"/><path d="M10 2v9"/><path d="M7 2v9"/><path d="M14 8c0-3 1-6 4-6v20"/></svg><span class="text-sm font-medium text-slate-700">Restaurateur</span></div>
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2"/><line x1="8" y1="5" x2="20" y2="17"/></svg><span class="text-sm font-medium text-slate-700">Tailleur</span></div>
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg><span class="text-sm font-medium text-slate-700">Décorateur</span></div>
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3a2 2 0 10-4 0v11.76a4 4 0 104 0z"/></svg><span class="text-sm font-medium text-slate-700">Chauffagiste</span></div>
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 16H9m10 0h2v-3l-2-5H5l-2 5v3h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg><span class="text-sm font-medium text-slate-700">Garagiste</span></div>
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3"/><path d="M12 11v10"/></svg><span class="text-sm font-medium text-slate-700">Fleuriste</span></div>
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18h18l-2-7H8L6 6H3v12z"/></svg><span class="text-sm font-medium text-slate-700">Cordonnier</span></div>
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="21" x2="13" y2="11"/><path d="M13 11l4-4 4 4-4 4z"/></svg><span class="text-sm font-medium text-slate-700">Tatoueur</span></div>
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11V6a2 2 0 114 0v5"/></svg><span class="text-sm font-medium text-slate-700">Kinésithérapeute</span></div>
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="15" r="4"/><circle cx="6" cy="9" r="2"/><circle cx="10" cy="6" r="2"/><circle cx="14" cy="6" r="2"/><circle cx="18" cy="9" r="2"/></svg><span class="text-sm font-medium text-slate-700">Vétérinaire</span></div>
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20"/><path d="M2 12a10 10 0 0120 0"/></svg><span class="text-sm font-medium text-slate-700">Traiteur</span></div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+            <span class="text-sm font-medium text-slate-700">Plombier</span>
+          </div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13,2 3,14 12,14 11,22 21,10 12,10"/></svg>
+            <span class="text-sm font-medium text-slate-700">Électricien</span>
+          </div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-5 9 5"/><path d="M5 9v11h14V9"/><path d="M9 20v-6h6v6"/></svg>
+            <span class="text-sm font-medium text-slate-700">Maçon</span>
+          </div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
+            <span class="text-sm font-medium text-slate-700">Coiffeur</span>
+          </div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><line x1="12" y1="15" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg>
+            <span class="text-sm font-medium text-slate-700">Esthéticienne</span>
+          </div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 014 13c0-5 7-11 7-11s7 6 7 11a7 7 0 01-7 7z"/><line x1="11" y1="11" x2="11" y2="20"/></svg>
+            <span class="text-sm font-medium text-slate-700">Paysagiste</span>
+          </div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 00-.2-1.7l2-1.5-2-3.4-2.3.9a7 7 0 00-2.9-1.7L13 2h-2l-.5 2.6a7 7 0 00-2.9 1.7L5.2 5.4l-2 3.4 2 1.5A7 7 0 005 12c0 .6.1 1.1.2 1.7l-2 1.5 2 3.4 2.3-.9a7 7 0 002.9 1.7L11 22h2l.5-2.6a7 7 0 002.9-1.7l2.3.9 2-3.4-2-1.5c.1-.6.2-1.1.2-1.7z"/></svg>
+            <span class="text-sm font-medium text-slate-700">Mécanicien</span>
+          </div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 14c0-3 4-5 9-5s9 2 9 5-4 5-9 5-9-2-9-5z"/><line x1="7" y1="12" x2="17" y2="16"/><line x1="9" y1="11" x2="19" y2="15"/></svg>
+            <span class="text-sm font-medium text-slate-700">Boulanger</span>
+          </div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            <span class="text-sm font-medium text-slate-700">Photographe</span>
+          </div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 2v6a3 3 0 003 3v11"/><path d="M10 2v9"/><path d="M7 2v9"/><path d="M14 8c0-3 1-6 4-6v20"/></svg>
+            <span class="text-sm font-medium text-slate-700">Restaurateur</span>
+          </div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            <span class="text-sm font-medium text-slate-700">Consultant</span>
+          </div>
         </div>
       </div>
     </div>
-
-    <p class="text-center mt-12 text-lg text-slate-600">Et tous les autres.</p>
   </section>
 
   <!-- ═════════════════════════════════════════════ -->
@@ -1710,7 +1680,7 @@ Je peux préparer un message de relance prêt à envoyer.<div class="text-[10px]
           </div>
           <p class="mt-4 text-base text-slate-600">Pour les entreprises qui veulent tout suivre sans perdre de temps.</p>
           <ul class="mt-8 space-y-3 text-base text-slate-700">
-            <li class="flex gap-2.5"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Factures illimitées</li>
+            <li class="flex gap-2.5"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Volume étendu inclus</li>
             <li class="flex gap-2.5"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Devis et factures depuis WhatsApp</li>
             <li class="flex gap-2.5"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Génération PDF + Factur-X</li>
             <li class="flex gap-2.5"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Connexion PA prévue</li>
@@ -1726,7 +1696,7 @@ Je peux préparer un message de relance prêt à envoyer.<div class="text-[10px]
 
       </div>
 
-      <p class="text-center mt-8 text-sm text-slate-500">Pas de carte demandée. Pas d&rsquo;engagement. Annulable à tout moment. Lancement officiel septembre 2026.</p>
+      <p class="text-center mt-8 text-sm text-slate-500">Pas de carte demandée. Pas d&rsquo;engagement. Démonstration disponible dès maintenant, mise en place accompagnée selon votre activité.</p>
     </div>
   </section>
 
@@ -1829,9 +1799,58 @@ Je peux préparer un message de relance prêt à envoyer.<div class="text-[10px]
   </section>
 
   <!-- ═════════════════════════════════════════════ -->
+  <!-- SECTION — CE QUE TANIA FAIT / NE FAIT PAS     -->
+  <!-- ═════════════════════════════════════════════ -->
+  <section class="bg-slate-50 py-16 lg:py-24">
+    <div class="max-w-5xl mx-auto px-6 lg:px-8">
+      <div class="text-center reveal max-w-2xl mx-auto">
+        <p class="text-emerald-600 font-semibold text-sm uppercase tracking-wider">En toute transparence</p>
+        <h2 class="mt-3 text-3xl md:text-4xl lg:text-[40px] lg:leading-[48px] font-bold text-slate-900 tracking-tighter2">
+          Ce que Tania fait — et ne fait pas sans vous.
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 mt-12">
+        <!-- Tania peut -->
+        <div class="reveal bg-white border border-emerald-200 rounded-2xl p-7 lg:p-8" data-delay="1" style="box-shadow: 0 8px 24px -16px rgba(16,185,129,0.25);">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="w-9 h-9 rounded-xl bg-emerald-50 flex items-center justify-center">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            <h3 class="text-lg font-bold text-slate-900">Tania peut</h3>
+          </div>
+          <ul class="space-y-3 text-[15px] text-slate-700">
+            <li class="flex items-start gap-2.5"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Préparer une facture à partir d’un message</li>
+            <li class="flex items-start gap-2.5"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Suivre les paiements</li>
+            <li class="flex items-start gap-2.5"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Repérer les clients à relancer</li>
+            <li class="flex items-start gap-2.5"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Préparer un export pour le comptable</li>
+            <li class="flex items-start gap-2.5"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Vous accompagner vers la réforme 2026</li>
+          </ul>
+        </div>
+
+        <!-- Tania ne fait pas sans vous -->
+        <div class="reveal bg-white border border-slate-200 rounded-2xl p-7 lg:p-8" data-delay="2" style="box-shadow: 0 1px 2px rgba(15,23,42,0.04);">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="w-9 h-9 rounded-xl bg-slate-100 flex items-center justify-center">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            </span>
+            <h3 class="text-lg font-bold text-slate-900">Tania ne fait pas sans vous</h3>
+          </div>
+          <ul class="space-y-3 text-[15px] text-slate-600">
+            <li class="flex items-start gap-2.5"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-slate-300 flex-shrink-0"></span> Envoyer une facture officielle sans votre validation</li>
+            <li class="flex items-start gap-2.5"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-slate-300 flex-shrink-0"></span> Remplacer votre comptable</li>
+            <li class="flex items-start gap-2.5"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-slate-300 flex-shrink-0"></span> Décider à votre place</li>
+            <li class="flex items-start gap-2.5"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-slate-300 flex-shrink-0"></span> Transmettre au circuit officiel sans cadre Plateforme Agréée partenaire</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════ -->
   <!-- SECTION 10 — FAQ                              -->
   <!-- ═════════════════════════════════════════════ -->
-  <section id="faq" class="bg-slate-50 py-16 lg:py-24">
+  <section id="faq" class="bg-white py-16 lg:py-24">
     <div class="max-w-3xl mx-auto px-6 lg:px-8">
       <div class="text-center reveal">
         <h2 class="text-3xl md:text-4xl lg:text-[40px] lg:leading-[48px] font-bold text-slate-900 tracking-tighter2">
@@ -2033,7 +2052,7 @@ Je peux préparer un message de relance prêt à envoyer.<div class="text-[10px]
             <li><a href="/a-propos/" class="inline-block py-1 hover:text-white transition-colors">À propos</a></li>
             <li><a href="/demo-tania-whatsapp-facturation/" class="inline-block py-1 hover:text-white transition-colors">Démo Tania WhatsApp</a></li>
             <li><a href="mailto:contact@tania.re" class="inline-block py-1 hover:text-white transition-colors">Contact</a></li>
-            <li><a href="#cta-final" class="inline-block py-1 hover:text-white transition-colors">Demander une démo</a></li>
+            <li><a href="#cta-final" class="inline-block py-1 hover:text-white transition-colors">Réserver ma démo</a></li>
             <li><a href="mailto:contact@tania.re" class="inline-block py-1 hover:text-white transition-colors">Support</a></li>
           </ul>
         </div>
