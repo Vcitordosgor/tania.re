@@ -547,7 +547,7 @@
                     </div>
                     <div class="grid grid-cols-4 gap-3 px-6 mt-4">
                       <div class="bg-emerald-50 border border-emerald-100 rounded-lg p-3">
-                        <p class="text-[10px] text-slate-500">CA du mois</p>
+                        <p class="text-[10px] text-slate-500">CA</p>
                         <p class="text-lg font-bold text-slate-900 mt-1">3&nbsp;920,00&nbsp;€</p>
                       </div>
                       <div class="bg-white border border-slate-200 rounded-lg p-3">
@@ -1292,139 +1292,102 @@ Je peux préparer un message de relance prêt à envoyer.<div class="text-[10px]
     <!-- Carrousel pleine largeur -->
     <div class="trades-viewport mt-12 relative" aria-hidden="false">
       <div class="trades-track gap-4">
-        <!-- Liste dupliquée 2× pour boucle infinie -->
-        <!-- (les SVG sont stroke emerald-600 monochromes) -->
-        <!-- bloc 1 -->
+        <!-- Liste réduite (11 métiers) -->
         <div class="flex gap-4 pr-4" id="trades-list">
-          <!-- Plombier -->
           <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
             <span class="text-sm font-medium text-slate-700">Plombier</span>
           </div>
-          <!-- Électricien -->
           <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13,2 3,14 12,14 11,22 21,10 12,10"/></svg>
             <span class="text-sm font-medium text-slate-700">Électricien</span>
           </div>
-          <!-- Maçon -->
           <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-5 9 5"/><path d="M5 9v11h14V9"/><path d="M9 20v-6h6v6"/></svg>
             <span class="text-sm font-medium text-slate-700">Maçon</span>
           </div>
-          <!-- Coiffeur -->
           <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
             <span class="text-sm font-medium text-slate-700">Coiffeur</span>
           </div>
-          <!-- Esthéticienne -->
           <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><line x1="12" y1="15" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg>
             <span class="text-sm font-medium text-slate-700">Esthéticienne</span>
           </div>
-          <!-- Paysagiste -->
           <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 014 13c0-5 7-11 7-11s7 6 7 11a7 7 0 01-7 7z"/><line x1="11" y1="11" x2="11" y2="20"/></svg>
             <span class="text-sm font-medium text-slate-700">Paysagiste</span>
           </div>
-          <!-- Mécanicien -->
           <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 00-.2-1.7l2-1.5-2-3.4-2.3.9a7 7 0 00-2.9-1.7L13 2h-2l-.5 2.6a7 7 0 00-2.9 1.7L5.2 5.4l-2 3.4 2 1.5A7 7 0 005 12c0 .6.1 1.1.2 1.7l-2 1.5 2 3.4 2.3-.9a7 7 0 002.9 1.7L11 22h2l.5-2.6a7 7 0 002.9-1.7l2.3.9 2-3.4-2-1.5c.1-.6.2-1.1.2-1.7z"/></svg>
             <span class="text-sm font-medium text-slate-700">Mécanicien</span>
           </div>
-          <!-- Boulanger -->
           <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 14c0-3 4-5 9-5s9 2 9 5-4 5-9 5-9-2-9-5z"/><line x1="7" y1="12" x2="17" y2="16"/><line x1="9" y1="11" x2="19" y2="15"/></svg>
             <span class="text-sm font-medium text-slate-700">Boulanger</span>
           </div>
-          <!-- Photographe -->
           <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
             <span class="text-sm font-medium text-slate-700">Photographe</span>
           </div>
-          <!-- Restaurateur -->
           <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 2v6a3 3 0 003 3v11"/><path d="M10 2v9"/><path d="M7 2v9"/><path d="M14 8c0-3 1-6 4-6v20"/></svg>
             <span class="text-sm font-medium text-slate-700">Restaurateur</span>
           </div>
-          <!-- Tailleur -->
           <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2"/><path d="M7.5 7.5L21 21"/><line x1="8" y1="5" x2="20" y2="17"/></svg>
             <span class="text-sm font-medium text-slate-700">Tailleur</span>
           </div>
-          <!-- Décorateur -->
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="7.5" cy="10" r="1"/><circle cx="12" cy="7" r="1"/><circle cx="16.5" cy="10" r="1"/><circle cx="15" cy="15" r="1"/></svg>
-            <span class="text-sm font-medium text-slate-700">Décorateur</span>
-          </div>
-          <!-- Chauffagiste -->
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 14.76V3a2 2 0 10-4 0v11.76a4 4 0 104 0z"/></svg>
-            <span class="text-sm font-medium text-slate-700">Chauffagiste</span>
-          </div>
-          <!-- Garagiste -->
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 16H9m10 0h2v-3l-2-5H5l-2 5v3h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
-            <span class="text-sm font-medium text-slate-700">Garagiste</span>
-          </div>
-          <!-- Fleuriste -->
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M12 11v10"/><path d="M9 5a3 3 0 016 0"/><path d="M12 11l-4 4"/><path d="M12 11l4 4"/></svg>
-            <span class="text-sm font-medium text-slate-700">Fleuriste</span>
-          </div>
-          <!-- Cordonnier -->
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18h18l-2-7H8L6 6H3v12z"/></svg>
-            <span class="text-sm font-medium text-slate-700">Cordonnier</span>
-          </div>
-          <!-- Tatoueur -->
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="21" x2="13" y2="11"/><path d="M13 11l4-4 4 4-4 4z"/></svg>
-            <span class="text-sm font-medium text-slate-700">Tatoueur</span>
-          </div>
-          <!-- Kinésithérapeute -->
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11V6a2 2 0 114 0v5"/><path d="M13 11V4a2 2 0 114 0v7"/><path d="M17 11V6a2 2 0 114 0v9a6 6 0 01-12 0V8a2 2 0 114 0v3"/></svg>
-            <span class="text-sm font-medium text-slate-700">Kinésithérapeute</span>
-          </div>
-          <!-- Vétérinaire -->
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="15" r="4"/><circle cx="6" cy="9" r="2"/><circle cx="10" cy="6" r="2"/><circle cx="14" cy="6" r="2"/><circle cx="18" cy="9" r="2"/></svg>
-            <span class="text-sm font-medium text-slate-700">Vétérinaire</span>
-          </div>
-          <!-- Traiteur -->
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h20"/><path d="M2 12a10 10 0 0120 0"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
-            <span class="text-sm font-medium text-slate-700">Traiteur</span>
-          </div>
         </div>
-        <!-- Duplication identique pour effet infini -->
+        <!-- Duplication identique pour la boucle infinie (masquée aux lecteurs d'écran) -->
         <div class="flex gap-4 pr-4" aria-hidden="true">
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg><span class="text-sm font-medium text-slate-700">Plombier</span></div>
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13,2 3,14 12,14 11,22 21,10 12,10"/></svg><span class="text-sm font-medium text-slate-700">Électricien</span></div>
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l9-5 9 5"/><path d="M5 9v11h14V9"/><path d="M9 20v-6h6v6"/></svg><span class="text-sm font-medium text-slate-700">Maçon</span></div>
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg><span class="text-sm font-medium text-slate-700">Coiffeur</span></div>
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><line x1="12" y1="15" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg><span class="text-sm font-medium text-slate-700">Esthéticienne</span></div>
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 014 13c0-5 7-11 7-11s7 6 7 11a7 7 0 01-7 7z"/><line x1="11" y1="11" x2="11" y2="20"/></svg><span class="text-sm font-medium text-slate-700">Paysagiste</span></div>
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/></svg><span class="text-sm font-medium text-slate-700">Mécanicien</span></div>
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14c0-3 4-5 9-5s9 2 9 5-4 5-9 5-9-2-9-5z"/></svg><span class="text-sm font-medium text-slate-700">Boulanger</span></div>
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg><span class="text-sm font-medium text-slate-700">Photographe</span></div>
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v6a3 3 0 003 3v11"/><path d="M10 2v9"/><path d="M7 2v9"/><path d="M14 8c0-3 1-6 4-6v20"/></svg><span class="text-sm font-medium text-slate-700">Restaurateur</span></div>
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2"/><line x1="8" y1="5" x2="20" y2="17"/></svg><span class="text-sm font-medium text-slate-700">Tailleur</span></div>
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg><span class="text-sm font-medium text-slate-700">Décorateur</span></div>
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3a2 2 0 10-4 0v11.76a4 4 0 104 0z"/></svg><span class="text-sm font-medium text-slate-700">Chauffagiste</span></div>
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 16H9m10 0h2v-3l-2-5H5l-2 5v3h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg><span class="text-sm font-medium text-slate-700">Garagiste</span></div>
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3"/><path d="M12 11v10"/></svg><span class="text-sm font-medium text-slate-700">Fleuriste</span></div>
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18h18l-2-7H8L6 6H3v12z"/></svg><span class="text-sm font-medium text-slate-700">Cordonnier</span></div>
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="21" x2="13" y2="11"/><path d="M13 11l4-4 4 4-4 4z"/></svg><span class="text-sm font-medium text-slate-700">Tatoueur</span></div>
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11V6a2 2 0 114 0v5"/></svg><span class="text-sm font-medium text-slate-700">Kinésithérapeute</span></div>
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="15" r="4"/><circle cx="6" cy="9" r="2"/><circle cx="10" cy="6" r="2"/><circle cx="14" cy="6" r="2"/><circle cx="18" cy="9" r="2"/></svg><span class="text-sm font-medium text-slate-700">Vétérinaire</span></div>
-          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20"/><path d="M2 12a10 10 0 0120 0"/></svg><span class="text-sm font-medium text-slate-700">Traiteur</span></div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+            <span class="text-sm font-medium text-slate-700">Plombier</span>
+          </div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13,2 3,14 12,14 11,22 21,10 12,10"/></svg>
+            <span class="text-sm font-medium text-slate-700">Électricien</span>
+          </div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-5 9 5"/><path d="M5 9v11h14V9"/><path d="M9 20v-6h6v6"/></svg>
+            <span class="text-sm font-medium text-slate-700">Maçon</span>
+          </div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
+            <span class="text-sm font-medium text-slate-700">Coiffeur</span>
+          </div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><line x1="12" y1="15" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg>
+            <span class="text-sm font-medium text-slate-700">Esthéticienne</span>
+          </div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 014 13c0-5 7-11 7-11s7 6 7 11a7 7 0 01-7 7z"/><line x1="11" y1="11" x2="11" y2="20"/></svg>
+            <span class="text-sm font-medium text-slate-700">Paysagiste</span>
+          </div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 00-.2-1.7l2-1.5-2-3.4-2.3.9a7 7 0 00-2.9-1.7L13 2h-2l-.5 2.6a7 7 0 00-2.9 1.7L5.2 5.4l-2 3.4 2 1.5A7 7 0 005 12c0 .6.1 1.1.2 1.7l-2 1.5 2 3.4 2.3-.9a7 7 0 002.9 1.7L11 22h2l.5-2.6a7 7 0 002.9-1.7l2.3.9 2-3.4-2-1.5c.1-.6.2-1.1.2-1.7z"/></svg>
+            <span class="text-sm font-medium text-slate-700">Mécanicien</span>
+          </div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 14c0-3 4-5 9-5s9 2 9 5-4 5-9 5-9-2-9-5z"/><line x1="7" y1="12" x2="17" y2="16"/><line x1="9" y1="11" x2="19" y2="15"/></svg>
+            <span class="text-sm font-medium text-slate-700">Boulanger</span>
+          </div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            <span class="text-sm font-medium text-slate-700">Photographe</span>
+          </div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 2v6a3 3 0 003 3v11"/><path d="M10 2v9"/><path d="M7 2v9"/><path d="M14 8c0-3 1-6 4-6v20"/></svg>
+            <span class="text-sm font-medium text-slate-700">Restaurateur</span>
+          </div>
+          <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl px-5 py-3 whitespace-nowrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2"/><path d="M7.5 7.5L21 21"/><line x1="8" y1="5" x2="20" y2="17"/></svg>
+            <span class="text-sm font-medium text-slate-700">Tailleur</span>
+          </div>
         </div>
       </div>
-    </div>
-
-    <p class="text-center mt-12 text-lg text-slate-600">Et tous les autres.</p>
-  </section>
+    </section>
 
   <!-- ═════════════════════════════════════════════ -->
   <!-- SECTION 6 — RÉFORME + RESSOURCES (premium)    -->
@@ -1716,7 +1679,7 @@ Je peux préparer un message de relance prêt à envoyer.<div class="text-[10px]
           </div>
           <p class="mt-4 text-base text-slate-600">Pour les entreprises qui veulent tout suivre sans perdre de temps.</p>
           <ul class="mt-8 space-y-3 text-base text-slate-700">
-            <li class="flex gap-2.5"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Volume adapté à votre activité</li>
+            <li class="flex gap-2.5"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Volume étendu inclus</li>
             <li class="flex gap-2.5"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Devis et factures depuis WhatsApp</li>
             <li class="flex gap-2.5"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Génération PDF + Factur-X</li>
             <li class="flex gap-2.5"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Connexion PA prévue</li>
