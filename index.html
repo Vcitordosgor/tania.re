@@ -197,13 +197,118 @@
       <h2 class="h2">Une assistante, plusieurs réflexes.</h2>
       <p class="lead">Vous parlez à Tania comme à une assistante : facture, devis, point de la semaine, relance. Toujours dans WhatsApp.</p>
     </div>
-    <div class="cap-pills reveal" role="list">
-      <span class="cap-pill active" role="listitem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Créer une facture</span>
-      <span class="cap-pill" role="listitem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg>Créer un devis</span>
-      <span class="cap-pill" role="listitem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>Faire le point</span>
-      <span class="cap-pill" role="listitem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Relancer</span>
+    <div class="caps-tabs reveal" role="tablist" aria-label="Capacités de Tania">
+      <button class="cap-pill active" role="tab" aria-selected="true" data-cap="facture"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Créer une facture</button>
+      <button class="cap-pill" role="tab" aria-selected="false" data-cap="devis"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg>Créer un devis</button>
+      <button class="cap-pill" role="tab" aria-selected="false" data-cap="point"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>Faire le point</button>
+      <button class="cap-pill" role="tab" aria-selected="false" data-cap="relance"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Relancer</button>
     </div>
-    <p class="cap-note reveal">Une seule conversation WhatsApp pour vos factures, devis, points hebdo et relances.</p>
+
+    <div class="cap-preview reveal">
+      <!-- Facture -->
+      <div class="cap-panel active" data-cap="facture" role="tabpanel">
+        <div class="cap-chat">
+          <div class="cap-chat-head"><span class="ava" aria-hidden="true">T</span><span><b>Tania</b><span class="st">en ligne</span></span></div>
+          <div class="cap-msgs">
+            <div class="cbub out">Sophie Dijoux, coupe couleur, 95&nbsp;€, espèces<span class="t">10:07</span></div>
+            <div class="cbub in">C'est noté. Je prépare la facture F-2026-0042. ✅<span class="t">10:07</span></div>
+            <div class="cap-doc">
+              <div class="cap-doc-head"><span class="cap-doc-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Factur-X</span><b>F-2026-0042.pdf</b></div>
+              <div class="cap-doc-row"><span>Sophie Dijoux</span><span>95,00&nbsp;€</span></div>
+              <div class="cap-doc-row mute"><span>Coupe + couleur</span><span>Payé · espèces</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="cap-side">
+          <h3>Une phrase, une facture conforme.</h3>
+          <p>Vous décrivez la prestation, Tania génère la facture au format Factur-X, prête pour le circuit officiel.</p>
+          <ul class="cap-feat">
+            <li>PDF lisible + données XML structurées</li>
+            <li>Mentions légales et TVA automatiques</li>
+            <li>Numérotation continue garantie</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Devis -->
+      <div class="cap-panel" data-cap="devis" role="tabpanel" hidden>
+        <div class="cap-chat">
+          <div class="cap-chat-head"><span class="ava" aria-hidden="true">T</span><span><b>Tania</b><span class="st">en ligne</span></span></div>
+          <div class="cap-msgs">
+            <div class="cbub out">devis Lambert, ravalement façade, 800&nbsp;€<span class="t">11:24</span></div>
+            <div class="cbub in">Devis D-2026-0018 préparé. Envoyer à Lambert&nbsp;?<span class="t">11:24</span></div>
+            <div class="cap-doc">
+              <div class="cap-doc-head"><span class="cap-doc-badge alt">Devis</span><b>D-2026-0018.pdf</b></div>
+              <div class="cap-doc-row"><span>Lambert</span><span>800,00&nbsp;€</span></div>
+              <div class="cap-doc-row mute"><span>Ravalement façade</span><span>Valable 30 jours</span></div>
+            </div>
+            <div class="cbub out short">Oui, envoie<span class="t">11:25</span></div>
+            <div class="cbub in short">Envoyé. Je vous préviens dès qu'il signe.<span class="t">11:25</span></div>
+          </div>
+        </div>
+        <div class="cap-side">
+          <h3>Du devis à la facture, sans recopier.</h3>
+          <p>Le devis se transforme en facture en un message une fois accepté — mêmes lignes, mêmes mentions, zéro saisie en double.</p>
+          <ul class="cap-feat">
+            <li>Envoi par lien direct au client</li>
+            <li>Conversion devis → facture automatique</li>
+            <li>Suivi acceptation / refus</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Point -->
+      <div class="cap-panel" data-cap="point" role="tabpanel" hidden>
+        <div class="cap-chat">
+          <div class="cap-chat-head"><span class="ava" aria-hidden="true">T</span><span><b>Tania</b><span class="st">en ligne</span></span></div>
+          <div class="cap-msgs">
+            <div class="cbub out">point semaine<span class="t">17:02</span></div>
+            <div class="cbub in">Voici votre semaine&nbsp;:<span class="t">17:02</span></div>
+            <div class="cap-kpis">
+              <div class="cap-kpi"><span class="lbl">Encaissé</span><span class="v">3 920&nbsp;€</span><span class="d up">+12&nbsp;%</span></div>
+              <div class="cap-kpi"><span class="lbl">À encaisser</span><span class="v">420&nbsp;€</span><span class="d warn">2 en cours</span></div>
+              <div class="cap-kpi"><span class="lbl">Devis créés</span><span class="v">3</span><span class="d info">1 accepté</span></div>
+              <div class="cap-kpi"><span class="lbl">À relancer</span><span class="v">2</span><span class="d danger">Action</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="cap-side">
+          <h3>Le point de la semaine, en un message.</h3>
+          <p>Encaissé, en attente, devis, relances : Tania résume votre activité sans tableur, sans rapport, sans logiciel à ouvrir.</p>
+          <ul class="cap-feat">
+            <li>Bilan jour, semaine ou mois</li>
+            <li>Comparaison période précédente</li>
+            <li>Export prêt pour votre comptable</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Relance -->
+      <div class="cap-panel" data-cap="relance" role="tabpanel" hidden>
+        <div class="cap-chat">
+          <div class="cap-chat-head"><span class="ava" aria-hidden="true">T</span><span><b>Tania</b><span class="st">en ligne</span></span></div>
+          <div class="cap-msgs">
+            <div class="cbub out">qui relancer&nbsp;?<span class="t">17:03</span></div>
+            <div class="cbub in">2 factures en retard&nbsp;:<span class="t">17:03</span></div>
+            <div class="cap-list">
+              <div class="cap-line"><span class="dot d-warn"></span><span class="who">Boyer · F-2026-0011</span><span class="amt">75&nbsp;€</span><span class="age">8&nbsp;j</span></div>
+              <div class="cap-line"><span class="dot d-danger"></span><span class="who">Hoareau · F-2026-0010</span><span class="amt">250&nbsp;€</span><span class="age">14&nbsp;j</span></div>
+            </div>
+            <div class="cbub in">Je prépare un message courtois pour chacun&nbsp;?<span class="t">17:03</span></div>
+            <div class="cbub out short">Oui<span class="t">17:04</span></div>
+          </div>
+        </div>
+        <div class="cap-side">
+          <h3>Relancer sans culpabiliser.</h3>
+          <p>Tania repère les retards, propose un message courtois et adapté, et garde la main : c'est vous qui validez l'envoi.</p>
+          <ul class="cap-feat">
+            <li>Détection automatique des retards</li>
+            <li>Messages adaptés au montant et à l'ancienneté</li>
+            <li>Historique des relances par client</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -476,6 +581,22 @@
         if(!el.closest('.hero')) obs.observe(el);
       });
     }
+
+    document.querySelectorAll('.caps-tabs .cap-pill').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var key = btn.getAttribute('data-cap');
+        document.querySelectorAll('.caps-tabs .cap-pill').forEach(function(b){
+          var on = b === btn;
+          b.classList.toggle('active', on);
+          b.setAttribute('aria-selected', on ? 'true' : 'false');
+        });
+        document.querySelectorAll('.cap-preview .cap-panel').forEach(function(p){
+          var on = p.getAttribute('data-cap') === key;
+          p.classList.toggle('active', on);
+          if(on){ p.removeAttribute('hidden'); } else { p.setAttribute('hidden',''); }
+        });
+      });
+    });
 
     document.querySelectorAll('#faqlist .qa button').forEach(function(btn){
       btn.addEventListener('click', function(){
