@@ -331,3 +331,35 @@
     .typing i{animation:none;}
     html{scroll-behavior:auto;}
   }
+
+  /* ─── Article / SEO pages layout ─── */
+  .article-wrap{max-width:760px;margin:0 auto;padding:0 32px;}
+  .article-hero{padding:56px 0 28px;}
+  .article-hero .breadcrumb{font-size:13.5px;color:var(--ink-faint);margin-bottom:14px;}
+  .article-hero .breadcrumb a{color:var(--ink-faint);}
+  .article-hero .breadcrumb a:hover{color:var(--emerald-deep);}
+  .article-hero h1{font-family:var(--font-display);font-weight:800;color:var(--ink);font-size:clamp(1.9rem,3.6vw,2.6rem);letter-spacing:-.03em;line-height:1.1;margin:0;}
+  .article-hero .meta{font-size:14px;color:var(--ink-faint);margin-top:14px;display:flex;gap:14px;flex-wrap:wrap;}
+  .article-hero .lede{font-size:18.5px;color:var(--ink-soft);line-height:1.62;margin:22px 0 0;}
+  .article-body{padding:24px 0 80px;}
+  .article-body h2{font-family:var(--font-display);font-weight:700;font-size:clamp(1.5rem,2.6vw,1.85rem);letter-spacing:-.02em;line-height:1.18;color:var(--ink);margin:48px 0 14px;}
+  .article-body h3{font-family:var(--font-display);font-weight:700;font-size:1.2rem;letter-spacing:-.01em;color:var(--ink);margin:32px 0 10px;}
+  .article-body p{font-size:17px;line-height:1.7;color:var(--ink-soft);margin:0 0 18px;}
+  .article-body strong, .article-body b{color:var(--ink);font-weight:600;}
+  .article-body ul,.article-body ol{font-size:17px;line-height:1.7;color:var(--ink-soft);margin:0 0 22px;padding-left:24px;}
+  .article-body li{margin:0 0 8px;}
+  .article-body a{color:var(--emerald-deep);text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px;}
+  .article-body a:hover{color:var(--forest);}
+  .article-body blockquote{margin:24px 0;padding:14px 18px;border-left:3px solid var(--emerald);background:var(--mist);color:var(--ink-soft);border-radius:0 12px 12px 0;font-size:16.5px;line-height:1.6;}
+  .article-body table{width:100%;border-collapse:collapse;margin:20px 0;font-size:15px;}
+  .article-body th,.article-body td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;}
+  .article-body th{background:var(--mist);font-weight:600;color:var(--ink);font-family:var(--font-display);}
+  .article-body code{background:var(--mist);padding:2px 6px;border-radius:4px;font-size:.92em;}
+  .article-body hr{border:0;border-top:1px solid var(--line);margin:34px 0;}
+  .article-cta{margin:36px 0;padding:24px 28px;background:var(--mist);border:1px solid var(--line);border-radius:var(--r-lg);}
+  .article-cta p{margin:0 0 12px;font-size:16.5px;color:var(--ink);}
+
+  /* Nav variant sans CTA #demo (pages internes) */
+  header.nav .nav-cta .btn-primary[href^="/"]{display:inline-flex;}
+
+  /* Footer reduit pour pages internes (memes classes que la home) */
