@@ -332,15 +332,16 @@
     html{scroll-behavior:auto;}
   }
 
-  /* ─── Capabilities cards ─── */
-  .caps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:46px;}
-  .cap{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:22px 20px;text-align:left;transition:border-color .18s,transform .18s,box-shadow .18s;}
-  .cap:hover{border-color:var(--emerald);transform:translateY(-2px);box-shadow:var(--shadow-xs);}
-  .cap-ic{width:42px;height:42px;border-radius:12px;background:var(--mint);color:var(--emerald-deep);display:grid;place-items:center;margin-bottom:14px;}
-  .cap h3{font-family:var(--font-display);font-weight:700;font-size:17px;letter-spacing:-.01em;margin:0 0 6px;color:var(--ink);}
-  .cap p{font-size:14px;color:var(--ink-soft);line-height:1.55;margin:0;}
-  @media (max-width:860px){.caps{grid-template-columns:repeat(2,1fr);}}
-  @media (max-width:480px){.caps{grid-template-columns:1fr;}}
+  /* ─── Capabilities pills ─── */
+  .cap-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:38px;}
+  .cap-pill{display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border-radius:999px;border:1.5px solid var(--line-strong);background:var(--paper);color:var(--ink);font-weight:600;font-size:15px;letter-spacing:-.005em;transition:border-color .16s,background .16s,color .16s,transform .12s;}
+  .cap-pill svg{color:var(--ink-soft);transition:color .16s;}
+  .cap-pill:hover{border-color:var(--emerald);color:var(--emerald-deep);transform:translateY(-1px);}
+  .cap-pill:hover svg{color:var(--emerald-deep);}
+  .cap-pill.active{border-color:var(--emerald);background:var(--mint);color:var(--emerald-deep);}
+  .cap-pill.active svg{color:var(--emerald-deep);}
+  .cap-note{text-align:center;font-size:14.5px;color:var(--ink-faint);margin:22px 0 0;}
+  @media (max-width:560px){.cap-pills{gap:8px;}.cap-pill{padding:11px 16px;font-size:14px;}}
 
   /* ─── Article / SEO pages layout ─── */
   .article-wrap{max-width:760px;margin:0 auto;padding:0 32px;}
