@@ -5,20 +5,20 @@
 
 /* ─── Design tokens ─── */
 :root {
-  --bg:            #F7FAF8;
-  --surface:       #FFFFFF;
-  --surface-soft:  #F8FAFC;
-  --text-1:        #0F172A;
-  --text-2:        #475569;
-  --text-3:        #64748B;
-  --text-muted:    #94A3B8;
-  --brand:         #10B981;
-  --brand-strong:  #059669;
-  --brand-deep:    #047857;
-  --brand-soft:    #ECFDF5;
+  --bg:            var(--mist);
+  --surface:       var(--paper);
+  --surface-soft:  var(--mist);
+  --text-1:        var(--ink);
+  --text-2:        var(--ink-soft);
+  --text-3:        var(--ink-faint);
+  --text-muted:    var(--line-strong);
+  --brand:         var(--emerald);
+  --brand-strong:  var(--forest);
+  --brand-deep:    var(--emerald-deep);
+  --brand-soft:    var(--mint);
   --brand-line:    #A7F3D0;
-  --border:        #E2E8F0;
-  --border-soft:   #EEF2F6;
+  --border:        var(--line);
+  --border-soft:   var(--mist);
   --warn-bg:       #FEF3C7;
   --warn-text:     #92400E;
   --info-bg:       #E0E7FF;
@@ -45,7 +45,7 @@ body { background: var(--bg); color: var(--text-1); margin: 0; }
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: saturate(140%) blur(8px);
   -webkit-backdrop-filter: saturate(140%) blur(8px);
-  border-bottom: 1px solid #F1F5F9;
+  border-bottom: 1px solid var(--mist);
 }
 .sim-site-header__inner {
   max-width: 1200px;
@@ -73,8 +73,8 @@ body { background: var(--bg); color: var(--text-1); margin: 0; }
 
 /* ─── Footer (remplace Tailwind) ─── */
 .sim-site-footer {
-  background: #0F172A;
-  color: #94A3B8;
+  background: var(--ink);
+  color: var(--line-strong);
   padding: 3rem 0;
   margin-top: 2rem;
 }
@@ -97,7 +97,7 @@ body { background: var(--bg); color: var(--text-1); margin: 0; }
   gap: 1.5rem;
 }
 .sim-site-footer__links a {
-  color: #94A3B8;
+  color: var(--line-strong);
   text-decoration: none;
   transition: color 0.15s ease;
 }
@@ -493,7 +493,7 @@ body { background: var(--bg); color: var(--text-1); margin: 0; }
 }
 /* Hover : neutre, jamais confondu avec sélectionné */
 .sim-options label:hover {
-  border-color: #CBD5E1;
+  border-color: var(--line-strong);
   background: var(--surface-soft);
 }
 .sim-options input[type="radio"] {
@@ -505,7 +505,7 @@ body { background: var(--bg); color: var(--text-1); margin: 0; }
   content: '';
   width: 18px;
   height: 18px;
-  border: 2px solid #CBD5E1;
+  border: 2px solid var(--line-strong);
   border-radius: 999px;
   background: var(--surface);
   flex-shrink: 0;
@@ -557,7 +557,7 @@ body { background: var(--bg); color: var(--text-1); margin: 0; }
   box-shadow: 0 6px 18px -6px rgba(16,185,129,0.45);
 }
 .sim-nav-next:hover:not(:disabled) { background: var(--brand-strong); transform: translateY(-1px); }
-.sim-nav-next:disabled { background: #CBD5E1; cursor: not-allowed; box-shadow: none; }
+.sim-nav-next:disabled { background: var(--line-strong); cursor: not-allowed; box-shadow: none; }
 
 /* ─── Résultat (fiche conseil) ─── */
 .sim-result { display: none; padding: 0 0 3rem; max-width: 760px; margin: 0 auto; }
@@ -1085,8 +1085,8 @@ body { background: var(--bg); color: var(--text-1); margin: 0; }
   .sim-share, .sim-restart-row, .sim-toast,
   .sim-btn-whatsapp, .sim-utils-row, .sim-btn-ghost-center { display: none !important; }
   .sim-result { display: block !important; max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
-  .sim-result .sim-card { box-shadow: none !important; border: 1px solid #e2e8f0 !important; break-inside: avoid; page-break-inside: avoid; }
-  .sim-card-tania { background: #f9fafb !important; }
+  .sim-result .sim-card { box-shadow: none !important; border: 1px solid var(--line) !important; break-inside: avoid; page-break-inside: avoid; }
+  .sim-card-tania { background: var(--mist) !important; }
   .sim-tania-text { margin-bottom: 0 !important; }
   .sim-plan-header { padding: 0 0 1rem !important; }
   .sim-plan-header h2 { font-size: 1.5rem !important; }
