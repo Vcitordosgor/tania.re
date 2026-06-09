@@ -190,22 +190,50 @@
 </section>
 
 <!-- CAPABILITIES -->
-<section class="pad-sm" id="capacites">
+<section class="pad" id="capacites">
   <div class="wrap">
-    <div class="shead center reveal">
-      <span class="eyebrow" style="justify-content:center;"><span class="dot"></span>Tout ce que Tania fait</span>
-      <h2 class="h2">Une assistante, plusieurs réflexes.</h2>
-      <p class="lead">Vous parlez à Tania comme à une assistante : facture, devis, point de la semaine, relance. Toujours dans WhatsApp.</p>
-    </div>
-    <div class="cap-pills reveal" role="list">
-      <span class="cap-pill" role="listitem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Créer une facture</span>
-      <span class="cap-pill" role="listitem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg>Créer un devis</span>
-      <span class="cap-pill" role="listitem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>Faire le point</span>
-      <span class="cap-pill" role="listitem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Relancer</span>
-      <span class="cap-pill" role="listitem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg>Exporter au comptable</span>
-    </div>
+    <div class="caps-grid">
+      <!-- Panneau gauche : narratif + input mock -->
+      <div class="caps-lead reveal">
+        <span class="eyebrow"><span class="dot"></span>Tout ce que Tania fait</span>
+        <h2 class="h2">4 mots. <span class="uline">1 action<svg viewBox="0 0 200 16" fill="none" preserveAspectRatio="none" aria-hidden="true"><path d="M3 11C42 5 92 4 130 6c25 1.3 47 3 64 6" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></span>.</h2>
+        <p class="lead">Vous écrivez à Tania comme à une assistante. Une phrase courte, en français — elle s'occupe du reste.</p>
 
-    <p class="caps-foot reveal">Une seule conversation WhatsApp. Pas de logiciel à ouvrir, rien à apprendre — vous écrivez en français, comme à une vraie assistante.</p>
+        <div class="caps-input" aria-hidden="true">
+          <span class="caps-input-lab">Vous écrivez</span>
+          <div class="caps-input-row">
+            <span class="caps-input-ava">T</span>
+            <span class="caps-input-text">Bonjour Tania,<span class="cur"></span></span>
+          </div>
+        </div>
+
+        <p class="caps-note">Pas de logiciel à ouvrir. Pas de menu à apprendre. Juste une conversation.</p>
+      </div>
+
+      <!-- Panneau droit : 5 commandes -->
+      <div class="caps-cmds reveal">
+        <div class="cmd">
+          <div class="cmd-in"><span class="quote">«</span>Sophie Dijoux, coupe couleur, 95&nbsp;€<span class="quote">»</span></div>
+          <div class="cmd-out"><svg class="cmd-arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><b>Facture F-2026-0042</b><span>Factur-X · prête</span></div>
+        </div>
+        <div class="cmd">
+          <div class="cmd-in"><span class="quote">«</span>devis Lambert, ravalement façade, 800&nbsp;€<span class="quote">»</span></div>
+          <div class="cmd-out"><svg class="cmd-arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><b>Devis D-2026-0018</b><span>envoyé en deux clics</span></div>
+        </div>
+        <div class="cmd">
+          <div class="cmd-in"><span class="quote">«</span>point semaine<span class="quote">»</span></div>
+          <div class="cmd-out"><svg class="cmd-arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><b>3 920 € encaissés</b><span>+12 % vs. semaine passée</span></div>
+        </div>
+        <div class="cmd">
+          <div class="cmd-in"><span class="quote">«</span>qui relancer&nbsp;?<span class="quote">»</span></div>
+          <div class="cmd-out"><svg class="cmd-arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><b>2 factures en retard</b><span>messages prêts à envoyer</span></div>
+        </div>
+        <div class="cmd">
+          <div class="cmd-in"><span class="quote">«</span>export mai pour le comptable<span class="quote">»</span></div>
+          <div class="cmd-out"><svg class="cmd-arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><b>Lien sécurisé envoyé</b><span>factures + devis + paiements</span></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
