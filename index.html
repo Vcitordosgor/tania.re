@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tania — Facturation par WhatsApp pour les TPE et PME de La Réunion</title>
   <meta name="description" content="Conçu à La Réunion pour les TPE et PME : préparez vos factures, suivez vos paiements et anticipez la réforme 2026-2027, simplement par WhatsApp." />
+  <link rel="canonical" href="https://tania.re/" />
   <meta name="theme-color" content="#10b981" />
 
   <meta property="og:title" content="Tania — Facturation par WhatsApp" />
@@ -23,7 +24,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;450;500;600;700;800&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="/css/site.css" />
 
@@ -43,8 +44,6 @@
 
 <body>
 
-<h1 class="sr-only">Tania — facturation par WhatsApp pour les TPE et PME de La Réunion, conforme à la réforme 2026–2027.</h1>
-
 <!-- NAV -->
 <header class="nav">
   <div class="wrap nav-in">
@@ -57,10 +56,12 @@
     </nav>
     <div class="nav-cta">
       <a class="btn btn-primary" href="#demo">Réserver ma démo</a>
-      <button class="menu-btn" aria-label="Ouvrir le menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0E1A24" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0E1A24" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
   </div>
 </header>
+
+<main id="main">
 
 <!-- HERO -->
 <section class="hero">
@@ -475,7 +476,7 @@
         <p id="wl-status" role="alert" style="display:none; margin-top:12px; font-size:13.5px; color:#C0392B; text-align:center;"></p>
       </form>
 
-      <div id="demo-success" class="formcard" style="display:none; text-align:center; margin-top:34px;">
+      <div id="demo-success" class="formcard" role="status" aria-live="polite" style="display:none; text-align:center; margin-top:34px;">
         <div style="margin:0 auto; width:60px; height:60px; border-radius:50%; background:var(--mint); display:grid; place-items:center;">
           <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--emerald-deep)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
         </div>
@@ -488,6 +489,8 @@
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- FOOTER -->
 <footer>
