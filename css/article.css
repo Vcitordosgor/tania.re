@@ -432,3 +432,25 @@
   .article-table { font-size: 14px; }
   .article-table th, .article-table td { padding: 0.65rem 0.75rem; }
 }
+
+/* ─── Encarts factorisés (ex-styles inline) ─── */
+.inline-cta {
+  text-align: center;
+  margin: 1.75rem 0 2.25rem;
+  padding: 1rem 1.25rem;
+  background: var(--mint);
+  border: 1px solid #A7F3D0;
+  border-radius: var(--r-md);
+  font-size: 1.02rem;
+}
+.disclaimer {
+  margin-top: 2rem;
+  background: var(--mist);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--line-strong);
+  border-radius: 0 10px 10px 0;
+  padding: 0.9rem 1.1rem;
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+  line-height: 1.6;
+}
