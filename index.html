@@ -46,6 +46,16 @@
 
 <body>
 
+<script>
+  // ─── Liens Stripe Payment Link (à remplacer par les vrais) ───
+  const STRIPE_LINK_OFFRE_1 = "https://buy.stripe.com/REMPLACER_ESSENTIEL"; // Offre Essentiel — 49 €/mois
+  const STRIPE_LINK_OFFRE_2 = "https://buy.stripe.com/REMPLACER_PRO";       // Offre Pro — 89 €/mois
+  document.addEventListener('DOMContentLoaded', function () {
+    var c1 = document.getElementById('cta-essentiel'); if (c1) c1.href = STRIPE_LINK_OFFRE_1;
+    var c2 = document.getElementById('cta-pro');       if (c2) c2.href = STRIPE_LINK_OFFRE_2;
+  });
+</script>
+
 <!-- NAV -->
 <header class="nav">
   <div class="wrap nav-in">
@@ -389,7 +399,8 @@
           <li><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Export comptable simple</li>
           <li><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Mise en place accompagnée</li>
         </ul>
-        <a class="btn btn-outline btn-block" href="#demo">Réserver ma démo</a>
+        <a id="cta-essentiel" class="btn btn-outline btn-block" href="#tarifs" target="_blank" rel="noopener">Choisir</a>
+        <a class="psecondary" href="#demo">Ou réserver une démo</a>
       </div>
       <div class="price reco reveal">
         <div class="reco-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.8.6-5.1 4.5 1.5 6.7L12 17.3 5.9 20.6l1.5-6.7L2.3 8.9l6.8-.6z"/></svg>Recommandé</div>
@@ -401,7 +412,8 @@
           <li><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Jusqu'à 150 factures/mois incluses</li>
           <li><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Lien dédié pour le comptable</li>
         </ul>
-        <a class="btn btn-primary btn-block" href="#demo">Réserver ma démo</a>
+        <a id="cta-pro" class="btn btn-primary btn-block" href="#tarifs" target="_blank" rel="noopener">Choisir</a>
+        <a class="psecondary" href="#demo">Ou réserver une démo</a>
       </div>
     </div>
     <p class="pnote reveal">Pas de carte demandée. Pas d'engagement. Démonstration disponible dès maintenant, mise en place accompagnée selon votre activité.</p>
