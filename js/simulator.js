@@ -363,8 +363,8 @@ Mes priorités :
 3. ${actions[2]}
 
 Pouvez-vous me dire comment Tania peut m'aider à préparer simplement la réforme ?`;
-    // TODO: remplacer par le numéro WhatsApp officiel Tania après validation Meta
-    return `https://wa.me/33648345707?text=${encodeURIComponent(message)}`;
+    // Numéro WhatsApp officiel Tania
+    return `https://wa.me/262693517153?text=${encodeURIComponent(message)}`;
   };
 
   // ─── Construction lien mailto (envoi du plan par email) ───
