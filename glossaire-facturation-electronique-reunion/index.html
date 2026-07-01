@@ -25,35 +25,35 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;450;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/site.css" />
-  <link rel="stylesheet" href="/css/article.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/site.css?v=2" />
+  <link rel="stylesheet" href="/css/article.css?v=2" />
 
   <style>
     body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
-    .tania-logo { display: inline-flex; align-items: center; line-height: 1; color: #10b981; text-decoration: none; }
+    .tania-logo { display: inline-flex; align-items: center; line-height: 1; color: var(--emerald); text-decoration: none; }
     .tania-T { height: 1em; width: 0.69em; display: block; }
     .tania-ania { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1em; letter-spacing: -0.025em; line-height: 1; color: inherit; }
     .tania-logo.md { font-size: 32px; }
     .hero-cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.5rem 0 2rem; }
-    .hero-cta-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: #10b981; color: #fff; font-weight: 600; padding: 0.85rem 1.4rem; border-radius: 12px; text-decoration: none; box-shadow: 0 8px 22px -8px rgba(16,185,129,0.45); transition: all 0.18s ease; }
-    .hero-cta-primary:hover { background: #059669; transform: translateY(-1px); color: #fff; }
-    .hero-cta-secondary { display: inline-flex; align-items: center; gap: 0.5rem; color: #047857; font-weight: 600; padding: 0.85rem 1rem; text-decoration: underline; text-underline-offset: 4px; }
-    .hero-cta-secondary:hover { color: #065f46; }
-    .gloss-nav { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 1.5rem 0 2rem; padding: 1rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; }
-    .gloss-nav a { display: inline-block; padding: 0.35rem 0.7rem; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; color: #047857; font-weight: 600; font-size: 0.85rem; text-decoration: none; transition: all 0.15s ease; }
-    .gloss-nav a:hover { background: #ecfdf5; border-color: #10b981; }
+    .hero-cta-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--emerald); color: #fff; font-weight: 600; padding: 0.85rem 1.4rem; border-radius: 12px; text-decoration: none; box-shadow: 0 8px 22px -8px rgba(16,185,129,0.45); transition: all 0.18s ease; }
+    .hero-cta-primary:hover { background: var(--forest); transform: translateY(-1px); color: #fff; }
+    .hero-cta-secondary { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--emerald-deep); font-weight: 600; padding: 0.85rem 1rem; text-decoration: underline; text-underline-offset: 4px; }
+    .hero-cta-secondary:hover { color: var(--forest-dark); }
+    .gloss-nav { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 1.5rem 0 2rem; padding: 1rem; background: var(--mist); border: 1px solid var(--line); border-radius: 12px; }
+    .gloss-nav a { display: inline-block; padding: 0.35rem 0.7rem; background: #fff; border: 1px solid var(--line); border-radius: 8px; color: var(--emerald-deep); font-weight: 600; font-size: 0.85rem; text-decoration: none; transition: all 0.15s ease; }
+    .gloss-nav a:hover { background: #ecfdf5; border-color: var(--emerald); }
     .gloss-list { display: flex; flex-direction: column; gap: 0.65rem; margin: 1.5rem 0; }
-    .gloss-item { border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.05rem 1.3rem; background: #fff; transition: border-color 0.2s ease; }
-    .gloss-item[open] { border-color: #10b981; box-shadow: 0 4px 12px -4px rgba(16, 185, 129, 0.15); }
-    .gloss-item summary { cursor: pointer; font-weight: 700; color: #0f172a; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+    .gloss-item { border: 1px solid var(--line); border-radius: 12px; padding: 1.05rem 1.3rem; background: #fff; transition: border-color 0.2s ease; }
+    .gloss-item[open] { border-color: var(--emerald); box-shadow: 0 4px 12px -4px rgba(16, 185, 129, 0.15); }
+    .gloss-item summary { cursor: pointer; font-weight: 700; color: var(--ink); font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
     .gloss-item summary::-webkit-details-marker { display: none; }
-    .gloss-item summary::after { content: '+'; font-size: 1.3rem; color: #10b981; transition: transform 0.2s ease; font-weight: 300; line-height: 1; }
+    .gloss-item summary::after { content: '+'; font-size: 1.3rem; color: var(--emerald); transition: transform 0.2s ease; font-weight: 300; line-height: 1; }
     .gloss-item[open] summary::after { transform: rotate(45deg); }
     .gloss-def { margin-top: 0.75rem; }
-    .gloss-def p { font-size: 0.93rem; color: #475569; line-height: 1.65; margin: 0 0 0.5rem; }
+    .gloss-def p { font-size: 0.93rem; color: var(--ink-soft); line-height: 1.65; margin: 0 0 0.5rem; }
     .gloss-def p:last-child { margin-bottom: 0; }
-    .gloss-def .ex { background: #f0fdf4; border-left: 3px solid #10b981; padding: 0.55rem 0.8rem; border-radius: 0 8px 8px 0; font-size: 0.88rem; color: #064e3b; margin-top: 0.5rem; }
+    .gloss-def .ex { background: #f0fdf4; border-left: 3px solid var(--emerald); padding: 0.55rem 0.8rem; border-radius: 0 8px 8px 0; font-size: 0.88rem; color: #064e3b; margin-top: 0.5rem; }
   </style>
 
   <script type="application/ld+json">
@@ -61,7 +61,7 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Glossaire de la facturation électronique à La Réunion",
-    "description": "Tous les termes clés de la facturation électronique 2026-2027 expliqués simplement : Factur-X, e-reporting, Plateforme Agréée, et plus encore.",
+    "description": "Tous les termes clés de la facturation électronique 2026–2027 expliqués simplement : Factur-X, e-reporting, Plateforme Agréée, et plus encore.",
     "image": "https://tania.re/og-image.png",
     "datePublished": "2026-05-24",
     "dateModified": "2026-05-24",
@@ -114,7 +114,7 @@
       <h1>Glossaire de la facturation électronique à La Réunion</h1>
       <p class="article-meta">Mis à jour le 24 mai 2026 · 20 termes expliqués simplement</p>
 
-      <p class="lede">Les mots clés de la facturation électronique 2026-2027 expliqués sans jargon, pour les TPE, indépendants et artisans à La Réunion. Cliquez sur chaque terme pour développer la définition.</p>
+      <p class="lede">Les mots clés de la facturation électronique 2026–2027 expliqués sans jargon, pour les TPE, indépendants et artisans à La Réunion. Cliquez sur chaque terme pour développer la définition.</p>
 
       <div class="hero-cta-row">
         <a href="/test-facturation-electronique-reunion/" class="hero-cta-primary">Faire le test gratuit
@@ -153,7 +153,7 @@
         <details class="gloss-item" id="facturation-electronique">
           <summary>Facturation électronique</summary>
           <div class="gloss-def">
-            <p>Système officiel par lequel les factures circulent entre entreprises sous forme structurée (lisible par machine), via des Plateformes Agréées. À partir de 2026-2027, elle remplace progressivement l’envoi de PDF par email pour les transactions B2B en France.</p>
+            <p>Système officiel par lequel les factures circulent entre entreprises sous forme structurée (lisible par machine), via des Plateformes Agréées. À partir de 2026–2027, elle remplace progressivement l’envoi de PDF par email pour les transactions B2B en France.</p>
             <p class="ex"><strong>Exemple&#8239;:</strong> votre client professionnel ne recevra plus votre facture par email mais via sa Plateforme Agréée.</p>
           </div>
         </details>
@@ -161,7 +161,7 @@
         <details class="gloss-item" id="facture-b2b">
           <summary>Facture électronique B2B</summary>
           <div class="gloss-def">
-            <p>Facture émise entre deux entreprises françaises (B2B = business to business). Elle entre dans le périmètre obligatoire de la facturation électronique à partir des échéances 2026-2027.</p>
+            <p>Facture émise entre deux entreprises françaises (B2B = business to business). Elle entre dans le périmètre obligatoire de la facturation électronique à partir des échéances 2026–2027.</p>
           </div>
         </details>
 
@@ -330,7 +330,7 @@
       <div class="foot-brand">
         <a class="brand" href="/"><span class="mark" aria-hidden="true"><svg viewBox="0 0 80 80" width="18" height="18" aria-hidden="true"><rect x="0" y="14" width="80" height="18" fill="currentColor"/><rect x="31" y="42" width="18" height="38" fill="currentColor"/></svg></span>Tania</a>
         <p>La facturation par WhatsApp pour les TPE et PME de La Réunion.</p>
-        <div class="foot-loc"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Conçu à La Réunion</div>
+        <div class="foot-loc"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Conçu à La Réunion</div>
       </div>
       <div class="fcol"><h4>Produit</h4><a href="/#how">Comment ça marche</a><a href="/#reforme">Réforme 2026–2027</a><a href="/#tarifs">Tarifs</a><a href="/#faq">FAQ</a></div>
       <div class="fcol"><h4>Société</h4><a href="/a-propos/">À propos</a><a href="/demo-tania-whatsapp-facturation/">Démo WhatsApp</a><a href="mailto:contact@tania.re">Contact</a><a href="/#demo">Réserver ma démo</a></div>
