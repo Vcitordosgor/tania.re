@@ -31,29 +31,29 @@
 
   <style>
     body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
-    .tania-logo { display: inline-flex; align-items: center; line-height: 1; color: #10b981; text-decoration: none; }
+    .tania-logo { display: inline-flex; align-items: center; line-height: 1; color: var(--emerald); text-decoration: none; }
     .tania-T { height: 1em; width: 0.69em; display: block; }
     .tania-ania { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1em; letter-spacing: -0.025em; line-height: 1; color: inherit; }
     .tania-logo.md { font-size: 32px; }
     .hero-cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.5rem 0 2rem; }
-    .hero-cta-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: #10b981; color: #fff; font-weight: 600; padding: 0.85rem 1.4rem; border-radius: 12px; text-decoration: none; box-shadow: 0 8px 22px -8px rgba(16,185,129,0.45); transition: all 0.18s ease; }
-    .hero-cta-primary:hover { background: #059669; transform: translateY(-1px); color: #fff; }
-    .hero-cta-secondary { display: inline-flex; align-items: center; gap: 0.5rem; color: #047857; font-weight: 600; padding: 0.85rem 1rem; text-decoration: underline; text-underline-offset: 4px; }
-    .hero-cta-secondary:hover { color: #065f46; }
-    .gloss-nav { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 1.5rem 0 2rem; padding: 1rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; }
-    .gloss-nav a { display: inline-block; padding: 0.35rem 0.7rem; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; color: #047857; font-weight: 600; font-size: 0.85rem; text-decoration: none; transition: all 0.15s ease; }
-    .gloss-nav a:hover { background: #ecfdf5; border-color: #10b981; }
+    .hero-cta-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--emerald); color: #fff; font-weight: 600; padding: 0.85rem 1.4rem; border-radius: 12px; text-decoration: none; box-shadow: 0 8px 22px -8px rgba(16,185,129,0.45); transition: all 0.18s ease; }
+    .hero-cta-primary:hover { background: var(--forest); transform: translateY(-1px); color: #fff; }
+    .hero-cta-secondary { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--emerald-deep); font-weight: 600; padding: 0.85rem 1rem; text-decoration: underline; text-underline-offset: 4px; }
+    .hero-cta-secondary:hover { color: var(--forest-dark); }
+    .gloss-nav { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 1.5rem 0 2rem; padding: 1rem; background: var(--mist); border: 1px solid var(--line); border-radius: 12px; }
+    .gloss-nav a { display: inline-block; padding: 0.35rem 0.7rem; background: #fff; border: 1px solid var(--line); border-radius: 8px; color: var(--emerald-deep); font-weight: 600; font-size: 0.85rem; text-decoration: none; transition: all 0.15s ease; }
+    .gloss-nav a:hover { background: #ecfdf5; border-color: var(--emerald); }
     .gloss-list { display: flex; flex-direction: column; gap: 0.65rem; margin: 1.5rem 0; }
-    .gloss-item { border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.05rem 1.3rem; background: #fff; transition: border-color 0.2s ease; }
-    .gloss-item[open] { border-color: #10b981; box-shadow: 0 4px 12px -4px rgba(16, 185, 129, 0.15); }
-    .gloss-item summary { cursor: pointer; font-weight: 700; color: #0f172a; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+    .gloss-item { border: 1px solid var(--line); border-radius: 12px; padding: 1.05rem 1.3rem; background: #fff; transition: border-color 0.2s ease; }
+    .gloss-item[open] { border-color: var(--emerald); box-shadow: 0 4px 12px -4px rgba(16, 185, 129, 0.15); }
+    .gloss-item summary { cursor: pointer; font-weight: 700; color: var(--ink); font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
     .gloss-item summary::-webkit-details-marker { display: none; }
-    .gloss-item summary::after { content: '+'; font-size: 1.3rem; color: #10b981; transition: transform 0.2s ease; font-weight: 300; line-height: 1; }
+    .gloss-item summary::after { content: '+'; font-size: 1.3rem; color: var(--emerald); transition: transform 0.2s ease; font-weight: 300; line-height: 1; }
     .gloss-item[open] summary::after { transform: rotate(45deg); }
     .gloss-def { margin-top: 0.75rem; }
-    .gloss-def p { font-size: 0.93rem; color: #475569; line-height: 1.65; margin: 0 0 0.5rem; }
+    .gloss-def p { font-size: 0.93rem; color: var(--ink-soft); line-height: 1.65; margin: 0 0 0.5rem; }
     .gloss-def p:last-child { margin-bottom: 0; }
-    .gloss-def .ex { background: #f0fdf4; border-left: 3px solid #10b981; padding: 0.55rem 0.8rem; border-radius: 0 8px 8px 0; font-size: 0.88rem; color: #064e3b; margin-top: 0.5rem; }
+    .gloss-def .ex { background: #f0fdf4; border-left: 3px solid var(--emerald); padding: 0.55rem 0.8rem; border-radius: 0 8px 8px 0; font-size: 0.88rem; color: #064e3b; margin-top: 0.5rem; }
   </style>
 
   <script type="application/ld+json">

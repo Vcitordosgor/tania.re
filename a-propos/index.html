@@ -32,29 +32,29 @@
 
   <style>
     body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
-    .tania-logo { display: inline-flex; align-items: center; line-height: 1; color: #10b981; text-decoration: none; }
+    .tania-logo { display: inline-flex; align-items: center; line-height: 1; color: var(--emerald); text-decoration: none; }
     .tania-T { height: 1em; width: 0.69em; display: block; }
     .tania-ania { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1em; letter-spacing: -0.025em; line-height: 1; color: inherit; }
     .tania-logo.md { font-size: 32px; }
     html { scroll-behavior: smooth; }
     .hero-cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.5rem 0 2rem; }
-    .hero-cta-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: #10b981; color: #fff; font-weight: 600; padding: 0.85rem 1.4rem; border-radius: 12px; text-decoration: none; box-shadow: 0 8px 22px -8px rgba(16,185,129,0.45); transition: all 0.18s ease; }
-    .hero-cta-primary:hover { background: #059669; transform: translateY(-1px); color: #fff; }
-    .hero-cta-secondary { display: inline-flex; align-items: center; gap: 0.5rem; color: #047857; font-weight: 600; padding: 0.85rem 1rem; text-decoration: underline; text-underline-offset: 4px; }
-    .hero-cta-secondary:hover { color: #065f46; }
+    .hero-cta-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--emerald); color: #fff; font-weight: 600; padding: 0.85rem 1.4rem; border-radius: 12px; text-decoration: none; box-shadow: 0 8px 22px -8px rgba(16,185,129,0.45); transition: all 0.18s ease; }
+    .hero-cta-primary:hover { background: var(--forest); transform: translateY(-1px); color: #fff; }
+    .hero-cta-secondary { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--emerald-deep); font-weight: 600; padding: 0.85rem 1rem; text-decoration: underline; text-underline-offset: 4px; }
+    .hero-cta-secondary:hover { color: var(--forest-dark); }
     .do-dont { display: grid; grid-template-columns: 1fr; gap: 1rem; margin: 1.5rem 0; }
     @media (min-width: 768px) { .do-dont { grid-template-columns: 1fr 1fr; } }
-    .do-card, .dont-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 1.2rem 1.35rem; }
-    .do-card { border-left: 3px solid #10b981; }
+    .do-card, .dont-card { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 1.2rem 1.35rem; }
+    .do-card { border-left: 3px solid var(--emerald); }
     .dont-card { border-left: 3px solid #f59e0b; }
-    .do-card h3, .dont-card h3 { font-size: 1.05rem; font-weight: 700; color: #0f172a; margin: 0 0 0.75rem; }
+    .do-card h3, .dont-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--ink); margin: 0 0 0.75rem; }
     .do-card ul, .dont-card ul { margin: 0; padding-left: 1.1rem; }
-    .do-card li, .dont-card li { font-size: 0.93rem; color: #475569; line-height: 1.55; margin-bottom: 0.4rem; }
-    .editor-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 14px; padding: 1.3rem 1.5rem; margin: 1.5rem 0; }
+    .do-card li, .dont-card li { font-size: 0.93rem; color: var(--ink-soft); line-height: 1.55; margin-bottom: 0.4rem; }
+    .editor-card { background: var(--mist); border: 1px solid var(--line); border-radius: 14px; padding: 1.3rem 1.5rem; margin: 1.5rem 0; }
     .editor-card dl { display: grid; grid-template-columns: 1fr; gap: 0.55rem; margin: 0; }
     @media (min-width: 640px) { .editor-card dl { grid-template-columns: max-content 1fr; column-gap: 1.2rem; } }
-    .editor-card dt { font-weight: 600; color: #0f172a; font-size: 0.92rem; }
-    .editor-card dd { margin: 0; color: #475569; font-size: 0.92rem; line-height: 1.55; }
+    .editor-card dt { font-weight: 600; color: var(--ink); font-size: 0.92rem; }
+    .editor-card dd { margin: 0; color: var(--ink-soft); font-size: 0.92rem; line-height: 1.55; }
   </style>
 
   <script type="application/ld+json">

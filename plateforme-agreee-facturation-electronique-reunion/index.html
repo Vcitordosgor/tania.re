@@ -31,54 +31,54 @@
 
   <style>
     body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
-    .tania-logo { display: inline-flex; align-items: center; line-height: 1; color: #10b981; text-decoration: none; }
+    .tania-logo { display: inline-flex; align-items: center; line-height: 1; color: var(--emerald); text-decoration: none; }
     .tania-T { height: 1em; width: 0.69em; display: block; }
     .tania-ania { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1em; letter-spacing: -0.025em; line-height: 1; color: inherit; }
     .tania-logo.md { font-size: 32px; }
     .hero-cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.5rem 0 2rem; }
-    .hero-cta-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: #10b981; color: #fff; font-weight: 600; padding: 0.85rem 1.4rem; border-radius: 12px; text-decoration: none; box-shadow: 0 8px 22px -8px rgba(16,185,129,0.45); transition: all 0.18s ease; }
-    .hero-cta-primary:hover { background: #059669; transform: translateY(-1px); color: #fff; }
-    .hero-cta-secondary { display: inline-flex; align-items: center; gap: 0.5rem; color: #047857; font-weight: 600; padding: 0.85rem 1rem; text-decoration: underline; text-underline-offset: 4px; }
-    .hero-cta-secondary:hover { color: #065f46; }
+    .hero-cta-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--emerald); color: #fff; font-weight: 600; padding: 0.85rem 1.4rem; border-radius: 12px; text-decoration: none; box-shadow: 0 8px 22px -8px rgba(16,185,129,0.45); transition: all 0.18s ease; }
+    .hero-cta-primary:hover { background: var(--forest); transform: translateY(-1px); color: #fff; }
+    .hero-cta-secondary { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--emerald-deep); font-weight: 600; padding: 0.85rem 1rem; text-decoration: underline; text-underline-offset: 4px; }
+    .hero-cta-secondary:hover { color: var(--forest-dark); }
 
     /* Tableau acteurs : tableau desktop + cartes mobile */
     .actors-wrap { overflow-x: auto; margin: 1.5rem 0; -webkit-overflow-scrolling: touch; }
-    .actors-table { width: 100%; min-width: 720px; border-collapse: separate; border-spacing: 0; background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; overflow: hidden; font-size: 0.92rem; }
-    .actors-table th, .actors-table td { padding: 0.85rem 1rem; text-align: left; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
-    .actors-table thead th { background: #f1f5f9; font-weight: 700; color: #0f172a; font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; }
+    .actors-table { width: 100%; min-width: 720px; border-collapse: separate; border-spacing: 0; background: #fff; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; font-size: 0.92rem; }
+    .actors-table th, .actors-table td { padding: 0.85rem 1rem; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
+    .actors-table thead th { background: var(--mist); font-weight: 700; color: var(--ink); font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; }
     .actors-table tbody tr:last-child td { border-bottom: none; }
-    .actors-table td:first-child, .actors-table th:first-child { font-weight: 700; color: #0f172a; }
+    .actors-table td:first-child, .actors-table th:first-child { font-weight: 700; color: var(--ink); }
     .actors-table tr.tania-row { background: #ecfdf5; }
-    .actors-table tr.tania-row td:first-child { color: #047857; }
+    .actors-table tr.tania-row td:first-child { color: var(--emerald-deep); }
     .actors-mobile { display: none; margin: 1.5rem 0; flex-direction: column; gap: 1rem; }
-    .actor-mcard { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 1.1rem 1.25rem; }
-    .actor-mcard.tania-card { background: #ecfdf5; border-color: #10b981; }
-    .actor-mcard h3 { font-size: 1.05rem; font-weight: 700; color: #0f172a; margin: 0 0 0.6rem; }
-    .actor-mcard.tania-card h3 { color: #047857; }
-    .actor-mcard h4 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #64748b; margin: 0.65rem 0 0.25rem; }
-    .actor-mcard p { font-size: 0.88rem; color: #475569; line-height: 1.55; margin: 0; }
+    .actor-mcard { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 1.1rem 1.25rem; }
+    .actor-mcard.tania-card { background: #ecfdf5; border-color: var(--emerald); }
+    .actor-mcard h3 { font-size: 1.05rem; font-weight: 700; color: var(--ink); margin: 0 0 0.6rem; }
+    .actor-mcard.tania-card h3 { color: var(--emerald-deep); }
+    .actor-mcard h4 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-faint); margin: 0.65rem 0 0.25rem; }
+    .actor-mcard p { font-size: 0.88rem; color: var(--ink-soft); line-height: 1.55; margin: 0; }
     @media (max-width: 767px) {
       .actors-wrap { display: none; }
       .actors-mobile { display: flex; }
     }
 
     .check-list { list-style: none; padding: 0; margin: 1.25rem 0; counter-reset: chk; display: flex; flex-direction: column; gap: 0.55rem; }
-    .check-list li { counter-increment: chk; display: flex; align-items: flex-start; gap: 0.85rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 0.85rem 1rem; }
-    .check-list li::before { content: counter(chk); flex-shrink: 0; width: 26px; height: 26px; border-radius: 999px; background: #10b981; color: #fff; font-weight: 700; font-size: 0.85rem; display: inline-flex; align-items: center; justify-content: center; margin-top: 1px; }
-    .check-list li span { font-size: 0.94rem; color: #0f172a; line-height: 1.5; font-weight: 500; }
+    .check-list li { counter-increment: chk; display: flex; align-items: flex-start; gap: 0.85rem; background: var(--mist); border: 1px solid var(--line); border-radius: 12px; padding: 0.85rem 1rem; }
+    .check-list li::before { content: counter(chk); flex-shrink: 0; width: 26px; height: 26px; border-radius: 999px; background: var(--emerald); color: #fff; font-weight: 700; font-size: 0.85rem; display: inline-flex; align-items: center; justify-content: center; margin-top: 1px; }
+    .check-list li span { font-size: 0.94rem; color: var(--ink); line-height: 1.5; font-weight: 500; }
 
     .error-cards { display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin: 1.5rem 0; }
     @media (min-width: 768px) { .error-cards { grid-template-columns: 1fr 1fr; } }
-    .error-card { background: #fff; border: 1px solid #e2e8f0; border-left: 3px solid #f59e0b; border-radius: 0 12px 12px 0; padding: 0.95rem 1.15rem; }
-    .error-card h4 { font-size: 0.97rem; font-weight: 700; color: #0f172a; margin: 0 0 0.35rem; line-height: 1.35; }
-    .error-card p { font-size: 0.88rem; color: #475569; line-height: 1.5; margin: 0 0 0.3rem; }
-    .error-card .action { font-size: 0.83rem; color: #047857; font-weight: 600; }
+    .error-card { background: #fff; border: 1px solid var(--line); border-left: 3px solid #f59e0b; border-radius: 0 12px 12px 0; padding: 0.95rem 1.15rem; }
+    .error-card h4 { font-size: 0.97rem; font-weight: 700; color: var(--ink); margin: 0 0 0.35rem; line-height: 1.35; }
+    .error-card p { font-size: 0.88rem; color: var(--ink-soft); line-height: 1.5; margin: 0 0 0.3rem; }
+    .error-card .action { font-size: 0.83rem; color: var(--emerald-deep); font-weight: 600; }
 
     .res-grid { display: grid; grid-template-columns: 1fr; gap: 0.5rem; margin: 1.25rem 0; }
     @media (min-width: 640px) { .res-grid { grid-template-columns: 1fr 1fr; } }
-    .res-link { display: flex; align-items: center; gap: 0.65rem; padding: 0.7rem 0.95rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; text-decoration: none; color: #0f172a; font-size: 0.93rem; font-weight: 500; transition: all 0.15s ease; }
-    .res-link:hover { background: #fff; border-color: #10b981; color: #047857; }
-    .res-link::before { content: '›'; color: #10b981; font-weight: 700; }
+    .res-link { display: flex; align-items: center; gap: 0.65rem; padding: 0.7rem 0.95rem; background: var(--mist); border: 1px solid var(--line); border-radius: 10px; text-decoration: none; color: var(--ink); font-size: 0.93rem; font-weight: 500; transition: all 0.15s ease; }
+    .res-link:hover { background: #fff; border-color: var(--emerald); color: var(--emerald-deep); }
+    .res-link::before { content: '›'; color: var(--emerald); font-weight: 700; }
   </style>
 
   <script type="application/ld+json">

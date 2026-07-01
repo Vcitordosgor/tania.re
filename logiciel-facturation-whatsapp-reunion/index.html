@@ -32,30 +32,30 @@
 
   <style>
     body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
-    .tania-logo { display: inline-flex; align-items: center; line-height: 1; color: #10b981; text-decoration: none; }
+    .tania-logo { display: inline-flex; align-items: center; line-height: 1; color: var(--emerald); text-decoration: none; }
     .tania-T { height: 1em; width: 0.69em; display: block; }
     .tania-ania { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1em; letter-spacing: -0.025em; line-height: 1; color: inherit; }
     .tania-logo.md { font-size: 32px; }
     html { scroll-behavior: smooth; }
     .hero-cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.5rem 0 2rem; }
-    .hero-cta-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: #10b981; color: #fff; font-weight: 600; padding: 0.85rem 1.4rem; border-radius: 12px; text-decoration: none; box-shadow: 0 8px 22px -8px rgba(16,185,129,0.45); transition: all 0.18s ease; }
-    .hero-cta-primary:hover { background: #059669; transform: translateY(-1px); color: #fff; }
-    .hero-cta-secondary { display: inline-flex; align-items: center; gap: 0.5rem; color: #047857; font-weight: 600; padding: 0.85rem 1rem; text-decoration: underline; text-underline-offset: 4px; }
-    .hero-cta-secondary:hover { color: #065f46; }
+    .hero-cta-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--emerald); color: #fff; font-weight: 600; padding: 0.85rem 1.4rem; border-radius: 12px; text-decoration: none; box-shadow: 0 8px 22px -8px rgba(16,185,129,0.45); transition: all 0.18s ease; }
+    .hero-cta-primary:hover { background: var(--forest); transform: translateY(-1px); color: #fff; }
+    .hero-cta-secondary { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--emerald-deep); font-weight: 600; padding: 0.85rem 1rem; text-decoration: underline; text-underline-offset: 4px; }
+    .hero-cta-secondary:hover { color: var(--forest-dark); }
     .bullet-cards { display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin: 1.25rem 0 1.75rem; }
     @media (min-width: 640px) { .bullet-cards { grid-template-columns: repeat(2, 1fr); } }
     @media (min-width: 1024px) { .bullet-cards { grid-template-columns: repeat(3, 1fr); } }
-    .bullet-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1rem 1.2rem; }
-    .bullet-card h4 { font-size: 0.98rem; font-weight: 700; color: #0f172a; margin: 0 0 0.35rem; }
-    .bullet-card p { font-size: 0.88rem; color: #475569; line-height: 1.5; margin: 0; }
-    .cmp-wrap { overflow-x: auto; margin: 1.25rem 0 1.75rem; border: 1px solid #e2e8f0; border-radius: 14px; }
+    .bullet-card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 1rem 1.2rem; }
+    .bullet-card h4 { font-size: 0.98rem; font-weight: 700; color: var(--ink); margin: 0 0 0.35rem; }
+    .bullet-card p { font-size: 0.88rem; color: var(--ink-soft); line-height: 1.5; margin: 0; }
+    .cmp-wrap { overflow-x: auto; margin: 1.25rem 0 1.75rem; border: 1px solid var(--line); border-radius: 14px; }
     .cmp { width: 100%; min-width: 640px; border-collapse: collapse; font-size: 0.92rem; }
-    .cmp th, .cmp td { padding: 0.7rem 0.9rem; text-align: left; border-bottom: 1px solid #e2e8f0; }
-    .cmp th { background: #f8fafc; font-weight: 700; color: #0f172a; font-size: 0.85rem; }
-    .cmp td:first-child { font-weight: 600; color: #0f172a; }
+    .cmp th, .cmp td { padding: 0.7rem 0.9rem; text-align: left; border-bottom: 1px solid var(--line); }
+    .cmp th { background: var(--mist); font-weight: 700; color: var(--ink); font-size: 0.85rem; }
+    .cmp td:first-child { font-weight: 600; color: var(--ink); }
     .cmp tr:last-child td { border-bottom: none; }
     .metiers-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0 1.75rem; }
-    .metiers-row span { display: inline-flex; padding: 0.45rem 0.85rem; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 999px; font-size: 0.88rem; color: #0f172a; font-weight: 500; }
+    .metiers-row span { display: inline-flex; padding: 0.45rem 0.85rem; background: var(--mist); border: 1px solid var(--line); border-radius: 999px; font-size: 0.88rem; color: var(--ink); font-weight: 500; }
   </style>
 
   <script type="application/ld+json">
