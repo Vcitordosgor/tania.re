@@ -1,0 +1,27 @@
+{
+  // Worker API dédié au formulaire de contact Tania.
+  // Ne sert AUCUN asset statique : il ne répond que sur la route /api/contact.
+  // Le site reste servi par le projet Cloudflare Pages "tania-re".
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "tania-contact",
+  "main": "src/index.js",
+  "compatibility_date": "2026-07-01",
+
+  // Pas de sous-domaine workers.dev : uniquement la route sur tania.re
+  "workers_dev": false,
+  "routes": [
+    { "pattern": "tania.re/api/contact*", "zone_name": "tania.re" }
+  ],
+
+  // Binding Email Routing — même pattern que 9site4/LABUSE.
+  // Sans destination_address : autorise l'envoi vers toute adresse
+  // de destination VÉRIFIÉE dans Email Routing.
+  "send_email": [
+    { "name": "SEB" }
+  ],
+
+  "observability": { "enabled": true }
+
+  // Secrets à définir dans le dashboard (jamais ici) :
+  //   NOTION_TOKEN = ntn_…   (intégration partagée sur la base Deals)
+}
