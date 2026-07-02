@@ -467,28 +467,34 @@
     <div class="cta-inner reveal">
       <h2>Prêt à simplifier votre administratif ?</h2>
       <p class="sub">Réservez une démo gratuite. En 15 minutes, vous voyez comment Tania peut créer vos devis, factures et suivis directement depuis WhatsApp.</p>
-      <form id="waitlist-form" action="https://formsubmit.co/contact@tania.re" method="POST" class="formcard">
-        <input type="hidden" name="_subject" value="Nouvelle demande de démo Tania" />
-        <input type="hidden" name="_template" value="table" />
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value="https://tania.re/?demo=ok" />
-        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+      <form id="contact-form" class="formcard" novalidate>
+        <!-- Honeypot anti-spam — masqué, ne pas remplir -->
+        <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />
 
-        <label class="field-label" for="wl-name"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>Votre nom</label>
-        <input class="inp" id="wl-name" name="name" type="text" required placeholder="Marc Hoareau" />
+        <label class="field-label" for="cf-nom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>Votre nom*</label>
+        <input class="inp" id="cf-nom" name="nom" type="text" required placeholder="Marc Hoareau" autocomplete="name" />
+        <span class="field-err" id="cf-nom-err" role="alert"></span>
 
-        <label class="field-label" for="wl-email"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Votre email</label>
-        <input class="inp" id="wl-email" name="email" type="email" required placeholder="marc@exemple.fr" />
+        <label class="field-label" for="cf-entreprise"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M6 21V7l6-4 6 4v14M10 12h.01M14 12h.01M10 16h.01M14 16h.01"/></svg>Votre entreprise</label>
+        <input class="inp" id="cf-entreprise" name="entreprise" type="text" placeholder="BATI974 (facultatif)" autocomplete="organization" />
 
-        <label class="field-label" for="wl-whatsapp"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.2 7.5L3 21l2-5.8A8.5 8.5 0 1 1 21 11.5z"/></svg>Votre WhatsApp</label>
-        <input class="inp" id="wl-whatsapp" name="whatsapp" type="tel" required placeholder="+262 6 92 12 34 56" style="margin-bottom:6px;" />
+        <label class="field-label" for="cf-telephone"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.2 7.5L3 21l2-5.8A8.5 8.5 0 1 1 21 11.5z"/></svg>Votre téléphone / WhatsApp*</label>
+        <input class="inp" id="cf-telephone" name="telephone" type="tel" required placeholder="+262 6 92 12 34 56" autocomplete="tel" />
+        <span class="field-err" id="cf-telephone-err" role="alert"></span>
 
-        <button type="submit" id="wl-submit" class="btn btn-primary btn-block" style="margin-top:18px;" data-track="demo-submit">
-          <span id="wl-submit-label">Réserver ma démo gratuite</span>
-          <span class="arr" id="wl-submit-arrow">→</span>
-          <svg id="wl-submit-spinner" style="display:none" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke-opacity="0.25"/><path d="M22 12a10 10 0 0 1-10 10" stroke-linecap="round"/></svg>
+        <label class="field-label" for="cf-email"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Votre email*</label>
+        <input class="inp" id="cf-email" name="email" type="email" required placeholder="marc@exemple.fr" autocomplete="email" />
+        <span class="field-err" id="cf-email-err" role="alert"></span>
+
+        <label class="field-label" for="cf-message"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Votre message</label>
+        <textarea class="inp" id="cf-message" name="message" rows="4" placeholder="Dites-nous en quelques mots votre besoin (facultatif)"></textarea>
+
+        <button type="submit" id="cf-submit" class="btn btn-primary btn-block" style="margin-top:18px;" data-track="demo-submit">
+          <span id="cf-submit-label">Réserver ma démo gratuite</span>
+          <span class="arr" id="cf-submit-arrow">→</span>
+          <svg id="cf-submit-spinner" style="display:none" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke-opacity="0.25"/><path d="M22 12a10 10 0 0 1-10 10" stroke-linecap="round"/></svg>
         </button>
-        <p id="wl-status" role="alert" style="display:none; margin-top:12px; font-size:13.5px; color:#C0392B; text-align:center;"></p>
+        <p id="cf-status" role="alert" style="display:none; margin-top:12px; font-size:13.5px; color:#C0392B; text-align:center;"></p>
       </form>
 
       <div id="demo-success" class="formcard" role="status" aria-live="polite" style="display:none; text-align:center; margin-top:34px;">
@@ -590,27 +596,74 @@
       });
     }
 
-    var form = document.getElementById('waitlist-form');
-    var status = document.getElementById('wl-status');
+    var form = document.getElementById('contact-form');
+    var status = document.getElementById('cf-status');
     var success = document.getElementById('demo-success');
-    var submitBtn = document.getElementById('wl-submit');
-    var submitLabel = document.getElementById('wl-submit-label');
-    var submitArrow = document.getElementById('wl-submit-arrow');
-    var submitSpinner = document.getElementById('wl-submit-spinner');
+    var submitBtn = document.getElementById('cf-submit');
+    var submitLabel = document.getElementById('cf-submit-label');
+    var submitArrow = document.getElementById('cf-submit-arrow');
+    var submitSpinner = document.getElementById('cf-submit-spinner');
     if (form) {
+      var PHONE_REGEX = /^[+]?[\d\s().-]{8,20}$/;
+      var EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+      var mountedAt = Date.now();
+
+      function setFieldError(name, msg){
+        var el = document.getElementById('cf-' + name + '-err');
+        var input = document.getElementById('cf-' + name);
+        if(el){ el.textContent = msg || ''; el.style.display = msg ? 'block' : 'none'; }
+        if(input){ input.classList.toggle('inp-error', !!msg); }
+      }
+
       form.addEventListener('submit', async function(ev){
         ev.preventDefault();
+
+        // Time-trap : ignore une soumission < 1500 ms après le chargement (bot)
+        if (Date.now() - mountedAt < 1500) return;
+
+        var fd = new FormData(form);
+
+        // Honeypot — succès silencieux
+        if (String(fd.get('website') || '').trim()) {
+          form.style.display = 'none';
+          if(success){ success.style.display = 'block'; }
+          return;
+        }
+
+        var data = {
+          nom: String(fd.get('nom') || '').trim(),
+          entreprise: String(fd.get('entreprise') || '').trim(),
+          telephone: String(fd.get('telephone') || '').trim(),
+          email: String(fd.get('email') || '').trim(),
+          message: String(fd.get('message') || '').trim(),
+        };
+
+        var errs = {};
+        if (!data.nom) errs.nom = 'Veuillez indiquer votre nom.';
+        if (!data.telephone) errs.telephone = 'Veuillez indiquer un téléphone.';
+        else if (!PHONE_REGEX.test(data.telephone)) errs.telephone = 'Format de téléphone non reconnu.';
+        if (!data.email) errs.email = 'Veuillez indiquer un email.';
+        else if (!EMAIL_REGEX.test(data.email)) errs.email = "L'adresse email semble invalide.";
+
+        ['nom','telephone','email'].forEach(function(f){ setFieldError(f, errs[f]); });
+        var errKeys = Object.keys(errs);
+        if (errKeys.length) {
+          var first = document.getElementById('cf-' + errKeys[0]);
+          if(first) first.focus();
+          return;
+        }
+
         if(status){ status.style.display = 'none'; }
         submitBtn.disabled = true;
         if(submitLabel) submitLabel.textContent = 'Envoi en cours…';
         if(submitArrow) submitArrow.style.display = 'none';
         if(submitSpinner) submitSpinner.style.display = 'inline-block';
-        var formData = new FormData(form);
+
         try {
-          var res = await fetch('https://formsubmit.co/ajax/contact@tania.re', {
+          var res = await fetch('/api/contact', {
             method: 'POST',
-            headers: { 'Accept': 'application/json' },
-            body: formData,
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
           });
           if (res.ok) {
             form.style.display = 'none';
@@ -619,15 +672,16 @@
               success.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
           } else {
-            throw new Error('http_' + res.status);
+            var body = await res.json().catch(function(){ return {}; });
+            throw new Error(body && body.error ? body.error : ('http_' + res.status));
           }
-        } catch (_e) {
+        } catch (err) {
           submitBtn.disabled = false;
           if(submitLabel) submitLabel.textContent = 'Réserver ma démo gratuite';
           if(submitArrow) submitArrow.style.display = 'inline-block';
           if(submitSpinner) submitSpinner.style.display = 'none';
           if(status){
-            status.textContent = 'Une erreur est survenue. Écrivez-nous directement à contact@tania.re.';
+            status.textContent = "L'envoi a échoué. Réessayez ou écrivez-nous à contact@tania.re.";
             status.style.display = 'block';
           }
         }
