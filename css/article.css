@@ -11,20 +11,20 @@
 
 .article h1 {
   font-family: var(--font-display);
-  font-size: clamp(1.9rem, 3.6vw, 2.6rem);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
   line-height: 1.1;
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  font-weight: 400;
+  letter-spacing: 0;
   color: var(--ink);
   margin: 0 0 1.25rem;
 }
 
 .article h2 {
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 2.6vw, 1.85rem);
+  font-size: clamp(1.3rem, 2.2vw, 1.6rem);
   line-height: 1.18;
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  font-weight: 400;
+  letter-spacing: 0;
   color: var(--ink);
   margin: 3rem 0 1rem;
   scroll-margin-top: 90px;
@@ -34,8 +34,8 @@
   font-family: var(--font-display);
   font-size: 1.2rem;
   line-height: 1.3;
-  font-weight: 700;
-  letter-spacing: -0.01em;
+  font-weight: 400;
+  letter-spacing: 0;
   color: var(--ink);
   margin: 2rem 0 0.65rem;
 }
@@ -61,12 +61,12 @@
 .article li { margin-bottom: 0.4rem; }
 
 .article a {
-  color: var(--emerald-deep);
+  color: var(--ink);
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-thickness: 1.5px;
 }
-.article a:hover { color: var(--forest); text-decoration-thickness: 2px; }
+.article a:hover { color: var(--ink-soft); text-decoration-thickness: 2px; }
 
 /* Boutons CTA — pas de soulignement, texte blanc le cas échéant */
 .article a.hero-cta-primary,
@@ -88,7 +88,7 @@
 
 /* ─── Callouts ─── */
 .callout {
-  border-left: 4px solid var(--emerald);
+  border-left: 4px solid var(--line);
   background: var(--mint);
   border-radius: 0 var(--r-md) var(--r-md) 0;
   padding: 1.25rem 1.4rem;
@@ -97,7 +97,7 @@
 .callout-title {
   font-family: var(--font-display);
   font-size: 12.5px;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--emerald-deep);
@@ -108,13 +108,13 @@
 .callout li { margin-bottom: 0.3rem; }
 
 .callout-info {
-  border-left-color: var(--emerald-deep);
+  border-left-color: var(--line);
   background: var(--mist);
 }
 .callout-info .callout-title { color: var(--emerald-deep); }
 
 .callout-light {
-  border-left-color: var(--line-strong);
+  border-left-color: var(--line);
   background: var(--mist);
 }
 .callout-light .callout-title { color: var(--ink-faint); }
@@ -122,7 +122,7 @@
 /* ─── Table of contents ─── */
 .toc {
   background: var(--mist);
-  border: 1px solid var(--line);
+  border: 2.5px solid var(--line);
   border-radius: var(--r-md);
   padding: 1.4rem 1.6rem;
   margin: 2.5rem 0;
@@ -130,7 +130,7 @@
 .toc-title {
   font-family: var(--font-display);
   font-size: 12.5px;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--ink-faint);
@@ -147,7 +147,7 @@
 .toc a {
   color: var(--ink);
   text-decoration: none;
-  border-bottom: 1px dotted var(--ink-faint);
+  border-bottom: 2px solid var(--rowline);
 }
 .toc a:hover { color: var(--emerald-deep); border-bottom-color: var(--emerald-deep); }
 
@@ -158,21 +158,21 @@
   border-collapse: collapse;
   font-size: 15px;
   background: var(--paper);
-  border: 1px solid var(--line);
+  border: 2.5px solid var(--line);
   border-radius: var(--r-md);
   overflow: hidden;
 }
 .article-table th, .article-table td {
   padding: 0.85rem 1rem;
   text-align: left;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 2px solid var(--rowline);
   vertical-align: top;
   color: var(--ink-soft);
 }
 .article-table th {
   background: var(--mist);
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 400;
   color: var(--ink);
   font-size: 12.5px;
   text-transform: uppercase;
@@ -184,19 +184,19 @@
 /* ─── Bloc réponse FAQ ─── */
 .answer-block {
   background: var(--mist);
-  border: 1px solid var(--line);
-  border-left: 4px solid var(--emerald);
+  border: 2.5px solid var(--line);
+  border-left: 4px solid var(--line);
   border-radius: 0 var(--r-md) var(--r-md) 0;
   padding: 1.1rem 1.4rem;
   margin: 1.5rem 0 2rem;
 }
 .answer-block .answer-q {
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 400;
   color: var(--ink);
   margin: 0 0 0.5rem;
   font-size: 16.5px;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
 }
 .answer-block .answer-r {
   color: var(--ink-soft);
@@ -218,7 +218,7 @@
   padding: 1.5rem;
   margin: 1.5rem 0;
   background: var(--mist);
-  border: 1px solid var(--line);
+  border: 2.5px solid var(--line);
   border-radius: var(--r-md);
 }
 .checklist li {
@@ -228,38 +228,38 @@
   padding: 0.55rem 0;
   font-size: 16px;
   color: var(--ink);
-  border-bottom: 1px dashed var(--line);
+  border-bottom: 2px solid var(--rowline);
 }
 .checklist li:last-child { border-bottom: none; }
 .checklist input[type="checkbox"] {
   margin-top: 0.35rem;
   width: 18px;
   height: 18px;
-  accent-color: var(--emerald);
+  accent-color: #25D366;
   flex-shrink: 0;
 }
 
 /* ─── FAQ accordéons ─── */
 .faq-list { margin: 1.5rem 0 2rem; }
 .faq-item {
-  border: 1px solid var(--line);
+  border: 2.5px solid var(--line);
   border-radius: var(--r-md);
   padding: 1.1rem 1.3rem;
   margin-bottom: 0.75rem;
   background: var(--paper);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: .12s;
 }
 .faq-item[open] {
-  border-color: var(--emerald);
-  box-shadow: 0 4px 12px -4px rgba(16, 185, 129, 0.18);
+  border-color: var(--line);
+  box-shadow: 3px 3px 0 var(--shg);
 }
 .faq-item summary {
   cursor: pointer;
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 400;
   color: var(--ink);
   font-size: 16.5px;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   list-style: none;
   display: flex;
   justify-content: space-between;
@@ -270,7 +270,7 @@
 .faq-item summary::after {
   content: '+';
   font-size: 1.5rem;
-  color: var(--emerald);
+  color: #25D366;
   font-weight: 400;
   transition: transform 0.2s ease;
   line-height: 1;
@@ -286,7 +286,7 @@
 
 /* ─── CTA section ─── */
 .article-cta {
-  background: linear-gradient(135deg, var(--forest) 0%, var(--emerald-deep) 100%);
+  background: var(--wa);
   border-radius: var(--r-lg);
   padding: 2.5rem 2rem;
   text-align: center;
@@ -296,34 +296,36 @@
 }
 .article-cta h2 {
   font-family: var(--font-display);
-  color: #fff;
+  color: var(--wat);
   margin: 0 0 1rem;
   font-size: clamp(1.4rem, 2.6vw, 1.85rem);
-  letter-spacing: -0.02em;
-  font-weight: 800;
+  letter-spacing: 0;
+  font-weight: 400;
 }
-.article-cta p { color: #d1fae5; margin: 0 0 1.5rem; font-size: 17px; line-height: 1.6; }
+.article-cta p { color: var(--wap); margin: 0 0 1.5rem; font-size: 17px; line-height: 1.6; }
 .article-cta .cta-button {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: #fff;
-  color: var(--emerald-deep);
+  background: var(--grad);
+  color: var(--gradink);
+  border: 2.5px solid var(--line);
+  box-shadow: 3px 3px 0 var(--shg);
   font-family: var(--font-body);
   font-weight: 700;
   padding: 1rem 1.8rem;
-  border-radius: 12px;
+  border-radius: var(--r-md);
   text-decoration: none;
   font-size: 16px;
-  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 3px 3px 0 var(--sh);
+  transition: .12s;
 }
 .article-cta .cta-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px -2px rgba(0, 0, 0, 0.25);
-  color: var(--emerald-deep);
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--shg);
+  color: var(--gradink);
 }
-.article-cta .cta-fine { font-size: 13px; color: #a7f3d0; margin-top: 1rem; }
+.article-cta .cta-fine { font-size: 13px; color: var(--wap); margin-top: 1rem; }
 
 /* ─── Related articles ─── */
 .related-grid {
@@ -338,23 +340,22 @@
 .related-card {
   display: block;
   background: var(--paper);
-  border: 1px solid var(--line);
+  border: 2.5px solid var(--line);
   border-radius: var(--r-md);
   padding: 1.25rem 1.4rem;
   text-decoration: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: .12s;
 }
 .related-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--emerald);
-  box-shadow: var(--shadow-xs);
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--sh);
 }
 .related-card .related-title {
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 400;
   color: var(--ink);
   font-size: 16.5px;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   margin: 0 0 0.35rem;
 }
 .related-card .related-sub {
@@ -416,7 +417,7 @@
   color: var(--ink-faint);
   margin-bottom: 2rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 2px solid var(--rowline);
 }
 
 /* ─── Mobile ─── */
@@ -438,15 +439,15 @@
   text-align: center;
   margin: 1.75rem 0 2.25rem;
   padding: 1rem 1.25rem;
-  background: var(--mint);
-  border: 1px solid #A7F3D0;
+  background: var(--tagok);
+  border: 2px solid var(--line);
   border-radius: var(--r-md);
   font-size: 1.02rem;
 }
 .disclaimer {
   margin-top: 2rem;
   background: var(--mist);
-  border: 1px solid var(--line);
+  border: 2.5px solid var(--line);
   border-left: 4px solid var(--line-strong);
   border-radius: 0 10px 10px 0;
   padding: 0.9rem 1.1rem;
