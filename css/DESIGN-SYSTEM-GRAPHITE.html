@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design System — Graphite Vert Pâle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================================
+   DESIGN SYSTEM — GRAPHITE VERT PÂLE
+   Source : tailwind.config.js (graphite.*) + src/input.css (.t-gp-*)
+   Fichier de référence autonome — aucun build requis.
+   ============================================================================ */
+:root {
+  --bg:       #E6F2E8;
+  --tile:     #FFFFFF;
+  --tile2:    #F0F8F2;
+  --line:     #1A231C;
+  --ink:      #151E17;
+  --ink2:     #687A6C;
+  --mut:      #92A697;
+  --sh:       #CFE2D4;
+  --shg:      #A9E2BE;
+  --grad:     linear-gradient(135deg, #25D366, #2FDC7B);
+  --gradink:  #0B2013;
+  --hero:     linear-gradient(135deg, #25D366 0%, #36DD80 60%, #6BE8A4 100%);
+  --heroink:  #0B2013;
+  --wa:       linear-gradient(135deg, #121A14, #212B22);
+  --wat:      #4FE690;
+  --wap:      #B5C4B9;
+  --tagok:    linear-gradient(135deg, #9BEDBD, #D2F7E1);
+  --green:    #25D366;
+  --bar:      #E4EFE7;
+  --rowline:  #E5EFE8;
+  --tagbg:    #FFFFFF;
+  --badgebg:  #FFFFFF;
+}
+/* Rayons : 26 sidebar · 20 tuile/table · 16 logo/wa/user/toast · 14 btn/input/navlink/cta
+   · 12 badge hero/note · 9 tag/iconbtn · 8 compteur · 999 search pill · 50% avatar
+   Bordures : 2.5px contour principal · 2px filets/tags/badges
+   Ombres (0 blur) : 7px7px0 sidebar/hero/modal · 5px5px0 tuile/CTA(-shg) · 3px3px0 btn/input · 2px2px0 iconbtn
+   Press hover : translate(2px,2px) + ombre -2px, transition .12s
+   Focus : outline 2px solid #25D366, offset 2px
+   Typo : Archivo Black (titres 30/18/14, hero num 66/48, stat 34) ·
+          Space Grotesk (700 13.5-14 interactifs · 500 14 corps · 700 11.5 upcase ls1.2 · tabular-nums montants)
+   Composants .t-gp-* : cta(grad,gradink,r14,sh 5>3 shg) · btn(tile,r14,sh 3>1) · t(tile,r20,sh 5>3)
+   · hero-tile(hero,r20,sh 7>5 shg, badge blanc rotate3deg) · wa-tile(wa,r20,sh 5>3 shg, t1 wat, p wap)
+   · tag(r9,2px,700 10,min74,ok=tagok,cancel=mut+line-through) · pill(r999,2px,700 11)
+   · search(r999,sh3) · input/select(r14,2.5px,sh3, placeholder mut) · row(filet 2px rowline,
+     ref 66px 700 11.5 · cli flex 600 · date 46px 11 mut · amt 92px right 700 tabular)
+   · navlink(r14,sh3, .on=grad+gradink, cnt r8 2px) · iconbtn(32px,r9,2px,sh2>1)
+   · toast(r16,sh5, dot 9px vert border 2px line) */
+</style>
+</head>
+<body style="background:#E6F2E8;font-family:'Space Grotesk',sans-serif;padding:40px;">
+<h1 style="font-family:'Archivo Black',sans-serif;">Design System — Graphite Vert Pâle</h1>
+<p>Copie de référence (tokens + specs dans le &lt;style&gt; ci-dessus). Version planche complète : docs/da/DESIGN-SYSTEM-GRAPHITE.html du repo tania-prototype.</p>
+</body>
+</html>
