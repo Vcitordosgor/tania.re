@@ -25,15 +25,15 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/site.css?v=2" />
-  <link rel="stylesheet" href="/css/article.css?v=2" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/site.css?v=3" />
+  <link rel="stylesheet" href="/css/article.css?v=3" />
 
   <style>
-    body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    body { font-family: 'Space Grotesk', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
     .tania-logo { display: inline-flex; align-items: center; line-height: 1; color: var(--emerald); text-decoration: none; }
     .tania-T { height: 1em; width: 0.69em; display: block; }
-    .tania-ania { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1em; letter-spacing: -0.025em; line-height: 1; color: inherit; }
+    .tania-ania { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 1em; letter-spacing: -0.025em; line-height: 1; color: inherit; }
     .tania-logo.md { font-size: 32px; }
     html { scroll-behavior: smooth; }
 
@@ -44,8 +44,8 @@
     .hub-hero h1 { font-size: clamp(1.85rem, 4vw, 2.8rem); line-height: 1.12; font-weight: 800; letter-spacing: -0.025em; color: var(--ink); margin: 0 0 1rem; }
     .hub-hero p { font-size: 1.08rem; color: var(--ink-soft); line-height: 1.6; margin: 0 0 1.75rem; }
     .hub-cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
-    .hub-btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--emerald); color: #fff; font-weight: 600; padding: 0.95rem 1.6rem; border-radius: 12px; text-decoration: none; box-shadow: 0 8px 22px -8px rgba(16,185,129,0.45); transition: all 0.18s ease; }
-    .hub-btn-primary:hover { background: var(--forest); transform: translateY(-1px); color: #fff; }
+    .hub-btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--grad); color: var(--gradink); border: 2.5px solid var(--line); font-weight: 600; padding: 0.95rem 1.6rem; border-radius: 12px; text-decoration: none; box-shadow: 5px 5px 0 var(--shg); transition: .12s; }
+    .hub-btn-primary:hover { transform: translate(2px,2px); box-shadow: 3px 3px 0 var(--shg); color: var(--gradink); }
     .hub-btn-secondary { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--emerald-deep); font-weight: 600; padding: 0.95rem 1.2rem; text-decoration: underline; text-underline-offset: 4px; }
     .hub-btn-secondary:hover { color: var(--forest-dark); }
 
@@ -62,22 +62,22 @@
     .hub-priority-card p { font-size: 0.95rem; color: var(--ink-soft); line-height: 1.55; margin: 0 0 0.85rem; }
     .hub-priority-card .meta { font-size: 0.82rem; color: var(--ink-faint); display: inline-flex; align-items: center; gap: 0.35rem; margin-bottom: 1rem; }
     .hub-priority-card .arrow { margin-top: auto; display: inline-flex; align-items: center; gap: 0.45rem; font-weight: 600; font-size: 0.95rem; }
-    .hub-priority-card.is-primary { background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%); border: 2px solid var(--emerald); box-shadow: 0 12px 30px -16px rgba(16,185,129,0.3); }
-    .hub-priority-card.is-primary:hover { border-color: var(--forest); box-shadow: 0 18px 40px -16px rgba(16,185,129,0.45); }
-    .hub-priority-card.is-primary .badge { background: #d1fae5; color: var(--emerald-deep); }
+    .hub-priority-card.is-primary { background: linear-gradient(135deg, var(--mint) 0%, #ffffff 100%); border: 2px solid var(--emerald); box-shadow: 5px 5px 0 var(--shg); }
+    .hub-priority-card.is-primary:hover { border-color: var(--forest); box-shadow: 5px 5px 0 var(--shg); }
+    .hub-priority-card.is-primary .badge { background: var(--mint); color: var(--emerald-deep); }
     .hub-priority-card.is-primary .arrow { color: var(--emerald-deep); }
     .hub-priority-card.is-primary .arrow svg { transition: transform 0.18s ease; }
     .hub-priority-card.is-primary:hover .arrow svg { transform: translateX(2px); }
-    .hub-priority-card.is-secondary { background: #fff; border: 1px solid var(--line); }
-    .hub-priority-card.is-secondary:hover { border-color: var(--line-strong); box-shadow: 0 10px 24px -16px rgba(15,23,42,0.12); }
+    .hub-priority-card.is-secondary { background: #fff; border: 2px solid var(--line); }
+    .hub-priority-card.is-secondary:hover { border-color: var(--line-strong); box-shadow: 3px 3px 0 var(--sh); }
     .hub-priority-card.is-secondary .badge { background: var(--mist); color: var(--ink-soft); }
     .hub-priority-card.is-secondary .arrow { color: var(--ink); }
 
     .hub-grid { display: grid; grid-template-columns: 1fr; gap: 0.85rem; }
     @media (min-width: 640px) { .hub-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (min-width: 1024px) { .hub-grid { grid-template-columns: repeat(3, 1fr); } }
-    .hub-card { display: flex; flex-direction: column; padding: 1.25rem 1.35rem; background: #fff; border: 1px solid var(--line); border-radius: 14px; text-decoration: none; transition: all 0.18s ease; }
-    .hub-card:hover { border-color: var(--emerald); transform: translateY(-2px); box-shadow: 0 10px 24px -16px rgba(15,23,42,0.14); }
+    .hub-card { display: flex; flex-direction: column; padding: 1.25rem 1.35rem; background: #fff; border: 2px solid var(--line); border-radius: 14px; text-decoration: none; transition: .12s; }
+    .hub-card:hover { border-color: var(--line); transform: translate(2px,2px); box-shadow: 3px 3px 0 var(--sh); }
     .hub-card .cat { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--emerald-deep); margin-bottom: 0.5rem; }
     .hub-card h3 { font-size: 1.02rem; font-weight: 700; color: var(--ink); margin: 0 0 0.4rem; line-height: 1.35; }
     .hub-card p { font-size: 0.88rem; color: var(--ink-faint); line-height: 1.5; margin: 0 0 0.85rem; }
@@ -87,20 +87,20 @@
 
     .hub-need-list { display: grid; grid-template-columns: 1fr; gap: 0.55rem; }
     @media (min-width: 768px) { .hub-need-list { grid-template-columns: 1fr 1fr; } }
-    .hub-need { display: flex; align-items: center; gap: 0.85rem; padding: 0.85rem 1rem; background: var(--mist); border: 1px solid var(--line); border-radius: 12px; text-decoration: none; transition: all 0.15s ease; }
-    .hub-need:hover { background: #fff; border-color: var(--emerald); }
+    .hub-need { display: flex; align-items: center; gap: 0.85rem; padding: 0.85rem 1rem; background: var(--mist); border: 2px solid var(--line); border-radius: 12px; text-decoration: none; transition: all 0.15s ease; }
+    .hub-need:hover { background: #fff; border-color: var(--line); }
     .hub-need .q { font-size: 0.93rem; color: var(--ink); font-weight: 500; flex: 1; }
     .hub-need .go { color: var(--emerald-deep); font-size: 0.85rem; font-weight: 600; display: inline-flex; align-items: center; gap: 0.3rem; }
     .hub-need:hover .go svg { transform: translateX(2px); }
     .hub-need .go svg { transition: transform 0.18s ease; }
 
-    .hub-tania { background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 50%); border: 1px solid #a7f3d0; border-radius: 18px; padding: 1.75rem 1.5rem; }
+    .hub-tania { background: linear-gradient(135deg, var(--mint) 0%, #ffffff 50%); border: 1px solid var(--shg); border-radius: 18px; padding: 1.75rem 1.5rem; }
     @media (min-width: 768px) { .hub-tania { padding: 2.25rem 2rem; } }
     .hub-tania .cat { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--emerald-deep); margin-bottom: 0.6rem; }
     .hub-tania h2 { font-size: 1.45rem; font-weight: 700; color: var(--ink); margin: 0 0 0.85rem; letter-spacing: -0.015em; }
     .hub-tania p { font-size: 0.98rem; color: #334155; line-height: 1.65; margin: 0 0 1.25rem; }
 
-    .hub-disclaimer { margin-top: 2.5rem; padding: 0.9rem 1.15rem; background: var(--mist); border: 1px solid var(--line); border-left: 3px solid var(--line-strong); border-radius: 0 10px 10px 0; font-size: 0.83rem; color: var(--ink-faint); line-height: 1.6; }
+    .hub-disclaimer { margin-top: 2.5rem; padding: 0.9rem 1.15rem; background: var(--mist); border: 2px solid var(--line); border-left: 3px solid var(--line-strong); border-radius: 0 10px 10px 0; font-size: 0.83rem; color: var(--ink-faint); line-height: 1.6; }
   </style>
 
   <script type="application/ld+json">
@@ -178,7 +178,7 @@
     </nav>
     <div class="nav-cta">
       <a class="btn btn-primary" href="/#demo">Réserver ma démo</a>
-      <button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="primary-nav"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0E1A24" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="primary-nav"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A231C" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
   </div>
 </header>

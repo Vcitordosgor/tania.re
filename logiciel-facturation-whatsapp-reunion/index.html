@@ -26,36 +26,36 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/site.css?v=2" />
-  <link rel="stylesheet" href="/css/article.css?v=2" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/site.css?v=3" />
+  <link rel="stylesheet" href="/css/article.css?v=3" />
 
   <style>
-    body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    body { font-family: 'Space Grotesk', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
     .tania-logo { display: inline-flex; align-items: center; line-height: 1; color: var(--emerald); text-decoration: none; }
     .tania-T { height: 1em; width: 0.69em; display: block; }
-    .tania-ania { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1em; letter-spacing: -0.025em; line-height: 1; color: inherit; }
+    .tania-ania { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 1em; letter-spacing: -0.025em; line-height: 1; color: inherit; }
     .tania-logo.md { font-size: 32px; }
     html { scroll-behavior: smooth; }
     .hero-cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.5rem 0 2rem; }
-    .hero-cta-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--emerald); color: #fff; font-weight: 600; padding: 0.85rem 1.4rem; border-radius: 12px; text-decoration: none; box-shadow: 0 8px 22px -8px rgba(16,185,129,0.45); transition: all 0.18s ease; }
-    .hero-cta-primary:hover { background: var(--forest); transform: translateY(-1px); color: #fff; }
+    .hero-cta-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--grad); color: var(--gradink); font-weight: 700; padding: 0.85rem 1.4rem; border: 2.5px solid var(--line); border-radius: 14px; text-decoration: none; box-shadow: 5px 5px 0 var(--shg); transition: .12s; }
+    .hero-cta-primary:hover { transform: translate(2px,2px); box-shadow: 3px 3px 0 var(--shg); color: var(--gradink); }
     .hero-cta-secondary { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--emerald-deep); font-weight: 600; padding: 0.85rem 1rem; text-decoration: underline; text-underline-offset: 4px; }
     .hero-cta-secondary:hover { color: var(--forest-dark); }
     .bullet-cards { display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin: 1.25rem 0 1.75rem; }
     @media (min-width: 640px) { .bullet-cards { grid-template-columns: repeat(2, 1fr); } }
     @media (min-width: 1024px) { .bullet-cards { grid-template-columns: repeat(3, 1fr); } }
-    .bullet-card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 1rem 1.2rem; }
+    .bullet-card { background: #fff; border: 2px solid var(--line); border-radius: 12px; padding: 1rem 1.2rem; }
     .bullet-card h4 { font-size: 0.98rem; font-weight: 700; color: var(--ink); margin: 0 0 0.35rem; }
     .bullet-card p { font-size: 0.88rem; color: var(--ink-soft); line-height: 1.5; margin: 0; }
-    .cmp-wrap { overflow-x: auto; margin: 1.25rem 0 1.75rem; border: 1px solid var(--line); border-radius: 14px; }
+    .cmp-wrap { overflow-x: auto; margin: 1.25rem 0 1.75rem; border: 2px solid var(--line); border-radius: 14px; }
     .cmp { width: 100%; min-width: 640px; border-collapse: collapse; font-size: 0.92rem; }
-    .cmp th, .cmp td { padding: 0.7rem 0.9rem; text-align: left; border-bottom: 1px solid var(--line); }
+    .cmp th, .cmp td { padding: 0.7rem 0.9rem; text-align: left; border-bottom: 2px solid var(--rowline); }
     .cmp th { background: var(--mist); font-weight: 700; color: var(--ink); font-size: 0.85rem; }
     .cmp td:first-child { font-weight: 600; color: var(--ink); }
     .cmp tr:last-child td { border-bottom: none; }
     .metiers-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0 1.75rem; }
-    .metiers-row span { display: inline-flex; padding: 0.45rem 0.85rem; background: var(--mist); border: 1px solid var(--line); border-radius: 999px; font-size: 0.88rem; color: var(--ink); font-weight: 500; }
+    .metiers-row span { display: inline-flex; padding: 0.45rem 0.85rem; background: var(--mist); border: 2px solid var(--line); border-radius: 999px; font-size: 0.88rem; color: var(--ink); font-weight: 500; }
   </style>
 
   <script type="application/ld+json">
@@ -113,7 +113,7 @@
     </nav>
     <div class="nav-cta">
       <a class="btn btn-primary" href="/#demo">Réserver ma démo</a>
-      <button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="primary-nav"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0E1A24" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="primary-nav"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A231C" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
   </div>
 </header>
