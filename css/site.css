@@ -64,7 +64,7 @@
 
   /* nav */
   header.nav{position:sticky;top:0;z-index:50;background:#1A231C;}
-  header.nav .wrap{max-width:1440px;}
+  header.nav .wrap{max-width:none;padding:0 48px;}
   .nav-in{display:flex;align-items:center;justify-content:space-between;height:72px;}
   .brand{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:400;font-size:18px;letter-spacing:0;color:var(--ink);}
   header.nav .brand{color:#fff;}
