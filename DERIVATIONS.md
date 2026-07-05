@@ -33,10 +33,12 @@ auto-hébergement des polices.
   **Cloudflare** (site + Worker + Email Routing), **Notion** (leads — vu dans le
   Worker), **Anthropic** (IA), plateformes agréées.
 - **Mise à jour (5 juillet 2026)** : la réception des emails de contact ne passe
-  plus par une boîte Gmail. Le Worker envoie désormais la notification vers
-  `contact@tania.re`, acheminée par **Cloudflare Email Routing** vers la boîte
-  réelle de l'éditeur. **Google/Gmail retiré** de la liste des sous-traitants
-  et des transferts hors UE.
+  plus par une boîte Gmail. Le Worker envoie la notification vers une **boîte
+  OVHcloud (France)**, destination vérifiée dans Cloudflare Email Routing (SEB).
+  **Google/Gmail retiré** ; **OVHcloud** ajouté aux sous-traitants comme
+  destinataire des emails de contact (hébergement France, hors transferts hors UE).
+  L'adresse réelle de la boîte OVH reste un placeholder `REMPLACER_BOITE_OVH`
+  dans le Worker — ⚠️ [VIC] à renseigner avant déploiement.
 
 ## 4. Transferts hors UE + CCT/DPA
 - **Choix** : section dédiée nommant explicitement Meta et Anthropic (US),
