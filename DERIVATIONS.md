@@ -30,14 +30,18 @@ auto-hébergement des polices.
 - **Choix** : remplacer par **Meta Platforms Ireland Ltd**. Ajout des
   sous-traitants réellement actifs : **Stripe** (paiement, présent dans
   `index.html`), **OVHcloud** (hébergement données produit, confirmé éditeur),
-  **Cloudflare** (site + Worker + Email Routing), **Google LLC** (destination
-  Gmail des emails de contact — vu dans `workers/contact/src/index.js`),
-  **Notion** (leads — vu dans le Worker), **Anthropic** (IA), plateformes agréées.
+  **Cloudflare** (site + Worker + Email Routing), **Notion** (leads — vu dans le
+  Worker), **Anthropic** (IA), plateformes agréées.
+- **Mise à jour (5 juillet 2026)** : la réception des emails de contact ne passe
+  plus par une boîte Gmail. Le Worker envoie désormais la notification vers
+  `contact@tania.re`, acheminée par **Cloudflare Email Routing** vers la boîte
+  réelle de l'éditeur. **Google/Gmail retiré** de la liste des sous-traitants
+  et des transferts hors UE.
 
 ## 4. Transferts hors UE + CCT/DPA
 - **Choix** : section dédiée nommant explicitement Meta et Anthropic (US),
   encadrés par **Clauses Contractuelles Types (CCT/SCC)** + **DPA**. Stripe,
-  Google, Notion, Cloudflare mentionnés au même titre.
+  Notion, Cloudflare mentionnés au même titre.
 - **À la charge de l'éditeur** : signer effectivement ces DPA (obligation
   contractuelle réelle, hors code).
 
@@ -80,7 +84,7 @@ auto-hébergement des polices.
 
 ## Points restant à la charge de l'éditeur (VIC)
 1. **Adresse LCEN** complète à confirmer (§8).
-2. **Signer les DPA** Meta / Anthropic / Stripe / OVH / Google / Notion.
+2. **Signer les DPA** Meta / Anthropic / Stripe / OVH / Notion.
 3. **Notion** : confirmer s'il reste le CRM ou doit être retiré de la politique.
 4. Vérifier l'adresse OVHcloud indiquée (Roubaix par défaut) si datacenter autre.
 5. Remplacer les liens Stripe placeholder (`REMPLACER_*`) dans `index.html`.
