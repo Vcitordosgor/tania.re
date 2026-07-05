@@ -90,3 +90,32 @@ auto-hébergement des polices.
 3. **Notion** : confirmer s'il reste le CRM ou doit être retiré de la politique.
 4. Vérifier l'adresse OVHcloud indiquée (Roubaix par défaut) si datacenter autre.
 5. Remplacer les liens Stripe placeholder (`REMPLACER_*`) dans `index.html`.
+
+---
+
+# Header flottant néo-brutaliste (refonte header, feat/header-floating)
+
+Valeurs déduites (non spécifiées explicitement dans le brief) :
+
+1. **Couleur graphite** : le brief donne `#1E241F` mais demande « reprendre le
+   token graphite exact du DS si différent ». Le token DS `--line` = `#1A231C`
+   (différent) → **utilisé `var(--line)` (#1A231C)** pour outline, hard shadow
+   et wordmark.
+2. **Marges de flottement** : brief « ~14–16px » → header `padding:14px 16px`
+   (14 vertical, 16 latéral). Padding interne de la carte : `11px 22px`
+   (dérivé pour une hauteur confortable ~94px).
+3. **Hauteur du header** : ancienne hauteur fixe `104px` supprimée ; la hauteur
+   est désormais pilotée par padding + contenu (~94px desktop / 96px mobile).
+4. **Offset du drawer mobile** : réaligné `104px → 96px` pour coller sous la
+   nouvelle hauteur de header.
+5. **Poids des liens nav** : non spécifié → **conservé l'existant (700)**.
+   Couleur `#3E4A41`, hover `var(--line)` (graphite plein), Space Grotesk 13.5px.
+6. **Burger (mobile)** : restylé pour le nouveau langage (outline + offset) :
+   bordure `2.5px → 1.5px var(--line)`, radius `12 → 10px`,
+   ombre `2px 2px --sh → 3px 3px var(--line)`. Comportement inchangé.
+7. **CTA header uniquement** : styles scopés à `header.nav .nav-cta .btn-primary`
+   (fond `#4ADE80`, texte `#0B3D24`, border 1.5px `var(--line)`, radius 8px,
+   shadow `3px 3px 0 var(--line)`, padding `9px 18px`, weight 500, hover pressé
+   translate(3px,3px) + shadow 0). **La classe globale `.btn-primary` n'est PAS
+   modifiée** (hero et autres boutons inchangés). Ancien shadow `5px 5px --shg`
+   du bouton retiré sur le header.
