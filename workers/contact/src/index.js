@@ -7,7 +7,7 @@ import { EmailMessage } from 'cloudflare:email';
 
 // ===== À PERSONNALISER PAR SITE =====
 const MARQUE = 'TANIA';                          // 'TANIA' | 'LABUSE' | '9site4'
-const NOTIFY_EMAIL = 'REMPLACER_BOITE_OVH';      // ⚠️ [VIC] boîte OVHcloud réelle, destination VÉRIFIÉE dans SEB (Email Routing)
+const NOTIFY_EMAIL = 'taniafacturation@gmail.com'; // destination VÉRIFIÉE dans Email Routing
 const SENDER_EMAIL = 'contact@tania.re';         // adresse d'envoi sur le domaine
 const SITE_NAME = 'Tania';
 // ====================================

@@ -30,19 +30,19 @@ auto-hébergement des polices.
 - **Choix** : remplacer par **Meta Platforms Ireland Ltd**. Ajout des
   sous-traitants réellement actifs : **Stripe** (paiement, présent dans
   `index.html`), **OVHcloud** (hébergement données produit, confirmé éditeur),
-  **Cloudflare** (site + Worker + Email Routing), **Notion** (leads — vu dans le
-  Worker), **Anthropic** (IA), plateformes agréées.
-- **Mise à jour (5 juillet 2026)** : la réception des emails de contact ne passe
-  plus par une boîte Gmail. Le Worker envoie la notification vers une **boîte
-  OVHcloud (France)**, destination vérifiée dans Cloudflare Email Routing (SEB).
-  **Google/Gmail retiré** ; **OVHcloud** ajouté aux sous-traitants comme
-  destinataire des emails de contact (hébergement France, hors transferts hors UE).
-  L'adresse réelle de la boîte OVH reste un placeholder `REMPLACER_BOITE_OVH`
-  dans le Worker — ⚠️ [VIC] à renseigner avant déploiement.
+  **Cloudflare** (site + Worker + Email Routing), **Google LLC** (réception Gmail
+  des emails de contact — `NOTIFY_EMAIL` dans `workers/contact/src/index.js`),
+  **Notion** (leads — vu dans le Worker), **Anthropic** (IA), plateformes agréées.
+- **Décision éditeur (5 juillet 2026)** : la réception des emails de contact
+  reste sur la **boîte Gmail** existante (`taniafacturation@gmail.com`, destination
+  déjà vérifiée dans Email Routing). La politique déclare donc **Google LLC**
+  comme sous-traitant et le transfert hors UE associé. **OVHcloud n'est déclaré
+  que comme hébergeur des données produit** (France), pas pour le flux email.
 
 ## 4. Transferts hors UE + CCT/DPA
 - **Choix** : section dédiée nommant explicitement Meta et Anthropic (US),
-  encadrés par **Clauses Contractuelles Types (CCT/SCC)** + **DPA**. Stripe,
+  encadrés par **Clauses Contractuelles Types (CCT/SCC)** + **DPA**. Google
+  (Gmail, US) encadré par le **Data Privacy Framework** UE–US + CCT. Stripe,
   Notion, Cloudflare mentionnés au même titre.
 - **À la charge de l'éditeur** : signer effectivement ces DPA (obligation
   contractuelle réelle, hors code).
@@ -86,7 +86,7 @@ auto-hébergement des polices.
 
 ## Points restant à la charge de l'éditeur (VIC)
 1. **Adresse LCEN** complète à confirmer (§8).
-2. **Signer les DPA** Meta / Anthropic / Stripe / OVH / Notion.
+2. **Signer les DPA** Meta / Anthropic / Stripe / OVH / Google / Notion.
 3. **Notion** : confirmer s'il reste le CRM ou doit être retiré de la politique.
 4. Vérifier l'adresse OVHcloud indiquée (Roubaix par défaut) si datacenter autre.
 5. Remplacer les liens Stripe placeholder (`REMPLACER_*`) dans `index.html`.
