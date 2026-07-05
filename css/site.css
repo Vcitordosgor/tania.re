@@ -295,7 +295,7 @@
   .qa:last-child{border-bottom:2px solid var(--rowline);}
   .qa button{width:100%;background:none;border:0;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 4px;text-align:left;font-family:var(--font-display);font-weight:400;font-size:15px;color:var(--ink);letter-spacing:0;}
   .qa .ic{flex:none;color:#25D366;transition:transform .2s;font-size:22px;line-height:1;width:22px;text-align:center;}
-  .qa[aria-expanded="true"] .ic{transform:rotate(45deg);}
+  .qa[aria-expanded="true"] .ic,.qa button[aria-expanded="true"] .ic{transform:rotate(45deg);}
   .qa .ans{overflow:hidden;max-height:0;transition:max-height .28s ease;}
   .qa .ans p{margin:0;padding:0 4px 24px;font-size:14.5px;font-weight:500;color:var(--ink-soft);line-height:1.6;max-width:62ch;}
 
@@ -456,3 +456,39 @@
   header.nav .nav-cta .btn-primary[href^="/"]{display:inline-flex;}
 
   /* Footer reduit pour pages internes (memes classes que la home) */
+
+  /* ══ MOTION PASS — cascade & micro-interactions (pull-up visuel) ══ */
+  /* Reveals : translate/box-shadow réagissent vite au survol sans casser l'entrée .6s */
+  .reveal{transition:opacity .6s cubic-bezier(.22,.61,.36,1),transform .6s cubic-bezier(.22,.61,.36,1),translate .15s ease-out,box-shadow .15s ease-out;}
+  /* Press hover vif via `translate` (indépendante du transform du reveal) */
+  .testcard:hover,.price:hover,.scard:hover,.pbox:hover{transform:none;translate:2px 2px;}
+  /* Cascade des cartes sœurs (délais sur opacity+transform uniquement) */
+  .scards .scard:nth-child(2),.pgrid .pbox:nth-child(2),.prices .price:nth-child(2){transition-delay:.12s,.12s,0s,0s;}
+  .scards .scard:nth-child(3),.pgrid .pbox:nth-child(3){transition-delay:.24s,.24s,0s,0s;}
+  /* Timeline : cascade interne des 4 étapes */
+  .steps .step{opacity:0;transform:translateY(14px);transition:opacity .55s cubic-bezier(.22,.61,.36,1),transform .55s cubic-bezier(.22,.61,.36,1);}
+  .steps.in .step{opacity:1;transform:none;}
+  .steps.in .step:nth-of-type(1){transition-delay:.05s;}
+  .steps.in .step:nth-of-type(2){transition-delay:.17s;}
+  .steps.in .step:nth-of-type(3){transition-delay:.29s;}
+  .steps.in .step:nth-of-type(4){transition-delay:.41s;}
+  /* Pastilles d'étapes : pop au survol */
+  .step .node{transition:transform .16s ease-out,box-shadow .16s ease-out;}
+  .step:hover .node{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--shg);}
+  /* FAQ : le + réagit au survol */
+  .qa button:hover .ic{transform:scale(1.25);}
+  .qa button[aria-expanded="true"]:hover .ic{transform:rotate(45deg) scale(1.2);}
+  /* Footer : liens qui glissent */
+  .fcol a{transition:color .15s ease,translate .15s ease;}
+  .fcol a:hover{translate:4px 0;}
+  /* Points verts (kicker/eyebrow) : pulsation douce */
+  @keyframes dot-pulse{0%,100%{transform:scale(1);opacity:1;}50%{transform:scale(1.35);opacity:.75;}}
+  .kicker .dot,.eyebrow .dot{animation:dot-pulse 2.4s ease-in-out infinite;}
+  /* Tableaux & commandes : transitions douces */
+  .dtable .tr{transition:background .15s ease;}
+  .cmd{transition:transform .15s ease-out,box-shadow .15s ease-out;}
+  @media (prefers-reduced-motion:reduce){
+    .steps .step{transition:none !important;opacity:1 !important;transform:none !important;}
+    .kicker .dot,.eyebrow .dot{animation:none !important;}
+    .reveal{transition:none !important;}
+  }

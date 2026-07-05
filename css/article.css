@@ -455,3 +455,11 @@
   color: var(--ink-faint);
   line-height: 1.6;
 }
+
+/* ══ MOTION PASS — entrée douce des pages articles ══ */
+@keyframes article-in{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+.article-container > div:first-child{animation:article-in .5s cubic-bezier(.22,.61,.36,1) both;}
+.article-container .article{animation:article-in .6s .1s cubic-bezier(.22,.61,.36,1) both;}
+@media (prefers-reduced-motion:reduce){
+  .article-container > div:first-child,.article-container .article{animation:none;}
+}
