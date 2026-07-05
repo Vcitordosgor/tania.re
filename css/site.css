@@ -64,18 +64,21 @@
 
   /* nav */
   header.nav{position:sticky;top:0;z-index:50;background:var(--bg);padding:14px 16px;}
-  header.nav .wrap{max-width:none;padding:11px 22px;background:var(--tile);border:1.5px solid var(--line);border-radius:12px;box-shadow:3px 3px 0 var(--line);}
+  header.nav .wrap{max-width:none;padding:11px 20px;background:var(--tile);border:1.5px solid var(--line);border-radius:14px;box-shadow:3px 3px 0 var(--line);}
   .nav-in{display:flex;align-items:center;justify-content:space-between;}
   .brand{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:400;font-size:18px;letter-spacing:0;color:var(--ink);}
   header.nav .brand{color:var(--line);}
-  .brand .mark{width:32px;height:32px;border-radius:9px;background:var(--grad);border:2px solid var(--line);box-shadow:2px 2px 0 var(--sh);display:grid;place-items:center;color:var(--gradink);line-height:1;}
+  .brand .mark{width:32px;height:32px;border-radius:9px;background:var(--grad);border:2px solid var(--line);box-shadow:2px 2px 0 var(--sh);display:grid;place-items:center;color:var(--gradink);line-height:1;transition:transform .12s ease-out,box-shadow .12s ease-out;}
   .brand .mark.mark-alt{background:#FFFFFF;}
   .brand .mark svg{display:block;width:18px;height:18px;}
+  header.nav .brand:hover .mark{transform:translate(2px,2px);box-shadow:0 0 0 var(--sh);}
   nav.links{display:flex;align-items:center;gap:28px;}
   nav.links a{font-size:13.5px;font-weight:700;color:var(--ink);transition:color .15s;}
   nav.links a:hover{color:var(--ink-soft);}
-  header.nav nav.links a{color:#3E4A41;}
-  header.nav nav.links a:hover{color:var(--line);}
+  header.nav nav.links{gap:6px;}
+  header.nav nav.links a{color:#3E4A41;font-weight:600;padding:8px 13px;border-radius:9px;border:1.5px solid transparent;transition:background .14s ease,color .14s ease,border-color .14s ease,box-shadow .14s ease,transform .14s ease;}
+  header.nav nav.links a:hover{background:var(--tile2);color:var(--line);border-color:var(--line);box-shadow:2px 2px 0 var(--line);transform:translate(-1px,-1px);}
+  header.nav nav.links a:active{transform:translate(1px,1px);box-shadow:0 0 0 var(--line);}
   nav.links a.cta-mobile{display:none;}
   .nav-cta{display:flex;align-items:center;gap:18px;}
   header.nav .nav-cta .btn-primary{background:#4ADE80;color:#0B3D24;border:1.5px solid var(--line);border-radius:8px;box-shadow:3px 3px 0 var(--line);padding:9px 18px;font-weight:500;transition:transform .12s ease-out,box-shadow .12s ease-out;}
