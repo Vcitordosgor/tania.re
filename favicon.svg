@@ -1,9 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
-  <rect x="2" y="2" width="76" height="76" rx="18" fill="#25D366" stroke="#1A231C" stroke-width="4"/>
-  <!-- relief noir (décalé) -->
-  <rect x="22" y="27" width="44" height="13" fill="#1A231C"/>
-  <rect x="37.5" y="27" width="13" height="32" fill="#1A231C"/>
-  <!-- T blanc -->
-  <rect x="18" y="23" width="44" height="13" fill="#FFFFFF"/>
-  <rect x="33.5" y="23" width="13" height="32" fill="#FFFFFF"/>
+  <rect x="2" y="2" width="76" height="76" rx="16" fill="#25D366" stroke="#1A231C" stroke-width="4"/>
+  <rect x="14.5" y="23.5" width="51" height="11.5" fill="#0B2013"/>
+  <rect x="34.3" y="35" width="11.5" height="24.2" fill="#0B2013"/>
 </svg>
