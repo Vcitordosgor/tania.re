@@ -46,11 +46,28 @@
 
 <script>
   // ─── Liens Stripe Payment Link (à remplacer par les vrais) ───
-  const STRIPE_LINK_OFFRE_1 = "https://buy.stripe.com/REMPLACER_ESSENTIEL"; // Offre Essentiel — 49 €/mois
-  const STRIPE_LINK_OFFRE_2 = "https://buy.stripe.com/REMPLACER_PRO";       // Offre Pro — 89 €/mois
+  const STRIPE_LINK_ESSENTIEL = "https://buy.stripe.com/REMPLACER_ESSENTIEL"; // Essentiel — 49 €/mois
+  const STRIPE_LINK_DUO       = "https://buy.stripe.com/REMPLACER_DUO";       // Duo — 69 €/mois
+  const STRIPE_LINK_PRO       = "https://buy.stripe.com/REMPLACER_PRO";       // Pro — 89 €/mois
   document.addEventListener('DOMContentLoaded', function () {
-    var c1 = document.getElementById('cta-essentiel'); if (c1) c1.href = STRIPE_LINK_OFFRE_1;
-    var c2 = document.getElementById('cta-pro');       if (c2) c2.href = STRIPE_LINK_OFFRE_2;
+    var c1 = document.getElementById('cta-essentiel'); if (c1) c1.href = STRIPE_LINK_ESSENTIEL;
+    var cd = document.getElementById('cta-duo');       if (cd) cd.href = STRIPE_LINK_DUO;
+    var c2 = document.getElementById('cta-pro');       if (c2) c2.href = STRIPE_LINK_PRO;
+    // Toggle Mensuel / Annuel — met à jour les prix affichés, défaut Mensuel
+    var bopts = document.querySelectorAll('.billing .bopt');
+    bopts.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var mode = btn.getAttribute('data-mode');
+        bopts.forEach(function (b) {
+          var on = b === btn;
+          b.classList.toggle('on', on);
+          b.setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
+        document.querySelectorAll('.pprice [data-m]').forEach(function (el) {
+          el.textContent = el.getAttribute(mode === 'a' ? 'data-a' : 'data-m');
+        });
+      });
+    });
   });
 </script>
 
@@ -380,19 +397,35 @@
   <div class="wrap">
     <div class="shead center reveal">
       <span class="eyebrow" style="justify-content:center;"><span class="dot"></span>Tarifs</span>
-      <h2 class="h2">Deux offres. Une seule logique : vous faire gagner du temps.</h2>
-      <p class="lead">Tania s'adapte à votre volume d'activité, sans vous imposer un logiciel compliqué.</p>
+      <h2 class="h2">Une offre par équipe. Une seule logique&nbsp;: vous faire gagner du temps.</h2>
+      <p class="lead">Tania travaille comme une assistante&nbsp;: choisissez simplement combien de personnes lui écrivent.</p>
     </div>
+
+    <!-- Niveau 0 — Réception (gratuit) -->
+    <div class="reception reveal">
+      <div class="reception-txt">
+        <div class="reception-head"><span class="reception-badge">Gratuit</span><h3>Réception</h3></div>
+        <p>Dès septembre 2026, votre entreprise doit pouvoir recevoir des factures électroniques. Tania les reçoit pour vous et les classe, directement dans WhatsApp.</p>
+      </div>
+      <a class="btn btn-primary" href="#demo">Activer gratuitement</a>
+    </div>
+
+    <!-- Toggle Mensuel / Annuel -->
+    <div class="billing reveal" role="group" aria-label="Rythme de facturation">
+      <button type="button" class="bopt on" data-mode="m" aria-pressed="true">Mensuel</button>
+      <button type="button" class="bopt" data-mode="a" aria-pressed="false">Annuel <span class="bsave">2 mois offerts</span></button>
+    </div>
+
     <div class="prices">
       <div class="price reveal">
         <div class="ptier">Essentiel</div>
-        <div class="pprice">49 € <span>/ mois</span></div>
-        <p class="pdesc">Pour les indépendants et petites TPE qui veulent suivre leurs factures, paiements et relances sans logiciel compliqué.</p>
+        <div class="pprice"><b data-m="49" data-a="490">49</b>&nbsp;€ <span data-m="/ mois" data-a="/ an">/ mois</span></div>
+        <p class="pdesc">Pour l'artisan qui gère tout lui-même.</p>
+        <div class="pmeta"><span><b>1</b> compte WhatsApp</span><span><b>50</b> factures/mois</span></div>
         <ul class="pfeat">
-          <li><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Jusqu'à 50 factures/mois incluses</li>
+          <li><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Relances préparées</b> — Tania relance vos clients en retard pendant que vous êtes sur le chantier</span></li>
           <li><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Devis et factures assistés</li>
           <li><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Suivi des paiements</li>
-          <li><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Relances préparées</li>
           <li><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Dashboard clair</li>
           <li><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Export comptable simple</li>
           <li><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Mise en place accompagnée</li>
@@ -402,15 +435,26 @@
       </div>
       <div class="price reco reveal">
         <div class="reco-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.8.6-5.1 4.5 1.5 6.7L12 17.3 5.9 20.6l1.5-6.7L2.3 8.9l6.8-.6z"/></svg>Recommandé</div>
-        <div class="ptier">Pro</div>
-        <div class="pprice">89 € <span>/ mois</span></div>
-        <p class="pdesc">Pour les entreprises qui facturent davantage et veulent faciliter le suivi avec leur comptable.</p>
+        <div class="ptier">Duo</div>
+        <div class="pprice"><b data-m="69" data-a="690">69</b>&nbsp;€ <span data-m="/ mois" data-a="/ an">/ mois</span></div>
+        <p class="pdesc">Pour l'artisan et la personne qui gère la paperasse avec lui.</p>
+        <div class="pmeta"><span><b>2</b> comptes WhatsApp</span><span><b>50</b> factures/mois</span></div>
         <ul class="pfeat">
           <li><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Tout Essentiel</li>
-          <li><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Jusqu'à 150 factures/mois incluses</li>
-          <li><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Lien dédié pour le comptable</li>
         </ul>
-        <a id="cta-pro" class="btn btn-primary btn-block" href="#tarifs" target="_blank" rel="noopener">Choisir</a>
+        <a id="cta-duo" class="btn btn-primary btn-block" href="#tarifs" target="_blank" rel="noopener">Choisir</a>
+        <a class="psecondary" href="#demo">Ou réserver une démo</a>
+      </div>
+      <div class="price reveal">
+        <div class="ptier">Pro</div>
+        <div class="pprice"><b data-m="89" data-a="890">89</b>&nbsp;€ <span data-m="/ mois" data-a="/ an">/ mois</span></div>
+        <p class="pdesc">Pour l'entreprise qui facture en volume et travaille avec son comptable.</p>
+        <div class="pmeta"><span><b>3</b> comptes WhatsApp</span><span><b>150</b> factures/mois</span></div>
+        <ul class="pfeat">
+          <li><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Tout Duo</li>
+          <li><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Lien dédié pour le comptable</b></span></li>
+        </ul>
+        <a id="cta-pro" class="btn btn-outline btn-block" href="#tarifs" target="_blank" rel="noopener">Choisir</a>
         <a class="psecondary" href="#demo">Ou réserver une démo</a>
       </div>
     </div>
