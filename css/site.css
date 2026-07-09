@@ -512,3 +512,6 @@
 
   /* Resserrage hero → première section (P3) */
   .hero + .pad{padding-top:44px;}
+
+  /* Sélection de texte dans la DA */
+  ::selection{background:#4ADE80;color:#0B2013;}
