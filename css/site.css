@@ -339,7 +339,7 @@
   .foot-brand p{color:var(--wap);font-size:13.5px;font-weight:500;max-width:24ch;line-height:1.55;margin:0 0 16px;}
   .foot-loc{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--wap);}
   .foot-loc svg{color:var(--wat);}
-  .fcol h4{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--wat);margin:0 0 16px;font-weight:700;font-family:var(--font-body);}
+  .fcol h4,.fcol .fcol-t{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--wat);margin:0 0 16px;font-weight:700;font-family:var(--font-body);}
   .fcol a{display:block;padding:4px 0;font-size:13.5px;font-weight:500;color:var(--wap);margin-bottom:12px;transition:color .15s;}
   .fcol a:hover{color:#fff;}
   .foot-bottom{margin-top:48px;padding-top:24px;border-top:2px solid rgba(181,196,185,.25);font-size:12.5px;font-weight:500;color:var(--wap);}
