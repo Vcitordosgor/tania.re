@@ -57,7 +57,7 @@
     .compare-mcard.tania-card { background: var(--mint); border-color: var(--line); }
     .compare-mcard h3 { font-size: 1.05rem; font-weight: 700; color: var(--ink); margin: 0 0 0.75rem; }
     .compare-mcard.tania-card h3 { color: var(--emerald-deep); }
-    .compare-mcard h4 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-faint); margin: 0.75rem 0 0.3rem; }
+    .compare-mcard h4, .compare-mcard h3 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-faint); margin: 0.75rem 0 0.3rem; }
     .compare-mcard ul { margin: 0; padding-left: 1rem; font-size: 0.88rem; line-height: 1.55; color: var(--ink-soft); }
     .compare-mcard ul li { margin-bottom: 0.15rem; }
     @media (max-width: 767px) {
@@ -71,7 +71,7 @@
     .profile-cards { display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin: 1.5rem 0; }
     @media (min-width: 768px) { .profile-cards { grid-template-columns: 1fr 1fr; } }
     .profile-card { background: #fff; border: 2px solid var(--line); border-radius: 14px; padding: 1.1rem 1.3rem; }
-    .profile-card h4 { font-size: 1.02rem; font-weight: 700; color: var(--ink); margin: 0 0 0.5rem; }
+    .profile-card h4, .profile-card h3 { font-size: 1.02rem; font-weight: 700; color: var(--ink); margin: 0 0 0.5rem; }
     .profile-card p { font-size: 0.91rem; color: var(--ink-soft); line-height: 1.55; margin: 0; }
     .res-grid { display: grid; grid-template-columns: 1fr; gap: 0.5rem; margin: 1.25rem 0; }
     @media (min-width: 640px) { .res-grid { grid-template-columns: 1fr 1fr; } }
@@ -227,49 +227,49 @@
 
         <div class="compare-mcard">
           <h3>Excel / Word / PDF</h3>
-          <h4>Points forts</h4>
+          <h3>Points forts</h3>
           <ul><li>Simple</li><li>Gratuit ou déjà maîtrisé</li><li>Rapide pour commencer</li></ul>
-          <h4>Limites</h4>
+          <h3>Limites</h3>
           <ul><li>Fichiers dispersés</li><li>Relances manuelles</li><li>Données peu structurées</li><li>Risque d’erreurs de numérotation</li></ul>
-          <h4>Pour qui</h4>
+          <h3>Pour qui</h3>
           <ul><li>Très petites activités avec peu de factures</li></ul>
-          <h4>À vérifier</h4>
+          <h3>À vérifier</h3>
           <ul><li>Compatibilité avec les exigences futures et le circuit officiel</li></ul>
         </div>
 
         <div class="compare-mcard">
           <h3>Logiciel classique</h3>
-          <h4>Points forts</h4>
+          <h3>Points forts</h3>
           <ul><li>Structuré</li><li>Suivi propre</li><li>Export possible</li><li>Adapté au volume</li></ul>
-          <h4>Limites</h4>
+          <h3>Limites</h3>
           <ul><li>Peut être lourd</li><li>Nécessite de se connecter</li><li>Peu utilisé par les profils terrain</li></ul>
-          <h4>Pour qui</h4>
+          <h3>Pour qui</h3>
           <ul><li>TPE déjà organisées ou avec volume régulier</li></ul>
-          <h4>À vérifier</h4>
+          <h3>À vérifier</h3>
           <ul><li>Compatibilité Factur-X, Plateforme Agréée ou intégration</li></ul>
         </div>
 
         <div class="compare-mcard">
           <h3>Comptable</h3>
-          <h4>Points forts</h4>
+          <h3>Points forts</h3>
           <ul><li>Conseil</li><li>Validation fiscale</li><li>Accompagnement</li><li>Expertise</li></ul>
-          <h4>Limites</h4>
+          <h3>Limites</h3>
           <ul><li>Pas toujours disponible au quotidien</li><li>Ne remplace pas une organisation interne</li><li>Dépend du cabinet</li></ul>
-          <h4>Pour qui</h4>
+          <h3>Pour qui</h3>
           <ul><li>Entreprises qui veulent sécuriser leur situation</li></ul>
-          <h4>À vérifier</h4>
+          <h3>À vérifier</h3>
           <ul><li>Quelle Plateforme Agréée recommandée, et quel rôle reste à l’entreprise</li></ul>
         </div>
 
         <div class="compare-mcard tania-card">
           <h3>Tania</h3>
-          <h4>Points forts</h4>
+          <h3>Points forts</h3>
           <ul><li>Simple depuis WhatsApp</li><li>Adapté aux habitudes terrain</li><li>Suivi devis / factures / paiements / relances</li><li>Aide à structurer progressivement</li></ul>
-          <h4>Limites</h4>
+          <h3>Limites</h3>
           <ul><li>Ne remplace pas le comptable</li><li>N’est pas une Plateforme Agréée</li><li>Certaines fonctionnalités dépendent du parcours produit et de partenaires</li></ul>
-          <h4>Pour qui</h4>
+          <h3>Pour qui</h3>
           <ul><li>TPE, artisans, indépendants, micro-entrepreneurs qui veulent rester simples</li></ul>
-          <h4>À vérifier</h4>
+          <h3>À vérifier</h3>
           <ul><li>Comment articuler Tania avec le comptable et la Plateforme Agréée</li></ul>
         </div>
 
@@ -330,23 +330,23 @@
 
       <div class="profile-cards">
         <div class="profile-card">
-          <h4>Vous faites moins de 5 factures par mois</h4>
+          <h3>Vous faites moins de 5 factures par mois</h3>
           <p>Excel peut suffire à court terme, mais il faut vérifier votre méthode avant 2026–2027. Anticiper évite la précipitation.</p>
         </div>
         <div class="profile-card">
-          <h4>Vous utilisez déjà un logiciel</h4>
+          <h3>Vous utilisez déjà un logiciel</h3>
           <p>Vérifiez sa compatibilité avec la réforme (Factur-X, Plateforme Agréée) auprès de votre éditeur et de votre comptable.</p>
         </div>
         <div class="profile-card">
-          <h4>Vous êtes souvent sur le terrain</h4>
+          <h3>Vous êtes souvent sur le terrain</h3>
           <p>Une méthode simple depuis WhatsApp peut éviter de perdre les informations entre deux chantiers. Tania a été conçue pour ça.</p>
         </div>
         <div class="profile-card">
-          <h4>Vous facturez des professionnels</h4>
+          <h3>Vous facturez des professionnels</h3>
           <p>Anticipez l’émission électronique B2B prévue pour 2027 et le rôle de la Plateforme Agréée. Voir notre page <a href="/plateforme-agreee-facturation-electronique-reunion/">Choisir sa Plateforme Agréée</a>.</p>
         </div>
         <div class="profile-card">
-          <h4>Vous facturez surtout des particuliers</h4>
+          <h3>Vous facturez surtout des particuliers</h3>
           <p>Le sujet principal est l’e-reporting et la réception de vos factures fournisseurs en 2026. Pas la facturation B2B au sens strict.</p>
         </div>
       </div>

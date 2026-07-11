@@ -55,7 +55,7 @@
     .client-cards { display: grid; grid-template-columns: 1fr; gap: 1rem; margin: 1.5rem 0; }
     @media (min-width: 768px) { .client-cards { grid-template-columns: repeat(3, 1fr); } }
     .client-card { background: #fff; border: 2px solid var(--line); border-radius: 14px; padding: 1.1rem 1.25rem; }
-    .client-card h4 { font-size: 1.02rem; font-weight: 700; color: var(--ink); margin: 0 0 0.5rem; line-height: 1.35; }
+    .client-card h4, .client-card h3 { font-size: 1.02rem; font-weight: 700; color: var(--ink); margin: 0 0 0.5rem; line-height: 1.35; }
     .client-card p { font-size: 0.92rem; color: var(--ink-soft); line-height: 1.55; margin: 0; }
     .actions-numbered { list-style: none; padding: 0; margin: 1.5rem 0; counter-reset: act; display: flex; flex-direction: column; gap: 0.55rem; }
     .actions-numbered li { counter-increment: act; display: flex; align-items: flex-start; gap: 0.85rem; background: var(--mist); border: 2px solid var(--line); border-radius: 12px; padding: 0.85rem 1rem; }
@@ -265,15 +265,15 @@
 
       <div class="client-cards">
         <div class="client-card">
-          <h4>Vous facturez surtout des entreprises</h4>
+          <h3>Vous facturez surtout des entreprises</h3>
           <p>Votre sujet principal est l’<strong>émission électronique B2B</strong> à anticiper pour 2027. Vos factures devront passer par une Plateforme Agréée. Anticiper le choix de votre outil et de votre Plateforme dès maintenant évite la précipitation.</p>
         </div>
         <div class="client-card">
-          <h4>Vous facturez surtout des particuliers</h4>
+          <h3>Vous facturez surtout des particuliers</h3>
           <p>Vous relevez plutôt de l’<strong>e-reporting</strong> que de la facturation électronique B2B classique. Vous devez toutefois anticiper la <strong>réception</strong> de vos factures fournisseurs (loueur, énergie, prestataires…) à partir de 2026.</p>
         </div>
         <div class="client-card">
-          <h4>Vous avez les deux types de clients</h4>
+          <h3>Vous avez les deux types de clients</h3>
           <p>C’est le cas où il faut <strong>bien séparer vos flux</strong>. Émission B2B électronique pour les entreprises clientes, e-reporting pour les ventes aux particuliers, et réception électronique côté fournisseurs.</p>
         </div>
       </div>

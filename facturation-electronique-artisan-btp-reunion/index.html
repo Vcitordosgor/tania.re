@@ -45,7 +45,7 @@
     .client-cards { display: grid; grid-template-columns: 1fr; gap: 1rem; margin: 1.5rem 0; }
     @media (min-width: 768px) { .client-cards { grid-template-columns: repeat(2, 1fr); } }
     .client-card { background: #fff; border: 2px solid var(--line); border-radius: 14px; padding: 1.1rem 1.25rem; }
-    .client-card h4 { font-size: 1.02rem; font-weight: 700; color: var(--ink); margin: 0 0 0.5rem; line-height: 1.35; }
+    .client-card h4, .client-card h3 { font-size: 1.02rem; font-weight: 700; color: var(--ink); margin: 0 0 0.5rem; line-height: 1.35; }
     .client-card p { font-size: 0.92rem; color: var(--ink-soft); line-height: 1.55; margin: 0; }
     .actions-numbered { list-style: none; padding: 0; margin: 1.5rem 0; counter-reset: act; display: flex; flex-direction: column; gap: 0.55rem; }
     .actions-numbered li { counter-increment: act; display: flex; align-items: flex-start; gap: 0.85rem; background: var(--mist); border: 2px solid var(--line); border-radius: 12px; padding: 0.85rem 1rem; }
@@ -211,19 +211,19 @@
 
       <div class="client-cards">
         <div class="client-card">
-          <h4>Vous travaillez surtout avec des particuliers</h4>
+          <h3>Vous travaillez surtout avec des particuliers</h3>
           <p>Vos chantiers facturés à des particuliers relèvent de l’<strong>e-reporting</strong> et non de la facturation électronique B2B. Vous devez tout de même pouvoir <strong>recevoir</strong> vos factures fournisseurs électroniquement dès 2026.</p>
         </div>
         <div class="client-card">
-          <h4>Vous travaillez pour des syndics et des entreprises</h4>
+          <h3>Vous travaillez pour des syndics et des entreprises</h3>
           <p>Vous êtes en plein dans la <strong>facturation B2B électronique</strong>. À partir de 2027, vos factures à ces clients devront transiter par une Plateforme Agréée, avec un format structuré comme <a href="/factur-x-facturation-electronique-reunion/">Factur-X</a>.</p>
         </div>
         <div class="client-card">
-          <h4>Vous faites de la sous-traitance pour d’autres artisans</h4>
+          <h3>Vous faites de la sous-traitance pour d’autres artisans</h3>
           <p>Votre client est un professionnel, donc émission électronique en 2027. Pensez aussi à l’<strong>autoliquidation BTP</strong> qui doit continuer d’apparaître clairement sur la facture, indépendamment de la réforme.</p>
         </div>
         <div class="client-card">
-          <h4>Vous mixez particuliers et professionnels</h4>
+          <h3>Vous mixez particuliers et professionnels</h3>
           <p>C’est le cas le plus fréquent. Il faut <strong>séparer les flux</strong>&#8239;: B2B électronique pour les pros, e-reporting pour les particuliers, et réception électronique côté fournisseurs.</p>
         </div>
       </div>

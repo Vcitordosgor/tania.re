@@ -55,7 +55,7 @@
     .actor-mcard.tania-card { background: var(--mint); border-color: var(--line); }
     .actor-mcard h3 { font-size: 1.05rem; font-weight: 700; color: var(--ink); margin: 0 0 0.6rem; }
     .actor-mcard.tania-card h3 { color: var(--emerald-deep); }
-    .actor-mcard h4 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-faint); margin: 0.65rem 0 0.25rem; }
+    .actor-mcard h4, .actor-mcard h3 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-faint); margin: 0.65rem 0 0.25rem; }
     .actor-mcard p { font-size: 0.88rem; color: var(--ink-soft); line-height: 1.55; margin: 0; }
     @media (max-width: 767px) {
       .actors-wrap { display: none; }
@@ -70,7 +70,7 @@
     .error-cards { display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin: 1.5rem 0; }
     @media (min-width: 768px) { .error-cards { grid-template-columns: 1fr 1fr; } }
     .error-card { background: #fff; border: 2px solid var(--line); border-left: 3px solid #f59e0b; border-radius: 0 12px 12px 0; padding: 0.95rem 1.15rem; }
-    .error-card h4 { font-size: 0.97rem; font-weight: 700; color: var(--ink); margin: 0 0 0.35rem; line-height: 1.35; }
+    .error-card h4, .error-card h3 { font-size: 0.97rem; font-weight: 700; color: var(--ink); margin: 0 0 0.35rem; line-height: 1.35; }
     .error-card p { font-size: 0.88rem; color: var(--ink-soft); line-height: 1.5; margin: 0 0 0.3rem; }
     .error-card .action { font-size: 0.83rem; color: var(--emerald-deep); font-weight: 600; }
 
@@ -243,27 +243,27 @@
       <div class="actors-mobile">
         <div class="actor-mcard">
           <h3>Plateforme Agréée</h3>
-          <h4>Rôle</h4><p>Émission, réception et transmission des factures dans le circuit officiel.</p>
-          <h4>Ne fait pas forcément</h4><p>Organisation quotidienne des devis, paiements et relances.</p>
-          <h4>À vérifier</h4><p>Immatriculation officielle, compatibilité avec votre comptable et vos outils.</p>
+          <h3>Rôle</h3><p>Émission, réception et transmission des factures dans le circuit officiel.</p>
+          <h3>Ne fait pas forcément</h3><p>Organisation quotidienne des devis, paiements et relances.</p>
+          <h3>À vérifier</h3><p>Immatriculation officielle, compatibilité avec votre comptable et vos outils.</p>
         </div>
         <div class="actor-mcard">
           <h3>Expert-comptable</h3>
-          <h4>Rôle</h4><p>Conseil fiscal, organisation comptable, accompagnement réforme.</p>
-          <h4>Ne fait pas forcément</h4><p>Gestion quotidienne de chaque devis, facture ou relance.</p>
-          <h4>À vérifier</h4><p>Quelle Plateforme Agréée il recommande, et comment organiser les flux.</p>
+          <h3>Rôle</h3><p>Conseil fiscal, organisation comptable, accompagnement réforme.</p>
+          <h3>Ne fait pas forcément</h3><p>Gestion quotidienne de chaque devis, facture ou relance.</p>
+          <h3>À vérifier</h3><p>Quelle Plateforme Agréée il recommande, et comment organiser les flux.</p>
         </div>
         <div class="actor-mcard">
           <h3>Logiciel de facturation</h3>
-          <h4>Rôle</h4><p>Création et suivi des devis, factures et paiements.</p>
-          <h4>Ne fait pas forcément</h4><p>Connexion effective à une Plateforme Agréée (à vérifier auprès de l’éditeur).</p>
-          <h4>À vérifier</h4><p>Compatibilité Factur-X et raccordement à une Plateforme Agréée.</p>
+          <h3>Rôle</h3><p>Création et suivi des devis, factures et paiements.</p>
+          <h3>Ne fait pas forcément</h3><p>Connexion effective à une Plateforme Agréée (à vérifier auprès de l’éditeur).</p>
+          <h3>À vérifier</h3><p>Compatibilité Factur-X et raccordement à une Plateforme Agréée.</p>
         </div>
         <div class="actor-mcard tania-card">
           <h3>Tania</h3>
-          <h4>Rôle</h4><p>Structurer devis, factures, relances et suivis depuis WhatsApp.</p>
-          <h4>Ne fait pas</h4><p>Comptabilité officielle, conseil fiscal, rôle de Plateforme Agréée.</p>
-          <h4>À vérifier</h4><p>Articulation avec votre comptable et la Plateforme Agréée choisie.</p>
+          <h3>Rôle</h3><p>Structurer devis, factures, relances et suivis depuis WhatsApp.</p>
+          <h3>Ne fait pas</h3><p>Comptabilité officielle, conseil fiscal, rôle de Plateforme Agréée.</p>
+          <h3>À vérifier</h3><p>Articulation avec votre comptable et la Plateforme Agréée choisie.</p>
         </div>
       </div>
 
@@ -290,27 +290,27 @@
 
       <div class="error-cards">
         <div class="error-card">
-          <h4>Penser que son PDF actuel suffira forcément</h4>
+          <h3>Penser que son PDF actuel suffira forcément</h3>
           <p>Un PDF envoyé par mail aujourd’hui ne sera plus suffisant pour les transactions B2B après 2027. La facture devra transiter par une Plateforme Agréée.</p>
           <span class="action">Action&#8239;: anticiper le passage à un format structuré.</span>
         </div>
         <div class="error-card">
-          <h4>Confondre logiciel de facturation et Plateforme Agréée</h4>
+          <h3>Confondre logiciel de facturation et Plateforme Agréée</h3>
           <p>Avoir un logiciel ne suffit pas&#8239;: il doit être <strong>raccordé</strong> à une Plateforme Agréée ou en cours de l’être. Beaucoup d’éditeurs préparent cette intégration.</p>
           <span class="action">Action&#8239;: demander à votre éditeur où il en est.</span>
         </div>
         <div class="error-card">
-          <h4>Attendre 2027 pour se poser la question</h4>
+          <h3>Attendre 2027 pour se poser la question</h3>
           <p>Le rush des derniers mois est prévisible. Les Plateformes Agréées seront probablement saturées en support, et votre comptable aussi.</p>
           <span class="action">Action&#8239;: amorcer la réflexion avant l’été 2026.</span>
         </div>
         <div class="error-card">
-          <h4>Penser que le comptable gérera tout sans coordination</h4>
+          <h3>Penser que le comptable gérera tout sans coordination</h3>
           <p>Votre comptable peut vous accompagner, mais vous restez responsable de l’émission de vos factures et du suivi quotidien.</p>
           <span class="action">Action&#8239;: travailler en coordination, pas en délégation.</span>
         </div>
         <div class="error-card">
-          <h4>Croire qu’une petite entreprise n’est pas concernée</h4>
+          <h3>Croire qu’une petite entreprise n’est pas concernée</h3>
           <p>Toutes les entreprises assujetties à la TVA sont concernées par la réception en 2026. Et les TPE/PME/micro-entreprises par l’émission en 2027.</p>
           <span class="action">Action&#8239;: vérifier votre périmètre avec votre comptable.</span>
         </div>

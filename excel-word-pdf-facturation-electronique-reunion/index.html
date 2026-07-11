@@ -55,7 +55,7 @@
     .risk-cards { display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin: 1.5rem 0; }
     @media (min-width: 768px) { .risk-cards { grid-template-columns: repeat(2, 1fr); } }
     .risk-card { background: #fff; border: 2px solid var(--line); border-left: 3px solid #f59e0b; border-radius: 0 12px 12px 0; padding: 1rem 1.2rem; }
-    .risk-card h4 { font-size: 0.98rem; font-weight: 700; color: var(--ink); margin: 0 0 0.35rem; line-height: 1.35; }
+    .risk-card h4, .risk-card h3 { font-size: 0.98rem; font-weight: 700; color: var(--ink); margin: 0 0 0.35rem; line-height: 1.35; }
     .risk-card p { font-size: 0.9rem; color: var(--ink-soft); line-height: 1.55; margin: 0; }
     .actions-numbered { list-style: none; padding: 0; margin: 1.5rem 0; counter-reset: act; display: flex; flex-direction: column; gap: 0.55rem; }
     .actions-numbered li { counter-increment: act; display: flex; align-items: flex-start; gap: 0.85rem; background: var(--mist); border: 2px solid var(--line); border-radius: 12px; padding: 0.85rem 1rem; }
@@ -258,23 +258,23 @@
 
       <div class="risk-cards">
         <div class="risk-card">
-          <h4>Vous oubliez des factures ou des relances</h4>
+          <h3>Vous oubliez des factures ou des relances</h3>
           <p>Les fichiers se perdent, les rappels manuels finissent par sauter. Résultat&#8239;: trésorerie qui souffre et stress du suivi.</p>
         </div>
         <div class="risk-card">
-          <h4>Vos numéros de facture ne sont pas toujours propres</h4>
+          <h3>Vos numéros de facture ne sont pas toujours propres</h3>
           <p>La numérotation continue est obligatoire. Avec un modèle Word ou Excel copié-collé, il est facile de sauter un numéro ou d’en doubler un.</p>
         </div>
         <div class="risk-card">
-          <h4>Vos informations clients sont dispersées</h4>
+          <h3>Vos informations clients sont dispersées</h3>
           <p>Adresses, SIRET, IBAN dans des fichiers différents, parfois sur WhatsApp. À l’heure de la réforme, ces données devront être propres et structurées.</p>
         </div>
         <div class="risk-card">
-          <h4>Vous facturez à la fois des particuliers et des professionnels</h4>
+          <h3>Vous facturez à la fois des particuliers et des professionnels</h3>
           <p>Les obligations diffèrent (facturation B2B électronique vs e-reporting B2C). Sans outil pour distinguer les flux, le risque de confusion grimpe.</p>
         </div>
         <div class="risk-card">
-          <h4>Vous devez retrouver rapidement une facture ou un paiement</h4>
+          <h3>Vous devez retrouver rapidement une facture ou un paiement</h3>
           <p>Excel et Word ne sont pas des outils de recherche. Quand un client demande une facture envoyée il y a 6 mois, retrouver le bon fichier prend du temps.</p>
         </div>
       </div>
